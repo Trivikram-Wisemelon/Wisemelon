@@ -1,0 +1,4610 @@
+<!--======================================= Wisemelon Website =======================================-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wisemelon: Bot Reimagined</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--======================================= CSS Global ===========================================-->
+
+    <style>
+      body {
+        font-family: "Bricolage Grotesque", Arial, sans-serif;
+      }
+    </style>
+
+    <!-- CSS for "Iphone component" -->
+
+    <style>
+      @keyframes typeReveal {
+        0% {
+          max-width: 0;
+          opacity: 0;
+        }
+        5% {
+          opacity: 1;
+        }
+        100% {
+          max-width: 100%;
+          opacity: 1;
+        }
+      }
+
+      .typing {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 0;
+        opacity: 0;
+        animation: typeReveal 3s steps(30) forwards;
+      }
+
+      @keyframes showAfterDelay {
+        0% {
+          opacity: 0;
+        }
+        99% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .delay-12s {
+        animation: showAfterDelay 12s forwards;
+      }
+
+      .signal-bar {
+        width: 2px;
+        background-color: black;
+        display: inline-block;
+        margin-right: 1px;
+      }
+      .metallic {
+        background: linear-gradient(145deg, #1a1a1a, #000000);
+        box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.1),
+          inset 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+    </style>
+
+    <!--  CSS for stack animation -->
+    <style>
+      .shuffle1,
+      .shuffle2 {
+        will-change: transform;
+        transition: transform 0.6s ease-in-out;
+      }
+    </style>
+
+    <!--===================== CSS for PC component =====================-->
+
+    <style>
+      .message-list {
+        position: absolute;
+        top: 8%;
+        left: 6%;
+        width: 23%;
+        height: 90%;
+        background: #ffffff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1vw;
+        padding-top: 2%;
+        border: 1px solid #ddd; /* lighter border */
+        border-radius: 12px; /* more rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
+      }
+
+      .user-item {
+        position: relative;
+        width: 90%;
+        height: 8%; /* 10 users -> each ~8% */
+        display: flex;
+        align-items: center;
+        border-bottom: 0.2% solid #ccc;
+      }
+
+      .user-item img.profile {
+        width: 15%;
+        height: auto;
+        border-radius: 50%;
+        margin-right: 3%;
+      }
+
+      .user-text {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .user-name {
+        font-size: 1vw;
+        font-weight: bold;
+      }
+
+      .last-message {
+        font-size: 0.8vw;
+        color: #666;
+      }
+
+      .user-meta {
+        position: absolute;
+        right: 2%;
+        top: 10%;
+        text-align: center;
+      }
+
+      .user-meta .date {
+        font-size: 0.6vw;
+        color: grey;
+      }
+
+      .user-meta .icon {
+        font-size: 1.2vw;
+      }
+
+      .chat-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .profile-pic {
+        font-size: 2vw; /* adjusts size */
+        color: rgb(201, 214, 218);
+      }
+
+      .fa-facebook {
+        font-size: 2vw; /* adjusts size */
+        color: rgb(0, 181, 241);
+      }
+
+      .fa-whatsapp {
+        font-size: 2vw; /* adjusts size */
+        color: rgb(0, 178, 80);
+      }
+
+      .chat-top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .chat-left {
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+      }
+
+      .profile-pic {
+        width: 3vw;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      .user-text {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8vw;
+      }
+
+      .user-name {
+        font-weight: bold;
+      }
+
+      .user-status {
+        color: grey;
+        font-size: 0.6vw;
+      }
+
+      .chat-right {
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+      }
+
+      .icon {
+        width: 1.5vw;
+        height: 1.5vw;
+      }
+
+      .close-btn {
+        background: black;
+        color: white;
+        border: none;
+        padding: 0.3vw 0.6vw;
+        font-size: 0.8vw;
+        cursor: pointer;
+      }
+
+      .chat-divider {
+        width: 100%;
+        text-align: center;
+        border-bottom: 0.1vw solid #ccc;
+        line-height: 0.1vw;
+        margin: 1vw 0;
+      }
+
+      .chat-divider span {
+        background: #fff;
+        padding: 0 0.5vw;
+        font-size: 0.8vw;
+      }
+
+      .chat-message {
+        max-width: 60%;
+        margin: 0.5vw 0;
+        padding: 0.5vw 1vw;
+        border-radius: 1vw;
+        font-size: 0.8vw;
+        position: relative;
+      }
+
+      .chat-message.right {
+        align-self: flex-end;
+      }
+
+      .chat-message.left {
+        align-self: flex-start;
+      }
+
+      .chat-message.green {
+        background: #b9fbc0;
+        color: black;
+      }
+
+      .chat-message.grey {
+        background: #e0e0e0;
+        color: black;
+      }
+
+      /* bottom-left profile pic inside last message */
+      .bottom-profile-pic {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 2vw;
+        height: auto;
+        border-radius: 50%;
+        transform: translate(-30%, 30%);
+      }
+
+      .container {
+        position: relative;
+        width: 80vw;
+        aspect-ratio: 16 / 9;
+        background: white;
+        border: 4px solid #009c4c;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      /* Left vertical navbar */
+      .left-menu {
+        position: absolute;
+        top: 12%;
+        left: 1%;
+        width: 4%;
+        height: 76%;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1vw;
+
+        border: 1px solid #ddd; /* lighter border */
+        border-radius: 12px; /* more rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
+      }
+
+      .left-menu {
+        overflow: hidden; /* hide anything sticking out */
+      }
+
+      .left-menu svg {
+        width: 100%; /* fill its parent’s width */
+        height: auto; /* keep aspect ratio */
+      }
+
+      .left-menu svg {
+        max-width: 3em; /* or whatever matches your font-size */
+        max-height: 3em;
+      }
+
+      /* Top horizontal menu bar */
+      .top-menu {
+        position: absolute;
+        top: 1%;
+        left: 6%;
+        width: 88%;
+        height: 5%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1vw;
+        border: 1px solid #ddd; /* lighter border */
+        border-radius: 12px; /* more rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
+      }
+
+      .top-menu {
+        overflow: hidden; /* hide anything sticking out */
+      }
+
+      .top-menu svg {
+        width: 100%; /* fill its parent’s width */
+        height: auto; /* keep aspect ratio */
+      }
+
+      .top-menu svg {
+        max-width: 3em; /* or whatever matches your font-size */
+        max-height: 3em;
+      }
+
+      /* Message user list on left */
+      .message-list {
+        position: absolute;
+        top: 10%;
+        left: 6%;
+        width: 23%;
+        height: 80%;
+        background: #ffffff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1vw;
+        padding-top: 2%;
+        border: 1px solid #ddd; /* lighter border */
+        border-radius: 12px; /* more rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
+      }
+
+      /* Main chat area */
+      .chat-area {
+        position: absolute;
+        top: 8%;
+        left: 30%;
+        width: 38%;
+        height: 90%;
+        background: #ffffff;
+        font-size: 1vw;
+        display: flex;
+        flex-direction: column; /* stack children vertically */
+        align-items: flex-start; /* align items to left */
+        justify-content: flex-start; /* start from top */
+        border: 1px solid #ddd; /* lighter border */
+        border-radius: 12px; /* more rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
+        padding: 2%; /* optional: gives breathing space inside */
+        box-sizing: border-box;
+      }
+
+      /* Right side info panel */
+      .side-panel {
+        position: absolute;
+        top: 8%;
+        left: 70%;
+        width: 24%;
+        height: 90%;
+        background: #ffffff;
+        font-size: 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd; /* lighter border */
+        border-radius: 12px; /* more rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
+      }
+    </style>
+  </head>
+
+  <body class="bg-white min-h-screen overflow-x-hidden">
+    <!--======================================= Header  =============================================-->
+
+    <header
+      class="px-6 md:px-24 py-4 flex items-center justify-between z-50 bg-white mt-6"
+    >
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <img
+          src="assets/images/logo/DarkLogo.png"
+          alt="Logo"
+          class="w-[210px] h-auto object-contain"
+        />
+      </div>
+
+      <!-- Nav -->
+      <nav class="hidden xl:flex flex-1 justify-center max-w-[800px] mr-30">
+        <ul class="flex gap-20 text-lg">
+          <ul class="flex gap-20 text-lg">
+            <li>
+              <a
+                href="#"
+                class="text-black font-semibold hover:text-gray-800 transition-colors"
+                >Product</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-black font-semibold hover:text-gray-800 transition-colors"
+                >Industry</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-black font-semibold hover:text-gray-800 transition-colors"
+                >Resources</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-black font-semibold hover:text-gray-800 transition-colors"
+                >Blogs</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-black font-semibold hover:text-gray-800 transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </ul>
+      </nav>
+
+      <!-- Button -->
+      <div class="hidden xl:block flex-shrink-0">
+        <button
+          class="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-900 whitespace-nowrap transition-colors"
+        >
+          Start For Free
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <button
+        class="xl:hidden flex flex-col justify-between w-6 h-5"
+        aria-label="Open menu"
+      >
+        <span class="block h-[3px] bg-black"></span>
+        <span class="block h-[3px] bg-black"></span>
+        <span class="block h-[3px] bg-black"></span>
+      </button>
+    </header>
+
+    <!--======================================= SECTION 1 =======================================-->
+
+    <section
+      id="shuffleSection"
+      class="relative w-full px-6 md:px-24 pb-64 bg-white text-center z-10"
+    >
+      <div class="h-36 mt-24">
+        <h1
+          class="text-4xl md:text-6xl font-extrabold leading-tight text-black text-center tracking-tight"
+        >
+          Your AI <span class="text-[#16C542]">agent</span> for all<br />
+          &nbsp; your digital channels
+        </h1>
+      </div>
+
+      <!--================= Iphone component ============-->
+
+      <div
+        id="cardContainer"
+        class="relative w-full h-[609px] flex items-center justify-center mt-16 -mb-[600px]"
+      >
+        <!-- Left_deeper_phone (phone 1)-->
+        <div
+          id="card1"
+          class="absolute top-[70px] left-1/2 -translate-x-[90%] -rotate-[69deg] scale-[0.85] z-10 transition-transform duration-500 ease-in-out"
+        >
+          <div class="flex items-center justify-center scale-[0.70] origin-top">
+            <div
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+            >
+              <!-- Side Buttons-->
+              <div
+                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+              ></div>
+
+              <!-- Notch -->
+              <div
+                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+              ></div>
+
+              <!-- Screen -->
+              <div
+                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
+              >
+                <!-- Time -->
+                <div
+                  id="live-time"
+                  class="absolute top-2 left-4 text-black text-sm font-medium z-10"
+                ></div>
+
+                <!-- Status Icons -->
+                <div
+                  class="absolute top-2 right-4 flex items-center gap-1 z-10"
+                >
+                  <div class="flex items-end gap-[1px]">
+                    <div class="signal-bar h-[4px]"></div>
+                    <div class="signal-bar h-[6px]"></div>
+                    <div class="signal-bar h-[8px]"></div>
+                    <div class="signal-bar h-[10px]"></div>
+                  </div>
+                  <div class="w-[14px] h-[14px] relative">
+                    <div
+                      class="absolute inset-0 rounded-full border-[2px] border-black"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-center border border-black w-[20px] h-[10px] relative"
+                  >
+                    <div class="w-[14px] h-full bg-black"></div>
+                    <div
+                      class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Navbar -->
+                <div
+                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
+                    ></div>
+                    <img
+                      src="https://i.pravatar.cc/30?img=8"
+                      class="w-6 h-6 rounded-full"
+                      alt="Julia"
+                    />
+                    <span class="text-sm font-medium text-black">Jhon</span>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
+                    >
+                      <div
+                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
+                    >
+                      <div
+                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
+                    >
+                      i
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                ></div>
+
+                <!-- X Icon -->
+                <div
+                  class="absolute top-[76px] right-4 text-black text-xl font-bold z-10"
+                >
+                  &times;
+                </div>
+
+                <!-- Chat Icon Image shifted left and up -->
+                <img
+                  src="assets/images/chat-icon.png"
+                  alt="Chat Icon"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                />
+
+                <!-- Bold Centered Text with Subheading -->
+                <div
+                  class="absolute top-[160px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
+                >
+                  <div
+                    class="text-lg font-extrabold text-black whitespace-nowrap"
+                  >
+                    Get paid directly in chat
+                  </div>
+
+                  <div class="text-gray-600 text-xs mt-1 px-2 leading-tight">
+                    Allow Julia to pay you by debit or credit card directly in
+                    chat by requesting a payment now
+                  </div>
+                </div>
+
+                <!-- Two Side-by-Side Buttons -->
+                <div
+                  class="absolute top-[230px] left-1/2 -translate-x-1/2 flex gap-4 z-10"
+                >
+                  <button
+                    class="bg-white text-black border border-gray-300 px-4 py-1 rounded-sm text-sm font-medium shadow-sm whitespace-nowrap"
+                  >
+                    Not now
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
+                  >
+                    Request Payment
+                  </button>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[280px] left-0 right-0 h-px bg-gray-200 z-10"
+                ></div>
+
+                <!-- Right-aligned purple chat bubble -->
+                <div
+                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  Hi! Yes, depends on your size
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[310px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    I wear medium
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[375px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
+                >
+                  Ok, this is what we have in stock:
+                </div>
+
+                <!-- Image Cards Section -->
+                <div
+                  class="absolute top-[420px] left-1/2 -translate-x-1/2 flex gap-3 z-10"
+                >
+                  <!-- Card 1 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog1.png"
+                      alt="Item 1"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog2.png"
+                      alt="Item 2"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog3.png"
+                      alt="Item 3"
+                      class="w-[66px] h-[66px] object-contain"
+                    />
+
+                    <!-- Heart Icon -->
+                    <div class="absolute top-1 right-1 w-5 h-5 text-red-500">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
+        6 4 4 6.5 4c1.74 0 3.41 1.04 
+        4.13 2.61h1.74C14.09 5.04 
+        15.76 4 17.5 4 20 4 22 6 
+        22 8.5c0 3.78-3.4 6.86-8.55 
+        11.54L12 21.35z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[490px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    Bulldog one, please!!
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[560px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  You got it!
+                </div>
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[600px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  I'll create a request now
+                </div>
+
+                <!-- Message Input Section -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-gray-100 rounded-full flex items-center justify-between px-4 py-2 z-10 shadow"
+                >
+                  <!-- Left Side: Camera Icon + Placeholder -->
+                  <div class="flex items-center space-x-3">
+                    <!-- Camera Icon (blue circle) -->
+                    <div
+                      class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 10l4.553 3.684a1 1 0 01-.553 1.816H5a1 1 0 01-.553-1.816L9 10V6a3 3 0 116 0v4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Placeholder -->
+                    <span class="text-gray-500 text-sm">Message...</span>
+                  </div>
+
+                  <!-- Right Side Icons -->
+                  <div class="flex items-center space-x-3">
+                    <!-- $ Icon -->
+                    <span class="text-black text-lg font-semibold">$</span>
+
+                    <!-- Image Icon (bordered) -->
+                    <div
+                      class="w-7 h-7 border border-black rounded-md flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-black"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 5h18M3 19h18M4 7h16v10H4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Plus Icon (black circle) -->
+                    <div
+                      class="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white text-lg font-semibold"
+                    >
+                      +
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Speaker Slit (Bottom Microphone Style) -->
+                <div
+                  class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                ></div>
+              </div>
+            </div>
+
+            <script>
+              function updateTime() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                document.getElementById(
+                  "live-time"
+                ).textContent = `${hours}:${minutes}`;
+              }
+              updateTime();
+              setInterval(updateTime, 60000);
+            </script>
+          </div>
+        </div>
+
+        <!-- Left_behind_phone (phone 2)-->
+        <div
+          id="card2"
+          class="absolute top-[60px] left-1/2 -translate-x-[80%] -rotate-[25deg] scale-[0.9] z-20 transition-transform duration-500 ease-in-out"
+        >
+          <div class="flex items-center justify-center scale-[0.70] origin-top">
+            <!-- iPhone Frame -->
+            <div
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+            >
+              <!-- Side Buttons -->
+              <div
+                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+              ></div>
+
+              <!-- Notch -->
+              <div
+                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+              ></div>
+
+              <!-- Screen -->
+              <div
+                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
+              >
+                <!-- Time -->
+                <div
+                  id="live-time"
+                  class="absolute top-2 left-4 text-black text-sm font-medium z-10"
+                ></div>
+
+                <!-- Status Icons -->
+                <div
+                  class="absolute top-2 right-4 flex items-center gap-1 z-10"
+                >
+                  <div class="flex items-end gap-[1px]">
+                    <div class="signal-bar h-[4px]"></div>
+                    <div class="signal-bar h-[6px]"></div>
+                    <div class="signal-bar h-[8px]"></div>
+                    <div class="signal-bar h-[10px]"></div>
+                  </div>
+                  <div class="w-[14px] h-[14px] relative">
+                    <div
+                      class="absolute inset-0 rounded-full border-[2px] border-black"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-center border border-black w-[20px] h-[10px] relative"
+                  >
+                    <div class="w-[14px] h-full bg-black"></div>
+                    <div
+                      class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Navbar -->
+                <div
+                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
+                    ></div>
+                    <img
+                      src="https://i.pravatar.cc/30?img=8"
+                      class="w-6 h-6 rounded-full"
+                      alt="Julia"
+                    />
+                    <span class="text-sm font-medium text-black">Jhon</span>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
+                    >
+                      <div
+                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
+                    >
+                      <div
+                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
+                    >
+                      i
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                ></div>
+
+                <!-- X Icon -->
+                <div
+                  class="absolute top-[76px] right-4 text-black text-xl font-bold z-10"
+                >
+                  &times;
+                </div>
+
+                <!-- Chat Icon Image shifted left and up -->
+                <img
+                  src="assets/images/chat-icon.png"
+                  alt="Chat Icon"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                />
+
+                <!-- Bold Centered Text with Subheading -->
+                <div
+                  class="absolute top-[160px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
+                >
+                  <div
+                    class="text-lg font-extrabold text-black whitespace-nowrap"
+                  >
+                    Get paid directly in chat
+                  </div>
+
+                  <div class="text-gray-600 text-xs mt-1 px-2 leading-tight">
+                    Allow Julia to pay you by debit or credit card directly in
+                    chat by requesting a payment now
+                  </div>
+                </div>
+
+                <!-- Two Side-by-Side Buttons -->
+                <div
+                  class="absolute top-[230px] left-1/2 -translate-x-1/2 flex gap-4 z-10"
+                >
+                  <button
+                    class="bg-white text-black border border-gray-300 px-4 py-1 rounded-sm text-sm font-medium shadow-sm whitespace-nowrap"
+                  >
+                    Not now
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
+                  >
+                    Request Payment
+                  </button>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[280px] left-0 right-0 h-px bg-gray-200 z-10"
+                ></div>
+
+                <!-- Right-aligned purple chat bubble -->
+                <div
+                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  Hi! Yes, depends on your size
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[310px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    I wear medium
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[375px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
+                >
+                  Ok, this is what we have in stock:
+                </div>
+
+                <!-- Image Cards Section -->
+                <div
+                  class="absolute top-[420px] left-1/2 -translate-x-1/2 flex gap-3 z-10"
+                >
+                  <!-- Card 1 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog1.png"
+                      alt="Item 1"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog2.png"
+                      alt="Item 2"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog3.png"
+                      alt="Item 3"
+                      class="w-[66px] h-[66px] object-contain"
+                    />
+
+                    <!-- Heart Icon -->
+                    <div class="absolute top-1 right-1 w-5 h-5 text-red-500">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
+        6 4 4 6.5 4c1.74 0 3.41 1.04 
+        4.13 2.61h1.74C14.09 5.04 
+        15.76 4 17.5 4 20 4 22 6 
+        22 8.5c0 3.78-3.4 6.86-8.55 
+        11.54L12 21.35z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[490px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    Bulldog one, please!!
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[560px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  You got it!
+                </div>
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[600px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  I'll create a request now
+                </div>
+
+                <!-- Message Input Section -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-gray-100 rounded-full flex items-center justify-between px-4 py-2 z-10 shadow"
+                >
+                  <!-- Left Side: Camera Icon + Placeholder -->
+                  <div class="flex items-center space-x-3">
+                    <!-- Camera Icon (blue circle) -->
+                    <div
+                      class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 10l4.553 3.684a1 1 0 01-.553 1.816H5a1 1 0 01-.553-1.816L9 10V6a3 3 0 116 0v4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Placeholder -->
+                    <span class="text-gray-500 text-sm">Message...</span>
+                  </div>
+
+                  <!-- Right Side Icons -->
+                  <div class="flex items-center space-x-3">
+                    <!-- $ Icon -->
+                    <span class="text-black text-lg font-semibold">$</span>
+
+                    <!-- Image Icon (bordered) -->
+                    <div
+                      class="w-7 h-7 border border-black rounded-md flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-black"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 5h18M3 19h18M4 7h16v10H4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Plus Icon (black circle) -->
+                    <div
+                      class="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white text-lg font-semibold"
+                    >
+                      +
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Speaker Slit (Bottom Microphone Style) -->
+                <div
+                  class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                ></div>
+              </div>
+            </div>
+
+            <script>
+              function updateTime() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                document.getElementById(
+                  "live-time"
+                ).textContent = `${hours}:${minutes}`;
+              }
+              updateTime();
+              setInterval(updateTime, 60000);
+            </script>
+          </div>
+        </div>
+
+        <!-- Center_phone_(main) (phone 3)-->
+        <div
+          id="card3"
+          class="absolute top-[30px] z-30 transition-transform duration-500 ease-in-out"
+        >
+          <div class="flex items-center justify-center scale-[0.70] origin-top">
+            <!-- iPhone Frame -->
+            <div
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+            >
+              <!-- Side Buttons -->
+              <div
+                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+              ></div>
+
+              <!-- Notch -->
+              <div
+                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+              ></div>
+
+              <!-- Screen -->
+              <div
+                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
+              >
+                <!-- Time -->
+                <div
+                  id="live-time"
+                  class="absolute top-2 left-4 text-black text-sm font-medium z-10"
+                ></div>
+
+                <!-- Status Icons -->
+                <div
+                  class="absolute top-2 right-4 flex items-center gap-1 z-10"
+                >
+                  <div class="flex items-end gap-[1px]">
+                    <div class="signal-bar h-[4px]"></div>
+                    <div class="signal-bar h-[6px]"></div>
+                    <div class="signal-bar h-[8px]"></div>
+                    <div class="signal-bar h-[10px]"></div>
+                  </div>
+                  <div class="w-[14px] h-[14px] relative">
+                    <div
+                      class="absolute inset-0 rounded-full border-[2px] border-black"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-center border border-black w-[20px] h-[10px] relative"
+                  >
+                    <div class="w-[14px] h-full bg-black"></div>
+                    <div
+                      class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Navbar -->
+                <div
+                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
+                    ></div>
+                    <img
+                      src="https://i.pravatar.cc/30?img=8"
+                      class="w-6 h-6 rounded-full"
+                      alt="Julia"
+                    />
+                    <span class="text-sm font-medium text-black">Jhon</span>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
+                    >
+                      <div
+                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
+                    >
+                      <div
+                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
+                    >
+                      i
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                ></div>
+
+                <!-- X Icon -->
+                <div
+                  class="absolute top-[76px] right-4 text-black text-xl font-bold z-10"
+                >
+                  &times;
+                </div>
+
+                <!-- Chat Icon Image shifted left and up -->
+                <img
+                  src="assets/images/chat-icon.png"
+                  alt="Chat Icon"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                />
+
+                <!-- Bold Centered Text with Subheading -->
+                <div
+                  class="absolute top-[160px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
+                >
+                  <div
+                    class="text-lg font-extrabold text-black whitespace-nowrap"
+                  >
+                    Get paid directly in chat
+                  </div>
+
+                  <div class="text-gray-600 text-xs mt-1 px-2 leading-tight">
+                    Allow Mayur to pay you by debit or credit card directly in
+                    chat by requesting a payment now
+                  </div>
+                </div>
+
+                <!-- Two Side-by-Side Buttons -->
+                <div
+                  class="absolute top-[230px] left-1/2 -translate-x-1/2 flex gap-4 z-10"
+                >
+                  <button
+                    class="bg-white text-black border border-gray-300 px-4 py-1 rounded-sm text-sm font-medium shadow-sm whitespace-nowrap"
+                  >
+                    Not now
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
+                  >
+                    Request Payment
+                  </button>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[280px] left-0 right-0 h-px bg-gray-200 z-10"
+                ></div>
+
+                <!-- Right-aligned purple chat bubble -->
+                <div
+                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  <span class="typing" style="animation-delay: 0s">
+                    Hi! Yes, depends on your size
+                  </span>
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[310px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    <span class="typing" style="animation-delay: 3.2s">
+                      I wear medium
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+
+                <div
+                  class="absolute top-[375px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
+                >
+                  <span class="typing" style="animation-delay: 7s">
+                    Ok, this is what we have in stock:
+                  </span>
+                </div>
+
+                <!-- Image Cards Section -->
+                <div
+                  class="delay-12s absolute top-[420px] left-1/2 -translate-x-1/2 flex gap-3 z-10"
+                >
+                  <!-- Card 1 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog1.png"
+                      alt="Item 1"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog2.png"
+                      alt="Item 2"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog3.png"
+                      alt="Item 3"
+                      class="w-[66px] h-[66px] object-contain"
+                    />
+
+                    <!-- Heart Icon -->
+                    <div class="absolute top-1 right-1 w-5 h-5 text-red-500">
+                      <svg
+                        class="delay-12s"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
+        6 4 4 6.5 4c1.74 0 3.41 1.04 
+        4.13 2.61h1.74C14.09 5.04 
+        15.76 4 17.5 4 20 4 22 6 
+        22 8.5c0 3.78-3.4 6.86-8.55 
+        11.54L12 21.35z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[490px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    <span class="typing" style="animation-delay: 12.8s">
+                      Bulldog one, please!!
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[560px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  <span class="typing" style="animation-delay: 16s">
+                    You got it!
+                  </span>
+                </div>
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[600px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  <span class="typing" style="animation-delay: 20s">
+                    I'll create a request now
+                  </span>
+                </div>
+
+                <!-- Message Input Section -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-gray-100 rounded-full flex items-center justify-between px-4 py-2 z-10 shadow"
+                >
+                  <!-- Left Side: Camera Icon + Placeholder -->
+                  <div class="flex items-center space-x-3">
+                    <!-- Camera Icon (blue circle) -->
+                    <div
+                      class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 10l4.553 3.684a1 1 0 01-.553 1.816H5a1 1 0 01-.553-1.816L9 10V6a3 3 0 116 0v4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Placeholder -->
+                    <span class="text-gray-500 text-sm">Message...</span>
+                  </div>
+
+                  <!-- Right Side Icons -->
+                  <div class="flex items-center space-x-3">
+                    <!-- $ Icon -->
+                    <span class="text-black text-lg font-semibold">$</span>
+
+                    <!-- Image Icon (bordered) -->
+                    <div
+                      class="w-7 h-7 border border-black rounded-md flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-black"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 5h18M3 19h18M4 7h16v10H4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Plus Icon (black circle) -->
+                    <div
+                      class="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white text-lg font-semibold"
+                    >
+                      +
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Speaker Slit (Bottom Microphone Style) -->
+                <div
+                  class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                ></div>
+              </div>
+            </div>
+
+            <script>
+              function updateTime() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                document.getElementById(
+                  "live-time"
+                ).textContent = `${hours}:${minutes}`;
+              }
+              updateTime();
+              setInterval(updateTime, 60000);
+            </script>
+          </div>
+        </div>
+
+        <!-- Right_behind_phone (phone 4)-->
+        <div
+          id="card4"
+          class="absolute top-[60px] left-1/2 -translate-x-[20%] rotate-[25deg] scale-[0.9] z-20 transition-transform duration-500 ease-in-out"
+        >
+          <div class="flex items-center justify-center scale-[0.70] origin-top">
+            <!-- iPhone Frame -->
+            <div
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+            >
+              <!-- Side Buttons -->
+              <div
+                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+              ></div>
+
+              <!-- Notch -->
+              <div
+                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+              ></div>
+
+              <!-- Screen -->
+              <div
+                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
+              >
+                <!-- Time -->
+                <div
+                  id="live-time"
+                  class="absolute top-2 left-4 text-black text-sm font-medium z-10"
+                ></div>
+
+                <!-- Status Icons -->
+                <div
+                  class="absolute top-2 right-4 flex items-center gap-1 z-10"
+                >
+                  <div class="flex items-end gap-[1px]">
+                    <div class="signal-bar h-[4px]"></div>
+                    <div class="signal-bar h-[6px]"></div>
+                    <div class="signal-bar h-[8px]"></div>
+                    <div class="signal-bar h-[10px]"></div>
+                  </div>
+                  <div class="w-[14px] h-[14px] relative">
+                    <div
+                      class="absolute inset-0 rounded-full border-[2px] border-black"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-center border border-black w-[20px] h-[10px] relative"
+                  >
+                    <div class="w-[14px] h-full bg-black"></div>
+                    <div
+                      class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Navbar -->
+                <div
+                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
+                    ></div>
+                    <img
+                      src="https://i.pravatar.cc/30?img=8"
+                      class="w-6 h-6 rounded-full"
+                      alt="Julia"
+                    />
+                    <span class="text-sm font-medium text-black">Jhon</span>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
+                    >
+                      <div
+                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
+                    >
+                      <div
+                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
+                    >
+                      i
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                ></div>
+
+                <!-- X Icon -->
+                <div
+                  class="absolute top-[76px] right-4 text-black text-xl font-bold z-10"
+                >
+                  &times;
+                </div>
+
+                <!-- Chat Icon Image shifted left and up -->
+                <img
+                  src="assets/images/chat-icon.png"
+                  alt="Chat Icon"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                />
+
+                <!-- Bold Centered Text with Subheading -->
+                <div
+                  class="absolute top-[160px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
+                >
+                  <div
+                    class="text-lg font-extrabold text-black whitespace-nowrap"
+                  >
+                    Get paid directly in chat
+                  </div>
+
+                  <div class="text-gray-600 text-xs mt-1 px-2 leading-tight">
+                    Allow Julia to pay you by debit or credit card directly in
+                    chat by requesting a payment now
+                  </div>
+                </div>
+
+                <!-- Two Side-by-Side Buttons -->
+                <div
+                  class="absolute top-[230px] left-1/2 -translate-x-1/2 flex gap-4 z-10"
+                >
+                  <button
+                    class="bg-white text-black border border-gray-300 px-4 py-1 rounded-sm text-sm font-medium shadow-sm whitespace-nowrap"
+                  >
+                    Not now
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
+                  >
+                    Request Payment
+                  </button>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[280px] left-0 right-0 h-px bg-gray-200 z-10"
+                ></div>
+
+                <!-- Right-aligned purple chat bubble -->
+                <div
+                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  Hi! Yes, depends on your size
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[310px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    I wear medium
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[375px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
+                >
+                  Ok, this is what we have in stock:
+                </div>
+
+                <!-- Image Cards Section -->
+                <div
+                  class="absolute top-[420px] left-1/2 -translate-x-1/2 flex gap-3 z-10"
+                >
+                  <!-- Card 1 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog1.png"
+                      alt="Item 1"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog2.png"
+                      alt="Item 2"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog3.png"
+                      alt="Item 3"
+                      class="w-[66px] h-[66px] object-contain"
+                    />
+
+                    <!-- Heart Icon -->
+                    <div class="absolute top-1 right-1 w-5 h-5 text-red-500">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
+        6 4 4 6.5 4c1.74 0 3.41 1.04 
+        4.13 2.61h1.74C14.09 5.04 
+        15.76 4 17.5 4 20 4 22 6 
+        22 8.5c0 3.78-3.4 6.86-8.55 
+        11.54L12 21.35z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[490px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    Bulldog one, please!!
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[560px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  You got it!
+                </div>
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[600px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  I'll create a request now
+                </div>
+
+                <!-- Message Input Section -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-gray-100 rounded-full flex items-center justify-between px-4 py-2 z-10 shadow"
+                >
+                  <!-- Left Side: Camera Icon + Placeholder -->
+                  <div class="flex items-center space-x-3">
+                    <!-- Camera Icon (blue circle) -->
+                    <div
+                      class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 10l4.553 3.684a1 1 0 01-.553 1.816H5a1 1 0 01-.553-1.816L9 10V6a3 3 0 116 0v4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Placeholder -->
+                    <span class="text-gray-500 text-sm">Message...</span>
+                  </div>
+
+                  <!-- Right Side Icons -->
+                  <div class="flex items-center space-x-3">
+                    <!-- $ Icon -->
+                    <span class="text-black text-lg font-semibold">$</span>
+
+                    <!-- Image Icon (bordered) -->
+                    <div
+                      class="w-7 h-7 border border-black rounded-md flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-black"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 5h18M3 19h18M4 7h16v10H4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Plus Icon (black circle) -->
+                    <div
+                      class="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white text-lg font-semibold"
+                    >
+                      +
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Speaker Slit (Bottom Microphone Style) -->
+                <div
+                  class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                ></div>
+              </div>
+            </div>
+
+            <script>
+              function updateTime() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                document.getElementById(
+                  "live-time"
+                ).textContent = `${hours}:${minutes}`;
+              }
+              updateTime();
+              setInterval(updateTime, 60000);
+            </script>
+          </div>
+        </div>
+
+        <!-- Right-deeper_Phone (phone 5)-->
+
+        <div
+          id="card5"
+          class="absolute top-[70px] left-1/2 -translate-x-[10%] rotate-[69deg] scale-[0.85] z-10 transition-transform duration-500 ease-in-out"
+        >
+          <div class="flex items-center justify-center scale-[0.70] origin-top">
+            <!-- iPhone Frame -->
+            <div
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+            >
+              <!-- Side Buttons -->
+              <div
+                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+              ></div>
+
+              <!-- Notch -->
+              <div
+                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+              ></div>
+
+              <!-- Screen -->
+              <div
+                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
+              >
+                <!-- Time -->
+                <div
+                  id="live-time"
+                  class="absolute top-2 left-4 text-black text-sm font-medium z-10"
+                ></div>
+
+                <!-- Status Icons -->
+                <div
+                  class="absolute top-2 right-4 flex items-center gap-1 z-10"
+                >
+                  <div class="flex items-end gap-[1px]">
+                    <div class="signal-bar h-[4px]"></div>
+                    <div class="signal-bar h-[6px]"></div>
+                    <div class="signal-bar h-[8px]"></div>
+                    <div class="signal-bar h-[10px]"></div>
+                  </div>
+                  <div class="w-[14px] h-[14px] relative">
+                    <div
+                      class="absolute inset-0 rounded-full border-[2px] border-black"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
+                    ></div>
+                  </div>
+                  <div
+                    class="flex items-center border border-black w-[20px] h-[10px] relative"
+                  >
+                    <div class="w-[14px] h-full bg-black"></div>
+                    <div
+                      class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Navbar -->
+                <div
+                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
+                    ></div>
+                    <img
+                      src="https://i.pravatar.cc/30?img=8"
+                      class="w-6 h-6 rounded-full"
+                      alt="Julia"
+                    />
+                    <span class="text-sm font-medium text-black">Jhon</span>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
+                    >
+                      <div
+                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
+                    >
+                      <div
+                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
+                    >
+                      i
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                ></div>
+
+                <!-- X Icon -->
+                <div
+                  class="absolute top-[76px] right-4 text-black text-xl font-bold z-10"
+                >
+                  &times;
+                </div>
+
+                <!-- Chat Icon Image shifted left and up -->
+                <img
+                  src="assets/images/chat-icon.png"
+                  alt="Chat Icon"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                />
+
+                <!-- Bold Centered Text with Subheading -->
+                <div
+                  class="absolute top-[160px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
+                >
+                  <div
+                    class="text-lg font-extrabold text-black whitespace-nowrap"
+                  >
+                    Get paid directly in chat
+                  </div>
+
+                  <div class="text-gray-600 text-xs mt-1 px-2 leading-tight">
+                    Allow Julia to pay you by debit or credit card directly in
+                    chat by requesting a payment now
+                  </div>
+                </div>
+
+                <!-- Two Side-by-Side Buttons -->
+                <div
+                  class="absolute top-[230px] left-1/2 -translate-x-1/2 flex gap-4 z-10"
+                >
+                  <button
+                    class="bg-white text-black border border-gray-300 px-4 py-1 rounded-sm text-sm font-medium shadow-sm whitespace-nowrap"
+                  >
+                    Not now
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
+                  >
+                    Request Payment
+                  </button>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[280px] left-0 right-0 h-px bg-gray-200 z-10"
+                ></div>
+
+                <!-- Right-aligned purple chat bubble -->
+                <div
+                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  <span class="reveal" style="animation-delay: 0s">
+                    Hi! Yes, depends on your size
+                  </span>
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[310px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    I wear medium
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[375px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
+                >
+                  Ok, this is what we have in stock:
+                </div>
+
+                <!-- Image Cards Section -->
+                <div
+                  class="absolute top-[420px] left-1/2 -translate-x-1/2 flex gap-3 z-10"
+                >
+                  <!-- Card 1 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog1.png"
+                      alt="Item 1"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog2.png"
+                      alt="Item 2"
+                      class="w-[60px] h-[60px] object-contain"
+                    />
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div
+                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
+                  >
+                    <img
+                      src="assets/images/dog3.png"
+                      alt="Item 3"
+                      class="w-[66px] h-[66px] object-contain"
+                    />
+
+                    <!-- Heart Icon -->
+                    <div class="absolute top-1 right-1 w-5 h-5 text-red-500">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
+        6 4 4 6.5 4c1.74 0 3.41 1.04 
+        4.13 2.61h1.74C14.09 5.04 
+        15.76 4 17.5 4 20 4 22 6 
+        22 8.5c0 3.78-3.4 6.86-8.55 
+        11.54L12 21.35z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Left-aligned grey chat bubble with profile image -->
+                <div
+                  class="absolute top-[490px] left-4 flex items-start gap-2 z-10"
+                >
+                  <!-- Profile Image -->
+                  <img
+                    src="https://i.pravatar.cc/30?img=8"
+                    class="w-6 h-6 rounded-full mt-6"
+                    alt="Julia"
+                  />
+
+                  <!-- Chat Bubble -->
+                  <div
+                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                  >
+                    Bulldog one, please!!
+                  </div>
+                </div>
+
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[560px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  You got it!
+                </div>
+                <!-- Right-aligned blue chat bubble -->
+                <div
+                  class="absolute top-[600px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                >
+                  I'll create a request now
+                </div>
+
+                <!-- Message Input Section -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-gray-100 rounded-full flex items-center justify-between px-4 py-2 z-10 shadow"
+                >
+                  <!-- Left Side: Camera Icon + Placeholder -->
+                  <div class="flex items-center space-x-3">
+                    <!-- Camera Icon (blue circle) -->
+                    <div
+                      class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 10l4.553 3.684a1 1 0 01-.553 1.816H5a1 1 0 01-.553-1.816L9 10V6a3 3 0 116 0v4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Placeholder -->
+                    <span class="text-gray-500 text-sm">Message...</span>
+                  </div>
+
+                  <!-- Right Side Icons -->
+                  <div class="flex items-center space-x-3">
+                    <!-- $ Icon -->
+                    <span class="text-black text-lg font-semibold">$</span>
+
+                    <!-- Image Icon (bordered) -->
+                    <div
+                      class="w-7 h-7 border border-black rounded-md flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 text-black"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 5h18M3 19h18M4 7h16v10H4z"
+                        />
+                      </svg>
+                    </div>
+
+                    <!-- Plus Icon (black circle) -->
+                    <div
+                      class="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white text-lg font-semibold"
+                    >
+                      +
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Speaker Slit (Bottom Microphone Style) -->
+                <div
+                  class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                ></div>
+              </div>
+            </div>
+
+            <script>
+              function updateTime() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                document.getElementById(
+                  "live-time"
+                ).textContent = `${hours}:${minutes}`;
+              }
+              updateTime();
+              setInterval(updateTime, 60000);
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--======================================= SECTION 2 =======================================-->
+
+    <section
+      id="cardsSection"
+      class="relative w-full flex flex-col items-center pt-0 pb-12 bg-gradient-to-b from-green-200 to-green-300 mt-[240px] z-20"
+    >
+      <div class="h-36 flex justify-center mt-3">
+        <svg
+          class="h-36 max-w-4xl block ml-40"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 100 500 90"
+          preserveAspectRatio="xMidYMin slice"
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #6fde01; stop-opacity: 1" />
+              <stop
+                offset="100%"
+                style="stop-color: #16c542; stop-opacity: 1"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            d="M49.6 100.3 C39.2 160.6 152.3 142.4 140.3 185.2"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M120 98.8 C107.2 140.9 180.4 141.7 173.3 185.3"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M197.2 97 L197.4 185.7"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M345.4 100.3 C355.8 160.6 242.7 142.4 254.7 185.2"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M275 98.8 C287.8 140.9 214.6 141.7 221.7 185.5"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+
+      <div class="mt-3 px-4 -mb-30">
+        <h1
+          class="text-3xl text-center font-normal text-[#16C542] tracking-normal"
+        >
+          One Powerful System
+        </h1>
+        <h1
+          class="md:text-6xl font-extrabold leading-tight text-center tracking-tight text-[#16C542]"
+        >
+          Leading Qualification
+        </h1>
+        <h1 class="mt-3 text-3xl font-normal">
+          Are you facing challenges to timely qualify your leads?
+        </h1>
+      </div>
+
+      <!--=============== PC component ===============-->
+
+      <div class="relative w-[66vw] aspect-[16/9] mx-auto mt-40">
+        <div
+          class="shuffle2 absolute inset-0 bg-gray-700 rounded-xl shadow-xl z-0"
+        >
+          <div class="container">
+            <div class="left-menu">
+              <nav class="flex flex-col items-center space-y-6">
+                <div class="style-13">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-14"
+                  >
+                    <path
+                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,152H56a8,8,0,0,0,0-16H40V120H56a8,8,0,0,0,0-16H40V88H56a8,8,0,0,0,0-16H40V56H80V200H40Zm176,48H96V56H216V200Z"
+                      class="style-15"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-20">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-21"
+                  >
+                    <path
+                      d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"
+                      class="style-22"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-27">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-28"
+                  >
+                    <path
+                      d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"
+                      class="style-29"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-34">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-35"
+                  >
+                    <path
+                      d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"
+                      class="style-36"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-41">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-42"
+                  >
+                    <path
+                      d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-24,16v24H116V152ZM80,164a12,12,0,0,1,12-12h8v24H92A12,12,0,0,1,80,164Zm84,12h-8V152h8a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z"
+                      class="style-43"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-48">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-49"
+                  >
+                    <path
+                      d="M120,16V8a8,8,0,0,1,16,0v8a8,8,0,0,1-16,0Zm80,32a8,8,0,0,0,5.66-2.34l8-8a8,8,0,0,0-11.32-11.32l-8,8A8,8,0,0,0,200,48ZM50.34,45.66A8,8,0,0,0,61.66,34.34l-8-8A8,8,0,0,0,42.34,37.66Zm87,26.45a8,8,0,1,0-2.64,15.78C153.67,91.08,168,108.32,168,128a8,8,0,0,0,16,0C184,100.6,163.93,76.57,137.32,72.11ZM232,176v24a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V176a16,16,0,0,1,16-16V128a88,88,0,0,1,88.67-88c48.15.36,87.33,40.29,87.33,89v31A16,16,0,0,1,232,176ZM56,160H200V129c0-40-32.05-72.71-71.45-73H128a72,72,0,0,0-72,72Zm160,40V176H40v24H216Z"
+                      class="style-50"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-55">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-56"
+                  >
+                    <path
+                      d="M64.34,196.07l-9.45,16a8,8,0,1,1-13.78-8.14l9.46-16a8,8,0,1,1,13.77,8.14ZM232,152H184.2l-30.73-52a8,8,0,1,0-13.77,8.14l61.41,103.93a8,8,0,0,0,13.78-8.14L193.66,168H232a8,8,0,0,0,0-16Zm-89.53,0H90.38L158.89,36.07a8,8,0,0,0-13.78-8.14L128,56.89l-17.11-29a8,8,0,1,0-13.78,8.14l21.6,36.55L71.8,152H24a8,8,0,0,0,0,16H142.47a8,8,0,1,0,0-16Z"
+                      class="style-57"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-62">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-63"
+                  >
+                    <path
+                      d="M248,124a56.11,56.11,0,0,0-32-50.61V72a48,48,0,0,0-88-26.49A48,48,0,0,0,40,72v1.39a56,56,0,0,0,0,101.2V176a48,48,0,0,0,88,26.49A48,48,0,0,0,216,176v-1.41A56.09,56.09,0,0,0,248,124ZM88,208a32,32,0,0,1-31.81-28.56A55.87,55.87,0,0,0,64,180h8a8,8,0,0,0,0-16H64A40,40,0,0,1,50.67,86.27,8,8,0,0,0,56,78.73V72a32,32,0,0,1,64,0v68.26A47.8,47.8,0,0,0,88,128a8,8,0,0,0,0,16,32,32,0,0,1,0,64Zm104-44h-8a8,8,0,0,0,0,16h8a55.87,55.87,0,0,0,7.81-.56A32,32,0,1,1,168,144a8,8,0,0,0,0-16,47.8,47.8,0,0,0-32,12.26V72a32,32,0,0,1,64,0v6.73a8,8,0,0,0,5.33,7.54A40,40,0,0,1,192,164Zm16-52a8,8,0,0,1-8,8h-4a36,36,0,0,1-36-36V80a8,8,0,0,1,16,0v4a20,20,0,0,0,20,20h4A8,8,0,0,1,208,112ZM60,120H56a8,8,0,0,1,0-16h4A20,20,0,0,0,80,84V80a8,8,0,0,1,16,0v4A36,36,0,0,1,60,120Z"
+                      class="style-64"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-69">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-70"
+                  >
+                    <path
+                      d="M144,157.68a68,68,0,1,0-71.9,0c-20.65,6.76-39.23,19.39-54.17,37.17a8,8,0,1,0,12.24,10.3C50.25,181.19,77.91,168,108,168s57.75,13.19,77.87,37.15a8,8,0,0,0,12.26-10.3C183.18,177.07,164.6,164.44,144,157.68ZM56,100a52,52,0,1,1,52,52A52.06,52.06,0,0,1,56,100Zm196.25,43.07-4.66-2.69a23.6,23.6,0,0,0,0-8.76l4.66-2.69a8,8,0,1,0-8-13.86l-4.67,2.7a23.92,23.92,0,0,0-7.58-4.39V108a8,8,0,0,0-16,0v5.38a23.92,23.92,0,0,0-7.58,4.39l-4.67-2.7a8,8,0,1,0-8,13.86l4.66,2.69a23.6,23.6,0,0,0,0,8.76l-4.66,2.69a8,8,0,0,0,8,13.86l4.67-2.7a23.92,23.92,0,0,0,7.58,4.39V164a8,8,0,0,0,16,0v-5.38a23.92,23.92,0,0,0,7.58-4.39l4.67,2.7a7.92,7.92,0,0,0,4,1.07,8,8,0,0,0,4-14.93ZM216,136a8,8,0,1,1,8,8A8,8,0,0,1,216,136Z"
+                      class="style-71"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-76">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-77"
+                  >
+                    <path
+                      d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
+                      class="style-78"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-83">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-84"
+                  >
+                    <path
+                      d="M27.2,126.4a8,8,0,0,0,11.2-1.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,93.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,115.2,8,8,0,0,0,27.2,126.4ZM176,40a24,24,0,1,1-24,24A24,24,0,0,1,176,40ZM80,40A24,24,0,1,1,56,64,24,24,0,0,1,80,40ZM203,197.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,219.2a8,8,0,1,0,12.8,9.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,197.51ZM80,144a24,24,0,1,1-24,24A24,24,0,0,1,80,144Zm96,0a24,24,0,1,1-24,24A24,24,0,0,1,176,144Z"
+                      class="style-85"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-90">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-91"
+                  >
+                    <path
+                      d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"
+                      class="style-92"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-97">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-98"
+                  >
+                    <path
+                      d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"
+                      class="style-99"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-102">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    font-size="1.25rem"
+                    class="style-103"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M10.707 17.707L16.414 12l-5.707-5.707l-1.414 1.414L13.586 12l-4.293 4.293z"
+                      class="style-104"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-110">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-111"
+                  >
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+                      class="style-112"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-117">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-118"
+                  >
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+                      class="style-119"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-124">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-125"
+                  >
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+                      class="style-126"
+                    ></path>
+                  </svg>
+                </div>
+              </nav>
+            </div>
+
+            <div class="top-menu">
+              <div style="margin-left: 1%">Inbox</div>
+              <div style="display: flex; gap: 2vw">
+                <!-- Inbox icon -->
+                <div class="style-124">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    class="style-125"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,16V152h-28.7A15.86,15.86,0,0,0,168,156.69L148.69,176H107.31L88,156.69A15.86,15.86,0,0,0,76.69,152H48V48Zm0,160H48V168H76.69L96,187.31A15.86,15.86,0,0,0,107.31,192h41.38A15.86,15.86,0,0,0,160,187.31L179.31,168H208v40Z"
+                      class="style-126"
+                    />
+                  </svg>
+                </div>
+
+                <!-- History icon -->
+
+                <div class="style-124">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    class="style-125"
+                  >
+                    <path
+                      d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49c7.15-8.42,14.27-16.35,22.39-24.57a80,80,0,1,1,1.66,114.75,8,8,0,1,0-11,11.64A96,96,0,1,0,128,32Z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <!-- Circle -->
+
+                <div class="icon-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-slash"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="9" y1="15" x2="15" y2="9"></line>
+                  </svg>
+                </div>
+
+                <!-- graph icon -->
+
+                <div class="icon-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <rect
+                      x="3"
+                      y="14"
+                      width="4"
+                      height="6"
+                      fill="white"
+                      stroke="black"
+                      stroke-width="1"
+                    />
+                    <rect
+                      x="10"
+                      y="8"
+                      width="4"
+                      height="12"
+                      fill="white"
+                      stroke="black"
+                      stroke-width="1"
+                    />
+                    <rect
+                      x="17"
+                      y="2"
+                      width="4"
+                      height="18"
+                      fill="white"
+                      stroke="black"
+                      stroke-width="1"
+                    />
+                  </svg>
+                </div>
+
+                <!-- Profile icon -->
+
+                <!-- Info icon -->
+
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <circle cx="12" cy="8" r="1" />
+                  </svg>
+                </div>
+
+                <!-- settings icon -->
+
+                <div class="icon-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-settings"
+                  >
+                    <path
+                      d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div style="margin-right: 1%">Search 🔍</div>
+            </div>
+
+            <div class="message-list">
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-area">
+              <div class="chat-content">
+                <!-- Top bar -->
+                <div class="chat-top-bar">
+                  <div class="chat-left">
+                    <i class="fa-solid fa-user profile-pic"></i>
+                    <div class="user-text">
+                      <div class="user-name">John Doe</div>
+                      <div class="user-status">online</div>
+                    </div>
+                  </div>
+                  <div class="chat-right">
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        fill="black"
+                        d="M12 17.27L18.18 21l-1.63-7.03L22 
+        9.24l-7.19-.61L12 2 9.19 8.63 
+        2 9.24l5.45 4.73L5.82 21z"
+                      />
+                    </svg>
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        fill="black"
+                        d="M6.62 10.79a15.05 15.05 0 0 
+        0 6.59 6.59l2.2-2.2c.27-.27.67-.36 
+        1.02-.24 1.12.37 2.33.57 3.57.57.55 
+        0 1 .45 1 1V20c0 .55-.45 1-1 
+        1C10.3 21 3 13.7 3 5c0-.55.45-1 
+        1-1h3.5c.55 0 1 .45 1 1 0 
+        1.24.2 2.45.57 3.57.11.35.03.74-.25 
+        1.02l-2.2 2.2z"
+                      />
+                    </svg>
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        fill="black"
+                        d="M17 10.5V6c0-1.1-.9-2-2-2H5C3.9 
+        4 3 4.9 3 6v12c0 1.1.9 2 
+        2 2h10c1.1 0 2-.9 2-2v-4.5l4 
+        4v-11l-4 4z"
+                      />
+                    </svg>
+                    <button class="close-btn">Close</button>
+                  </div>
+                </div>
+
+                <!-- Divider with date -->
+                <div class="chat-divider">
+                  <span>Mon, 1 Jul 2025</span>
+                </div>
+
+                <!-- Messages -->
+                <div class="chat-message right green">Contact Sales</div>
+                <div class="chat-message right green">
+                  Interested in trying Wisemelon
+                </div>
+                <div class="chat-message left grey">Contact Sales</div>
+                <div class="chat-message left grey">
+                  Interested in trying Wisemelon
+                  <i class="fa-solid fa-user bottom-profile-pic"></i>
+                </div>
+                <div class="chat-message right green">Contact Sales</div>
+                <div class="chat-message right green">
+                  Interested in trying Wisemelon
+                </div>
+              </div>
+            </div>
+
+            <div class="side-panel">Info panel</div>
+          </div>
+        </div>
+
+        <div
+          class="shuffle1 absolute inset-0 bg-white rounded-xl shadow-2xl z-10"
+        >
+          <div class="container">
+            <div class="left-menu">
+              <nav class="flex flex-col items-center space-y-6">
+                <div class="style-13">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-14"
+                  >
+                    <path
+                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,152H56a8,8,0,0,0,0-16H40V120H56a8,8,0,0,0,0-16H40V88H56a8,8,0,0,0,0-16H40V56H80V200H40Zm176,48H96V56H216V200Z"
+                      class="style-15"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-20">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-21"
+                  >
+                    <path
+                      d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"
+                      class="style-22"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-27">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-28"
+                  >
+                    <path
+                      d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"
+                      class="style-29"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-34">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-35"
+                  >
+                    <path
+                      d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"
+                      class="style-36"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-41">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-42"
+                  >
+                    <path
+                      d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-24,16v24H116V152ZM80,164a12,12,0,0,1,12-12h8v24H92A12,12,0,0,1,80,164Zm84,12h-8V152h8a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z"
+                      class="style-43"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-48">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-49"
+                  >
+                    <path
+                      d="M120,16V8a8,8,0,0,1,16,0v8a8,8,0,0,1-16,0Zm80,32a8,8,0,0,0,5.66-2.34l8-8a8,8,0,0,0-11.32-11.32l-8,8A8,8,0,0,0,200,48ZM50.34,45.66A8,8,0,0,0,61.66,34.34l-8-8A8,8,0,0,0,42.34,37.66Zm87,26.45a8,8,0,1,0-2.64,15.78C153.67,91.08,168,108.32,168,128a8,8,0,0,0,16,0C184,100.6,163.93,76.57,137.32,72.11ZM232,176v24a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V176a16,16,0,0,1,16-16V128a88,88,0,0,1,88.67-88c48.15.36,87.33,40.29,87.33,89v31A16,16,0,0,1,232,176ZM56,160H200V129c0-40-32.05-72.71-71.45-73H128a72,72,0,0,0-72,72Zm160,40V176H40v24H216Z"
+                      class="style-50"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-55">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-56"
+                  >
+                    <path
+                      d="M64.34,196.07l-9.45,16a8,8,0,1,1-13.78-8.14l9.46-16a8,8,0,1,1,13.77,8.14ZM232,152H184.2l-30.73-52a8,8,0,1,0-13.77,8.14l61.41,103.93a8,8,0,0,0,13.78-8.14L193.66,168H232a8,8,0,0,0,0-16Zm-89.53,0H90.38L158.89,36.07a8,8,0,0,0-13.78-8.14L128,56.89l-17.11-29a8,8,0,1,0-13.78,8.14l21.6,36.55L71.8,152H24a8,8,0,0,0,0,16H142.47a8,8,0,1,0,0-16Z"
+                      class="style-57"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-62">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-63"
+                  >
+                    <path
+                      d="M248,124a56.11,56.11,0,0,0-32-50.61V72a48,48,0,0,0-88-26.49A48,48,0,0,0,40,72v1.39a56,56,0,0,0,0,101.2V176a48,48,0,0,0,88,26.49A48,48,0,0,0,216,176v-1.41A56.09,56.09,0,0,0,248,124ZM88,208a32,32,0,0,1-31.81-28.56A55.87,55.87,0,0,0,64,180h8a8,8,0,0,0,0-16H64A40,40,0,0,1,50.67,86.27,8,8,0,0,0,56,78.73V72a32,32,0,0,1,64,0v68.26A47.8,47.8,0,0,0,88,128a8,8,0,0,0,0,16,32,32,0,0,1,0,64Zm104-44h-8a8,8,0,0,0,0,16h8a55.87,55.87,0,0,0,7.81-.56A32,32,0,1,1,168,144a8,8,0,0,0,0-16,47.8,47.8,0,0,0-32,12.26V72a32,32,0,0,1,64,0v6.73a8,8,0,0,0,5.33,7.54A40,40,0,0,1,192,164Zm16-52a8,8,0,0,1-8,8h-4a36,36,0,0,1-36-36V80a8,8,0,0,1,16,0v4a20,20,0,0,0,20,20h4A8,8,0,0,1,208,112ZM60,120H56a8,8,0,0,1,0-16h4A20,20,0,0,0,80,84V80a8,8,0,0,1,16,0v4A36,36,0,0,1,60,120Z"
+                      class="style-64"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-69">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-70"
+                  >
+                    <path
+                      d="M144,157.68a68,68,0,1,0-71.9,0c-20.65,6.76-39.23,19.39-54.17,37.17a8,8,0,1,0,12.24,10.3C50.25,181.19,77.91,168,108,168s57.75,13.19,77.87,37.15a8,8,0,0,0,12.26-10.3C183.18,177.07,164.6,164.44,144,157.68ZM56,100a52,52,0,1,1,52,52A52.06,52.06,0,0,1,56,100Zm196.25,43.07-4.66-2.69a23.6,23.6,0,0,0,0-8.76l4.66-2.69a8,8,0,1,0-8-13.86l-4.67,2.7a23.92,23.92,0,0,0-7.58-4.39V108a8,8,0,0,0-16,0v5.38a23.92,23.92,0,0,0-7.58,4.39l-4.67-2.7a8,8,0,1,0-8,13.86l4.66,2.69a23.6,23.6,0,0,0,0,8.76l-4.66,2.69a8,8,0,0,0,8,13.86l4.67-2.7a23.92,23.92,0,0,0,7.58,4.39V164a8,8,0,0,0,16,0v-5.38a23.92,23.92,0,0,0,7.58-4.39l4.67,2.7a7.92,7.92,0,0,0,4,1.07,8,8,0,0,0,4-14.93ZM216,136a8,8,0,1,1,8,8A8,8,0,0,1,216,136Z"
+                      class="style-71"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-76">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-77"
+                  >
+                    <path
+                      d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
+                      class="style-78"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-83">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-84"
+                  >
+                    <path
+                      d="M27.2,126.4a8,8,0,0,0,11.2-1.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,93.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,115.2,8,8,0,0,0,27.2,126.4ZM176,40a24,24,0,1,1-24,24A24,24,0,0,1,176,40ZM80,40A24,24,0,1,1,56,64,24,24,0,0,1,80,40ZM203,197.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,219.2a8,8,0,1,0,12.8,9.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,197.51ZM80,144a24,24,0,1,1-24,24A24,24,0,0,1,80,144Zm96,0a24,24,0,1,1-24,24A24,24,0,0,1,176,144Z"
+                      class="style-85"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-90">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-91"
+                  >
+                    <path
+                      d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"
+                      class="style-92"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-97">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-98"
+                  >
+                    <path
+                      d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"
+                      class="style-99"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-102">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    font-size="1.25rem"
+                    class="style-103"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M10.707 17.707L16.414 12l-5.707-5.707l-1.414 1.414L13.586 12l-4.293 4.293z"
+                      class="style-104"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-110">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-111"
+                  >
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+                      class="style-112"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-117">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-118"
+                  >
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+                      class="style-119"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="style-124">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    class="style-125"
+                  >
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+                      class="style-126"
+                    ></path>
+                  </svg>
+                </div>
+              </nav>
+            </div>
+
+            <div class="top-menu">
+              <div style="margin-left: 1%">Inbox</div>
+              <div style="display: flex; gap: 2vw">
+                <!-- Inbox icon -->
+                <div class="style-124">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    class="style-125"
+                  >
+                    <path
+                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,16V152h-28.7A15.86,15.86,0,0,0,168,156.69L148.69,176H107.31L88,156.69A15.86,15.86,0,0,0,76.69,152H48V48Zm0,160H48V168H76.69L96,187.31A15.86,15.86,0,0,0,107.31,192h41.38A15.86,15.86,0,0,0,160,187.31L179.31,168H208v40Z"
+                      class="style-126"
+                    />
+                  </svg>
+                </div>
+
+                <!-- History icon -->
+
+                <div class="style-124">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    class="style-125"
+                  >
+                    <path
+                      d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49c7.15-8.42,14.27-16.35,22.39-24.57a80,80,0,1,1,1.66,114.75,8,8,0,1,0-11,11.64A96,96,0,1,0,128,32Z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <!-- Circle -->
+
+                <div class="icon-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-slash"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="9" y1="15" x2="15" y2="9"></line>
+                  </svg>
+                </div>
+
+                <!-- graph icon -->
+
+                <div class="icon-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <rect
+                      x="3"
+                      y="14"
+                      width="4"
+                      height="6"
+                      fill="white"
+                      stroke="black"
+                      stroke-width="1"
+                    />
+                    <rect
+                      x="10"
+                      y="8"
+                      width="4"
+                      height="12"
+                      fill="white"
+                      stroke="black"
+                      stroke-width="1"
+                    />
+                    <rect
+                      x="17"
+                      y="2"
+                      width="4"
+                      height="18"
+                      fill="white"
+                      stroke="black"
+                      stroke-width="1"
+                    />
+                  </svg>
+                </div>
+
+                <!-- Profile icon -->
+
+                <!-- Info icon -->
+
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <circle cx="12" cy="8" r="1" />
+                  </svg>
+                </div>
+
+                <!-- settings icon -->
+
+                <div class="icon-container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-settings"
+                  >
+                    <path
+                      d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div style="margin-right: 1%">Search 🔍</div>
+            </div>
+
+            <div class="message-list">
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <i class="fa-solid fa-user profile-pic"></i>
+                <div class="user-text">
+                  <div class="user-name">John Doe</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-area">
+              <div class="chat-content">
+                <!-- Top bar -->
+                <div class="chat-top-bar">
+                  <div class="chat-left">
+                    <i class="fa-solid fa-user profile-pic"></i>
+                    <div class="user-text">
+                      <div class="user-name">John Doe</div>
+                      <div class="user-status">online</div>
+                    </div>
+                  </div>
+                  <div class="chat-right">
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        fill="black"
+                        d="M12 17.27L18.18 21l-1.63-7.03L22 
+        9.24l-7.19-.61L12 2 9.19 8.63 
+        2 9.24l5.45 4.73L5.82 21z"
+                      />
+                    </svg>
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        fill="black"
+                        d="M6.62 10.79a15.05 15.05 0 0 
+        0 6.59 6.59l2.2-2.2c.27-.27.67-.36 
+        1.02-.24 1.12.37 2.33.57 3.57.57.55 
+        0 1 .45 1 1V20c0 .55-.45 1-1 
+        1C10.3 21 3 13.7 3 5c0-.55.45-1 
+        1-1h3.5c.55 0 1 .45 1 1 0 
+        1.24.2 2.45.57 3.57.11.35.03.74-.25 
+        1.02l-2.2 2.2z"
+                      />
+                    </svg>
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path
+                        fill="black"
+                        d="M17 10.5V6c0-1.1-.9-2-2-2H5C3.9 
+        4 3 4.9 3 6v12c0 1.1.9 2 
+        2 2h10c1.1 0 2-.9 2-2v-4.5l4 
+        4v-11l-4 4z"
+                      />
+                    </svg>
+                    <button class="close-btn">Close</button>
+                  </div>
+                </div>
+
+                <!-- Divider with date -->
+                <div class="chat-divider">
+                  <span>Mon, 1 Jul 2025</span>
+                </div>
+
+                <!-- Messages -->
+                <div class="chat-message right green">Contact Sales</div>
+                <div class="chat-message right green">
+                  Interested in trying Wisemelon
+                </div>
+                <div class="chat-message left grey">Contact Sales</div>
+                <div class="chat-message left grey">
+                  Interested in trying Wisemelon
+                  <i class="fa-solid fa-user bottom-profile-pic"></i>
+                </div>
+                <div class="chat-message right green">Contact Sales</div>
+                <div class="chat-message right green">
+                  Interested in trying Wisemelon
+                </div>
+              </div>
+            </div>
+
+            <div class="side-panel">Info panel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--========================================  SECTION 3 =====================================-->
+
+    <section class="p-6 bg-white p-8 w-[95%] mx-auto mb-12">
+      <div class="mb-6 mt-6">
+        <h1
+          class="text-4xl md:text-6xl font-extrabold leading-tight text-black text-center tracking-tight"
+        >
+          The most powerful
+          <span style="color: #16c542">WhatsApp</span>
+          Platform.
+        </h1>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        <!-- Card 1 (wide) -->
+        <div
+          class="relative bg-zinc-50 rounded-lg p-3 sm:col-span-2 overflow-hidden"
+          style="aspect-ratio: 2/0.8"
+        >
+          <!-- Scalable inner container -->
+          <div class="absolute inset-0 w-full h-full">
+            <div class="relative w-full h-full">
+              <!-- Text Box -->
+              <div
+                class="absolute w-72 max-w-[40%] border border-black bottom-3 left-3 bg-white p-2 z-10 text-xs sm:text-sm"
+              >
+                <a href="#" class="font-medium text-black">Learn More →</a>
+                <h2 class="mt-2 text-xl sm:text-2xl font-bold text-black">
+                  WhatsApp Flows
+                </h2>
+                <p class="mt-1 text-black">
+                  WhatsApp flows allows you to capture information using easy to
+                  use forms, product list and more.
+                </p>
+              </div>
+              <img
+                src="assets/images/phonepart1.png"
+                alt=""
+                class="absolute top-[-1%] left-[38%] w-[16%] h-auto object-contain z-10"
+              />
+              <img
+                src="assets/images/phonepart2.png"
+                alt=""
+                class="absolute top-[-1%] left-[86%] w-[14%] h-auto object-contain"
+              />
+
+              <img
+                src="assets/images/phonepart3.png"
+                alt=""
+                class="absolute top-[55%] left-[75%] max-w-[15%] object-contain"
+              />
+
+              <!-- Inserted SVG -->
+              <svg
+                viewBox="0 0 500 500"
+                class="absolute w-full h-full max-w-full max-h-full top-[22%] left-[68%] scale-[1.5]"
+                preserveAspectRatio="xMinYMin meet"
+              >
+                <defs>
+                  <!-- Electric gradient -->
+                  <linearGradient
+                    id="electric-gradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#22c55e" />
+                    <stop offset="100%" stop-color="#16a34a" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Group all static elements -->
+                <g transform="rotate(1 250 250)">
+                  <!-- Static Paths -->
+                  <path
+                    id="left-curve"
+                    d="M 91.738 55.286 C 120.088 43.106 143.298 111.683 176.185 112.394"
+                    stroke="#15803d"
+                    fill="none"
+                  />
+                  <path
+                    id="top-curve"
+                    d="M 260.631 110.571 C 306.947 118.66 297.777 39.364 351.762 41.919"
+                    stroke="#15803d"
+                    fill="none"
+                  />
+                  <path
+                    id="bottom-curve"
+                    d="M 260.632 111.178 C 347.038 139.169 311.025 131.403 330.499 191.98"
+                    stroke="#15803d"
+                    fill="none"
+                  />
+
+                  <!-- Node dots -->
+                  <circle cx="91.738" cy="55.286" r="3" fill="#22c55e" />
+                  <circle cx="351.762" cy="41.919" r="3" fill="#22c55e" />
+                  <circle cx="330.499" cy="191.98" r="3" fill="#22c55e" />
+
+                  <!-- Static Box -->
+                  <rect
+                    x="176.793"
+                    y="100.849"
+                    width="83.438"
+                    height="22.478"
+                    rx="5"
+                    ry="5"
+                    style="fill: #bbf7d0; stroke: #15803d"
+                  />
+                  <text
+                    x="188"
+                    y="115.5"
+                    style="
+                      fill: #14532d;
+                      font-family: Arial, sans-serif;
+                      font-size: 10px;
+                    "
+                  >
+                    Find Products
+                  </text>
+                </g>
+
+                <!-- Separate group for animation to avoid layout shaking -->
+                <g transform="rotate(1 250 250)">
+                  <!-- Moving Dot 1: Left to Center -->
+                  <circle r="3" fill="url(#electric-gradient)">
+                    <animateMotion dur="3s" begin="loop.begin" fill="remove">
+                      <mpath xlink:href="#left-curve" />
+                    </animateMotion>
+                  </circle>
+
+                  <!-- Moving Dot 2: Center to Top-right -->
+                  <circle r="3" fill="url(#electric-gradient)">
+                    <animateMotion dur="3s" begin="loop.begin+3s" fill="remove">
+                      <mpath xlink:href="#top-curve" />
+                    </animateMotion>
+                  </circle>
+
+                  <!-- Moving Dot 3: Center to Bottom-right -->
+                  <circle r="3" fill="url(#electric-gradient)">
+                    <animateMotion dur="3s" begin="loop.begin+6s" fill="remove">
+                      <mpath xlink:href="#bottom-curve" />
+                    </animateMotion>
+                  </circle>
+                </g>
+
+                <!-- Loop controller (fires every 12s) -->
+                <rect width="0" height="0">
+                  <animate
+                    id="loop"
+                    begin="0s;loop.end+12s"
+                    dur="0.001s"
+                    attributeName="visibility"
+                    from="visible"
+                    to="hidden"
+                  />
+                </rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 (tall) -->
+        <div
+          class="bg-zinc-50 rounded-lg p-6 sm:row-span-2 flex flex-col justify-between"
+        >
+          <div>
+            <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+            <h2 class="mt-2 text-2xl font-bold text-black">400+ Apps</h2>
+            <p class="mt-1 text-black">
+              WhatsApp flows allows you to capture information using easy to use
+              forms, product list and more.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-zinc-50 rounded-lg p-20 sm:col-span-2">
+          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+          <h2 class="mt-2 text-2xl font-bold text-black">
+            Intelligent Assisant
+          </h2>
+          <p class="mt-1 text-black">
+            Train your AI on your own data, give it a personality and a goal,
+            leave the rest to wisemelon, it handles the rest!
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+
+        <!-- Card 5 -->
+        <div class="bg-zinc-50 rounded-lg p-6">
+          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
+          <p class="mt-1 text-black">
+            WhatsApp flows allows you to capture information using easy to use
+            forms, product list and more.
+          </p>
+        </div>
+
+        <div class="bg-zinc-50 rounded-lg p-6">
+          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
+          <p class="mt-1 text-black">
+            WhatsApp flows allows you to capture information using easy to use
+            forms, product list and more.
+          </p>
+        </div>
+
+        <div class="bg-zinc-50 rounded-lg p-6">
+          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
+          <p class="mt-1 text-black">
+            WhatsApp flows allows you to capture information using easy to use
+            forms, product list and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--======================================= SECTION 4 =======================================-->
+
+    <section class="p-8 max-w-[70%] mx-auto mb-12">
+      <!-- Title -->
+      <h2 class="text-3xl font-bold mb-6">
+        Personalised setup for your business.
+      </h2>
+
+      <!-- Description Box -->
+      <div
+        class="flex flex-col justify-between border-2 border-black rounded-xl p-2 mb-8"
+      >
+        <div>
+          <p class="text-gray-600 mb-2 pl-1">
+            Describe your business and wisemelon will tell you how it can help
+            you.
+          </p>
+          <textarea
+            class="w-full border-none outline-none resize-none p-1 pt-0 leading-tight rounded-md"
+            rows="3"
+            placeholder="Type here..."
+          ></textarea>
+        </div>
+        <div class="flex justify-end mt-4">
+          <button
+            type="submit"
+            class="bg-black text-white px-6 py-3 rounded-md"
+          >
+            send
+          </button>
+        </div>
+      </div>
+
+      <!-- Cards grid pushed full width -->
+      <div class="-mx-8 sm:-mx-12 lg:-mx-16">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-12 px-8 sm:px-12 lg:px-16"
+        >
+          <div
+            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+            style="
+              background-image: url('assets/images/img2.png');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
+            >
+              Education
+            </div>
+            <div class="absolute bottom-0 right-0 p-4">
+              <a
+                href="#"
+                class="text-white flex items-center gap-2 hidden xl:inline"
+              >
+                Check Use Cases</a
+              ><span class="text-white">➔</span>
+            </div>
+          </div>
+
+          <div
+            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+            style="
+              background-image: url('assets/images/img2.png');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
+            >
+              Finance
+            </div>
+            <div class="absolute bottom-0 right-0 p-4">
+              <a
+                href="#"
+                class="text-white flex items-center gap-2 hidden xl:inline"
+              >
+                Check Use Cases</a
+              ><span class="text-white">➔</span>
+            </div>
+          </div>
+
+          <div
+            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+            style="
+              background-image: url('assets/images/img2.png');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
+            >
+              Healthcare
+            </div>
+            <div class="absolute bottom-0 right-0 p-4">
+              <a
+                href="#"
+                class="text-white flex items-center gap-2 hidden xl:inline"
+              >
+                Check Use Cases</a
+              ><span class="text-white">➔</span>
+            </div>
+          </div>
+
+          <div
+            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+            style="
+              background-image: url('assets/images/img2.png');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
+            >
+              Home Services
+            </div>
+            <div class="absolute bottom-0 right-0 p-4">
+              <a
+                href="#"
+                class="text-white flex items-center gap-2 hidden xl:inline"
+              >
+                Check Use Cases</a
+              ><span class="text-white">➔</span>
+            </div>
+          </div>
+
+          <div
+            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+            style="
+              background-image: url('assets/images/img2.png');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
+            >
+              Real Estate
+            </div>
+            <div class="absolute bottom-0 right-0 p-4">
+              <a
+                href="#"
+                class="text-white flex items-center gap-2 hidden xl:inline"
+              >
+                Check Use Cases</a
+              ><span class="text-white">➔</span>
+            </div>
+          </div>
+
+          <div
+            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+            style="
+              background-image: url('assets/images/img2.png');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div
+              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
+            >
+              Education
+            </div>
+            <div class="absolute bottom-0 right-0 p-4">
+              <a
+                href="#"
+                class="text-white flex items-center gap-2 hidden xl:inline"
+              >
+                Check Use Cases</a
+              ><span class="text-white">➔</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--======================================== SECTION 5 ========================================-->
+
+    <section
+      class="bg-gradient-to-b from-zinc-50 to-zinc-100 py-12 px-6 sm:px-12"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Top Logos -->
+        <div
+          class="flex flex-wrap items-center justify-items-start gap-24 mb-40"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="assets/images/logo/meta.png"
+              alt="Meta Logo"
+              class="h-10"
+            />
+          </div>
+          <img
+            src="assets/images/logo/iso9001.png"
+            alt="ISO Badge 1"
+            class="h-12"
+          />
+          <img
+            src="assets/images/logo/iso27001.png"
+            alt="ISO Badge 2"
+            class="h-12"
+          />
+          <div class="text-center">
+            <img
+              src="assets/images/logo/gdpr.png"
+              alt="ISO Badge 2"
+              class="h-12"
+            />
+          </div>
+        </div>
+
+        <!-- Testimonials and Feature Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+          <!-- Left Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl shadow-sm p-6 text-sm">
+              <p><strong>How Petfolk,</strong></p>
+              <span class="text-gray-500">
+                scaled their services to more than 10k customers in 2
+                months</span
+              >
+            </div>
+            <div class="bg-white rounded-xl shadow-sm p-6 text-sm">
+              <p>
+                <strong>How ViSource,</strong
+                ><span class="text-gray-500"
+                  >automated their response time by 80% for their steel
+                  distribution business.</span
+                >
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 text-sm sm:col-span-2"
+            >
+              <p>
+                <strong>How Math Accelerator,</strong
+                ><span class="text-gray-200">
+                  <p>
+                    keeps visitors informed about hundreds of incubated startups
+                    and their work.
+                  </p>
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Testimonial Card Stack (Square) -->
+          <div class="relative -mt-40 w-96 h-96 left-60">
+            <!-- Background Cards -->
+            <div
+              class="absolute -top-3 left-1 w-full h-full bg-pink-100 rounded-xl rotate-[-10deg] shadow-md"
+            ></div>
+            <div
+              class="absolute -top-1.5 left-1.5 w-full h-full bg-green-50 rounded-xl rotate-[-2deg] shadow-md"
+            ></div>
+
+            <!-- Foreground Card (Square) -->
+            <div
+              class="relative bg-white rounded-xl p-4 shadow-lg z-10 w-full h-full flex flex-col justify-between rotate-[2deg] left-6"
+            >
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt="Prabhu Deva"
+                  class="w-20 h-20 rounded-full object-cover"
+                />
+                <div>
+                  <p class="font-bold text-2xl">Prabhu Deva</p>
+                  <p class="text-sm text-gray-600">CMO, Bell Labs</p>
+                </div>
+              </div>
+              <p class="text-gray-800 text-sm mt-3 flex-grow">
+                I don’t know who else could we have trusted for our customer
+                interactions, wisemelon literally provides all the options a
+                business would ever need.
+              </p>
+              <a href="#" class="font-medium text-black text-sm mt-4">
+                Try Yourself →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner Logos -->
+        <div
+          class="mt-40 grid grid-cols-4 sm:grid-cols-7 gap-6 justify-items-center items-center"
+        >
+          <img
+            src="assets/images/logo/haldirams_logo.png"
+            alt="Haldiram's"
+            class="h-8"
+          />
+          <img
+            src="assets/images/logo/vendiman_pvt_ltd_logo.png.png"
+            alt="Vendiman"
+            class="h-8"
+          />
+          <img
+            src="assets/images/logo/bigbasket.png"
+            alt="Bigbasket"
+            class="h-8"
+          />
+          <img
+            src="assets/images/logo/hospitalsapollo.png"
+            alt="Apollo"
+            class="h-8"
+          />
+          <img
+            src="assets/images/logo/lalitha_jewellers_colombo_logo.png.png"
+            alt="Lalitha"
+            class="h-8"
+          />
+          <img
+            src="assets/images/logo/royalbrother.png"
+            alt="Royal Brothers"
+            class="h-8"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!--======================================== SECTION 6 ========================================-->
+
+    <section class="bg-white py-16 px-6 sm:px-12 min-h-[80vh]">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12"
+      >
+        <!-- Left: Text and Form -->
+        <div>
+          <h2 class="text-3xl font-bold text-black mb-24">
+            Automate your business in just
+            <span class="text-black">2 days.</span>
+          </h2>
+          <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+            <input
+              type="text"
+              placeholder="Full Name"
+              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="email"
+              placeholder="Business Email"
+              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="Mobile Number"
+              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="date"
+              placeholder="Meeting Date"
+              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <textarea
+              placeholder="Use Case"
+              rows="3"
+              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:col-span-2"
+            ></textarea>
+
+            <button
+              type="submit"
+              class="bg-black text-white text-sm px-5 py-2 rounded-md flex items-center gap-2 sm:col-span-2 w-fit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 17h5l-1.405-1.405M4 4v5a2 2 0 002 2h2l3 3m0 0l3-3m-3 3v12"
+                />
+              </svg>
+              Get a callback
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Phone Image and Tags -->
+        <div class="flex justify-center lg:justify-end relative">
+          <img
+            src="/assets/images/phone.png"
+            alt="Phone UI"
+            class="w-64 sm:w-72 md:w-80 lg:w-96"
+          />
+          <div class="absolute top-0 left-full ml-4 space-y-2">
+            <span
+              class="bg-pink-300 text-white text-xs px-3 py-1 rounded-full block"
+              >Rentals</span
+            >
+            <span
+              class="bg-rose-200 text-white text-xs px-3 py-1 rounded-full block"
+              >Healthcare</span
+            >
+            <span
+              class="bg-indigo-300 text-white text-xs px-3 py-1 rounded-full block"
+              >D2C</span
+            >
+            <span
+              class="bg-green-300 text-white text-xs px-3 py-1 rounded-full block"
+              >Finance</span
+            >
+            <span
+              class="bg-yellow-300 text-white text-xs px-3 py-1 rounded-full block"
+              >Education</span
+            >
+            <span
+              class="bg-sky-300 text-white text-xs px-3 py-1 rounded-full block"
+              >Home Services</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!--======================================== SECTION 7 ========================================-->
+
+    <section class="bg-white py-16 px-6 sm:px-12">
+      <!-- Headline -->
+      <div class="max-w-4xl mx-auto text-center mb-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-black">
+          <span class="underline underline-offset-4">Your Flow.</span>
+          <span class="underline underline-offset-4">Your Integrations.</span>
+          <span class="text-gray-500 font-medium">
+            Design Flow for your needs and wisemelon does the rest for you
+            automatically.
+          </span>
+        </h2>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex items-center justify-center gap-2 mb-12">
+        <!-- Button 1 -->
+        <button class="px-4 py-1 rounded-full bg-black text-white text-sm">
+          Engaging
+        </button>
+
+        <!-- Line -->
+        <div class="h-0.5 w-5 bg-gray-400"></div>
+
+        <!-- Button 2 -->
+        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
+          Your Data
+        </button>
+
+        <!-- Line -->
+        <div class="h-0.5 w-5 bg-gray-400"></div>
+
+        <!-- Button 3 -->
+        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
+          Lifecycle
+        </button>
+
+        <!-- Line -->
+        <div class="h-0.5 w-5 bg-gray-400"></div>
+
+        <!-- Button 4 -->
+        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
+          Automate
+        </button>
+
+        <!-- Line -->
+        <div class="h-0.5 w-5 bg-gray-400"></div>
+
+        <!-- Button 5 -->
+        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
+          Your Goals
+        </button>
+
+        <!-- Line -->
+        <div class="h-0.5 w-5 bg-gray-400"></div>
+
+        <!-- Button 6 -->
+        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
+          Analytics
+        </button>
+      </div>
+
+      <!-- Image with Overlay -->
+      <div class="max-w-6xl mx-auto">
+        <div class="relative rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="assets/images/img1.png"
+            alt="People on phone"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
+          >
+            <h3 class="text-3xl font-bold mb-4">
+              Engaging Experiences For Users.
+            </h3>
+            <p class="text-lg sm:text-xl font-medium max-w-2xl">
+              Convert more leads and retain your customers with our AI-driven
+              analytics and personalized marketing strategies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--======================================== Javascript =======================================-->
+
+    <script>
+      let shuffled = false;
+      let hasUserInteracted = false;
+
+      // Track last scroll position to detect real scrolls
+      let lastScrollY = window.scrollY;
+
+      function markInteraction(e) {
+        if (hasUserInteracted) return; // already marked
+
+        // Handle scroll event: only count if scrolled beyond 20px from lastScrollY
+        if (e.type === "scroll") {
+          const currentScrollY = window.scrollY;
+          if (Math.abs(currentScrollY - lastScrollY) < 20) {
+            // Ignore tiny scrolls
+            return;
+          }
+          lastScrollY = currentScrollY;
+        }
+
+        // Handle keydown: only arrow up/down keys count
+        if (e.type === "keydown" && !["ArrowUp", "ArrowDown"].includes(e.key)) {
+          return;
+        }
+
+        hasUserInteracted = true;
+        console.log("✅ User interacted for section 1");
+
+        // Remove listeners so this only runs once
+        window.removeEventListener("scroll", markInteraction);
+        window.removeEventListener("keydown", markInteraction);
+        window.removeEventListener("wheel", markInteraction);
+      }
+
+      // Add event listeners *after* page load event to avoid premature triggering
+      window.addEventListener("load", () => {
+        lastScrollY = window.scrollY;
+        window.addEventListener("scroll", markInteraction);
+        window.addEventListener("keydown", markInteraction);
+        window.addEventListener("wheel", markInteraction);
+      });
+
+      function shuffleCards() {
+        if (shuffled || !hasUserInteracted) return;
+        shuffled = true;
+        console.log("🚀 Shuffling cards...");
+
+        // 🚫 Disable scroll without causing layout shift
+        const scrollBarWidth =
+          window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.overflow = "hidden";
+        if (scrollBarWidth > 0) {
+          document.body.style.paddingRight = scrollBarWidth + "px";
+        }
+
+        const card1 = document.getElementById("card1");
+        const card2 = document.getElementById("card2");
+        const card4 = document.getElementById("card4");
+        const card5 = document.getElementById("card5");
+
+        card1.style.transform = "translate(-160%,0) rotate(-69deg) scale(0.85)";
+        card5.style.transform = "translate(20%,0) rotate(69deg) scale(0.85)";
+
+        setTimeout(() => {
+          card1.style.zIndex = "20";
+          card2.style.zIndex = "10";
+          card4.style.zIndex = "10";
+          card5.style.zIndex = "20";
+
+          card1.style.transform = "translate(-80%,0) rotate(-25deg) scale(0.9)";
+          card2.style.transform =
+            "translate(-90%,0) rotate(-69deg) scale(0.85)";
+          card5.style.transform = "translate(-20%,0) rotate(25deg) scale(0.9)";
+          card4.style.transform = "translate(-10%,0) rotate(69deg) scale(0.85)";
+        }, 400);
+        // ✅ Re-enable scroll after animation
+        setTimeout(() => {
+          document.body.style.overflow = "";
+          document.body.style.paddingRight = "";
+          console.log("✅ Scroll re-enabled");
+        }, 1000);
+      }
+
+      // Only shuffle cards if user has interacted
+      window.addEventListener("scroll", () => {
+        if (hasUserInteracted) shuffleCards();
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (hasUserInteracted && ["ArrowUp", "ArrowDown"].includes(e.key))
+          shuffleCards();
+      });
+
+      // ---------- SECTION 2 ----------
+      let cardsAnimationDone = false;
+
+      function runAnimation() {
+        console.log("🔥 Running section 2 animation");
+        const shuffle1 = document.querySelector(".shuffle1");
+        const shuffle2 = document.querySelector(".shuffle2");
+
+        shuffle1.style.transform = "translateY(61%) scale(1)";
+        shuffle2.style.transform = "translateY(-250px) scale(0.9)";
+
+        setTimeout(() => {
+          shuffle1.classList.remove("z-10");
+          shuffle1.classList.add("z-0");
+          shuffle2.classList.remove("z-0");
+          shuffle2.classList.add("z-10");
+
+          shuffle2.style.transform = "translateY(10px) scale(1)";
+          shuffle1.style.transform = "translateY(-100px) scale(0.9)";
+        }, 600);
+      }
+
+      function checkSection2() {
+        const cardsSection = document.getElementById("cardsSection");
+        if (!cardsSection) return;
+
+        const rect = cardsSection.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+
+        const viewHeight = window.innerHeight;
+        const topThird = viewHeight / 3;
+        const bottomThird = (viewHeight * 2) / 3;
+
+        if (sectionCenter > topThird && sectionCenter < bottomThird) {
+          if (!cardsAnimationDone) {
+            runAnimation();
+            cardsAnimationDone = true;
+          }
+        }
+      }
+
+      window.addEventListener("scroll", checkSection2);
+    </script>
+  </body>
+</html>

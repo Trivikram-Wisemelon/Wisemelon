@@ -1,0 +1,36 @@
+.custom-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;  /* reduced */
+  position: relative;
+  z-index: 1;         /* ensures it's not hidden behind something */
+}
+
+/* Small screens (≥640px) */
+@media (min-width: 640px) {
+  .custom-container {
+    margin-top: -50px;
+  }
+}
+
+/* Medium screens (≥768px) */
+@media (min-width: 768px) {
+  .custom-container {
+    margin-top: -40px;
+  }
+}
+
+/* Large screens (≥1024px) */
+@media (min-width: 1024px) {
+  .custom-container {
+    margin-top: -40px;
+  }
+}
+
+/* Extra-large screens (≥1280px) */
+@media (min-width: 1280px) {
+  .custom-container {
+    margin-top: -40px;
+  }
+}
