@@ -1,4 +1,4 @@
-<!--======================================= Wisemelon Website =======================================-->
+<!--======================================= Wisemelon Website ===================================-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +10,231 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!--======================================= CSS Global ===========================================-->
+    <!--======================================= CSS Global ======================================-->
+  
+    <!--css for Image slider-->
 
-    <style>
+<style>
+
+html, body {
+  overflow-x: hidden;
+}
+
+ .tab-button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tab-button.active {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+ .progress-line {
+  height: 4px;
+  width: 24px;
+  margin-left: 8px; /* optional spacing */
+  background-color: #cbd5e1;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.progress-line.active-line {
+  background-color: black;
+}
+ 
+  .tab-wrapper {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+  <!--css for side-panel-->
+
+  <style>
+    .glow-wrapper {
+      position: relative;
+      z-index: 0;
+      overflow: visible;
+    }
+
+    .sphere-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 200, 100, 0.8) 0%, rgba(0, 200, 100, 0) 60%);
+filter: blur(50px);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .sphere-glow.left {
+      top: -250px;
+      left: -150px;
+    }
+
+    .sphere-glow.right {
+      top: 300px;
+      right: -150px;
+    }
+
+    .main-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 100px 20px;
+    }
+  </style>
+
+<style>
+
+
+.user-profile .title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.user-email {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.view-history {
+  font-size: 0.75rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.note-section {
+  margin-top: 1.5rem;
+}
+
+.note-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.note-box {
+  width: 100%;
+  height: 8rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  border: 0.1rem solid #007bff;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.note-actions .icons button {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.visitor-logs {
+  margin-top: 2rem;
+}
+
+.logs-title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.log-entry {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: green;
+  border-radius: 50%;
+  margin-top: 0.4rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.log-content {
+  flex: 1;
+}
+
+.log-time {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.log-desc {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.tag {
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.65rem;
+  color: white;
+}
+
+.tag.violet {
+  background-color: #9c27b0;
+}
+.tag.yellow {
+  background-color: #ffc107;
+}
+.tag.green {
+  background-color: #4caf50;
+}
+
+
+</style>
+
+
+
+  
+  
+  <style>
       body {
         font-family: "Bricolage Grotesque", Arial, sans-serif;
       }
@@ -36,7 +256,8 @@
           opacity: 1;
         }
       }
-
+    
+/*
       .typing {
         display: inline-block;
         overflow: hidden;
@@ -44,7 +265,7 @@
         max-width: 0;
         opacity: 0;
         animation: typeReveal 3s steps(30) forwards;
-      }
+      }*/
 
       @keyframes showAfterDelay {
         0% {
@@ -86,6 +307,15 @@
     <!--===================== CSS for PC component =====================-->
 
     <style>
+
+.bg-pattern {
+  background-image: url('./assets/images/wh_bg.jpg'); /* adjust path */
+  background-repeat: repeat;
+  background-size: auto; /* keeps original size/aspect ratio */
+  background-position: top left; /* or center if you prefer */
+}
+
+
       .message-list {
         position: absolute;
         top: 8%;
@@ -107,10 +337,11 @@
       .user-item {
         position: relative;
         width: 90%;
-        height: 8%; /* 10 users -> each ~8% */
+        height: 10%; /* 10 users -> each ~8% */
         display: flex;
         align-items: center;
         border-bottom: 0.2% solid #ccc;
+        margin-bottom: 1rem;
       }
 
       .user-item img.profile {
@@ -120,22 +351,51 @@
         margin-right: 3%;
       }
 
+      .user-item i.fa-user {
+  width: 15%;
+  height: auto;
+  font-size: 2rem; /* or whatever size fits */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 3%; 
+}
       .user-text {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-left: 5%;
       }
 
       .user-name {
-        font-size: 1vw;
         font-weight: bold;
+        font-size: clamp(0.20rem, 1rem, 1rem);
       }
 
+
+@media (max-width: 700px) {
+  .user-name, 
+  .user-status,
+  .chat-message {
+    font-size: 0.5rem; /* or 0.75rem, or 0.6rem as needed */
+  }
+  
+}
+
+
+
       .last-message {
-        font-size: 0.8vw;
+        font-size: 0.8rem;  
         color: #666;
       }
+
+      @media (max-width: 1023px) {
+  .last-message {
+    display: none;
+  }
+}
 
       .user-meta {
         position: absolute;
@@ -162,17 +422,24 @@
       }
 
       .profile-pic {
-        font-size: 2vw; /* adjusts size */
+        font-size: 2rem; /* adjusts size */
         color: rgb(201, 214, 218);
       }
 
+      @media (max-width: 800px) {
+  .profile-pic {
+    font-size: 1rem; /* or 0.75rem, or 0.6rem as needed */
+  }
+}
+
+
       .fa-facebook {
-        font-size: 2vw; /* adjusts size */
+        font-size: 1rem; /* adjusts size */
         color: rgb(0, 181, 241);
       }
 
       .fa-whatsapp {
-        font-size: 2vw; /* adjusts size */
+        font-size: 1rem; /* adjusts size */
         color: rgb(0, 178, 80);
       }
 
@@ -186,11 +453,11 @@
       .chat-left {
         display: flex;
         align-items: center;
-        gap: 0.5vw;
+        gap: 0.5rem;
       }
 
       .profile-pic {
-        width: 3vw;
+        width: 3rem;
         height: auto;
         border-radius: 50%;
       }
@@ -201,13 +468,11 @@
         font-size: 0.8vw;
       }
 
-      .user-name {
-        font-weight: bold;
-      }
 
       .user-status {
         color: grey;
-        font-size: 0.6vw;
+        font-size: clamp(0.20rem, 1rem, 1rem);
+
       }
 
       .chat-right {
@@ -246,10 +511,10 @@
 
       .chat-message {
         max-width: 60%;
-        margin: 0.5vw 0;
-        padding: 0.5vw 1vw;
-        border-radius: 1vw;
-        font-size: 0.8vw;
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        font-size: 0.8rem;
         position: relative;
       }
 
@@ -285,9 +550,9 @@
       .container {
         position: relative;
         width: 80vw;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 18 / 9;
         background: white;
-        border: 4px solid #009c4c;
+        border: 5px solid #38df83;
         border-radius: 12px;
         overflow: hidden;
       }
@@ -295,10 +560,10 @@
       /* Left vertical navbar */
       .left-menu {
         position: absolute;
-        top: 12%;
+        top: 1%;
         left: 1%;
         width: 4%;
-        height: 76%;
+        height: 98%;
         background: #ffffff;
         display: flex;
         flex-direction: column;
@@ -307,7 +572,7 @@
         font-size: 1vw;
 
         border: 1px solid #ddd; /* lighter border */
-        border-radius: 12px; /* more rounded corners */
+        border-radius: 6px; /* more rounded corners */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
       }
 
@@ -330,15 +595,15 @@
         position: absolute;
         top: 1%;
         left: 6%;
-        width: 88%;
-        height: 5%;
+        width: 93%;
+        height: 8%;
         background: #ffffff;
         display: flex;
         align-items: center;
         justify-content: space-around;
         font-size: 1vw;
         border: 1px solid #ddd; /* lighter border */
-        border-radius: 12px; /* more rounded corners */
+        border-radius: 6px; /* more rounded corners */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
       }
 
@@ -359,10 +624,10 @@
       /* Message user list on left */
       .message-list {
         position: absolute;
-        top: 10%;
+        top: 11%;
         left: 6%;
         width: 23%;
-        height: 80%;
+        height: 88%;
         background: #ffffff;
         overflow: hidden;
         display: flex;
@@ -371,17 +636,18 @@
         font-size: 1vw;
         padding-top: 2%;
         border: 1px solid #ddd; /* lighter border */
-        border-radius: 12px; /* more rounded corners */
+        border-radius: 6px; /* more rounded corners */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
+        margin-bottom: 1rem;
       }
 
       /* Main chat area */
       .chat-area {
         position: absolute;
-        top: 8%;
+        top: 11%;
         left: 30%;
-        width: 38%;
-        height: 90%;
+        width: 43%;
+        height: 88%;
         background: #ffffff;
         font-size: 1vw;
         display: flex;
@@ -389,19 +655,38 @@
         align-items: flex-start; /* align items to left */
         justify-content: flex-start; /* start from top */
         border: 1px solid #ddd; /* lighter border */
-        border-radius: 12px; /* more rounded corners */
+        border-radius: 9px; /* more rounded corners */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
         padding: 2%; /* optional: gives breathing space inside */
         box-sizing: border-box;
       }
 
-      /* Right side info panel */
-      .side-panel {
+   .side-panel {
+  position: absolute;
+  top: 11%;
+  left: 74%;
+  width: 20%;
+  height: 88%;
+  background: #ffffff;
+  font-size: 1vw;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;   /* stack content vertically */
+  overflow: hidden;         /* keep content inside */
+  box-sizing: border-box;
+  padding: 1rem;            /* some inner spacing */
+}
+
+       .right-panel {
         position: absolute;
-        top: 8%;
-        left: 70%;
-        width: 24%;
-        height: 90%;
+        top: 11%;
+        left: 95%;
+        width: 4%;
+        height: 88%;
         background: #ffffff;
         font-size: 1vw;
         display: flex;
@@ -411,94 +696,100 @@
         border-radius: 12px; /* more rounded corners */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft card shadow */
       }
+
+
     </style>
-  </head>
+  
+</head>
 
   <body class="bg-white min-h-screen overflow-x-hidden">
-    <!--======================================= Header  =============================================-->
+    <!--======================================= Header  =========================================-->
 
-    <header
-      class="px-6 md:px-24 py-4 flex items-center justify-between z-50 bg-white mt-6"
-    >
-      <!-- Logo -->
-      <div class="flex-shrink-0">
-        <img
-          src="assets/images/logo/DarkLogo.png"
-          alt="Logo"
-          class="w-[210px] h-auto object-contain"
-        />
-      </div>
+<header class="bg-white mt-6 z-50">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12 flex items-center justify-between py-4">
+    <!-- Logo (shifted slightly left) -->
+    <div class="flex-shrink-0 -ml-20 md:-ml-48">
+      <img
+        src="assets/images/logo/DarkLogo.png"
+        alt="Logo"
+        class="w-[210px] h-auto object-contain"
+      />
+    </div>
 
-      <!-- Nav -->
-      <nav class="hidden xl:flex flex-1 justify-center max-w-[800px] mr-30">
-        <ul class="flex gap-20 text-lg">
-          <ul class="flex gap-20 text-lg">
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Product</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Industry</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Resources</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Blogs</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </ul>
-      </nav>
+    <!-- Nav -->
+    <nav class="hidden xl:flex flex-1 justify-center max-w-[800px] mr-30">
+      <ul class="flex gap-20 text-lg">
+        <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Product</a></li>
+        <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Industry</a></li>
+        <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Resources</a></li>
+        <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Blogs</a></li>
+        <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Contact</a></li>
+      </ul>
+    </nav>
 
-      <!-- Button -->
-      <div class="hidden xl:block flex-shrink-0">
-        <button
-          class="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-900 whitespace-nowrap transition-colors"
-        >
-          Start For Free
-        </button>
-      </div>
+    <!-- Button (shifted slightly right) -->
+   <div class="hidden xl:block flex-shrink-0 -mr-20 md:-mr-48">
 
-      <!-- Mobile Menu -->
       <button
-        class="xl:hidden flex flex-col justify-between w-6 h-5"
-        aria-label="Open menu"
+        class="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-900 whitespace-nowrap transition-colors"
       >
-        <span class="block h-[3px] bg-black"></span>
-        <span class="block h-[3px] bg-black"></span>
-        <span class="block h-[3px] bg-black"></span>
+        Start For Free
       </button>
-    </header>
+    </div>
+
+    <!-- Mobile Menu -->
+    <button
+      class="xl:hidden flex flex-col justify-between w-6 h-5"
+      aria-label="Open menu"
+    >
+      <span class="block h-[3px] bg-black"></span>
+      <span class="block h-[3px] bg-black"></span>
+      <span class="block h-[3px] bg-black"></span>
+    </button>
+  </div>
+</header>
+
+
+   <!-- ChatBot Animation -->
+  
+    <div class="bot">
+      <div class="head-container">
+        <div class="head">
+          <div class="ellipse face">
+            <div class="left eye"></div>
+            <div class="right eye"></div>
+          </div>
+        </div>
+      </div>
+      <div class="body-container">
+        <div class="scanner"></div>
+        <div class="left arm"></div>
+        <div class="body">
+          <div class="panel">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+            <div class="bigdot"></div>
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="right arm"></div>
+        </div>
+      </div>
+      <div class="shadow"></div>
+    </div>
 
     <!--======================================= SECTION 1 =======================================-->
 
     <section
-      id="shuffleSection"
-      class="relative w-full px-6 md:px-24 pb-64 bg-white text-center z-10"
+      id="section1"
+      class="relative w-full px-6 md:px-24 bg-white text-center z-10"
     >
+      <!-- Hero Section)-->
       <div class="h-36 mt-24">
+      <!--  <div class="sphere-glow left glow-wrapper"></div> 
+        <div class="sphere-glow right"></div>  -->
+
         <h1
           class="text-4xl md:text-6xl font-extrabold leading-tight text-black text-center tracking-tight"
         >
@@ -507,11 +798,12 @@
         </h1>
       </div>
 
+     
       <!--================= Iphone component ============-->
 
       <div
         id="cardContainer"
-        class="relative w-full h-[609px] flex items-center justify-center mt-16 -mb-[600px]"
+        class="relative w-full h-[609px] flex items-center justify-center mt-16"
       >
         <!-- Left_deeper_phone (phone 1)-->
         <div
@@ -520,25 +812,25 @@
         >
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
             >
               <!-- Side Buttons-->
               <div
-                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+                class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+                class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
               ></div>
 
               <!-- Notch -->
               <div
-                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+                class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
               ></div>
 
               <!-- Screen -->
@@ -631,9 +923,9 @@
 
                 <!-- Chat Icon Image shifted left and up -->
                 <img
-                  src="assets/images/chat-icon.png"
+                  src="assets/images/face.png"
                   alt="Chat Icon"
-                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[60px] h-auto z-10"
                 />
 
                 <!-- Bold Centered Text with Subheading -->
@@ -675,7 +967,7 @@
 
                 <!-- Right-aligned purple chat bubble -->
                 <div
-                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                  class="absolute top-[285px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
                 >
                   Hi! Yes, depends on your size
                 </div>
@@ -888,25 +1180,25 @@
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
-                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+                class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+                class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
               ></div>
 
               <!-- Notch -->
               <div
-                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+                class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
               ></div>
 
               <!-- Screen -->
@@ -987,7 +1279,7 @@
 
                 <!-- Divider below navbar -->
                 <div
-                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                  class="absolute top-[74 px] left-0 right-0 h-px bg-gray-300 z-10"
                 ></div>
 
                 <!-- X Icon -->
@@ -999,9 +1291,9 @@
 
                 <!-- Chat Icon Image shifted left and up -->
                 <img
-                  src="assets/images/chat-icon.png"
+                  src="assets/images/insta.png"
                   alt="Chat Icon"
-                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[60px] h-auto z-10"
                 />
 
                 <!-- Bold Centered Text with Subheading -->
@@ -1043,7 +1335,7 @@
 
                 <!-- Right-aligned purple chat bubble -->
                 <div
-                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                  class="absolute top-[285px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
                 >
                   Hi! Yes, depends on your size
                 </div>
@@ -1256,31 +1548,30 @@
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
-                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+                class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+                class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
               ></div>
 
               <!-- Notch -->
               <div
-                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+                class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
               ></div>
 
               <!-- Screen -->
-              <div
-                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
-              >
+              <div class="w-full h-full bg-white rounded-[32px] overflow-hidden relative">
+
                 <!-- Time -->
                 <div
                   id="live-time"
@@ -1297,6 +1588,7 @@
                     <div class="signal-bar h-[8px]"></div>
                     <div class="signal-bar h-[10px]"></div>
                   </div>
+                  
                   <div class="w-[14px] h-[14px] relative">
                     <div
                       class="absolute inset-0 rounded-full border-[2px] border-black"
@@ -1305,6 +1597,7 @@
                       class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
                     ></div>
                   </div>
+                 
                   <div
                     class="flex items-center border border-black w-[20px] h-[10px] relative"
                   >
@@ -1324,11 +1617,11 @@
                       class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
                     ></div>
                     <img
-                      src="https://i.pravatar.cc/30?img=8"
-                      class="w-6 h-6 rounded-full"
+                      src="./assets/images/logo/ws-dark.png"
+                      class="w-9 h-19 rounded-full"
                       alt="Julia"
                     />
-                    <span class="text-sm font-medium text-black">Jhon</span>
+                    <span class="text-lg font-medium text-black">Wisemelon</span>
                   </div>
                   <div class="flex items-center gap-4">
                     <div
@@ -1355,26 +1648,26 @@
 
                 <!-- Divider below navbar -->
                 <div
-                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                  class="absolute top-[71px] left-0 right-0 h-px bg-gray-300 z-10"
                 ></div>
-
+  <div class="absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0">
                 <!-- X Icon -->
                 <div
-                  class="absolute top-[76px] right-4 text-black text-xl font-bold z-10"
+                  class="absolute top-[12px] right-4 text-black text-xl font-bold z-10"
                 >
                   &times;
                 </div>
 
                 <!-- Chat Icon Image shifted left and up -->
                 <img
-                  src="assets/images/chat-icon.png"
+                  src="assets/images/wh.png"
                   alt="Chat Icon"
-                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                  class="absolute top-[20px] left-1/2 -translate-x-[55%] w-[60px] h-auto z-10"
                 />
 
                 <!-- Bold Centered Text with Subheading -->
                 <div
-                  class="absolute top-[160px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
+                  class="absolute top-[90px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
                 >
                   <div
                     class="text-lg font-extrabold text-black whitespace-nowrap"
@@ -1390,7 +1683,7 @@
 
                 <!-- Two Side-by-Side Buttons -->
                 <div
-                  class="absolute top-[230px] left-1/2 -translate-x-1/2 flex gap-4 z-10"
+                  class="absolute top-[170px] left-1/2 -translate-x-1/2 flex gap-4 z-10 mt-3"
                 >
                   <button
                     class="bg-white text-black border border-gray-300 px-4 py-1 rounded-sm text-sm font-medium shadow-sm whitespace-nowrap"
@@ -1398,7 +1691,7 @@
                     Not now
                   </button>
                   <button
-                    class="bg-blue-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
+                    class="bg-green-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
                   >
                     Request Payment
                   </button>
@@ -1406,12 +1699,12 @@
 
                 <!-- Divider below navbar -->
                 <div
-                  class="absolute top-[280px] left-0 right-0 h-px bg-gray-200 z-10"
+                  class="absolute top-[230px] left-0 right-0 h-px bg-gray-200 z-10"
                 ></div>
 
                 <!-- Right-aligned purple chat bubble -->
                 <div
-                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                  class="absolute top-[240px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
                 >
                   <span class="typing" style="animation-delay: 0s">
                     Hi! Yes, depends on your size
@@ -1420,7 +1713,7 @@
 
                 <!-- Left-aligned grey chat bubble with profile image -->
                 <div
-                  class="absolute top-[310px] left-4 flex items-start gap-2 z-10"
+                  class="absolute top-[270px] left-4 flex items-start gap-2 z-10"
                 >
                   <!-- Profile Image -->
                   <img
@@ -1442,7 +1735,7 @@
                 <!-- Right-aligned blue chat bubble -->
 
                 <div
-                  class="absolute top-[375px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
+                  class="absolute top-[340px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
                 >
                   <span class="typing" style="animation-delay: 7s">
                     Ok, this is what we have in stock:
@@ -1451,7 +1744,7 @@
 
                 <!-- Image Cards Section -->
                 <div
-                  class="delay-12s absolute top-[420px] left-1/2 -translate-x-1/2 flex gap-3 z-10"
+                  class="absolute top-[390px] left-[60%] left-1/2 -translate-x-1/2 flex gap-3 z-10"
                 >
                   <!-- Card 1 -->
                   <div
@@ -1508,7 +1801,7 @@
 
                 <!-- Left-aligned grey chat bubble with profile image -->
                 <div
-                  class="absolute top-[490px] left-4 flex items-start gap-2 z-10"
+                  class="absolute top-[460px] left-4 flex items-start gap-2 z-10"
                 >
                   <!-- Profile Image -->
                   <img
@@ -1529,7 +1822,7 @@
 
                 <!-- Right-aligned blue chat bubble -->
                 <div
-                  class="absolute top-[560px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                  class="absolute top-[520px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
                 >
                   <span class="typing" style="animation-delay: 16s">
                     You got it!
@@ -1537,8 +1830,8 @@
                 </div>
                 <!-- Right-aligned blue chat bubble -->
                 <div
-                  class="absolute top-[600px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
-                >
+                  class="absolute top-[565px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                > 
                   <span class="typing" style="animation-delay: 20s">
                     I'll create a request now
                   </span>
@@ -1612,6 +1905,7 @@
                 <div
                   class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
                 ></div>
+                </div>
               </div>
             </div>
 
@@ -1638,25 +1932,25 @@
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
-                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+                class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+                class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
               ></div>
 
               <!-- Notch -->
               <div
-                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+                class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
               ></div>
 
               <!-- Screen -->
@@ -1737,7 +2031,7 @@
 
                 <!-- Divider below navbar -->
                 <div
-                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                  class="absolute top-[74px] left-0 right-0 h-px bg-gray-300 z-10"
                 ></div>
 
                 <!-- X Icon -->
@@ -1749,9 +2043,9 @@
 
                 <!-- Chat Icon Image shifted left and up -->
                 <img
-                  src="assets/images/chat-icon.png"
+                  src="assets/images/insta.png"
                   alt="Chat Icon"
-                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[60px] h-auto z-10"
                 />
 
                 <!-- Bold Centered Text with Subheading -->
@@ -1793,7 +2087,7 @@
 
                 <!-- Right-aligned purple chat bubble -->
                 <div
-                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                  class="absolute top-[285px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
                 >
                   Hi! Yes, depends on your size
                 </div>
@@ -2007,25 +2301,25 @@
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[14px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
-                class="absolute left-0 top-[100px] -translate-x-full w-[6px] h-[40px] metallic rounded"
+                class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[160px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute left-0 top-[240px] -translate-x-full w-[6px] h-[60px] metallic rounded"
+                class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
               ></div>
               <div
-                class="absolute right-0 top-[140px] translate-x-full w-[6px] h-[50px] metallic rounded"
+                class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
               ></div>
 
               <!-- Notch -->
               <div
-                class="absolute top-[14px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+                class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
               ></div>
 
               <!-- Screen -->
@@ -2106,7 +2400,7 @@
 
                 <!-- Divider below navbar -->
                 <div
-                  class="absolute top-[72px] left-0 right-0 h-px bg-gray-300 z-10"
+                  class="absolute top-[74px] left-0 right-0 h-px bg-gray-300 z-10"
                 ></div>
 
                 <!-- X Icon -->
@@ -2118,9 +2412,9 @@
 
                 <!-- Chat Icon Image shifted left and up -->
                 <img
-                  src="assets/images/chat-icon.png"
+                  src="assets/images/face.png"
                   alt="Chat Icon"
-                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[90px] h-auto z-10"
+                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[60px] h-auto z-10"
                 />
 
                 <!-- Bold Centered Text with Subheading -->
@@ -2162,7 +2456,7 @@
 
                 <!-- Right-aligned purple chat bubble -->
                 <div
-                  class="absolute top-[285px] right-4 bg-purple-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                  class="absolute top-[285px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
                 >
                   <span class="reveal" style="animation-delay: 0s">
                     Hi! Yes, depends on your size
@@ -2373,10 +2667,10 @@
 
     <!--======================================= SECTION 2 =======================================-->
 
-    <section
-      id="cardsSection"
-      class="relative w-full flex flex-col items-center pt-0 pb-12 bg-gradient-to-b from-green-200 to-green-300 mt-[240px] z-20"
-    >
+<section
+  id="cardsSection"
+  class="relative w-full flex flex-col items-center pt-0 pb-6 sm:pb-12 md:pb-40 bg-gradient-to-b from-green-200 to-green-300 mt-[-10vh] z-20"
+>
       <div class="h-36 flex justify-center mt-3">
         <svg
           class="h-36 max-w-4xl block ml-40"
@@ -2426,7 +2720,7 @@
         </svg>
       </div>
 
-      <div class="mt-3 px-4 -mb-30">
+      <div class="mt-3 px-4 mb-3">
         <h1
           class="text-3xl text-center font-normal text-[#16C542] tracking-normal"
         >
@@ -2444,14 +2738,13 @@
 
       <!--=============== PC component ===============-->
 
-      <div class="relative w-[66vw] aspect-[16/9] mx-auto mt-40">
-        <div
-          class="shuffle2 absolute inset-0 bg-gray-700 rounded-xl shadow-xl z-0"
-        >
-          <div class="container">
-            <div class="left-menu">
-              <nav class="flex flex-col items-center space-y-6">
-                <div class="style-13">
+<div class="relative w-full max-w-[1280px] h-[400px] mx-auto px-4 mt-48 sm:mt-48 xs:mt-10">
+
+    <div class="shuffle2 absolute inset-0 z-0 flex items-center justify-center rounded-xl">
+    <div class="container shadow-2xl">
+      <div class="left-menu">
+        <nav class="flex flex-col items-center space-y-6">
+          <div class="style-13">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -2874,9 +3167,9 @@
 
             <div class="message-list">
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/64.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Kevin Smith</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -2886,9 +3179,9 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+              <img src="./assets/images/13.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Nikhil Gupta</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -2898,9 +3191,9 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/14.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Nisha Hose</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -2910,9 +3203,9 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/93.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Elton Jhon</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -2922,21 +3215,9 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/86.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Charlotte</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -2946,9 +3227,23 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/72.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Beard Brown</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              
+
+              <div class="user-item">
+                <img src="./assets/images/77.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
+                <div class="user-text">
+                  <div class="user-name">Susanta Manna</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -2960,7 +3255,7 @@
               <div class="user-item">
                 <i class="fa-solid fa-user profile-pic"></i>
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Munni Seltos</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -2972,7 +3267,7 @@
               <div class="user-item">
                 <i class="fa-solid fa-user profile-pic"></i>
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Jung Kook</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3023,7 +3318,7 @@
                 <!-- Top bar -->
                 <div class="chat-top-bar">
                   <div class="chat-left">
-                    <i class="fa-solid fa-user profile-pic"></i>
+                    <img src="./assets/images/16.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                     <div class="user-text">
                       <div class="user-name">John Doe</div>
                       <div class="user-status">online</div>
@@ -3086,15 +3381,79 @@
               </div>
             </div>
 
-            <div class="side-panel">Info panel</div>
-          </div>
+            <div class="side-panel">
+
+              
+  <div class="user-profile">
+    <h2 class="title">John Lark’s Timeline</h2>
+    <div class="user-name">John Lark</div>
+    <div class="user-email">visitor_v5t...@nonemail.com</div>
+    <a href="#" class="view-history">View Demographic History ➜</a>
+  </div>
+
+  <div class="note-section">
+    <h3 class="note-title">Add Notes To Timeline</h3>
+    <textarea class="note-box" placeholder="Write Note Here..."></textarea>
+    <div class="note-actions">
+      <div class="icons">
+        <button>B</button>
+        <button>I</button>
+        <button></button>
+        <button>📎</button>
+      </div>
+      <button class="add-btn">+ Add to Timeline</button>
+    </div>
+  </div>
+
+  <div class="visitor-logs">
+    <h3 class="logs-title">Visitors Logs</h3>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
+        <div class="log-desc">Conversation started for user for platform widget with bot - v500 Systems</div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
+        <div class="log-desc">Dushant Deshmukh<br>US Sales<br>Conversation started...</div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="">Agent Action</span></div>
+        <div class="log-desc">Conversation started...</div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="tag green">User Action</span></div>
+        <div class="log-desc">Conversation started...</div>
+      </div>
+    </div>
+  </div>
+
+
+
+            </div>
+
+             <div class="right-panel">
+             </div>
+          
+            </div>
         </div>
 
-        <div
-          class="shuffle1 absolute inset-0 bg-white rounded-xl shadow-2xl z-10"
-        >
-          <div class="container">
-            <div class="left-menu">
+<div class="shuffle1 absolute inset-0 z-10 flex items-center justify-center rounded-xl">
+  <div class="container">
+    <div class="left-menu">
               <nav class="flex flex-col items-center space-y-6">
                 <div class="style-13">
                   <svg
@@ -3519,9 +3878,9 @@
 
             <div class="message-list">
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/64.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Kevin Smith</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3531,9 +3890,9 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                 <img src="./assets/images/5.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Nikhil Gupta</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3543,9 +3902,9 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/14.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Nisha Hose</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3555,9 +3914,21 @@
               </div>
 
               <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
+                <img src="./assets/images/93.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Elton Jhon</div>
+                  <div class="last-message">Hey there! How are you?</div>
+                </div>
+                <div class="user-meta">
+                  <div class="date">12:45 PM</div>
+                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+              </div>
+
+              <div class="user-item">
+                <img src="./assets/images/72.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
+                <div class="user-text">
+                  <div class="user-name">Beard Brown</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3569,19 +3940,7 @@
               <div class="user-item">
                 <i class="fa-solid fa-user profile-pic"></i>
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Ethun Hunt</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3593,7 +3952,7 @@
               <div class="user-item">
                 <i class="fa-solid fa-user profile-pic"></i>
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Nisha Hose</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3605,7 +3964,7 @@
               <div class="user-item">
                 <i class="fa-solid fa-user profile-pic"></i>
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Munni Seltos</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3617,7 +3976,7 @@
               <div class="user-item">
                 <i class="fa-solid fa-user profile-pic"></i>
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Susanta Manna</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3629,7 +3988,7 @@
               <div class="user-item">
                 <i class="fa-solid fa-user profile-pic"></i>
                 <div class="user-text">
-                  <div class="user-name">John Doe</div>
+                  <div class="user-name">Nikhil Gupta</div>
                   <div class="last-message">Hey there! How are you?</div>
                 </div>
                 <div class="user-meta">
@@ -3668,7 +4027,7 @@
                 <!-- Top bar -->
                 <div class="chat-top-bar">
                   <div class="chat-left">
-                    <i class="fa-solid fa-user profile-pic"></i>
+                    <img src="./assets/images/16.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
                     <div class="user-text">
                       <div class="user-name">John Doe</div>
                       <div class="user-status">online</div>
@@ -3731,13 +4090,83 @@
               </div>
             </div>
 
-            <div class="side-panel">Info panel</div>
+            <div class="side-panel">
+
+              
+  <div class="user-profile">
+    <h2 class="title">John Lark’s Timeline</h2>
+    <div class="user-name">John Lark</div>
+    <div class="user-email">visitor_v5t...@nonemail.com</div>
+    <a href="#" class="view-history">View Demographic History ➜</a>
+  </div>
+
+  <div class="note-section">
+    <h3 class="note-title">Add Notes To Timeline</h3>
+    <textarea class="note-box" placeholder="Write Note Here..."></textarea>
+    <div class="note-actions">
+      <div class="icons">
+        <button>B</button>
+        <button>I</button>
+        <button>😊</button>
+        <button>📎</button>
+      </div>
+      <button class="add-btn">+ Add to Timeline</button>
+    </div>
+  </div>
+
+  <div class="visitor-logs">
+    <h3 class="logs-title">Visitors Logs</h3>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
+        <div class="log-desc">Conversation started for user for platform widget with bot - v500 Systems</div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
+        <div class="log-desc">Dushant Deshmukh<br>US Sales<br>Conversation started...</div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="">Agent Action</span></div>
+        <div class="log-desc">Conversation started...</div>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="dot"></div>
+      <div class="log-content">
+        <div class="log-time">September 24 2024, 03:00 PM <span class="tag green">User Action</span></div>
+        <div class="log-desc">Conversation started...</div>
+      </div>
+    </div>
+  </div>
+
+
+
+            </div>
+
+            <div class="right-panel">
+            </div>
+          
           </div>
         </div>
       </div>
+
+
+
+
     </section>
 
-    <!--========================================  SECTION 3 =====================================-->
+    <!--=======================================  SECTION 3 =====================================-->
 
     <section class="p-6 bg-white p-8 w-[95%] mx-auto mb-12">
       <div class="mb-6 mt-6">
@@ -3763,7 +4192,7 @@
             <div class="relative w-full h-full">
               <!-- Text Box -->
               <div
-                class="absolute w-72 max-w-[40%] border border-black bottom-3 left-3 bg-white p-2 z-10 text-xs sm:text-sm"
+                class="absolute w-72 max-w-[40%] bottom-3 left-3 bg-white p-2 z-10 text-xs sm:text-sm"
               >
                 <a href="#" class="font-medium text-black">Learn More →</a>
                 <h2 class="mt-2 text-xl sm:text-2xl font-bold text-black">
@@ -3960,7 +4389,8 @@
 
     <!--======================================= SECTION 4 =======================================-->
 
-    <section class="p-8 max-w-[70%] mx-auto mb-12">
+    <section class="p-8 w-full max-w-screen-xl mx-auto mb-12">
+
       <!-- Title -->
       <h2 class="text-3xl font-bold mb-6">
         Personalised setup for your business.
@@ -4137,15 +4567,15 @@
       </div>
     </section>
 
-    <!--======================================== SECTION 5 ========================================-->
+    <!--======================================== SECTION 5 =======================================-->
 
     <section
-      class="bg-gradient-to-b from-zinc-50 to-zinc-100 py-12 px-6 sm:px-12"
+      class="bg-gradient-to-b from-zinc-50 to-zinc-100 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto">
+      <div class="max-w-7xl mx-auto p-6 space-y-40">
         <!-- Top Logos -->
         <div
-          class="flex flex-wrap items-center justify-items-start gap-24 mb-40"
+          class="flex flex-wrap items-center gap-8 sm:gap-12 lg:gap-16 justify-center mb-20"
         >
           <div class="flex items-center gap-3">
             <img
@@ -4167,7 +4597,7 @@
           <div class="text-center">
             <img
               src="assets/images/logo/gdpr.png"
-              alt="ISO Badge 2"
+              alt="GDPR Badge"
               class="h-12"
             />
           </div>
@@ -4176,52 +4606,47 @@
         <!-- Testimonials and Feature Cards -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
           <!-- Left Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             <div class="bg-white rounded-xl shadow-sm p-6 text-sm">
               <p><strong>How Petfolk,</strong></p>
               <span class="text-gray-500">
-                scaled their services to more than 10k customers in 2
-                months</span
-              >
+                scaled their services to more than 10k customers in 2 months
+              </span>
             </div>
             <div class="bg-white rounded-xl shadow-sm p-6 text-sm">
               <p>
-                <strong>How ViSource,</strong
-                ><span class="text-gray-500"
-                  >automated their response time by 80% for their steel
-                  distribution business.</span
-                >
+                <strong>How ViSource,</strong>
+                <span class="text-gray-500">
+                  automated their response time by 80% for their steel
+                  distribution business.
+                </span>
               </p>
             </div>
             <div
               class="bg-white rounded-xl shadow-sm p-6 text-sm sm:col-span-2"
             >
               <p>
-                <strong>How Math Accelerator,</strong
-                ><span class="text-gray-200">
-                  <p>
-                    keeps visitors informed about hundreds of incubated startups
-                    and their work.
-                  </p>
+                <strong>How Math Accelerator,</strong>
+                <span class="text-gray-500">
+                  keeps visitors informed about hundreds of incubated startups
+                  and their work.
                 </span>
               </p>
             </div>
           </div>
 
-          <!-- Right Testimonial Card Stack (Square) -->
-          <div class="relative -mt-40 w-96 h-96 left-60">
-            <!-- Background Cards -->
-            <div
-              class="absolute -top-3 left-1 w-full h-full bg-pink-100 rounded-xl rotate-[-10deg] shadow-md"
-            ></div>
-            <div
-              class="absolute -top-1.5 left-1.5 w-full h-full bg-green-50 rounded-xl rotate-[-2deg] shadow-md"
-            ></div>
+          <!-- Right Testimonial Card Stack -->
+          <div class="relative w-full max-w-md mx-auto lg:mt-0 lg:w-[60%] lg:ml-12">
 
-            <!-- Foreground Card (Square) -->
-            <div
-              class="relative bg-white rounded-xl p-4 shadow-lg z-10 w-full h-full flex flex-col justify-between rotate-[2deg] left-6"
-            >
+            <!-- Background Cards -->
+              <div class="absolute inset-0 translate-x-1 -translate-y-3 bg-pink-100 rounded-xl rotate-[-10deg] shadow-md z-0"></div>
+
+            <div class="absolute inset-0 translate-x-1.5 -translate-y-1.5 bg-green-50 rounded-xl rotate-[-2deg] shadow-md z-0"></div>
+
+
+            <!-- Foreground Card -->
+             <div class="relative bg-white rounded-xl p-4 shadow-lg z-10 flex flex-col justify-between rotate-[2deg] w-full aspect-square">
+
               <div class="flex items-center gap-3">
                 <img
                   src="https://randomuser.me/api/portraits/men/75.jpg"
@@ -4234,8 +4659,8 @@
                 </div>
               </div>
               <p class="text-gray-800 text-sm mt-3 flex-grow">
-                I don’t know who else could we have trusted for our customer
-                interactions, wisemelon literally provides all the options a
+                I don’t know who else we could have trusted for our customer
+                interactions. Wisemelon literally provides all the options a
                 business would ever need.
               </p>
               <a href="#" class="font-medium text-black text-sm mt-4">
@@ -4247,7 +4672,7 @@
 
         <!-- Partner Logos -->
         <div
-          class="mt-40 grid grid-cols-4 sm:grid-cols-7 gap-6 justify-items-center items-center"
+          class="mt-20 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center items-center"
         >
           <img
             src="assets/images/logo/haldirams_logo.png"
@@ -4283,328 +4708,531 @@
       </div>
     </section>
 
-    <!--======================================== SECTION 6 ========================================-->
-
-    <section class="bg-white py-16 px-6 sm:px-12 min-h-[80vh]">
-      <div
-        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12"
-      >
-        <!-- Left: Text and Form -->
-        <div>
-          <h2 class="text-3xl font-bold text-black mb-24">
-            Automate your business in just
-            <span class="text-black">2 days.</span>
-          </h2>
-          <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
-            <input
-              type="text"
-              placeholder="Full Name"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="email"
-              placeholder="Business Email"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Mobile Number"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="date"
-              placeholder="Meeting Date"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <textarea
-              placeholder="Use Case"
-              rows="3"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:col-span-2"
-            ></textarea>
-
-            <button
-              type="submit"
-              class="bg-black text-white text-sm px-5 py-2 rounded-md flex items-center gap-2 sm:col-span-2 w-fit"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 17h5l-1.405-1.405M4 4v5a2 2 0 002 2h2l3 3m0 0l3-3m-3 3v12"
-                />
-              </svg>
-              Get a callback
-            </button>
-          </form>
-        </div>
-
-        <!-- Right: Phone Image and Tags -->
-        <div class="flex justify-center lg:justify-end relative">
-          <img
-            src="/assets/images/phone.png"
-            alt="Phone UI"
-            class="w-64 sm:w-72 md:w-80 lg:w-96"
-          />
-          <div class="absolute top-0 left-full ml-4 space-y-2">
-            <span
-              class="bg-pink-300 text-white text-xs px-3 py-1 rounded-full block"
-              >Rentals</span
-            >
-            <span
-              class="bg-rose-200 text-white text-xs px-3 py-1 rounded-full block"
-              >Healthcare</span
-            >
-            <span
-              class="bg-indigo-300 text-white text-xs px-3 py-1 rounded-full block"
-              >D2C</span
-            >
-            <span
-              class="bg-green-300 text-white text-xs px-3 py-1 rounded-full block"
-              >Finance</span
-            >
-            <span
-              class="bg-yellow-300 text-white text-xs px-3 py-1 rounded-full block"
-              >Education</span
-            >
-            <span
-              class="bg-sky-300 text-white text-xs px-3 py-1 rounded-full block"
-              >Home Services</span
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-        <!--======================================== SECTION 7 ========================================-->
+    <!--======================================== SECTION 6 =======================================-->
 
     <section class="bg-white py-16 px-6 sm:px-12">
-      <!-- Headline -->
-      <div class="max-w-4xl mx-auto text-center mb-8">
-        <h2 class="text-3xl sm:text-4xl font-bold text-black">
-          <span class="underline underline-offset-4">Your Flow.</span>
-          <span class="underline underline-offset-4">Your Integrations.</span>
-          <span class="text-gray-500 font-medium">
-            Design Flow for your needs and wisemelon does the rest for you
-            automatically.
-          </span>
-        </h2>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-48">
+    <!-- Left: Text and Form -->
+    <div>
+      <h2 class="text-3xl font-bold text-black mb-24">
+        Automate your business in just
+        <span class="text-black">2 days.</span>
+      </h2>
+      <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+        <input
+          type="text"
+          placeholder="Full Name"
+          class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="email"
+          placeholder="Business Email"
+          class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="text"
+          placeholder="Mobile Number"
+          class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="date"
+          placeholder="Meeting Date"
+          class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <textarea
+          placeholder="Use Case"
+          rows="3"
+          class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:col-span-2"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="bg-black text-white text-sm px-5 py-2 rounded-md flex items-center gap-2 sm:col-span-2 w-fit"
+        >
+         
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="h-5 w-5 text-white"
+  viewBox="0 0 24 24"
+  fill="none"
+>
+  <path
+    d="m7.18 10.27 6.504 6.46c.697-.807 5.11-5.538 7.316.924 0 0-.232 3.346-4.994 3.346-3.367 0-6.851-4.038-9.29-6.346C4.626 12.692 3 10.154 3 7.846 3 3.116 6.252 3 6.252 3c7.432 2.538.929 7.27.929 7.27Z"
+    fill="currentColor"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-miterlimit="10"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M14.172 5.586v4.242h4.242"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="m14.172 9.828 5.656-5.656"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-miterlimit="10"
+    stroke-linecap="round"
+  />
+</svg>
+
+
+          Get a callback
+        </button>
+      </form>
+    </div>
+
+<!-- Right: Phone Image and Tags as One Block (Always Side-by-Side) -->
+<div class="flex justify-center lg:justify-start">
+  <div class="flex items-start gap-4 max-w-full">
+    <!-- Phone Image -->
+    <img
+      src="./assets/images/phone2.png"
+      alt="Phone UI"
+      class="w-36 sm:w-44 md:w-52 lg:w-60"
+    />
+
+    <!-- Tags -->
+    <div class="space-y-12 mt-10">
+      <span class="bg-pink-300 text-black text-xs px-3 py-2 rounded-r-lg block">Rentals</span>
+      <span class="bg-rose-200 text-black text-xs px-3 py-2 rounded-r-lg block">Healthcare</span>
+      <span class="bg-indigo-300 text-black text-xs px-3 py-2 rounded-r-lg block">D2C</span>
+      <span class="bg-green-300 text-black text-xs px-3 py-2 rounded-r-lg block">Finance</span>
+      <span class="bg-yellow-300 text-black text-xs px-3 py-2 rounded-r-lg block">Education</span>
+      <span class="bg-sky-300 text-black text-xs px-3 py-2 rounded-r-lg block">Home Services</span>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+
+    <!--======================================== SECTION 7 =======================================-->
+
+<section class="bg-white py-16 px-6 sm:px-12">
+  <!-- Headline -->
+  <div class="max-w-4xl mx-auto text-center mb-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-black">
+      <span>Your flow, Your Integrations.</span>
+      <span class="text-gray-500 font-medium block mt-2" style="color:#6b7280;">
+        Design Flow for your needs and wisemelon does the rest for you automatically.
+      </span>
+    </h2>
+  </div>
+
+  <!-- Tabs -->
+  <div id="progressTabs" class="flex items-center justify-center mb-12 space-x-2">
+    <!-- We'll generate these with JS for easier control -->
+  </div>
+
+  <!-- Image and overlay -->
+  <div class="max-w-6xl mx-auto">
+    <div class="relative rounded-2xl overflow-hidden shadow-lg" style="height: 500px;">
+      <img id="sliderImage" src="" alt="" class="w-full h-full object-cover rounded-2xl" />
+      <div
+        class="absolute inset-0 bg-opacity-60 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
+        style="background-color: rgba(0, 0, 0, 0.6);"
+      >
+        <h3 id="overlayTitle" class="text-3xl font-bold mb-4"></h3>
+        <p id="overlayText" class="text-lg sm:text-xl font-medium max-w-2xl"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const steps = [
+      {
+        label: "Engaging",
+        img: "assets/images/image1.png",
+        title: "Engaging Experiences For Users.",
+        text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
+      },
+      {
+        label: "Your Data",
+        img: "assets/images/image2.png",
+        title: "Your Data. Your Chatbot.",
+        text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
+      },
+      {
+        label: "LifeCycle",
+        img: "assets/images/image3.png",
+        title: "Lifecycle Management.",
+        text: "Streamline your customer lifecycle with tailored automation workflows.",
+      },
+      {
+        label: "Automation",
+        img: "assets/images/image4.png",
+        title: "Automation Made Easy.",
+        text: "Automate repetitive tasks to save time and boost efficiency.",
+      },
+      {
+        label: "Your Guide",
+        img: "assets/images/image5.png",
+        title: "Your Personal Guide.",
+        text: "Get expert advice and support tailored to your needs.",
+      },
+      {
+        label: "Analytics",
+        img: "assets/images/image6.png",
+        title: "Powerful Analytics.",
+        text: "Gain insights and optimize your strategy with our data tools.",
+      },
+    ];
+
+    const tabsContainer = document.getElementById("progressTabs");
+    const sliderImage = document.getElementById("sliderImage");
+    const overlayTitle = document.getElementById("overlayTitle");
+    const overlayText = document.getElementById("overlayText");
+
+    // Generate tabs dynamically with lines except after last button
+    steps.forEach((step, idx) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "tab-wrapper";
+
+      const btn = document.createElement("button");
+      btn.className = "tab-button";
+      btn.textContent = step.label;
+      btn.setAttribute("data-index", idx);
+      btn.setAttribute("aria-pressed", "false");
+      wrapper.appendChild(btn);
+
+      if (idx !== steps.length - 1) {
+        const line = document.createElement("div");
+        line.className = "progress-line";
+        wrapper.appendChild(line);
+      }
+
+      tabsContainer.appendChild(wrapper);
+    });
+
+    const buttons = tabsContainer.querySelectorAll("button");
+    const lines = tabsContainer.querySelectorAll(".progress-line");
+
+    function setActive(index) {
+      buttons.forEach((btn, i) => {
+        const isActive = i <= index;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      lines.forEach((line, i) => {
+        line.classList.toggle("active-line", i < index);
+      });
+
+      sliderImage.src = steps[index].img;
+      sliderImage.alt = steps[index].label;
+      overlayTitle.textContent = steps[index].title;
+      overlayText.textContent = steps[index].text;
+    }
+
+    buttons.forEach(btn =>
+      btn.addEventListener("click", () => {
+        setActive(parseInt(btn.dataset.index));
+      })
+    );
+
+    setActive(0);
+  });
+</script>
+
+
+    <!--======================================== SECTION 8 =======================================-->
+
+
+ <section class="w-full py-16 bg-gray-50">
+  <div class="w-full max-w-screen-xl mx-auto px-4">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Plans & Pricing</h2>
+      <div class="inline-flex mt-4 bg-[#e8f9e3] rounded-full overflow-hidden">
+        <button class="py-2 px-6 bg-[#b6f397] font-medium text-black">Pay Monthly</button>
+        <button class="py-2 px-6 text-black">Pay Yearly (Save 25%)</button>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="flex flex-wrap justify-center gap-8">
+      
+      <!-- Card 1 -->
+      <div class="w-full sm:w-[45%] lg:w-[24%] bg-white border rounded-2xl p-6 shadow-md flex flex-col justify-between" style="aspect-ratio: 3/5;">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">wisemelon Starter</h3>
+          <p class="text-sm text-gray-600 mb-4">For individuals & casual users</p>
+          <p class="text-gray-700 text-sm mb-4">Get started with the essentials and explore our features.</p>
+          <div class="bg-[#dbf7c3] text-sm font-medium p-3 rounded-md text-center mb-6">
+            Get your first 3 months for 10k/mo
+          </div>
+          <div class="space-y-2 text-sm text-black">
+            <p>✓ Access to core features</p>
+            <p>✓ Limited storage</p>
+            <p>✓ Community access</p>
+            <p>✓ Standard support</p>
+          </div>
+        </div>
+        <button class="mt-6 py-2 px-4 border rounded-md font-medium">Learn More</button>
       </div>
 
-      <!-- Tabs -->
-      <div class="flex items-center justify-center gap-2 mb-12">
-        <!-- Button 1 -->
-        <button class="px-4 py-1 rounded-full bg-black text-white text-sm">
-          Engaging
-        </button>
-
-        <!-- Line -->
-        <div class="h-0.5 w-5 bg-gray-400"></div>
-
-        <!-- Button 2 -->
-        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
-          Your Data
-        </button>
-
-        <!-- Line -->
-        <div class="h-0.5 w-5 bg-gray-400"></div>
-
-        <!-- Button 3 -->
-        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
-          Lifecycle
-        </button>
-
-        <!-- Line -->
-        <div class="h-0.5 w-5 bg-gray-400"></div>
-
-        <!-- Button 4 -->
-        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
-          Automate
-        </button>
-
-        <!-- Line -->
-        <div class="h-0.5 w-5 bg-gray-400"></div>
-
-        <!-- Button 5 -->
-        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
-          Your Goals
-        </button>
-
-        <!-- Line -->
-        <div class="h-0.5 w-5 bg-gray-400"></div>
-
-        <!-- Button 6 -->
-        <button class="px-4 py-1 rounded-full border border-gray-400 text-sm">
-          Analytics
-        </button>
+      <!-- Card 2 -->
+      <div class="w-full sm:w-[45%] lg:w-[24%] bg-white border-2 border-[#9af76f] rounded-2xl p-6 shadow-lg flex flex-col justify-between" style="aspect-ratio: 4/5;">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">wisemelon Pro</h3>
+          <p class="text-sm text-gray-600 mb-4">For Professionals & Small Teams</p>
+          <p class="text-gray-700 text-sm mb-4">Unlock advanced tools and enhance your productivity.</p>
+          <div class="bg-[#dbf7c3] text-sm font-medium p-3 rounded-md text-center mb-6">
+            Get your first 3 months for 30k/mo
+          </div>
+          <div class="space-y-2 text-sm text-black">
+            <p>✓ All Freemium features</p>
+            <p>✓ Priority support</p>
+            <p>✓ Advanced analytics</p>
+            <p>✓ Team collaboration</p>
+          </div>
+        </div>
+        <button class="mt-6 py-2 px-4 border rounded-md font-medium">Learn More</button>
       </div>
 
-      <!-- Image with Overlay -->
-      <div class="max-w-6xl mx-auto">
-        <div class="relative rounded-2xl overflow-hidden shadow-lg">
-          <img
-            src="assets/images/img1.png"
-            alt="People on phone"
-            class="w-full h-full object-cover"
-          />
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
-          >
-            <h3 class="text-3xl font-bold mb-4">
-              Engaging Experiences For Users.
-            </h3>
-            <p class="text-lg sm:text-xl font-medium max-w-2xl">
-              Convert more leads and retain your customers with our AI-driven
-              analytics and personalized marketing strategies.
-            </p>
+      <!-- Card 3 -->
+      <div class="w-full sm:w-[45%] lg:w-[24%] bg-white border rounded-2xl p-6 shadow-md flex flex-col justify-between" style="aspect-ratio: 4/5;">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">wisemelon Enterprise</h3>
+          <p class="text-sm text-gray-600 mb-4">For Large Organizations & Businesses</p>
+          <p class="text-gray-700 text-sm mb-4">Unlock advanced tools and enhance your productivity.</p>
+          <div class="bg-[#dbf7c3] text-sm font-medium p-3 rounded-md text-center mb-6">
+            Get your first 3 months at a discounted rate
+          </div>
+          <div class="space-y-2 text-sm text-black">
+            <p>✓ All Pro features</p>
+            <p>✓ Dedicated account manager</p>
+            <p>✓ Advanced integrations</p>
+            <p>✓ Comprehensive analytics</p>
+          </div>
+        </div>
+        <button class="mt-6 py-2 px-4 border rounded-md font-medium">Learn More</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="w-full bg-black text-white pt-16 pb-8">
+  <div class="w-full max-w-screen-xl mx-auto px-4 flex flex-wrap justify-between items-start gap-8">
+    
+    <!-- Left section -->
+    <div class="flex flex-col gap-4 max-w-md">
+      <div class="flex items-center gap-2">
+        <img src="assets/images/logo/WhiteLogo2.png" alt="wisemelon logo" class="w-auto h-12" />
+        <span class="text-xl font-semibold"></span>
+      </div>
+      <p class="text-base text-gray-300">Bots are oldschool, Say Hi to wisemelon</p>
+
+      <div class="bg-gray-800 rounded-lg px-4 py-3 flex items-center gap-3 w-fit">
+        <div class="bg-gray-600 w-8 h-8 flex items-center justify-center text-white rounded-full text-lg font-semibold">P</div>
+        <div>
+          <p class="text-xs uppercase text-gray-400 font-medium">Featured On</p>
+          <div class="flex items-center gap-1">
+            <span class="text-base font-semibold text-white">Product Hunt</span>
+            <span class="text-sm text-gray-300">2549</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Center Links -->
+    <div class="flex flex-col gap-2 text-base font-medium text-gray-300">
+      <a href="#" class="hover:text-white">Pricing</a>
+      <a href="#" class="hover:text-white">Contact</a>
+      <a href="#" class="hover:text-white">HelpCenter</a>
+    </div>
+
+    <div class="flex flex-col gap-2 text-base font-medium text-gray-300">
+      <a href="#" class="hover:text-white">Blog</a>
+      <a href="#" class="hover:text-white">Suggestions</a>
+      <a href="#" class="hover:text-white">Partner</a>
+      <a href="#" class="hover:text-white">Become A Partner</a>
+    </div>
+
+    <div class="flex flex-col gap-2 text-base font-medium text-gray-300">
+      <a href="#" class="hover:text-white">LinkedIn</a>
+      <a href="#" class="hover:text-white">Facebook</a>
+      <a href="#" class="hover:text-white">Instagram</a>
+    </div>
+
+    <!-- Meta Partner -->
+    <div class="flex flex-col items-start gap-4 max-w-sm">
+      <p class="font-semibold text-base">Official Meta Business Partner</p>
+      <p class="text-sm text-gray-400 leading-relaxed">
+        We are experts in driving client success across Meta technologies such as WhatsApp, Facebook, Instagram, and more.
+      </p>
+      <img src="assets/images/meta.webp" alt="Meta Business Partner" class="w-48" />
+    </div>
+  </div>
+
+  <div class="w-full h-px bg-gray-700 my-8"></div>
+
+  <!-- Bottom bar -->
+  <div class="w-full max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+    <span>© Bizmorphic Research Pvt. Ltd 2025 All Rights Reserved.</span>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-white">Privacy Policy</a>
+      <a href="#" class="hover:text-white">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
 
     <!--======================================== Javascript =======================================-->
 
-    <script>
-      let shuffled = false;
-      let hasUserInteracted = false;
+    
+  <script>
+    let shuffled = false;
+    let hasUserInteracted = false;
+    let lastScrollY = window.scrollY;
+    let cardsAnimationDone = false;
 
-      // Track last scroll position to detect real scrolls
-      let lastScrollY = window.scrollY;
+    function markInteraction(e) {
+      if (hasUserInteracted) return;
 
-      function markInteraction(e) {
-        if (hasUserInteracted) return; // already marked
-
-        // Handle scroll event: only count if scrolled beyond 20px from lastScrollY
-        if (e.type === "scroll") {
-          const currentScrollY = window.scrollY;
-          if (Math.abs(currentScrollY - lastScrollY) < 20) {
-            // Ignore tiny scrolls
-            return;
-          }
-          lastScrollY = currentScrollY;
-        }
-
-        // Handle keydown: only arrow up/down keys count
-        if (e.type === "keydown" && !["ArrowUp", "ArrowDown"].includes(e.key)) {
-          return;
-        }
-
-        hasUserInteracted = true;
-        console.log("✅ User interacted for section 1");
-
-        // Remove listeners so this only runs once
-        window.removeEventListener("scroll", markInteraction);
-        window.removeEventListener("keydown", markInteraction);
-        window.removeEventListener("wheel", markInteraction);
+      if (e.type === "scroll") {
+        const currentScrollY = window.scrollY;
+        if (Math.abs(currentScrollY - lastScrollY) < 20) return;
+        lastScrollY = currentScrollY;
       }
 
-      // Add event listeners *after* page load event to avoid premature triggering
-      window.addEventListener("load", () => {
-        lastScrollY = window.scrollY;
-        window.addEventListener("scroll", markInteraction);
-        window.addEventListener("keydown", markInteraction);
-        window.addEventListener("wheel", markInteraction);
-      });
+      if (e.type === "keydown" && !["ArrowUp", "ArrowDown"].includes(e.key)) {
+        return;
+      }
 
-      function shuffleCards() {
-        if (shuffled || !hasUserInteracted) return;
-        shuffled = true;
-        console.log("🚀 Shuffling cards...");
+      hasUserInteracted = true;
+      console.log("✅ User interacted for section 1");
 
-        // 🚫 Disable scroll without causing layout shift
-        const scrollBarWidth =
-          window.innerWidth - document.documentElement.clientWidth;
-        document.body.style.overflow = "hidden";
-        if (scrollBarWidth > 0) {
-          document.body.style.paddingRight = scrollBarWidth + "px";
+      window.removeEventListener("scroll", markInteraction);
+      window.removeEventListener("keydown", markInteraction);
+      window.removeEventListener("wheel", markInteraction);
+    }
+
+    window.addEventListener("load", () => {
+      lastScrollY = window.scrollY;
+      window.addEventListener("scroll", markInteraction);
+      window.addEventListener("keydown", markInteraction);
+      window.addEventListener("wheel", markInteraction);
+    });
+
+    function shuffleCards() {
+      if (shuffled || !hasUserInteracted) return;
+      shuffled = true;
+      console.log("🚀 Shuffling cards...");
+
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = "hidden";
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = scrollBarWidth + "px";
+      }
+
+      const card1 = document.getElementById("card1");
+      const card2 = document.getElementById("card2");
+      const card4 = document.getElementById("card4");
+      const card5 = document.getElementById("card5");
+
+      card1.style.transform = "translate(-160%,0) rotate(-69deg) scale(0.85)";
+      card5.style.transform = "translate(20%,0) rotate(69deg) scale(0.85)";
+
+      setTimeout(() => {
+        card1.style.zIndex = "20";
+        card2.style.zIndex = "10";
+        card4.style.zIndex = "10";
+        card5.style.zIndex = "20";
+
+        card1.style.transform = "translate(-80%,0) rotate(-25deg) scale(0.9)";
+        card2.style.transform = "translate(-90%,0) rotate(-69deg) scale(0.85)";
+        card5.style.transform = "translate(-20%,0) rotate(25deg) scale(0.9)";
+        card4.style.transform = "translate(-10%,0) rotate(69deg) scale(0.85)";
+      }, 400);
+
+      setTimeout(() => {
+        document.body.style.overflow = "";
+        document.body.style.paddingRight = "";
+        console.log("✅ Scroll re-enabled");
+      }, 1000);
+    }
+
+    function checkSection1() {
+      const section1 = document.getElementById("section1");
+      if (!section1 || shuffled || !hasUserInteracted) return;
+
+      const rect = section1.getBoundingClientRect();
+      const sectionCenter = rect.top + rect.height / 2;
+      const viewHeight = window.innerHeight;
+
+      const triggerZoneTop = viewHeight / 3;
+      const triggerZoneBottom = (viewHeight * 2) / 3;
+
+      if (sectionCenter > triggerZoneTop && sectionCenter < triggerZoneBottom) {
+        shuffleCards();
+      }
+    }
+
+    function runAnimation() {
+      console.log("🔥 Running section 2 animation");
+      const shuffle1 = document.querySelector(".shuffle1");
+      const shuffle2 = document.querySelector(".shuffle2");
+
+      shuffle1.style.transform = "translateY(50%) scale(1)";
+      shuffle2.style.transform = "translateY(-50%) scale(0.9)";
+
+      setTimeout(() => {
+        shuffle1.classList.remove("z-10");
+        shuffle1.classList.add("z-0");
+        shuffle2.classList.remove("z-0");
+        shuffle2.classList.add("z-10");
+
+        shuffle2.style.transform = "translateY(10px) scale(1)";
+        shuffle1.style.transform = "translateY(-100px) scale(0.9)";
+      }, 600);
+    }
+
+    function checkSection2() {
+      const cardsSection = document.getElementById("cardsSection");
+      if (!cardsSection) return;
+
+      const rect = cardsSection.getBoundingClientRect();
+      const sectionCenter = rect.top + rect.height / 2;
+
+      const viewHeight = window.innerHeight;
+      const topThird = viewHeight / 3;
+      const bottomThird = (viewHeight * 2) / 3;
+
+      if (sectionCenter > topThird && sectionCenter < bottomThird) {
+        if (!cardsAnimationDone) {
+          runAnimation();
+          cardsAnimationDone = true;
         }
-
-        const card1 = document.getElementById("card1");
-        const card2 = document.getElementById("card2");
-        const card4 = document.getElementById("card4");
-        const card5 = document.getElementById("card5");
-
-        card1.style.transform = "translate(-160%,0) rotate(-69deg) scale(0.85)";
-        card5.style.transform = "translate(20%,0) rotate(69deg) scale(0.85)";
-
-        setTimeout(() => {
-          card1.style.zIndex = "20";
-          card2.style.zIndex = "10";
-          card4.style.zIndex = "10";
-          card5.style.zIndex = "20";
-
-          card1.style.transform = "translate(-80%,0) rotate(-25deg) scale(0.9)";
-          card2.style.transform =
-            "translate(-90%,0) rotate(-69deg) scale(0.85)";
-          card5.style.transform = "translate(-20%,0) rotate(25deg) scale(0.9)";
-          card4.style.transform = "translate(-10%,0) rotate(69deg) scale(0.85)";
-        }, 400);
-        // ✅ Re-enable scroll after animation
-        setTimeout(() => {
-          document.body.style.overflow = "";
-          document.body.style.paddingRight = "";
-          console.log("✅ Scroll re-enabled");
-        }, 1000);
       }
+    }
 
-      // Only shuffle cards if user has interacted
-      window.addEventListener("scroll", () => {
-        if (hasUserInteracted) shuffleCards();
-      });
+    window.addEventListener("scroll", () => {
+      checkSection1();
+      checkSection2();
+    });
 
-      window.addEventListener("keydown", (e) => {
-        if (hasUserInteracted && ["ArrowUp", "ArrowDown"].includes(e.key))
-          shuffleCards();
-      });
-
-      // ---------- SECTION 2 ----------
-      let cardsAnimationDone = false;
-
-      function runAnimation() {
-        console.log("🔥 Running section 2 animation");
-        const shuffle1 = document.querySelector(".shuffle1");
-        const shuffle2 = document.querySelector(".shuffle2");
-
-        shuffle1.style.transform = "translateY(61%) scale(1)";
-        shuffle2.style.transform = "translateY(-250px) scale(0.9)";
-
-        setTimeout(() => {
-          shuffle1.classList.remove("z-10");
-          shuffle1.classList.add("z-0");
-          shuffle2.classList.remove("z-0");
-          shuffle2.classList.add("z-10");
-
-          shuffle2.style.transform = "translateY(10px) scale(1)";
-          shuffle1.style.transform = "translateY(-100px) scale(0.9)";
-        }, 600);
+    window.addEventListener("keydown", (e) => {
+      if (["ArrowUp", "ArrowDown"].includes(e.key)) {
+        checkSection1();
+        checkSection2();
       }
-
-      function checkSection2() {
-        const cardsSection = document.getElementById("cardsSection");
-        if (!cardsSection) return;
-
-        const rect = cardsSection.getBoundingClientRect();
-        const sectionCenter = rect.top + rect.height / 2;
-
-        const viewHeight = window.innerHeight;
-        const topThird = viewHeight / 3;
-        const bottomThird = (viewHeight * 2) / 3;
-
-        if (sectionCenter > topThird && sectionCenter < bottomThird) {
-          if (!cardsAnimationDone) {
-            runAnimation();
-            cardsAnimationDone = true;
-          }
-        }
-      }
-
-      window.addEventListener("scroll", checkSection2);
-    </script>
+    });
+  </script>
   </body>
 </html>
