@@ -90,7 +90,7 @@ filter: blur(50px);
     }
 
     .sphere-glow.right {
-      top: 300px;
+      top: 100px;
       right: -150px;
     }
 
@@ -361,13 +361,7 @@ filter: blur(50px);
   border-radius: 50%;
   margin-right: 3%; 
 }
-      .user-text {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 5%;
-      }
+ 
 
       .user-name {
         font-weight: bold;
@@ -462,11 +456,16 @@ filter: blur(50px);
         border-radius: 50%;
       }
 
-      .user-text {
-        display: flex;
-        flex-direction: column;
-        font-size: 0.8vw;
-      }
+  .user-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+  font-size: 1rem; /* FIXED */
+  width: 5rem;
+}
+
 
 
       .user-status {
@@ -706,9 +705,10 @@ filter: blur(50px);
     <!--======================================= Header  =========================================-->
 
 <header class="bg-white mt-6 z-50">
-  <div class="max-w-screen-xl mx-auto px-6 md:px-12 flex items-center justify-between py-4">
+  <div class="w-full max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-10 flex items-center justify-between py-4">
+ 
     <!-- Logo (shifted slightly left) -->
-    <div class="flex-shrink-0 -ml-20 md:-ml-48">
+    <div class="flex-shrink-0 pr-8">
       <img
         src="assets/images/logo/DarkLogo.png"
         alt="Logo"
@@ -717,8 +717,8 @@ filter: blur(50px);
     </div>
 
     <!-- Nav -->
-    <nav class="hidden xl:flex flex-1 justify-center max-w-[800px] mr-30">
-      <ul class="flex gap-20 text-lg">
+    <nav class="hidden xl:flex flex-1 justify-center px-4"> 
+  <ul class="flex gap-6 md:gap-10 lg:gap-14 xl:gap-20 text-base">
         <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Product</a></li>
         <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Industry</a></li>
         <li><a href="#" class="text-black font-semibold hover:text-gray-800 transition-colors">Resources</a></li>
@@ -728,7 +728,7 @@ filter: blur(50px);
     </nav>
 
     <!-- Button (shifted slightly right) -->
-   <div class="hidden xl:block flex-shrink-0 -mr-20 md:-mr-48">
+   <div class="hidden xl:block flex-shrink-0 pl-8">
 
       <button
         class="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-900 whitespace-nowrap transition-colors"
@@ -749,36 +749,6 @@ filter: blur(50px);
   </div>
 </header>
 
-
-   <!-- ChatBot Animation -->
-  
-    <div class="bot">
-      <div class="head-container">
-        <div class="head">
-          <div class="ellipse face">
-            <div class="left eye"></div>
-            <div class="right eye"></div>
-          </div>
-        </div>
-      </div>
-      <div class="body-container">
-        <div class="scanner"></div>
-        <div class="left arm"></div>
-        <div class="body">
-          <div class="panel">
-            <div class="dot dot-1"></div>
-            <div class="dot dot-2"></div>
-            <div class="dot dot-3"></div>
-            <div class="bigdot"></div>
-          </div>
-        </div>
-        <div class="right-container">
-          <div class="right arm"></div>
-        </div>
-      </div>
-      <div class="shadow"></div>
-    </div>
-
     <!--======================================= SECTION 1 =======================================-->
 
     <section
@@ -788,10 +758,10 @@ filter: blur(50px);
       <!-- Hero Section)-->
       <div class="h-36 mt-24">
        <div class="sphere-glow left glow-wrapper"></div> 
-        <div class="sphere-glow right"></div>
+        <div class="sphere-glow right"></div> 
 
         <h1
-          class="text-4xl md:text-6xl font-extrabold leading-tight text-black text-center tracking-tight"
+          class="text-4xl md:text-5xl font-extrabold leading-tight text-center tracking-tight"
         >
           Your AI <span class="text-[#16C542]">agent</span> for all<br />
           &nbsp; your digital channels
@@ -812,7 +782,7 @@ filter: blur(50px);
         >
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
             >
               <!-- Side Buttons-->
               <div
@@ -1180,7 +1150,7 @@ filter: blur(50px);
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
@@ -1548,7 +1518,7 @@ filter: blur(50px);
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
@@ -1932,7 +1902,7 @@ filter: blur(50px);
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
@@ -2301,7 +2271,7 @@ filter: blur(50px);
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[6px] relative shadow-2xl"
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
             >
               <!-- Side Buttons -->
               <div
@@ -2669,11 +2639,11 @@ filter: blur(50px);
 
 <section
   id="cardsSection"
-  class="relative w-full flex flex-col items-center pt-0 pb-6 sm:pb-12 md:pb-40 bg-gradient-to-b from-green-200 to-green-300 mt-[-10vh] z-20"
+  class="relative w-full flex flex-col items-center pt-0 pb-6 sm:pb-12 md:pb-40 bg-gradient-to-b from-green-50 via-green-200 to-green-300 mt-[-10vh] z-20"
 >
-      <div class="h-36 flex justify-center mt-3">
+      <div class="h-32 flex justify-center mt-3 mr-10">
         <svg
-          class="h-36 max-w-4xl block ml-40"
+          class="h-28 max-w-4xl block ml-40"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 100 500 90"
           preserveAspectRatio="xMidYMin slice"
@@ -2687,1481 +2657,65 @@ filter: blur(50px);
               />
             </linearGradient>
           </defs>
-          <path
-            d="M49.6 100.3 C39.2 160.6 152.3 142.4 140.3 185.2"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
-          <path
-            d="M120 98.8 C107.2 140.9 180.4 141.7 173.3 185.3"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
+          <path d="M29.6 100.3 C19.2 160.6 132.3 142.4 120.3 185.2" fill="none" stroke="url(#grad1)" stroke-width="2" />
+
+          <path d="M105 98.8 C92.2 140.9 165.4 141.7 158.3 185.3" fill="none" stroke="url(#grad1)" stroke-width="2" />
+
+
           <path
             d="M197.2 97 L197.4 185.7"
             fill="none"
             stroke="url(#grad1)"
             stroke-width="2"
           />
-          <path
-            d="M345.4 100.3 C355.8 160.6 242.7 142.4 254.7 185.2"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
-          <path
-            d="M275 98.8 C287.8 140.9 214.6 141.7 221.7 185.5"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
+          
+          <path d="M293 98.8 C305.8 140.9 232.6 141.7 239.7 185.5" fill="none" stroke="url(#grad1)" stroke-width="2" />
+
+          
+          <path d="M365.4 100.3 C375.8 160.6 262.7 142.4 274.7 185.2" fill="none" stroke="url(#grad1)" stroke-width="2" />
+
         </svg>
       </div>
 
-      <div class="mt-3 px-4 mb-3">
+      <div class="-mt-6 px-4 mb-3">
         <h1
-          class="text-3xl text-center font-normal text-[#16C542] tracking-normal"
+          class="text-xl text-center font-normal text-[#16C542] tracking-normal"
         >
           One Powerful System
         </h1>
         <h1
-          class="md:text-6xl font-extrabold leading-tight text-center tracking-tight text-[#16C542]"
+          class="text-3xl md:text-4xl font-extrabold leading-tight text-center tracking-tight text-[#16C542] mt-3"
         >
           Leading Qualification
         </h1>
-        <h1 class="mt-3 text-3xl font-normal">
+        <h1 class="mt-3 text-2xl text-center font-normal">
           Are you facing challenges to timely qualify your leads?
         </h1>
       </div>
 
-      <!--=============== PC component ===============-->
+      <!--=============== stack animation ===============-->
 
-<div class="relative w-full max-w-[1280px] h-[400px] mx-auto px-4 mt-48 sm:mt-48 xs:mt-10">
+<div class="relative w-[600px] h-[800px]">
+    <!-- Screen 1 -->
+    <div class="absolute top-[30px] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gray-800 text-white border border-gray-700 shadow-xl rounded-xl flex items-center justify-center">
+      <h2 class="text-3xl font-bold">Screen 1</h2>
+    </div>
 
-    <div class="shuffle2 absolute inset-0 z-0 flex items-center justify-center rounded-xl">
-    <div class="container shadow-2xl">
-      <div class="left-menu">
-        <nav class="flex flex-col items-center space-y-6">
-          <div class="style-13">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-14"
-                  >
-                    <path
-                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,152H56a8,8,0,0,0,0-16H40V120H56a8,8,0,0,0,0-16H40V88H56a8,8,0,0,0,0-16H40V56H80V200H40Zm176,48H96V56H216V200Z"
-                      class="style-15"
-                    ></path>
-                  </svg>
-                </div>
+    <!-- Screen 2 (shifted right by 10px) -->
+    <div class="absolute top-[60px] left-1/2 -translate-x-1/2 translate-x-[-420px] w-[900px] h-[550px] bg-white text-gray-800 border border-gray-300 shadow-xl rounded-xl flex items-center justify-center">
+      <h2 class="text-3xl font-bold">Screen 2</h2>
+    </div>
 
-                <div class="style-20">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-21"
-                  >
-                    <path
-                      d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"
-                      class="style-22"
-                    ></path>
-                  </svg>
-                </div>
+    <!-- Screen 3 (shifted right by 20px) -->
+  <div class="absolute top-[90px] left-1/2 -translate-x-1/2 translate-x-[-390px] w-[900px] h-[550px] bg-green-100 text-white border border-gray-200 shadow-xl rounded-xl flex items-center justify-center">
+      <h2 class="text-3xl font-bold">Screen 3</h2>
+    </div>
 
-                <div class="style-27">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-28"
-                  >
-                    <path
-                      d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"
-                      class="style-29"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-34">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-35"
-                  >
-                    <path
-                      d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"
-                      class="style-36"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-41">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-42"
-                  >
-                    <path
-                      d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-24,16v24H116V152ZM80,164a12,12,0,0,1,12-12h8v24H92A12,12,0,0,1,80,164Zm84,12h-8V152h8a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z"
-                      class="style-43"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-48">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-49"
-                  >
-                    <path
-                      d="M120,16V8a8,8,0,0,1,16,0v8a8,8,0,0,1-16,0Zm80,32a8,8,0,0,0,5.66-2.34l8-8a8,8,0,0,0-11.32-11.32l-8,8A8,8,0,0,0,200,48ZM50.34,45.66A8,8,0,0,0,61.66,34.34l-8-8A8,8,0,0,0,42.34,37.66Zm87,26.45a8,8,0,1,0-2.64,15.78C153.67,91.08,168,108.32,168,128a8,8,0,0,0,16,0C184,100.6,163.93,76.57,137.32,72.11ZM232,176v24a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V176a16,16,0,0,1,16-16V128a88,88,0,0,1,88.67-88c48.15.36,87.33,40.29,87.33,89v31A16,16,0,0,1,232,176ZM56,160H200V129c0-40-32.05-72.71-71.45-73H128a72,72,0,0,0-72,72Zm160,40V176H40v24H216Z"
-                      class="style-50"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-55">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-56"
-                  >
-                    <path
-                      d="M64.34,196.07l-9.45,16a8,8,0,1,1-13.78-8.14l9.46-16a8,8,0,1,1,13.77,8.14ZM232,152H184.2l-30.73-52a8,8,0,1,0-13.77,8.14l61.41,103.93a8,8,0,0,0,13.78-8.14L193.66,168H232a8,8,0,0,0,0-16Zm-89.53,0H90.38L158.89,36.07a8,8,0,0,0-13.78-8.14L128,56.89l-17.11-29a8,8,0,1,0-13.78,8.14l21.6,36.55L71.8,152H24a8,8,0,0,0,0,16H142.47a8,8,0,1,0,0-16Z"
-                      class="style-57"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-62">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-63"
-                  >
-                    <path
-                      d="M248,124a56.11,56.11,0,0,0-32-50.61V72a48,48,0,0,0-88-26.49A48,48,0,0,0,40,72v1.39a56,56,0,0,0,0,101.2V176a48,48,0,0,0,88,26.49A48,48,0,0,0,216,176v-1.41A56.09,56.09,0,0,0,248,124ZM88,208a32,32,0,0,1-31.81-28.56A55.87,55.87,0,0,0,64,180h8a8,8,0,0,0,0-16H64A40,40,0,0,1,50.67,86.27,8,8,0,0,0,56,78.73V72a32,32,0,0,1,64,0v68.26A47.8,47.8,0,0,0,88,128a8,8,0,0,0,0,16,32,32,0,0,1,0,64Zm104-44h-8a8,8,0,0,0,0,16h8a55.87,55.87,0,0,0,7.81-.56A32,32,0,1,1,168,144a8,8,0,0,0,0-16,47.8,47.8,0,0,0-32,12.26V72a32,32,0,0,1,64,0v6.73a8,8,0,0,0,5.33,7.54A40,40,0,0,1,192,164Zm16-52a8,8,0,0,1-8,8h-4a36,36,0,0,1-36-36V80a8,8,0,0,1,16,0v4a20,20,0,0,0,20,20h4A8,8,0,0,1,208,112ZM60,120H56a8,8,0,0,1,0-16h4A20,20,0,0,0,80,84V80a8,8,0,0,1,16,0v4A36,36,0,0,1,60,120Z"
-                      class="style-64"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-69">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-70"
-                  >
-                    <path
-                      d="M144,157.68a68,68,0,1,0-71.9,0c-20.65,6.76-39.23,19.39-54.17,37.17a8,8,0,1,0,12.24,10.3C50.25,181.19,77.91,168,108,168s57.75,13.19,77.87,37.15a8,8,0,0,0,12.26-10.3C183.18,177.07,164.6,164.44,144,157.68ZM56,100a52,52,0,1,1,52,52A52.06,52.06,0,0,1,56,100Zm196.25,43.07-4.66-2.69a23.6,23.6,0,0,0,0-8.76l4.66-2.69a8,8,0,1,0-8-13.86l-4.67,2.7a23.92,23.92,0,0,0-7.58-4.39V108a8,8,0,0,0-16,0v5.38a23.92,23.92,0,0,0-7.58,4.39l-4.67-2.7a8,8,0,1,0-8,13.86l4.66,2.69a23.6,23.6,0,0,0,0,8.76l-4.66,2.69a8,8,0,0,0,8,13.86l4.67-2.7a23.92,23.92,0,0,0,7.58,4.39V164a8,8,0,0,0,16,0v-5.38a23.92,23.92,0,0,0,7.58-4.39l4.67,2.7a7.92,7.92,0,0,0,4,1.07,8,8,0,0,0,4-14.93ZM216,136a8,8,0,1,1,8,8A8,8,0,0,1,216,136Z"
-                      class="style-71"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-76">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-77"
-                  >
-                    <path
-                      d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
-                      class="style-78"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-83">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-84"
-                  >
-                    <path
-                      d="M27.2,126.4a8,8,0,0,0,11.2-1.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,93.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,115.2,8,8,0,0,0,27.2,126.4ZM176,40a24,24,0,1,1-24,24A24,24,0,0,1,176,40ZM80,40A24,24,0,1,1,56,64,24,24,0,0,1,80,40ZM203,197.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,219.2a8,8,0,1,0,12.8,9.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,197.51ZM80,144a24,24,0,1,1-24,24A24,24,0,0,1,80,144Zm96,0a24,24,0,1,1-24,24A24,24,0,0,1,176,144Z"
-                      class="style-85"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-90">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-91"
-                  >
-                    <path
-                      d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"
-                      class="style-92"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-97">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-98"
-                  >
-                    <path
-                      d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"
-                      class="style-99"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-102">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true"
-                    role="img"
-                    font-size="1.25rem"
-                    class="style-103"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M10.707 17.707L16.414 12l-5.707-5.707l-1.414 1.414L13.586 12l-4.293 4.293z"
-                      class="style-104"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-110">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-111"
-                  >
-                    <path
-                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
-                      class="style-112"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-117">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-118"
-                  >
-                    <path
-                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
-                      class="style-119"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-124">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-125"
-                  >
-                    <path
-                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
-                      class="style-126"
-                    ></path>
-                  </svg>
-                </div>
-              </nav>
-            </div>
-
-            <div class="top-menu">
-              <div style="margin-left: 1%">Inbox</div>
-              <div style="display: flex; gap: 2vw">
-                <!-- Inbox icon -->
-                <div class="style-124">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    class="style-125"
-                  >
-                    <path
-                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,16V152h-28.7A15.86,15.86,0,0,0,168,156.69L148.69,176H107.31L88,156.69A15.86,15.86,0,0,0,76.69,152H48V48Zm0,160H48V168H76.69L96,187.31A15.86,15.86,0,0,0,107.31,192h41.38A15.86,15.86,0,0,0,160,187.31L179.31,168H208v40Z"
-                      class="style-126"
-                    />
-                  </svg>
-                </div>
-
-                <!-- History icon -->
-
-                <div class="style-124">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    class="style-125"
-                  >
-                    <path
-                      d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49c7.15-8.42,14.27-16.35,22.39-24.57a80,80,0,1,1,1.66,114.75,8,8,0,1,0-11,11.64A96,96,0,1,0,128,32Z"
-                    ></path>
-                  </svg>
-                </div>
-
-                <!-- Circle -->
-
-                <div class="icon-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-circle-slash"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="9" y1="15" x2="15" y2="9"></line>
-                  </svg>
-                </div>
-
-                <!-- graph icon -->
-
-                <div class="icon-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                  >
-                    <rect
-                      x="3"
-                      y="14"
-                      width="4"
-                      height="6"
-                      fill="white"
-                      stroke="black"
-                      stroke-width="1"
-                    />
-                    <rect
-                      x="10"
-                      y="8"
-                      width="4"
-                      height="12"
-                      fill="white"
-                      stroke="black"
-                      stroke-width="1"
-                    />
-                    <rect
-                      x="17"
-                      y="2"
-                      width="4"
-                      height="18"
-                      fill="white"
-                      stroke="black"
-                      stroke-width="1"
-                    />
-                  </svg>
-                </div>
-
-                <!-- Profile icon -->
-
-                <!-- Info icon -->
-
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="16" x2="12" y2="12" />
-                    <circle cx="12" cy="8" r="1" />
-                  </svg>
-                </div>
-
-                <!-- settings icon -->
-
-                <div class="icon-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-settings"
-                  >
-                    <path
-                      d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
-                    ></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                </div>
-              </div>
-              <div style="margin-right: 1%">Search 🔍</div>
-            </div>
-
-            <div class="message-list">
-              <div class="user-item">
-                <img src="./assets/images/64.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Kevin Smith</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-              <img src="./assets/images/13.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Nikhil Gupta</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <img src="./assets/images/14.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Nisha Hose</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <img src="./assets/images/93.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Elton Jhon</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <img src="./assets/images/86.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Charlotte</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <img src="./assets/images/72.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Beard Brown</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              
-
-              <div class="user-item">
-                <img src="./assets/images/77.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Susanta Manna</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">Munni Seltos</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">Jung Kook</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">John Doe</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">John Doe</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">John Doe</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="chat-area">
-              <div class="chat-content">
-                <!-- Top bar -->
-                <div class="chat-top-bar">
-                  <div class="chat-left">
-                    <img src="./assets/images/16.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                    <div class="user-text">
-                      <div class="user-name">John Doe</div>
-                      <div class="user-status">online</div>
-                    </div>
-                  </div>
-                  <div class="chat-right">
-                    <svg class="icon" viewBox="0 0 24 24">
-                      <path
-                        fill="black"
-                        d="M12 17.27L18.18 21l-1.63-7.03L22 
-        9.24l-7.19-.61L12 2 9.19 8.63 
-        2 9.24l5.45 4.73L5.82 21z"
-                      />
-                    </svg>
-                    <svg class="icon" viewBox="0 0 24 24">
-                      <path
-                        fill="black"
-                        d="M6.62 10.79a15.05 15.05 0 0 
-        0 6.59 6.59l2.2-2.2c.27-.27.67-.36 
-        1.02-.24 1.12.37 2.33.57 3.57.57.55 
-        0 1 .45 1 1V20c0 .55-.45 1-1 
-        1C10.3 21 3 13.7 3 5c0-.55.45-1 
-        1-1h3.5c.55 0 1 .45 1 1 0 
-        1.24.2 2.45.57 3.57.11.35.03.74-.25 
-        1.02l-2.2 2.2z"
-                      />
-                    </svg>
-                    <svg class="icon" viewBox="0 0 24 24">
-                      <path
-                        fill="black"
-                        d="M17 10.5V6c0-1.1-.9-2-2-2H5C3.9 
-        4 3 4.9 3 6v12c0 1.1.9 2 
-        2 2h10c1.1 0 2-.9 2-2v-4.5l4 
-        4v-11l-4 4z"
-                      />
-                    </svg>
-                    <button class="close-btn">Close</button>
-                  </div>
-                </div>
-
-                <!-- Divider with date -->
-                <div class="chat-divider">
-                  <span>Mon, 1 Jul 2025</span>
-                </div>
-
-                <!-- Messages -->
-                <div class="chat-message right green">Contact Sales</div>
-                <div class="chat-message right green">
-                  Interested in trying Wisemelon
-                </div>
-                <div class="chat-message left grey">Contact Sales</div>
-                <div class="chat-message left grey">
-                  Interested in trying Wisemelon
-                  <i class="fa-solid fa-user bottom-profile-pic"></i>
-                </div>
-                <div class="chat-message right green">Contact Sales</div>
-                <div class="chat-message right green">
-                  Interested in trying Wisemelon
-                </div>
-              </div>
-            </div>
-
-            <div class="side-panel">
-
-              
-  <div class="user-profile">
-    <h2 class="title">John Lark’s Timeline</h2>
-    <div class="user-name">John Lark</div>
-    <div class="user-email">visitor_v5t...@nonemail.com</div>
-    <a href="#" class="view-history">View Demographic History ➜</a>
-  </div>
-
-  <div class="note-section">
-    <h3 class="note-title">Add Notes To Timeline</h3>
-    <textarea class="note-box" placeholder="Write Note Here..."></textarea>
-    <div class="note-actions">
-      <div class="icons">
-        <button>B</button>
-        <button>I</button>
-        <button></button>
-        <button>📎</button>
-      </div>
-      <button class="add-btn">+ Add to Timeline</button>
+    <!-- Screen 4 (shifted right by 30px) -->
+    <div class="absolute top-[120px] left-1/2 -translate-x-1/2 translate-x-[-360px] w-[900px] h-[550px] bg-white text-gray-800 border border-gray-300 shadow-xl rounded-xl flex items-center justify-center">
+      <h2 class="text-3xl font-bold">Screen 4</h2>
     </div>
   </div>
-
-  <div class="visitor-logs">
-    <h3 class="logs-title">Visitors Logs</h3>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
-        <div class="log-desc">Conversation started for user for platform widget with bot - v500 Systems</div>
-      </div>
-    </div>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
-        <div class="log-desc">Dushant Deshmukh<br>US Sales<br>Conversation started...</div>
-      </div>
-    </div>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="">Agent Action</span></div>
-        <div class="log-desc">Conversation started...</div>
-      </div>
-    </div>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="tag green">User Action</span></div>
-        <div class="log-desc">Conversation started...</div>
-      </div>
-    </div>
-  </div>
-
-
-
-            </div>
-
-             <div class="right-panel">
-             </div>
-          
-            </div>
-        </div>
-
-<div class="shuffle1 absolute inset-0 z-10 flex items-center justify-center rounded-xl">
-  <div class="container">
-    <div class="left-menu">
-              <nav class="flex flex-col items-center space-y-6">
-                <div class="style-13">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-14"
-                  >
-                    <path
-                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,152H56a8,8,0,0,0,0-16H40V120H56a8,8,0,0,0,0-16H40V88H56a8,8,0,0,0,0-16H40V56H80V200H40Zm176,48H96V56H216V200Z"
-                      class="style-15"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-20">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-21"
-                  >
-                    <path
-                      d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"
-                      class="style-22"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-27">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-28"
-                  >
-                    <path
-                      d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"
-                      class="style-29"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-34">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-35"
-                  >
-                    <path
-                      d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"
-                      class="style-36"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-41">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-42"
-                  >
-                    <path
-                      d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-24,16v24H116V152ZM80,164a12,12,0,0,1,12-12h8v24H92A12,12,0,0,1,80,164Zm84,12h-8V152h8a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z"
-                      class="style-43"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-48">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-49"
-                  >
-                    <path
-                      d="M120,16V8a8,8,0,0,1,16,0v8a8,8,0,0,1-16,0Zm80,32a8,8,0,0,0,5.66-2.34l8-8a8,8,0,0,0-11.32-11.32l-8,8A8,8,0,0,0,200,48ZM50.34,45.66A8,8,0,0,0,61.66,34.34l-8-8A8,8,0,0,0,42.34,37.66Zm87,26.45a8,8,0,1,0-2.64,15.78C153.67,91.08,168,108.32,168,128a8,8,0,0,0,16,0C184,100.6,163.93,76.57,137.32,72.11ZM232,176v24a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V176a16,16,0,0,1,16-16V128a88,88,0,0,1,88.67-88c48.15.36,87.33,40.29,87.33,89v31A16,16,0,0,1,232,176ZM56,160H200V129c0-40-32.05-72.71-71.45-73H128a72,72,0,0,0-72,72Zm160,40V176H40v24H216Z"
-                      class="style-50"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-55">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-56"
-                  >
-                    <path
-                      d="M64.34,196.07l-9.45,16a8,8,0,1,1-13.78-8.14l9.46-16a8,8,0,1,1,13.77,8.14ZM232,152H184.2l-30.73-52a8,8,0,1,0-13.77,8.14l61.41,103.93a8,8,0,0,0,13.78-8.14L193.66,168H232a8,8,0,0,0,0-16Zm-89.53,0H90.38L158.89,36.07a8,8,0,0,0-13.78-8.14L128,56.89l-17.11-29a8,8,0,1,0-13.78,8.14l21.6,36.55L71.8,152H24a8,8,0,0,0,0,16H142.47a8,8,0,1,0,0-16Z"
-                      class="style-57"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-62">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-63"
-                  >
-                    <path
-                      d="M248,124a56.11,56.11,0,0,0-32-50.61V72a48,48,0,0,0-88-26.49A48,48,0,0,0,40,72v1.39a56,56,0,0,0,0,101.2V176a48,48,0,0,0,88,26.49A48,48,0,0,0,216,176v-1.41A56.09,56.09,0,0,0,248,124ZM88,208a32,32,0,0,1-31.81-28.56A55.87,55.87,0,0,0,64,180h8a8,8,0,0,0,0-16H64A40,40,0,0,1,50.67,86.27,8,8,0,0,0,56,78.73V72a32,32,0,0,1,64,0v68.26A47.8,47.8,0,0,0,88,128a8,8,0,0,0,0,16,32,32,0,0,1,0,64Zm104-44h-8a8,8,0,0,0,0,16h8a55.87,55.87,0,0,0,7.81-.56A32,32,0,1,1,168,144a8,8,0,0,0,0-16,47.8,47.8,0,0,0-32,12.26V72a32,32,0,0,1,64,0v6.73a8,8,0,0,0,5.33,7.54A40,40,0,0,1,192,164Zm16-52a8,8,0,0,1-8,8h-4a36,36,0,0,1-36-36V80a8,8,0,0,1,16,0v4a20,20,0,0,0,20,20h4A8,8,0,0,1,208,112ZM60,120H56a8,8,0,0,1,0-16h4A20,20,0,0,0,80,84V80a8,8,0,0,1,16,0v4A36,36,0,0,1,60,120Z"
-                      class="style-64"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-69">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-70"
-                  >
-                    <path
-                      d="M144,157.68a68,68,0,1,0-71.9,0c-20.65,6.76-39.23,19.39-54.17,37.17a8,8,0,1,0,12.24,10.3C50.25,181.19,77.91,168,108,168s57.75,13.19,77.87,37.15a8,8,0,0,0,12.26-10.3C183.18,177.07,164.6,164.44,144,157.68ZM56,100a52,52,0,1,1,52,52A52.06,52.06,0,0,1,56,100Zm196.25,43.07-4.66-2.69a23.6,23.6,0,0,0,0-8.76l4.66-2.69a8,8,0,1,0-8-13.86l-4.67,2.7a23.92,23.92,0,0,0-7.58-4.39V108a8,8,0,0,0-16,0v5.38a23.92,23.92,0,0,0-7.58,4.39l-4.67-2.7a8,8,0,1,0-8,13.86l4.66,2.69a23.6,23.6,0,0,0,0,8.76l-4.66,2.69a8,8,0,0,0,8,13.86l4.67-2.7a23.92,23.92,0,0,0,7.58,4.39V164a8,8,0,0,0,16,0v-5.38a23.92,23.92,0,0,0,7.58-4.39l4.67,2.7a7.92,7.92,0,0,0,4,1.07,8,8,0,0,0,4-14.93ZM216,136a8,8,0,1,1,8,8A8,8,0,0,1,216,136Z"
-                      class="style-71"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-76">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-77"
-                  >
-                    <path
-                      d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
-                      class="style-78"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-83">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-84"
-                  >
-                    <path
-                      d="M27.2,126.4a8,8,0,0,0,11.2-1.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,93.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,115.2,8,8,0,0,0,27.2,126.4ZM176,40a24,24,0,1,1-24,24A24,24,0,0,1,176,40ZM80,40A24,24,0,1,1,56,64,24,24,0,0,1,80,40ZM203,197.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,219.2a8,8,0,1,0,12.8,9.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,197.51ZM80,144a24,24,0,1,1-24,24A24,24,0,0,1,80,144Zm96,0a24,24,0,1,1-24,24A24,24,0,0,1,176,144Z"
-                      class="style-85"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-90">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-91"
-                  >
-                    <path
-                      d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"
-                      class="style-92"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-97">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-98"
-                  >
-                    <path
-                      d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"
-                      class="style-99"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-102">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true"
-                    role="img"
-                    font-size="1.25rem"
-                    class="style-103"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M10.707 17.707L16.414 12l-5.707-5.707l-1.414 1.414L13.586 12l-4.293 4.293z"
-                      class="style-104"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-110">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-111"
-                  >
-                    <path
-                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
-                      class="style-112"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-117">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-118"
-                  >
-                    <path
-                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
-                      class="style-119"
-                    ></path>
-                  </svg>
-                </div>
-
-                <div class="style-124">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    class="style-125"
-                  >
-                    <path
-                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
-                      class="style-126"
-                    ></path>
-                  </svg>
-                </div>
-              </nav>
-            </div>
-
-            <div class="top-menu">
-              <div style="margin-left: 1%">Inbox</div>
-              <div style="display: flex; gap: 2vw">
-                <!-- Inbox icon -->
-                <div class="style-124">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    class="style-125"
-                  >
-                    <path
-                      d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,16V152h-28.7A15.86,15.86,0,0,0,168,156.69L148.69,176H107.31L88,156.69A15.86,15.86,0,0,0,76.69,152H48V48Zm0,160H48V168H76.69L96,187.31A15.86,15.86,0,0,0,107.31,192h41.38A15.86,15.86,0,0,0,160,187.31L179.31,168H208v40Z"
-                      class="style-126"
-                    />
-                  </svg>
-                </div>
-
-                <!-- History icon -->
-
-                <div class="style-124">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    class="style-125"
-                  >
-                    <path
-                      d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49c7.15-8.42,14.27-16.35,22.39-24.57a80,80,0,1,1,1.66,114.75,8,8,0,1,0-11,11.64A96,96,0,1,0,128,32Z"
-                    ></path>
-                  </svg>
-                </div>
-
-                <!-- Circle -->
-
-                <div class="icon-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-circle-slash"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="9" y1="15" x2="15" y2="9"></line>
-                  </svg>
-                </div>
-
-                <!-- graph icon -->
-
-                <div class="icon-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                  >
-                    <rect
-                      x="3"
-                      y="14"
-                      width="4"
-                      height="6"
-                      fill="white"
-                      stroke="black"
-                      stroke-width="1"
-                    />
-                    <rect
-                      x="10"
-                      y="8"
-                      width="4"
-                      height="12"
-                      fill="white"
-                      stroke="black"
-                      stroke-width="1"
-                    />
-                    <rect
-                      x="17"
-                      y="2"
-                      width="4"
-                      height="18"
-                      fill="white"
-                      stroke="black"
-                      stroke-width="1"
-                    />
-                  </svg>
-                </div>
-
-                <!-- Profile icon -->
-
-                <!-- Info icon -->
-
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="16" x2="12" y2="12" />
-                    <circle cx="12" cy="8" r="1" />
-                  </svg>
-                </div>
-
-                <!-- settings icon -->
-
-                <div class="icon-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-settings"
-                  >
-                    <path
-                      d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
-                    ></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                </div>
-              </div>
-              <div style="margin-right: 1%">Search 🔍</div>
-            </div>
-
-            <div class="message-list">
-              <div class="user-item">
-                <img src="./assets/images/64.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Kevin Smith</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                 <img src="./assets/images/5.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Nikhil Gupta</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <img src="./assets/images/14.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Nisha Hose</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <img src="./assets/images/93.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Elton Jhon</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <img src="./assets/images/72.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                <div class="user-text">
-                  <div class="user-name">Beard Brown</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">Ethun Hunt</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">Nisha Hose</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">Munni Seltos</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-facebook"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">Susanta Manna</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">Nikhil Gupta</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">John Doe</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-
-              <div class="user-item">
-                <i class="fa-solid fa-user profile-pic"></i>
-                <div class="user-text">
-                  <div class="user-name">John Doe</div>
-                  <div class="last-message">Hey there! How are you?</div>
-                </div>
-                <div class="user-meta">
-                  <div class="date">12:45 PM</div>
-                  <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="chat-area">
-              <div class="chat-content">
-                <!-- Top bar -->
-                <div class="chat-top-bar">
-                  <div class="chat-left">
-                    <img src="./assets/images/16.png" alt="Profile Picture" class="w-10 h-10 rounded-full object-cover profile-pic" />
-                    <div class="user-text">
-                      <div class="user-name">John Doe</div>
-                      <div class="user-status">online</div>
-                    </div>
-                  </div>
-                  <div class="chat-right">
-                    <svg class="icon" viewBox="0 0 24 24">
-                      <path
-                        fill="black"
-                        d="M12 17.27L18.18 21l-1.63-7.03L22 
-        9.24l-7.19-.61L12 2 9.19 8.63 
-        2 9.24l5.45 4.73L5.82 21z"
-                      />
-                    </svg>
-                    <svg class="icon" viewBox="0 0 24 24">
-                      <path
-                        fill="black"
-                        d="M6.62 10.79a15.05 15.05 0 0 
-        0 6.59 6.59l2.2-2.2c.27-.27.67-.36 
-        1.02-.24 1.12.37 2.33.57 3.57.57.55 
-        0 1 .45 1 1V20c0 .55-.45 1-1 
-        1C10.3 21 3 13.7 3 5c0-.55.45-1 
-        1-1h3.5c.55 0 1 .45 1 1 0 
-        1.24.2 2.45.57 3.57.11.35.03.74-.25 
-        1.02l-2.2 2.2z"
-                      />
-                    </svg>
-                    <svg class="icon" viewBox="0 0 24 24">
-                      <path
-                        fill="black"
-                        d="M17 10.5V6c0-1.1-.9-2-2-2H5C3.9 
-        4 3 4.9 3 6v12c0 1.1.9 2 
-        2 2h10c1.1 0 2-.9 2-2v-4.5l4 
-        4v-11l-4 4z"
-                      />
-                    </svg>
-                    <button class="close-btn">Close</button>
-                  </div>
-                </div>
-
-                <!-- Divider with date -->
-                <div class="chat-divider">
-                  <span>Mon, 1 Jul 2025</span>
-                </div>
-
-                <!-- Messages -->
-                <div class="chat-message right green">Contact Sales</div>
-                <div class="chat-message right green">
-                  Interested in trying Wisemelon
-                </div>
-                <div class="chat-message left grey">Contact Sales</div>
-                <div class="chat-message left grey">
-                  Interested in trying Wisemelon
-                  <i class="fa-solid fa-user bottom-profile-pic"></i>
-                </div>
-                <div class="chat-message right green">Contact Sales</div>
-                <div class="chat-message right green">
-                  Interested in trying Wisemelon
-                </div>
-              </div>
-            </div>
-
-            <div class="side-panel">
-
-              
-  <div class="user-profile">
-    <h2 class="title">John Lark’s Timeline</h2>
-    <div class="user-name">John Lark</div>
-    <div class="user-email">visitor_v5t...@nonemail.com</div>
-    <a href="#" class="view-history">View Demographic History ➜</a>
-  </div>
-
-  <div class="note-section">
-    <h3 class="note-title">Add Notes To Timeline</h3>
-    <textarea class="note-box" placeholder="Write Note Here..."></textarea>
-    <div class="note-actions">
-      <div class="icons">
-        <button>B</button>
-        <button>I</button>
-        <button>😊</button>
-        <button>📎</button>
-      </div>
-      <button class="add-btn">+ Add to Timeline</button>
-    </div>
-  </div>
-
-  <div class="visitor-logs">
-    <h3 class="logs-title">Visitors Logs</h3>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
-        <div class="log-desc">Conversation started for user for platform widget with bot - v500 Systems</div>
-      </div>
-    </div>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="">System Action</span></div>
-        <div class="log-desc">Dushant Deshmukh<br>US Sales<br>Conversation started...</div>
-      </div>
-    </div>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="">Agent Action</span></div>
-        <div class="log-desc">Conversation started...</div>
-      </div>
-    </div>
-
-    <div class="log-entry">
-      <div class="dot"></div>
-      <div class="log-content">
-        <div class="log-time">September 24 2024, 03:00 PM <span class="tag green">User Action</span></div>
-        <div class="log-desc">Conversation started...</div>
-      </div>
-    </div>
-  </div>
-
-
-
-            </div>
-
-            <div class="right-panel">
-            </div>
-          
-          </div>
-        </div>
-      </div>
-
-
 
 
     </section>
@@ -4180,7 +2734,7 @@ filter: blur(50px);
       </div>
 
       <div
-        class="max-w-7xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        class="max-w-7xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
       >
         <!-- Card 1 (wide) -->
         <div
@@ -4206,24 +2760,24 @@ filter: blur(50px);
               <img
                 src="assets/images/phonepart1.png"
                 alt=""
-                class="absolute top-[-1%] left-[38%] w-[16%] h-auto object-contain z-10"
+                class="absolute top-[-1%] left-[28%] w-[16%] h-auto object-contain z-10"
               />
               <img
                 src="assets/images/phonepart2.png"
                 alt=""
-                class="absolute top-[-1%] left-[86%] w-[14%] h-auto object-contain"
+                class="absolute top-[-1%] left-[76%] w-[14%] h-auto object-contain"
               />
 
               <img
                 src="assets/images/phonepart3.png"
                 alt=""
-                class="absolute top-[55%] left-[75%] max-w-[15%] object-contain"
+                class="absolute top-[55%] left-[65%] max-w-[15%] object-contain"
               />
 
               <!-- Inserted SVG -->
               <svg
                 viewBox="0 0 500 500"
-                class="absolute w-full h-full max-w-full max-h-full top-[22%] left-[68%] scale-[1.5]"
+                class="absolute w-full h-full max-w-full max-h-full top-[22%] left-[58%] scale-[1.5]"
                 preserveAspectRatio="xMinYMin meet"
               >
                 <defs>
@@ -4330,18 +2884,22 @@ filter: blur(50px);
           </div>
         </div>
         <!-- Card 2 (tall) -->
-        <div
-          class="bg-zinc-50 rounded-lg p-6 sm:row-span-2 flex flex-col justify-between"
-        >
-          <div>
-            <a href="#" class="text-sm font-medium text-black">Learn More →</a>
-            <h2 class="mt-2 text-2xl font-bold text-black">400+ Apps</h2>
-            <p class="mt-1 text-black">
-              WhatsApp flows allows you to capture information using easy to use
-              forms, product list and more.
-            </p>
-          </div>
-        </div>
+<div class="bg-zinc-50 rounded-lg p-6 sm:col-span-2 sm:row-span-2 flex flex-col justify-between">
+
+  <!-- Top section (optional link) -->
+  <div>
+    <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+  </div>
+
+  <!-- card right -->
+  <div class="mt-auto">
+    <h2 class="text-2xl font-bold text-black">400+ Apps</h2>
+    <p class="mt-1 text-black">
+      WhatsApp flows allows you to capture information using easy to use
+      forms, product list and more.
+    </p>
+  </div>
+</div>
 
         <!-- Card 3 -->
         <div class="bg-zinc-50 rounded-lg p-20 sm:col-span-2">
@@ -4355,9 +2913,9 @@ filter: blur(50px);
           </p>
         </div>
 
-        <!-- Card 4 -->
+       
 
-        <!-- Card 5 -->
+        <!-- Card 4 -->
         <div class="bg-zinc-50 rounded-lg p-6">
           <a href="#" class="text-sm font-medium text-black">Learn More →</a>
           <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
@@ -4366,6 +2924,8 @@ filter: blur(50px);
             forms, product list and more.
           </p>
         </div>
+
+         <!-- Card 5 -->
 
         <div class="bg-zinc-50 rounded-lg p-6">
           <a href="#" class="text-sm font-medium text-black">Learn More →</a>
@@ -4569,7 +3129,7 @@ filter: blur(50px);
 
     <!--======================================== SECTION 5 =======================================-->
 
-<section
+    <section
       class="bg-gradient-to-b from-zinc-50 to-zinc-100 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div class="max-w-7xl mx-auto p-6 space-y-40">
@@ -4709,7 +3269,6 @@ filter: blur(50px);
       </div>
     </section>
 
-    
     <!--======================================== SECTION 6 =======================================-->
 
     <section class="bg-white py-16 px-6 sm:px-12">
@@ -4749,10 +3308,10 @@ filter: blur(50px);
 
         <button
           type="submit"
-          class="bg-black text-white text-sm px-5 py-2 rounded-md flex items-center gap-2 sm:col-span-2 w-fit"
+          class="callback-btn bg-black text-white text-sm px-5 py-2 rounded-md flex items-center gap-2 sm:col-span-2 w-fit"
         >
          
-<svg
+<svg class="icon"
   xmlns="http://www.w3.org/2000/svg"
   class="h-5 w-5 text-white"
   viewBox="0 0 24 24"
@@ -4790,7 +3349,7 @@ filter: blur(50px);
 
 <!-- Right: Phone Image and Tags as One Block (Always Side-by-Side) -->
 <div class="flex justify-center lg:justify-start">
-  <div class="flex items-start gap-4 max-w-full">
+  <div class="flex items-start gap-1 max-w-full">
     <!-- Phone Image -->
     <img
       src="./assets/images/phone2.png"
@@ -4799,13 +3358,13 @@ filter: blur(50px);
     />
 
     <!-- Tags -->
-    <div class="space-y-12 mt-10">
-      <span class="bg-pink-300 text-black text-xs px-3 py-2 rounded-r-lg block">Rentals</span>
-      <span class="bg-rose-200 text-black text-xs px-3 py-2 rounded-r-lg block">Healthcare</span>
-      <span class="bg-indigo-300 text-black text-xs px-3 py-2 rounded-r-lg block">D2C</span>
-      <span class="bg-green-300 text-black text-xs px-3 py-2 rounded-r-lg block">Finance</span>
-      <span class="bg-yellow-300 text-black text-xs px-3 py-2 rounded-r-lg block">Education</span>
-      <span class="bg-sky-300 text-black text-xs px-3 py-2 rounded-r-lg block">Home Services</span>
+    <div class="space-y-12 mt-10 -ml-1">
+      <button class="bg-pink-300 text-black text-xs px-3 py-2 space-x-0 rounded-r-lg block">Rentals</button>
+      <button class="bg-rose-200 text-black text-xs px-3 py-2 rounded-r-lg block">Healthcare</button>
+      <button class="bg-indigo-300 text-black text-xs px-3 py-2 rounded-r-lg block">D2C</button>
+      <button class="bg-green-300 text-black text-xs px-3 py-2 rounded-r-lg block">Finance</button>
+      <button class="bg-yellow-300 text-black text-xs px-3 py-2 rounded-r-lg block">Education</button>
+      <button class="bg-sky-300 text-black text-xs px-3 py-2 rounded-r-lg block">Home Services</button  >
     </div>
   </div>
 </div>
@@ -4953,9 +3512,9 @@ filter: blur(50px);
     <!-- Section Header -->
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold">Plans & Pricing</h2>
-      <div class="inline-flex mt-4 bg-[#e8f9e3] rounded-full overflow-hidden">
-        <button class="py-2 px-6 bg-[#b6f397] font-medium text-black">Pay Monthly</button>
-        <button class="py-2 px-6 text-black">Pay Yearly (Save 25%)</button>
+      <div class="inline-flex mt-4 bg-[#e8f9e3] rounded-lg overflow-hidden p-1 border-2 border-green-400">
+        <button class="py-1 px-6 bg-[#b6f397] font-medium text-black rounded-lg">Pay Monthly</button>
+        <button class="py-1 px-6 text-black rounded-lg">Pay Yearly (Save 25%)</button>
       </div>
     </div>
 
@@ -4972,10 +3531,10 @@ filter: blur(50px);
             Get your first 3 months for 10k/mo
           </div>
           <div class="space-y-2 text-sm text-black">
-            <p>✓ Access to core features</p>
-            <p>✓ Limited storage</p>
-            <p>✓ Community access</p>
-            <p>✓ Standard support</p>
+            <p>%  Access to core features</p>
+            <p>%  Limited storage</p>
+            <p>%  Community access</p>
+            <p>%  Standard support</p>
           </div>
         </div>
         <button class="mt-6 py-2 px-4 border rounded-md font-medium">Learn More</button>
@@ -4991,10 +3550,10 @@ filter: blur(50px);
             Get your first 3 months for 30k/mo
           </div>
           <div class="space-y-2 text-sm text-black">
-            <p>✓ All Freemium features</p>
-            <p>✓ Priority support</p>
-            <p>✓ Advanced analytics</p>
-            <p>✓ Team collaboration</p>
+            <p>%  All Premium features</p>
+            <p>%  Priority support</p>
+            <p>%  Advanced analytics</p>
+            <p>%  Team collaboration</p>
           </div>
         </div>
         <button class="mt-6 py-2 px-4 border rounded-md font-medium">Learn More</button>
@@ -5010,10 +3569,10 @@ filter: blur(50px);
             Get your first 3 months at a discounted rate
           </div>
           <div class="space-y-2 text-sm text-black">
-            <p>✓ All Pro features</p>
-            <p>✓ Dedicated account manager</p>
-            <p>✓ Advanced integrations</p>
-            <p>✓ Comprehensive analytics</p>
+            <p>%  All Pro features</p>
+            <p>%  Dedicated account manager</p>
+            <p>%  Advanced integrations</p>
+            <p>%  Comprehensive analytics</p>
           </div>
         </div>
         <button class="mt-6 py-2 px-4 border rounded-md font-medium">Learn More</button>
