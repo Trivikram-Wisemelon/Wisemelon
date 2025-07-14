@@ -1,5 +1,9 @@
 /* Css for callback-btn */ 
 
+body {
+
+overflow: hidden;
+}
 
 .callback-btn {
  width: 6.5em;
@@ -44,4 +48,121 @@
 
 .callback-btn:hover .icon {
   fill: black; /* color on hover */
+}
+
+
+/* stack css */
+
+body.disable-scroll {
+  overflow: hidden;
+}
+/* SECTION 2 - stacked cards */
+.section2-cards-container {
+  position: relative;
+  width: 100%;
+  min-height: 40rem;
+}
+.section2-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  user-select: none;
+  transition: top 0.6s ease, box-shadow 0.6s ease;
+}
+.z1 { z-index: 1; top: 0; }
+.z2 { z-index: 2; top: 20px; }
+.z3 { z-index: 3; top: 40px; }
+.z4 { z-index: 4; top: 60px; }
+
+
+
+/* iphone animation */
+
+#cardContainer {
+  position: relative;
+  width: 1500px;
+  height: 800px;
+  margin: 0 auto; /* center container */
+  overflow: visible;
+  transform: translateX(-185px); /* slight left shift */
+}
+
+
+/* Medium tablets & small laptops */
+@media (max-width: 1024px) {
+  #cardContainer {
+    transform: translateX(-20rem);
+  }
+}
+
+
+@media (max-width: 1280px) {
+  #cardContainer {
+    transform: translateX(-24rem);
+  }
+}
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  #cardContainer {
+    transform: translateX(-180px);
+  }
+}
+
+@media (max-width: 1366px) {
+  #cardContainer {
+    transform: translateX(-17rem);
+  }
+}
+
+
+/* Large phones */
+@media (max-width: 600px) {
+  #cardContainer {
+    transform: translateX(-650px);
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  #cardContainer {
+    transform: translateX(-720px);
+  }
+}
+
+/* Extra small phones (like old iPhone SE) */
+@media (max-width: 360px) {
+  #cardContainer {
+    transform: translateX(-800px);
+  }
+}
+.card {
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;            /* center base point */
+  transform: translateX(-50%); /* shift back by half to center */
+  transition: transform 0.6s ease, z-index 0.6s ease;
+}
+
+
+.cardvideo {
+  border-radius: 0.5rem;
+  display: flex;
+ top: 80px; 
+  font-size: 1.25rem;
+  font-weight: bold;
+  position: relative;
+  left: 15%;            /* center base point */
+  transform: translateX(-50%); /* shift back by half to center */
+  transition: transform 0.6s ease, z-index 0.6s ease;
 }
