@@ -20,12 +20,13 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/buttons.css">
   </head>
 
   <body class="bg-white min-h-screen overflow-x-hidden">
     <!--======================================= Header  =========================================-->
 
-    <header class="bg-white mt-6 z-50">
+    <header class="mt-6 rounded-lg left-1/2 transform -translate-x-1/2 fixed top-0 left-0 w-[94%] z-50">
       <div
         class="w-full max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-10 flex items-center justify-between py-4"
       >
@@ -39,7 +40,8 @@
         </div>
 
         <!-- Nav -->
-        <nav class="hidden xl:flex flex-1 justify-center px-4">
+      <nav class="hidden xl:flex justify-center bg-white/30 backdrop-blur-md shadow h-[70px] rounded-lg">
+    <div class="w-full max-w-screen-md mx-auto flex items-center justify-center sm:px-4 lg:px-8 xl:px-12">
           <ul class="flex gap-6 md:gap-10 lg:gap-14 xl:gap-20 text-base">
             <li>
               <a
@@ -77,6 +79,7 @@
               >
             </li>
           </ul>
+          </div>
         </nav>
 
         <!-- Button (shifted slightly right) -->
@@ -102,28 +105,25 @@
 
     <!--======================================= SECTION 1 =======================================-->
 
-    <section id="section1" class="relative w-full bg-white text-center z-10">
-      <!-- Wrapped heading in padding container -->
-      <div class="px-6 md:px-24">
-        <div class="h-36 mt-24 mb-12">
-          <div class="sphere-glow left glow-wrapper"></div>
-          <div class="sphere-glow right"></div>
+ <section id="section1"
+  class="relative w-full min-h-[calc(100vh-64px)] bg-white text-center pt-[64px] z-10 pt-24">
 
-          <h1
-            class="text-4xl md:text-5xl font-extrabold leading-tight text-center tracking-tight"
-          >
-            Your AI <span class="text-[#16C542]">agent</span> for all<br />
-            &nbsp; your digital channels
-          </h1>
-        </div>
-      </div>
+  <div class="max-w-[1600px] w-full mx-auto px-4">
+    <div class="h-36 mt-36 mb-12">
+      <div class="sphere-glow left glow-wrapper z-[60]"></div>
+      <div class="sphere-glow right z-50"></div>
 
-      <!-- Iphone component-->
-      <div
-        id="cardContainer"
-        class="relative mx-auto mt-96"
-        style="display: flex; justify-content: center; align-items: center"
+      <h1
+        class="text-4xl md:text-5xl font-extrabold leading-tight text-center tracking-tight"
       >
+        Your AI <span class="text-[#16C542]">agent</span> for all<br />
+        &nbsp; your digital channels
+      </h1>
+    </div>
+  </div>
+
+  <div id="cardContainer"
+    class="w-fit mx-auto mt-[180px] flex justify-center gap-6">
         <!-- Left_deeper_phone (phone 1)-->
         <div id="card1" class="card">
           <div class="flex items-center justify-center scale-[0.70] origin-top">
@@ -477,359 +477,7 @@
 
         <!-- Left_behind_phone (phone 2)-->
         <div id="card2" class="card">
-          <div class="flex items-center justify-center scale-[0.70] origin-top">
-            <!-- iPhone Frame -->
-            <div
-              class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
-            >
-              <!-- Side Buttons -->
-              <div
-                class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
-              ></div>
-              <div
-                class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
-              ></div>
-              <div
-                class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
-              ></div>
-              <div
-                class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
-              ></div>
-
-              <!-- Notch -->
-              <div
-                class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
-              ></div>
-
-              <!-- Screen -->
-              <div
-                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
-              >
-                <!-- Time -->
-                <div
-                  id="live-time"
-                  class="live-time absolute top-2 left-4 text-black text-sm font-medium z-10"
-                ></div>
-
-                <!-- Status Icons -->
-                <div
-                  class="absolute top-2 right-4 flex items-center gap-1 z-10"
-                >
-                  <div class="flex items-end gap-[1px]">
-                    <div class="signal-bar h-[4px]"></div>
-                    <div class="signal-bar h-[6px]"></div>
-                    <div class="signal-bar h-[8px]"></div>
-                    <div class="signal-bar h-[10px]"></div>
-                  </div>
-                  <div class="w-[14px] h-[14px] relative">
-                    <div
-                      class="absolute inset-0 rounded-full border-[2px] border-black"
-                    ></div>
-                    <div
-                      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
-                    ></div>
-                  </div>
-                  <div
-                    class="flex items-center border border-black w-[20px] h-[10px] relative"
-                  >
-                    <div class="w-[14px] h-full bg-black"></div>
-                    <div
-                      class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
-                    ></div>
-                  </div>
-                </div>
-
-                <!-- Navbar -->
-                <div
-                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
-                >
-                  <div class="flex items-center gap-2">
-                    <div
-                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
-                    ></div>
-                    <img
-                      src="https://i.pravatar.cc/30?img=8"
-                      class="w-6 h-6 rounded-full"
-                      alt="Julia"
-                    />
-                    <span class="text-sm font-medium text-black">Jhon</span>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
-                    >
-                      <div
-                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
-                      ></div>
-                    </div>
-                    <div
-                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
-                    >
-                      <div
-                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
-                      ></div>
-                    </div>
-                    <div
-                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
-                    >
-                      i
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Divider below navbar -->
-                <div
-                  class="absolute top-[74 px] left-0 right-0 h-px bg-gray-300 z-10"
-                ></div>
-
-                <!-- X Icon -->
-                <div
-                  class="absolute top-[76px] right-4 text-black text-xl font-bold z-10"
-                >
-                  &times;
-                </div>
-
-                <!-- Chat Icon Image shifted left and up -->
-                <img
-                  src="assets/images/insta.png"
-                  alt="Chat Icon"
-                  class="absolute top-[85px] left-1/2 -translate-x-[55%] w-[60px] h-auto z-10"
-                />
-
-                <!-- Bold Centered Text with Subheading -->
-                <div
-                  class="absolute top-[160px] left-1/2 -translate-x-1/2 w-[270px] text-center z-10"
-                >
-                  <div
-                    class="text-lg font-extrabold text-black whitespace-nowrap"
-                  >
-                    Get paid directly in chat
-                  </div>
-
-                  <div class="text-gray-600 text-xs mt-1 px-2 leading-tight">
-                    Allow Julia to pay you by debit or credit card directly in
-                    chat by requesting a payment now
-                  </div>
-                </div>
-
-                <!-- Two Side-by-Side Buttons -->
-                <div
-                  class="absolute top-[230px] left-1/2 -translate-x-1/2 flex gap-4 z-10"
-                >
-                  <button
-                    class="bg-white text-black border border-gray-300 px-4 py-1 rounded-sm text-sm font-medium shadow-sm whitespace-nowrap"
-                  >
-                    Not now
-                  </button>
-                  <button
-                    class="bg-blue-500 text-white px-4 py-1 rounded-sm text-sm font-medium shadow-md whitespace-nowrap"
-                  >
-                    Request Payment
-                  </button>
-                </div>
-
-                <!-- Divider below navbar -->
-                <div
-                  class="absolute top-[280px] left-0 right-0 h-px bg-gray-200 z-10"
-                ></div>
-
-                <!-- Right-aligned purple chat bubble -->
-                <div
-                  class="absolute top-[285px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[250px] z-10"
-                >
-                  Hi! Yes, depends on your size
-                </div>
-
-                <!-- Left-aligned grey chat bubble with profile image -->
-                <div
-                  class="absolute top-[310px] left-4 flex items-start gap-2 z-10"
-                >
-                  <!-- Profile Image -->
-                  <img
-                    src="https://i.pravatar.cc/30?img=8"
-                    class="w-6 h-6 rounded-full mt-6"
-                    alt="Julia"
-                  />
-
-                  <!-- Chat Bubble -->
-                  <div
-                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
-                  >
-                    I wear medium
-                  </div>
-                </div>
-
-                <!-- Right-aligned blue chat bubble -->
-                <div
-                  class="absolute top-[375px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
-                >
-                  Ok, this is what we have in stock:
-                </div>
-
-                <!-- Image Cards Section -->
-                <div
-                  class="absolute top-[420px] left-1/2 -translate-x-1/2 flex gap-3 z-10"
-                >
-                  <!-- Card 1 -->
-                  <div
-                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
-                  >
-                    <img
-                      src="assets/images/dog1.png"
-                      alt="Item 1"
-                      class="w-[60px] h-[60px] object-contain"
-                    />
-                  </div>
-
-                  <!-- Card 2 -->
-                  <div
-                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
-                  >
-                    <img
-                      src="assets/images/dog2.png"
-                      alt="Item 2"
-                      class="w-[60px] h-[60px] object-contain"
-                    />
-                  </div>
-
-                  <!-- Card 3 -->
-                  <div
-                    class="w-[80px] h-[80px] bg-gray-100 rounded-xl shadow flex items-center justify-center"
-                  >
-                    <img
-                      src="assets/images/dog3.png"
-                      alt="Item 3"
-                      class="w-[66px] h-[66px] object-contain"
-                    />
-
-                    <!-- Heart Icon -->
-                    <div class="absolute top-1 right-1 w-5 h-5 text-red-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
-        6 4 4 6.5 4c1.74 0 3.41 1.04 
-        4.13 2.61h1.74C14.09 5.04 
-        15.76 4 17.5 4 20 4 22 6 
-        22 8.5c0 3.78-3.4 6.86-8.55 
-        11.54L12 21.35z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Left-aligned grey chat bubble with profile image -->
-                <div
-                  class="absolute top-[490px] left-4 flex items-start gap-2 z-10"
-                >
-                  <!-- Profile Image -->
-                  <img
-                    src="https://i.pravatar.cc/30?img=8"
-                    class="w-6 h-6 rounded-full mt-6"
-                    alt="Julia"
-                  />
-
-                  <!-- Chat Bubble -->
-                  <div
-                    class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
-                  >
-                    Bulldog one, please!!
-                  </div>
-                </div>
-
-                <!-- Right-aligned blue chat bubble -->
-                <div
-                  class="absolute top-[560px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
-                >
-                  You got it!
-                </div>
-                <!-- Right-aligned blue chat bubble -->
-                <div
-                  class="absolute top-[600px] right-4 bg-blue-700 text-white text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
-                >
-                  I'll create a request now
-                </div>
-
-                <!-- Message Input Section -->
-                <div
-                  class="absolute bottom-4 left-4 right-4 bg-gray-100 rounded-full flex items-center justify-between px-4 py-2 z-10 shadow"
-                >
-                  <!-- Left Side: Camera Icon + Placeholder -->
-                  <div class="flex items-center space-x-3">
-                    <!-- Camera Icon (blue circle) -->
-                    <div
-                      class="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-white"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-4 h-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 10l4.553 3.684a1 1 0 01-.553 1.816H5a1 1 0 01-.553-1.816L9 10V6a3 3 0 116 0v4z"
-                        />
-                      </svg>
-                    </div>
-
-                    <!-- Placeholder -->
-                    <span class="text-gray-500 text-sm">Message...</span>
-                  </div>
-
-                  <!-- Right Side Icons -->
-                  <div class="flex items-center space-x-3">
-                    <!-- $ Icon -->
-                    <span class="text-black text-lg font-semibold">$</span>
-
-                    <!-- Image Icon (bordered) -->
-                    <div
-                      class="w-7 h-7 border border-black rounded-md flex items-center justify-center"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-4 h-4 text-black"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M3 5h18M3 19h18M4 7h16v10H4z"
-                        />
-                      </svg>
-                    </div>
-
-                    <!-- Plus Icon (black circle) -->
-                    <div
-                      class="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white text-lg font-semibold"
-                    >
-                      +
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Speaker Slit (Bottom Microphone Style) -->
-                <div
-                  class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Center_phone_(main) (phone 3)-->
-        <div id="card3" class="card">
-          <div class="flex items-center justify-center scale-[0.70] origin-top">
+          <div class="flex items-center justify-center scale-[0.75] origin-top">
             <!-- iPhone Frame -->
             <div
               class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
@@ -938,7 +586,145 @@
                   class="absolute top-[71px] left-0 right-0 h-px bg-gray-300 z-10"
                 ></div>
                 <div
-                  class="absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0"
+                  class="bg-[url('./assets/images/snap.png')] bg-repeat absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0"
+                >
+                  <!-- X Icon -->
+                  <div
+                    class="absolute top-[12px] right-4 text-black text-xl font-bold z-10"
+                  >
+                    &times;
+                  </div>
+
+                  <!-- Chat Icon Image shifted left and up -->
+                  <img
+                    src="assets/images/"
+                    alt="Chat Icon"
+                    class="absolute top-[20px] left-1/2 -translate-x-[55%] w-[60px] h-auto z-10"
+                  />
+
+
+                  <!-- Speaker Slit (Bottom Microphone Style) -->
+                  <div
+                    class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center_phone_(main) (phone 3)-->
+        <div id="card3" class="card">
+          <div class="flex items-center justify-center scale-[0.75] origin-top">
+            <!-- iPhone Frame -->
+            <div
+              class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
+            >
+              <!-- Side Buttons -->
+              <div
+                class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
+              ></div>
+              <div
+                class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
+              ></div>
+
+              <!-- Notch -->
+              <div
+                class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+              ></div>
+
+              <!-- Screen -->
+              <div
+                class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
+              >
+                <!-- Time -->
+                <div
+                  id="live-time"
+                  class="live-time absolute top-2 left-4 text-black text-sm font-medium z-10"
+                ></div>
+
+                <!-- Status Icons -->
+                <div
+                  class="absolute top-2 right-4 flex items-center gap-1 z-10"
+                >
+                  <div class="flex items-end gap-[1px]">
+                    <div class="signal-bar h-[4px]"></div>
+                    <div class="signal-bar h-[6px]"></div>
+                    <div class="signal-bar h-[8px]"></div>
+                    <div class="signal-bar h-[10px]"></div>
+                  </div>
+
+                  <div class="w-[14px] h-[14px] relative">
+                    <div
+                      class="absolute inset-0 rounded-full border-[2px] border-black"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
+                    ></div>
+                  </div>
+
+                  <div
+                    class="flex items-center border border-black w-[20px] h-[10px] relative"
+                  >
+                    <div class="w-[14px] h-full bg-black"></div>
+                    <div
+                      class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Navbar -->
+                <div
+                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
+                    ></div>
+                    <img
+                      src="./assets/images/logo/ws-dark.png"
+                      class="w-9 h-19 rounded-full"
+                      alt="Julia"
+                    />
+                    <span class="text-lg font-medium text-black"
+                      >Wisemelon</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
+                    >
+                      <div
+                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
+                    >
+                      <div
+                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
+                    >
+                      i
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider below navbar -->
+                <div
+                  class="absolute top-[71px] left-0 right-0 h-px bg-gray-300 z-10"
+                ></div>
+                <div
+                  class="bg-[url('./assets/images/wh_bg.jpg')] bg-repeat absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0"
                 >
                   <!-- X Icon -->
                   <div
@@ -1202,7 +988,7 @@
 
         <!-- Right_behind_phone (phone 4)-->
         <div id="card4" class="card">
-          <div class="flex items-center justify-center scale-[0.70] origin-top">
+          <div class="flex items-center justify-center scale-[0.72] origin-top">
             <!-- iPhone Frame -->
             <div
               class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
@@ -1912,85 +1698,58 @@
     <!--======================================= SECTION 2 =======================================-->
 
     <section
-      id="cardsSection"
-      class="relative w-full flex flex-col items-center pt-0 pb-6 sm:pb-12 md:pb-40 bg-gradient-to-b from-green-50 via-green-200 to-green-300 mt-[-19rem] z-20"
-    >
-      <!-- SVG decoration -->
-      <div class="h-32 flex justify-center mt-3 -mb-5">
-        <svg
-          class="h-28 max-w-4xl block ml-40"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 100 500 90"
-          preserveAspectRatio="xMidYMin slice"
-        >
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style="stop-color: #6fde01; stop-opacity: 1" />
-              <stop
-                offset="100%"
-                style="stop-color: #16c542; stop-opacity: 1"
-              />
-            </linearGradient>
-          </defs>
-          <path
-            d="M29.6 100.3 C19.2 160.6 132.3 142.4 120.3 185.2"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
-          <path
-            d="M105 98.8 C92.2 140.9 165.4 141.7 158.3 185.3"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
-          <path
-            d="M197.2 97 L197.4 185.7"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
-          <path
-            d="M293 98.8 C305.8 140.9 232.6 141.7 239.7 185.5"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
-          <path
-            d="M365.4 100.3 C375.8 160.6 262.7 142.4 274.7 185.2"
-            fill="none"
-            stroke="url(#grad1)"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
+  id="cardsSection"
+  class="relative w-full min-h-screen flex flex-col items-center pt-0 pb-6 sm:pb-12 md:pb-40 bg-gradient-to-b from-green-50 via-green-200 to-green-300 z-20 -mt-20"
+>
+ <div class="flex justify-center max-w-screen-2xl mx-auto w-full overflow-visible">
+  <svg
+    class="h-36 w-full max-w-4xl mx-auto block"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="-53 90 500 100"
+    preserveAspectRatio="xMidYMin meet"
+  >
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color: #6fde01; stop-opacity: 1" />
+          <stop offset="100%" style="stop-color: #16c542; stop-opacity: 1" />
+        </linearGradient>
+      </defs>
+      <path d="M29.6 100.3 C19.2 160.6 132.3 142.4 120.3 185.2" fill="none" stroke="url(#grad1)" stroke-width="2" />
+      <path d="M105 98.8 C92.2 140.9 165.4 141.7 158.3 185.3" fill="none" stroke="url(#grad1)" stroke-width="2" />
+      <path d="M197.2 97 L197.4 185.7" fill="none" stroke="url(#grad1)" stroke-width="2" />
+      <path d="M293 98.8 C305.8 140.9 232.6 141.7 239.7 185.5" fill="none" stroke="url(#grad1)" stroke-width="2" />
+      <path d="M365.4 100.3 C375.8 160.6 262.7 142.4 274.7 185.2" fill="none" stroke="url(#grad1)" stroke-width="2" />
+    </svg>
+  </div>
 
       <!-- Titles -->
       <h2
-        class="text-xl text-center font-normal text-[#16C542] tracking-normal -mb-10"
+        class="text-xl text-center font-normal text-[#16C542] tracking-normal -mb-16 sm:-mt-2 md:-mt-20 lg:-mt-2"
       >
         One Powerful System
       </h2>
 
-      <div class="dynamic-heading -mb-60" id="dynamicHeading">
-        <h1 class="mb-50">Leading Qualification</h1>
-        <h2 class="mb-10">
+      <div class="dynamic-heading -mb-52 px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full" id="dynamicHeading">
+
+        <h1 class="">Leading Qualification</h1>
+        <h2 class="">
           Are you facing challenges to timely qualify your leads?
         </h2>
       </div>
 
       <!-- Cards Container -->
-      <div class="section2-cards-container">
-        <div class="section2-card z4" data-index="0">
+      <div class="section2-cards-container px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full">
+
+        <div class="bg-white/30 backdrop-blur-md section2-card z4 w-" data-index="0">
           <p>Card 1 Content</p>
         </div>
-        <div class="section2-card z3" data-index="1">
+        <div class="bg-white/30 backdrop-blur-md section2-card z3" data-index="1">
           <p>Card 2 Content</p>
         </div>
-        <div class="section2-card z2" data-index="2">
+        <div class="bg-white/30 backdrop-blur-md section2-card z2" data-index="2">
           <p>Card 3 Content</p>
         </div>
-        <div class="section2-card z1" data-index="3">
+        <div class="bg-white/30 backdrop-blur-md section2-card z1" data-index="3">
           <p>Card 4 Content</p>
         </div>
       </div>
@@ -1998,23 +1757,23 @@
 
     <!--=======================================  SECTION 3 =====================================-->
 
-    <section class="p-6 bg-white p-8 w-[95%] mx-auto mb-12">
-      <div class="mb-6 mt-6">
-        <h1
-          class="text-4xl md:text-6xl font-extrabold leading-tight text-black text-center tracking-tight"
-        >
-          The most powerful
-          <span style="color: #16c542">WhatsApp</span>
-          Platform.
-        </h1>
-      </div>
+    <section class="min-h-screen bg-white w-full px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto mb-12 py-12">
+  <div class="mb-6 mt-6">
+    <h1
+      class="text-4xl md:text-5xl font-extrabold leading-tight text-left tracking-tight"
+    >
+      The most powerful
+      <span style="color: #16c542">WhatsApp</span>
+      Platform.
+    </h1>
+  </div>
 
-      <div
-        class="max-w-7xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-      >
+  <div
+    class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+  >
         <!-- Card 1 (wide) -->
         <div
-          class="relative bg-zinc-50 rounded-lg p-3 sm:col-span-2 overflow-hidden"
+          class="relative bg-gradient-to-b from-white to-zinc-50 rounded-lg p-3 sm:col-span-2 overflow-hidden"
           style="aspect-ratio: 2/0.8"
         >
           <!-- Scalable inner container -->
@@ -2022,9 +1781,9 @@
             <div class="relative w-full h-full">
               <!-- Text Box -->
               <div
-                class="absolute w-72 max-w-[40%] bottom-3 left-3 bg-white p-2 z-10 text-xs sm:text-sm"
+                class="absolute w-72 max-w-[40%] bottom-3 left-3 p-2 z-10 text-xs sm:text-sm"
               >
-                <a href="#" class="font-medium text-black">Learn More →</a>
+                <a href="#" class="text-lg font-medium text-black">Learn More →</a>
                 <h2 class="mt-2 text-xl sm:text-2xl font-bold text-black">
                   WhatsApp Flows
                 </h2>
@@ -2161,31 +1920,43 @@
         </div>
         <!-- Card 2 (tall) -->
         <div
-          class="bg-zinc-50 rounded-lg p-6 sm:col-span-2 sm:row-span-2 flex flex-col justify-between h-full"
+          class="overflow-hidden bg-gradient-to-b from-white via-zinc-50 to-zinc-50 rounded-lg p-6 sm:col-span-2 sm:row-span-2 flex flex-col justify-between h-full"
         >
           <!-- Top: custom logo grid -->
-          <div class="grid-container gap-12 mb-12 mx-auto">
-            <div class="cardlogo tilt-right"></div>
-            <div class="cardlogo tilt-left"></div>
+          <div class="grid-container gap-20 mb-12 mx-auto">
+            <div class="cardlogo tilt-right"><img src="assets/images/logo/x.png" alt="" class="w-12 h-12 object-cover"></div>
+             <div class="cardlogo tilt-left"><img src="assets/images/insta.png" alt="" class="w-10 h-10 object-cover"></div>
+           
+<div class="cardlogo tilt-left"><img src="assets/images/Mailchimp.png" alt="" class="w-12 h-12"></div>
+              <div class="cardlogo tilt-left"><img src="assets/images/zendesk.png" alt="" class="w-12 h-12"></div>
 
-            <div class="cardlogo tilt-left"></div>
 
-            <div class="cardlogo tilt-left"></div>
-            <div class="cardlogo tilt-left"></div>
-
-            <div class="cardlogo tilt-left"></div>
+            <div class="cardlogo tilt-left">  <img src="assets/images/meta.png" alt="" class="w-11 h-11 object-contain"></div>  
+             <div class="cardlogo tilt-left"><img src="assets/images/WhatsApp.svg.webp" alt="" class="w-12 h-12 object-cover"></div>
+          
+           
 
             <img
               src="assets/images/gmail.png"
               alt="Gmail"
-              style="max-width: 150%; max-height: 150%; object-fit: contain"
+              style="max-width: 150%; max-height: 150%; object-fit"
             />
-            <div class="cardlogo tilt-right"></div>
-            <div class="cardlogo tilt-left"></div>
+              <img
+              src="assets/images/zoho.png"
+              alt="Gmail"
+              style="max-width: 150%; max-height: 150%; object-fit"
+            />
+          
+            <div class="cardlogo tilt-left"><img
+              src="assets/images/razor.png"
+              alt="Gmail"
+              class="w-16 h-16 object-contain"
+              style="max-width: 150%; max-height: 150%; object-fill"
+            /></div>
           </div>
 
           <!-- Bottom: text and link -->
-          <div class="flex justify-between items-end h-full">
+          <div class="flex justify-between items-end h-full overflow-hidden">
             <div>
               <h2 class="text-2xl font-bold text-black">400+ Apps</h2>
               <p class="mt-1 text-black max-w-xs">
@@ -2194,28 +1965,42 @@
               </p>
             </div>
             <div>
-              <a href="#" class="text-sm font-medium text-black"
+              <a href="#" class="text-lg font-medium text-black"
                 >Learn More →</a
               >
             </div>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="bg-zinc-50 rounded-lg p-20 sm:col-span-2">
-          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
-          <h2 class="mt-2 text-2xl font-bold text-black">
-            Intelligent Assisant
-          </h2>
-          <p class="mt-1 text-black">
-            Train your AI on your own data, give it a personality and a goal,
-            leave the rest to wisemelon, it handles the rest!
-          </p>
-        </div>
+     
+<!-- Card 3 -->
+<div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between h-96">
+  <!-- Spacer at top (if needed for layout) -->
+  <div></div>
+
+  <!-- Bottom row: text left, link right -->
+  <div class="flex justify-between items-end w-full">
+    <!-- Text left -->
+    <div class="flex flex-col max-w-md">
+      <h2 class="text-2xl font-bold text-black">
+        Intelligent Assistant
+      </h2>
+      <p class="mt-1 text-black">
+        Train your AI on your own data, give it a personality and a goal,
+        leave the rest to Wisemelon — it handles the rest!
+      </p>
+    </div>
+
+    <!-- Link right -->
+    <a href="#" class="text-lg font-medium text-black">Learn More →</a>
+  </div>
+</div>
+
+
 
         <!-- Card 4 -->
-        <div class="bg-zinc-50 rounded-lg p-6">
-          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+        <div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 flex flex-col justify-between">
+          <a href="#" class="text-lg font-medium text-black">Learn More →</a>
           <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
           <p class="mt-1 text-black">
             WhatsApp flows allows you to capture information using easy to use
@@ -2225,8 +2010,17 @@
 
         <!-- Card 5 -->
 
-        <div class="bg-zinc-50 rounded-lg p-6">
-          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
+        <div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 flex flex-col justify-between">
+          <a href="#" class="text-lg font-medium text-black">Learn More →</a>
+          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
+          <p class="mt-1 text-black">
+            WhatsApp flows allows you to capture information using easy to use
+            forms, product list and more.
+          </p>
+        </div>
+        <!-- Card 6 -->
+        <div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 flex flex-col justify-between">
+          <a href="#" class="text-lg font-medium text-black">Learn More →</a>
           <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
           <p class="mt-1 text-black">
             WhatsApp flows allows you to capture information using easy to use
@@ -2234,281 +2028,241 @@
           </p>
         </div>
 
-        <div class="bg-zinc-50 rounded-lg p-6">
-          <a href="#" class="text-sm font-medium text-black">Learn More →</a>
-          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
-          <p class="mt-1 text-black">
-            WhatsApp flows allows you to capture information using easy to use
-            forms, product list and more.
-          </p>
-        </div>
       </div>
     </section>
 
     <!--======================================= SECTION 4 =======================================-->
 
-    <section class="p-8 w-full max-w-screen-xl mx-auto mb-12">
+    <section class="w-full min-h-screen mb-12">
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Title -->
-      <h2 class="text-3xl font-bold mb-6">
-        Personalised setup for your business.
-      </h2>
+    <h2 class="text-3xl font-bold mb-6">
+      Personalised setup for your business.
+    </h2>
 
-      <!-- Description Box -->
-      <div
-        class="flex flex-col justify-between border-2 border-black rounded-xl p-2 mb-8"
-      >
-        <div>
-          <p class="text-gray-600 mb-2 pl-1">
-            Describe your business and wisemelon will tell you how it can help
-            you.
-          </p>
-          <textarea
-            class="w-full border-none outline-none resize-none p-1 pt-0 leading-tight rounded-md"
-            rows="3"
-            placeholder="Type here..."
-          ></textarea>
-        </div>
-        <div class="flex justify-end mt-4">
-          <button
-            type="submit"
-            class="bg-black text-white px-6 py-3 rounded-md"
-          >
-            send
-          </button>
-        </div>
+    <!-- Description Box -->
+    <div class="flex flex-col justify-between border-2 border-black rounded-xl p-4 mb-8 max-w-full mx-auto text-left">
+      <div>
+        <p class="text-gray-600 mb-2">
+          Describe your business and Wisemelon will tell you how it can help you.
+        </p>
+        <textarea
+          class="w-full border-none outline-none resize-none p-2 leading-tight rounded-md"
+          rows="3"
+          placeholder="Type here..."
+        ></textarea>
       </div>
-
-      <!-- Cards grid pushed full width -->
-      <div class="-mx-8 sm:-mx-12 lg:-mx-16">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 gap-12 px-8 sm:px-12 lg:px-16"
+      <div class="flex justify-end mt-4">
+        <button
+          type="submit"
+          class="bg-black text-white px-6 py-3 rounded-md"
         >
-          <div
-            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-            style="
-              background-image: url('assets/images/img2.png');
-              background-size: cover;
-              background-position: center;
-            "
-          >
-            <div
-              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
-            >
-              Education
-            </div>
-            <div class="absolute bottom-0 right-0 p-4">
-              <a
-                href="#"
-                class="text-white flex items-center gap-2 hidden xl:inline"
-              >
-                Check Use Cases</a
-              ><span class="text-white">➔</span>
-            </div>
-          </div>
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+
+      <!-- Cards grid centered with page content -->
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+    <!-- Repeat this card block -->
+    <div
+      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+      style="background: url('assets/images/img2.png') center/cover;"
+    >
+      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+        Education
+      </div>
+      <div class="absolute bottom-0 right-0 p-4">
+        <a href="#" class="text-white flex items-center gap-2">
+          Check Use Cases <span>➔</span>
+        </a>
+      </div>
+    </div>
 
           <div
-            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-            style="
-              background-image: url('assets/images/img2.png');
-              background-size: cover;
-              background-position: center;
-            "
-          >
+      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+      style="background: url('assets/images/img2.png') center/cover;"
+    >
+      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+        Finance
+      </div>
+      <div class="absolute bottom-0 right-0 p-4">
+        <a href="#" class="text-white flex items-center gap-2">
+          Check Use Cases <span>➔</span>
+        </a>
+      </div>
+    </div>
+
+        <div
+      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+      style="background: url('assets/images/img2.png') center/cover;"
+    >
+      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+        Healthcare
+      </div>
+      <div class="absolute bottom-0 right-0 p-4">
+        <a href="#" class="text-white flex items-center gap-2">
+          Check Use Cases <span>➔</span>
+        </a>
+      </div>
+    </div>
+    
             <div
-              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
-            >
-              Finance
-            </div>
-            <div class="absolute bottom-0 right-0 p-4">
-              <a
-                href="#"
-                class="text-white flex items-center gap-2 hidden xl:inline"
-              >
-                Check Use Cases</a
-              ><span class="text-white">➔</span>
-            </div>
-          </div>
+      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+      style="background: url('assets/images/img2.png') center/cover;"
+    >
+      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+       Home Services
+      </div>
+      <div class="absolute bottom-0 right-0 p-4">
+        <a href="#" class="text-white flex items-center gap-2">
+          Check Use Cases <span>➔</span>
+        </a>
+      </div>
+    </div>
 
           <div
-            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-            style="
-              background-image: url('assets/images/img2.png');
-              background-size: cover;
-              background-position: center;
-            "
-          >
-            <div
-              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
-            >
-              Healthcare
-            </div>
-            <div class="absolute bottom-0 right-0 p-4">
-              <a
-                href="#"
-                class="text-white flex items-center gap-2 hidden xl:inline"
-              >
-                Check Use Cases</a
-              ><span class="text-white">➔</span>
-            </div>
-          </div>
+      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+      style="background: url('assets/images/img2.png') center/cover;"
+    >
+      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+        Real Estate
+      </div>
+      <div class="absolute bottom-0 right-0 p-4">
+        <a href="#" class="text-white flex items-center gap-2">
+          Check Use Cases <span>➔</span>
+        </a>
+      </div>
+    </div>
 
           <div
-            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-            style="
-              background-image: url('assets/images/img2.png');
-              background-size: cover;
-              background-position: center;
-            "
-          >
-            <div
-              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
-            >
-              Home Services
-            </div>
-            <div class="absolute bottom-0 right-0 p-4">
-              <a
-                href="#"
-                class="text-white flex items-center gap-2 hidden xl:inline"
-              >
-                Check Use Cases</a
-              ><span class="text-white">➔</span>
-            </div>
-          </div>
+      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
+      style="background: url('assets/images/img2.png') center/cover;"
+    >
+      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+        Education
+      </div>
+      <div class="absolute bottom-0 right-0 p-4">
+        <a href="#" class="text-white flex items-center gap-2">
+          Check Use Cases <span>➔</span>
+        </a>
+      </div>
+    </div>
 
-          <div
-            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-            style="
-              background-image: url('assets/images/img2.png');
-              background-size: cover;
-              background-position: center;
-            "
-          >
-            <div
-              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
-            >
-              Real Estate
-            </div>
-            <div class="absolute bottom-0 right-0 p-4">
-              <a
-                href="#"
-                class="text-white flex items-center gap-2 hidden xl:inline"
-              >
-                Check Use Cases</a
-              ><span class="text-white">➔</span>
-            </div>
-          </div>
-
-          <div
-            class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-            style="
-              background-image: url('assets/images/img2.png');
-              background-size: cover;
-              background-position: center;
-            "
-          >
-            <div
-              class="absolute bottom-0 left-0 p-4 text-white font-normal text-3xl"
-            >
-              Education
-            </div>
-            <div class="absolute bottom-0 right-0 p-4">
-              <a
-                href="#"
-                class="text-white flex items-center gap-2 hidden xl:inline"
-              >
-                Check Use Cases</a
-              ><span class="text-white">➔</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!--======================================== SECTION 5 =======================================-->
 
-    <section
-      class="bg-gradient-to-b from-zinc-50 to-zinc-100 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
-    >
-      <div class="max-w-7xl mx-auto p-6 space-y-40">
-        <!-- Top Logos -->
-        <div
-          class="flex flex-wrap items-center gap-8 sm:gap-12 lg:gap-40 justify-start mb-20"
-        >
-          <div class="flex items-center gap-3">
-            <img
-              src="assets/images/logo/meta.png"
-              alt="Meta Logo"
-              class="h-12"
-            />
-          </div>
-          <img
-            src="assets/images/logo/iso9001.png"
-            alt="ISO Badge 1"
-            class="h-14"
-          />
-          <img
-            src="assets/images/logo/iso27001.png"
-            alt="ISO Badge 2"
-            class="h-14"
-          />
-          <div class="text-center">
-            <img
-              src="assets/images/logo/gdpr.png"
-              alt="GDPR Badge"
-              class="h-14"
-            />
-          </div>
-        </div>
+    <section class="w-full min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100 py-6 px-4 sm:px-6 lg:px-8">
+  <!-- Container with flex-column & full height -->
+  <div class="max-w-screen-2xl mx-auto flex flex-col min-h-screen">
+
+    <!-- Top Logos -->
+    <div class="flex flex-wrap items-center justify-ce gap-8 sm:gap-12 lg:gap-40 mt-6 mb-20">
+      <img src="assets/images/logo/meta.png" alt="Meta" class="h-12" />
+      <img src="assets/images/logo/iso9001.png" alt="ISO 9001" class="h-14" />
+      <img src="assets/images/logo/iso27001.png" alt="ISO 27001" class="h-14" />
+      <img src="assets/images/logo/gdpr.png" alt="GDPR" class="h-14" />
+    </div>
 
         <!-- Testimonials and Feature Cards -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-36">
           <!-- Left Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full min-h-80">
-            <div class="bg-white rounded-xl shadow-sm p-6 text-sm">
-              <p><strong>How Petfolk,</strong></p>
-              <span class="text-gray-500">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+            
+            <div class="bg-white rounded-xl shadow-sm p-12 text-lg">
+              <p><strong class="text-lg" >How Petfolk,</strong></p>
+              <span class="text-gray-500 text-base">
                 scaled their services to more than 10k customers in 2 months
               </span>
             </div>
-            <div class="bg-white rounded-xl shadow-sm p-6 text-sm">
+
+            <div class="bg-white rounded-xl shadow-sm p-12">
               <p>
-                <strong>How ViSource,</strong>
-                <span class="text-gray-500">
+                <strong class="text-lg">How ViSource,</strong></p>
+                <span class="text-gray-500 text-base">
                   automated their response time by 80% for their steel
                   distribution business.
                 </span>
-              </p>
+              
             </div>
+
             <div
-              class="bg-white rounded-xl shadow-sm p-6 text-sm sm:col-span-2"
+              class="bg-white rounded-xl shadow-sm p-12 text-lg sm:col-span-2"
             >
               <p>
-                <strong>How Math Accelerator,</strong>
-                <span class="text-gray-500">
+                <strong class="text-lg" >How Math Accelerator,</strong></p>
+                <span class="text-gray-500 text-base">
                   keeps visitors informed about hundreds of incubated startups
                   and their work.
                 </span>
-              </p>
+              
             </div>
           </div>
 
           <!-- Right Testimonial Card Stack -->
-         <div
-  class="relative w-full max-w-md mx-auto lg:mt-[-4rem] lg:w-[60%] lg:ml-48"
->
+        <div class="relative w-full max-w-md mx-auto lg:ml-48 lg:mt-[-4rem] md:my-32 sm: my-20 ">
   <!-- Background Card (bottom) -->
   <div
     id="dragcard3"
-    class="absolute inset-0 -translate-x-5 -translate-y-10 bg-pink-100 rounded-xl rotate-[-12deg] shadow-md z-10 transition-transform duration-500"
+    class="absolute inset-0 -translate-x-5 -translate-y-10 bg-pink-100/30 backdrop-blur-lg flex flex-col justify-between rounded-xl rotate-[-12deg] shadow-md z-10 transition-transform duration-500 p-4"
     data-x="-1.25rem" data-y="-2.5rem" data-rotate="-12"
-  ></div>
+  >
+ <div class="flex items-center gap-3">
+      <img
+        src="assets/images/14.png"
+        alt="Prabhu Deva"
+        class="w-20 h-20 rounded-full object-cover"
+      />
+      <div>
+        <p class="font-bold text-2xl">Prabhu Deva</p>
+        <p class="text-xl text-gray-600">CMO, Bell Labs</p>
+      </div>
+    </div>
+    <p class="text-gray-800 text-base mt-3 flex-grow">
+      I don’t know who else we could have trusted for our customer
+      interactions. Wisemelon literally provides all the options a
+      business would ever need.
+    </p>
+    <a href="#" class="font-medium text-black text-lg mt-4">
+      Try Yourself →
+    </a>
+
+
+</div>
 
   <!-- Middle Card -->
   <div
     id="dragcard2"
-    class="absolute inset-0 translate-x-2 -translate-y-5 bg-green-50 rounded-xl rotate-[-5deg] shadow-md z-20 transition-transform duration-500"
+    class="absolute inset-0 translate-x-2 -translate-y-5 bg-green-50 flex flex-col justify-between rounded-xl rotate-[-5deg] shadow-md z-20 transition-transform duration-500 p-4"
     data-x="0.5rem" data-y="-1.25rem" data-rotate="-5"
-  ></div>
+  >
+
+<div class="flex items-center gap-3">
+      <img
+        src="assets/images/13.png"
+        alt="Prabhu Deva"
+        class="w-20 h-20 rounded-full object-cover"
+      />
+      <div>
+        <p class="font-bold text-2xl">Prabhu Deva</p>
+        <p class="text-xl text-gray-600">CMO, Bell Labs</p>
+      </div>
+    </div>
+    <p class="text-gray-800 text-base mt-3 flex-grow">
+      I don’t know who else we could have trusted for our customer
+      interactions. Wisemelon literally provides all the options a
+      business would ever need.
+    </p>
+    <a href="#" class="font-medium text-black text-lg mt-4">
+      Try Yourself →
+    </a>
+
+</div>
 
   <!-- Foreground Card (top) -->
   <div
@@ -2525,15 +2279,15 @@
       />
       <div>
         <p class="font-bold text-2xl">Prabhu Deva</p>
-        <p class="text-sm text-gray-600">CMO, Bell Labs</p>
+        <p class="text-xl text-gray-600">CMO, Bell Labs</p>
       </div>
     </div>
-    <p class="text-gray-800 text-sm mt-3 flex-grow">
+    <p class="text-gray-800 text-base mt-3 flex-grow">
       I don’t know who else we could have trusted for our customer
       interactions. Wisemelon literally provides all the options a
       business would ever need.
     </p>
-    <a href="#" class="font-medium text-black text-sm mt-4">
+    <a href="#" class="font-medium text-black text-lg mt-4">
       Try Yourself →
     </a>
   </div>
@@ -2541,49 +2295,25 @@
 
         </div>
 
-        <!-- Partner Logos -->
-        <div
-          class="mt-20 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center items-center"
-        >
-          <img
-            src="assets/images/logo/haldirams_logo.png"
-            alt="Haldiram's"
-            class="h-12"
-          />
-          <img
-            src="assets/images/logo/vendiman_pvt_ltd_logo.png.png"
-            alt="Vendiman"
-            class="h-12"
-          />
-          <img
-            src="assets/images/logo/bigbasket.png"
-            alt="Bigbasket"
-            class="h-12"
-          />
-          <img
-            src="assets/images/logo/hospitalsapollo.png"
-            alt="Apollo"
-            class="h-12"
-          />
-          <img
-            src="assets/images/logo/lalitha_jewellers_colombo_logo.png.png"
-            alt="Lalitha"
-            class="h-12"
-          />
-          <img
-            src="assets/images/logo/royalbrother.png"
-            alt="Royal Brothers"
-            class="h-12"
-          />
-        </div>
+        <!-- Partner Logos (Anchored at Bottom) -->
+    <div class="mt-auto">
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-start items-center pb-6">
+        <img src="assets/images/logo/haldirams_logo.png" alt="Haldiram's" class="h-12" />
+        <img src="assets/images/logo/vendiman_pvt_ltd_logo.png.png" alt="Vendiman" class="h-12" />
+        <img src="assets/images/logo/bigbasket.png" alt="BigBasket" class="h-12" />
+        <img src="assets/images/logo/hospitalsapollo.png" alt="Apollo" class="h-12" />
+        <img src="assets/images/logo/lalitha_jewellers_colombo_logo.png.png" alt="Lalitha" class="h-12" />
+        <img src="assets/images/logo/royalbrother.png" alt="Royal Brothers" class="h-12" />
       </div>
-    </section>
+    </div>
 
+  </div>
+</section>
     <!--======================================== SECTION 6 =======================================-->
 
-    <section class="bg-white py-16 px-6 sm:px-12">
+    <section class="min-h-screen justify-center py-16 px-6 sm:px-12 md:pb-60">
       <div
-        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-48"
+        class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-48"
       >
         <!-- Left: Text and Form -->
         <div>
@@ -2660,13 +2390,18 @@
         </div>
 
         <!-- Right: Phone Image and Tags as One Block (Always Side-by-Side) -->
-        <div class="flex justify-center lg:justify-start">
-          <div class="flex items-start gap-1 max-w-full">
+        
+          <div class="flex flex-row flex-nowrap items-center justify-center gap-4">
             <!-- Phone Image -->
 
-            <div id="card3" class="cardvideo w-36 sm:w-44 md:w-52 lg:w-60 ml-32">
+            <div id="card3" class="cardvideo w-36 sm:w-44 md:w-52 lg:w-60 flex justify-items-center">
               <div
-                class="flex items-center justify-center scale-[0.70] origin-top"
+                class="flex items-center justify-center transform
+    scale-[0.8]        /* default small screens */
+    sm:scale-[0.85]     /* small screens up */
+    md:scale-[0.85]    /* medium screens up */
+    lg:scale-[1]       /* large screens up */
+    origin-top-left origin-top"
               >
                 <!-- iPhone Frame -->
                 <div
@@ -2778,7 +2513,7 @@
                     <div
                       class="absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0"
                     >
-                      <div class="video-container">
+                      <div class="video-container w-[360px] h-[640px] bg-black shadow-lg p-4 flex items-center justify-center overflow-hidden">
   <iframe
     id="videoPlayer"
     src="https://www.youtube.com/embed/o2oWoMcyAxU?&mute=1&controls=0&loop=1&playlist=o2oWoMcyAxU"
@@ -2802,81 +2537,78 @@
             </div>
 
             <!-- Tags -->
-            <div class="button-group space-y-12 mt-28 ml-5">
+            <div class="button-group space-y-12 ml-32 mb-40 md:ml-18 lg:ml-24">
               <button
                 onclick="changeVideo('6qFkDrUG-68')"
-                class="bg-pink-300 text-black text-xs px-3 py-2 space-x-0 rounded-r-lg block"
+                class="button1 bg-pink-300 text-black text-xs px-3 py-2 space-x-0 rounded-r-lg block"
               >
                 Rentals
               </button>
               <button
                 onclick="changeVideo('Tv3fWnUA_9I')"
-                class="bg-rose-200 text-black text-xs px-3 py-2 py-2 space-x-0 rounded-r-lg block"
+                class="button1 bg-rose-200 text-black text-xs px-3 py-2 py-2 space-x-0 rounded-r-lg block"
               >
                 Healthcare
               </button>
               <button
                 onclick="changeVideo('o2oWoMcyAxU')"
-                class="bg-indigo-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+                class="button1 bg-indigo-300 text-black text-xs px-3 py-2 rounded-r-lg block"
               >
                 D2C
               </button>
               <button
                 onclick="changeVideo('pyzn8K4hKls')"
-                class="bg-green-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+                class="button1 bg-green-300 text-black text-xs px-3 py-2 rounded-r-lg block"
               >
                 Finance
               </button>
               <button
                 onclick="changeVideo('hkbUKKplGFU')"
-                class="bg-yellow-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+                class="button1 bg-yellow-300 text-black text-xs px-3 py-2 rounded-r-lg block"
               >
                 Education
               </button>
               <button
                 onclick="changeVideo('LYlbQC-rF_E')"
-                class="bg-sky-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+                class="button1 bg-sky-300 text-black text-xs px-3 py-2 rounded-r-lg block"
               >
                 Home Services
               </button>
             </div>
+
           </div>
-        </div>
+        
       </div>
     </section>
 
     <!--======================================== SECTION 7 =======================================-->
 
-    <section
-      class="bg-white py-16 px-6 sm:px-12 tex-al justify-start justify-center justify-items-center"
+    <section      
+      class="min-h-screen bg-white py-2 px-6 sm:px-12 tex-al justify-center justify-items-center"
     >
       <!-- Headline -->
-      <div class="max-w-4xl mx-auto text-center mb-8">
-        <h2 class="text-3xl sm:text-4xl font-bold text-black">
-          <span>Your flow, Your Integrations.</span>
-          <span
-            class="text-gray-500 font-medium block mt-2"
-            style="color: #6b7280"
-          >
-            Design Flow for your needs and wisemelon does the rest for you
-            automatically.
-          </span>
-        </h2>
-      </div>
+<div class="max-w-screen-2xl mx-auto text-left mb-8">
+  <h2 class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-black leading-tight max-w-6xl ">
+    <span>Your flow, Your Integrations.</span>
+    <span class="text-gray-400 text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight">
+      Design Flow for your needs and wisemelon does the rest for you automatically.
+    </span>
+  </h2>
+</div>
 
       <!-- Tabs -->
       <div
         id="progressTabs"
-        class="flex items-center justify-center mb-12 space-x-2"
+        class="max-w-screen-2xl flex items-center max-w-screen-2xl mx-auto justify-start mb-12 space-x-2"
       >
         <!-- We'll generate these with JS for easier control -->
       </div>
 
       <!-- Image and overlay -->
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-screen-2xl mx-auto">
         <div
           class="relative rounded-2xl overflow-hidden shadow-lg"
-          style="height: 500px"
+          style="height: auto"
         >
           <img
             id="sliderImage"
@@ -2898,220 +2630,282 @@
       </div>
     </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const steps = [
-          {
-            label: "Engaging",
-            img: "assets/images/image1.png",
-            title: "Engaging Experiences For Users.",
-            text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
-          },
-          {
-            label: "Your Data",
-            img: "assets/images/image2.png",
-            title: "Your Data. Your Chatbot.",
-            text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
-          },
-          {
-            label: "LifeCycle",
-            img: "assets/images/image3.png",
-            title: "Lifecycle Management.",
-            text: "Streamline your customer lifecycle with tailored automation workflows.",
-          },
-          {
-            label: "Automation",
-            img: "assets/images/image4.png",
-            title: "Automation Made Easy.",
-            text: "Automate repetitive tasks to save time and boost efficiency.",
-          },
-          {
-            label: "Your Guide",
-            img: "assets/images/image5.png",
-            title: "Your Personal Guide.",
-            text: "Get expert advice and support tailored to your needs.",
-          },
-          {
-            label: "Analytics",
-            img: "assets/images/image6.png",
-            title: "Powerful Analytics.",
-            text: "Gain insights and optimize your strategy with our data tools.",
-          },
-        ];
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const steps = [
+      {
+        label: "Engaging",
+        img: "assets/images/image1.png",
+        title: "Engaging Experiences For Users.",
+        text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
+      },
+      {
+        label: "Your Data",
+        img: "assets/images/image2.png",
+        title: "Your Data. Your Chatbot.",
+        text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
+      },
+      {
+        label: "LifeCycle",
+        img: "assets/images/image3.png",
+        title: "Lifecycle Management.",
+        text: "Streamline your customer lifecycle with tailored automation workflows.",
+      },
+      {
+        label: "Automation",
+        img: "assets/images/image4.png",
+        title: "Automation Made Easy.",
+        text: "Automate repetitive tasks to save time and boost efficiency.",
+      },
+      {
+        label: "Your Guide",
+        img: "assets/images/image5.png",
+        title: "Your Personal Guide.",
+        text: "Get expert advice and support tailored to your needs.",
+      },
+      {
+        label: "Analytics",
+        img: "assets/images/image6.png",
+        title: "Powerful Analytics.",
+        text: "Gain insights and optimize your strategy with our data tools.",
+      },
+    ];
 
-        const tabsContainer = document.getElementById("progressTabs");
-        const sliderImage = document.getElementById("sliderImage");
-        const overlayTitle = document.getElementById("overlayTitle");
-        const overlayText = document.getElementById("overlayText");
+    const tabsContainer = document.getElementById("progressTabs");
+    const sliderImage = document.getElementById("sliderImage");
+    const overlayTitle = document.getElementById("overlayTitle");
+    const overlayText = document.getElementById("overlayText");
+    const flowsSection = document.getElementById("flows");
 
-        // Generate tabs dynamically with lines except after last button
-        steps.forEach((step, idx) => {
-          const wrapper = document.createElement("div");
-          wrapper.className = "tab-wrapper";
+    // Create tabs
+    steps.forEach((step, idx) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "tab-wrapper";
 
-          const btn = document.createElement("button");
-          btn.className = "tab-button";
-          btn.textContent = step.label;
-          btn.setAttribute("data-index", idx);
-          btn.setAttribute("aria-pressed", "false");
-          wrapper.appendChild(btn);
+      const btn = document.createElement("button");
+      btn.className = "tab-button";
+      btn.textContent = step.label;
+      btn.setAttribute("data-index", idx);
+      btn.setAttribute("aria-pressed", "false");
+      wrapper.appendChild(btn);
 
-          if (idx !== steps.length - 1) {
-            const line = document.createElement("div");
-            line.className = "progress-line";
-            wrapper.appendChild(line);
-          }
+      if (idx !== steps.length - 1) {
+        const line = document.createElement("div");
+        line.className = "progress-line";
+        wrapper.appendChild(line);
+      }
 
-          tabsContainer.appendChild(wrapper);
-        });
+      tabsContainer.appendChild(wrapper);
+    });
 
-        const buttons = tabsContainer.querySelectorAll("button");
-        const lines = tabsContainer.querySelectorAll(".progress-line");
+    const buttons = tabsContainer.querySelectorAll("button");
+    const lines = tabsContainer.querySelectorAll(".progress-line");
 
-        function setActive(index) {
-          buttons.forEach((btn, i) => {
-            const isActive = i <= index;
-            btn.classList.toggle("active", isActive);
-            btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-          });
+    let currentIndex = 0;
+    let scrollBlocked = false;
+    let sectionInView = false;
 
-          lines.forEach((line, i) => {
-            line.classList.toggle("active-line", i < index);
-          });
-
-          sliderImage.src = steps[index].img;
-          sliderImage.alt = steps[index].label;
-          overlayTitle.textContent = steps[index].title;
-          overlayText.textContent = steps[index].text;
-        }
-
-        buttons.forEach((btn) =>
-          btn.addEventListener("click", () => {
-            setActive(parseInt(btn.dataset.index));
-          })
-        );
-
-        setActive(0);
+    function setActive(index) {
+      currentIndex = index;
+      buttons.forEach((btn, i) => {
+        const isActive = i <= index;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
       });
-    </script>
+
+      lines.forEach((line, i) => {
+        line.classList.toggle("active-line", i < index);
+      });
+
+      sliderImage.src = steps[index].img;
+      sliderImage.alt = steps[index].label;
+      overlayTitle.textContent = steps[index].title;
+      overlayText.textContent = steps[index].text;
+    }
+
+    buttons.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        setActive(parseInt(btn.dataset.index));
+      })
+    );
+
+    setActive(0);
+
+    // Observer to track when section is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          sectionInView = entry.isIntersecting;
+        });
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(flowsSection);
+
+    function handleStepChange(delta) {
+      if (!sectionInView || scrollBlocked) return;
+
+      const nextIndex = currentIndex + delta;
+
+      if (nextIndex >= 0 && nextIndex < steps.length) {
+        setActive(nextIndex);
+        blockScrollTemporarily();
+      } else if (nextIndex === steps.length) {
+        observer.unobserve(flowsSection); // optional unlock scroll control
+      }
+    }
+
+    function blockScrollTemporarily() {
+      scrollBlocked = true;
+      setTimeout(() => (scrollBlocked = false), 500);
+    }
+
+    // Scroll & Arrow Key detection even when scroll is locked
+    window.addEventListener("wheel", (e) => {
+      if (!sectionInView) return;
+      if (e.deltaY > 0) {
+        handleStepChange(1);
+      } else if (e.deltaY < 0) {
+        handleStepChange(-1);
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (!sectionInView) return;
+      if (e.key === "ArrowDown") {
+        handleStepChange(1);
+      } else if (e.key === "ArrowUp") {
+        handleStepChange(-1);
+      }
+    });
+  });
+</script>
+
+
+
 
     <!--======================================== SECTION 8 =======================================-->
 
-    <section class="w-full py-16 bg-gray-50">
-      <div class="w-full max-w-screen-xl mx-auto px-4">
-        <!-- Section Header -->
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold">Plans & Pricing</h2>
-          <div
-            class="inline-flex mt-4 bg-[#e8f9e3] rounded-lg overflow-hidden p-1 border-2 border-green-400"
-          >
-            <button
-              class="py-1 px-6 bg-[#b6f397] font-medium text-black rounded-lg"
+<section id="flows" class="min-h-screen w-full py-16 bg-gray-50">
+  <div class="w-full max-w-screen-xl mx-auto px-4">
+    <!-- Section Header -->
+    <div class="max-w-screen-2xl text-center mb-12">
+      <h2 class="text-3xl font-bold">Plans & Pricing</h2>
+      <div
+        class="inline-flex mt-4 bg-[#e8f9e3] rounded-lg overflow-hidden p-1 border-2 border-green-400"
+      >
+        <button class="py-1 px-6 bg-[#b6f397] font-medium text-black rounded-lg">
+          Pay Monthly
+        </button>
+        <button class="py-1 px-6 text-black rounded-lg">
+          Pay Yearly (Save 25%)
+        </button>
+      </div>
+    </div>
+
+  
+    <!-- Grid container -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
+
+  <!-- Card 1 -->
+  <div class="w-full max-w-xs flex flex-col bg-white border rounded-2xl p-6 shadow-md min-h-[560px]">
+
+        <div class="flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">wisemelon Starter</h3>
+            <p class="text-sm text-gray-700 font-bold mb-4">
+              For individuals & casual users
+            </p>
+            <p class="text-gray-700 text-sm mb-4">
+              Get started with the essentials and explore our features.
+            </p>
+            <div
+              class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center mb-6"
             >
-              Pay Monthly
-            </button>
-            <button class="py-1 px-6 text-black rounded-lg">
-              Pay Yearly (Save 25%)
-            </button>
-          </div>
-        </div>
-
-        <!-- Cards -->
-        <div class="flex flex-wrap justify-center gap-8">
-          <!-- Card 1 -->
-          <div
-            class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-1/4 bg-white border rounded-2xl p-6 shadow-md flex flex-col justify-between"
-            style="aspect-ratio: 3/5"
-          >
-            <div>
-              <h3 class="text-lg font-semibold mb-2">wisemelon Starter</h3>
-              <p class="text-sm text-gray-600 mb-4">
-                For individuals & casual users
-              </p>
-              <p class="text-gray-700 text-sm mb-4">
-                Get started with the essentials and explore our features.
-              </p>
-              <div
-                class="bg-[#dbf7c3] text-sm font-medium p-3 rounded-md text-center mb-6"
-              >
-                Get your first 3 months for 10k/mo
-              </div>
-              <div class="space-y-2 text-sm text-black">
-                <p>% Access to core features</p>
-                <p>% Limited storage</p>
-                <p>% Community access</p>
-                <p>% Standard support</p>
-              </div>
+              Get your first 3 months for 10k/mo
             </div>
-            <button class="mt-6 py-2 px-4 border rounded-md font-medium">
-              Learn More
-            </button>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-1/4 bg-white border-2 border-[#9af76f] rounded-2xl p-6 shadow-lg flex flex-col justify-between"
-            style="aspect-ratio: 4/5"
-          >
-            <div>
-              <h3 class="text-lg font-semibold mb-2">wisemelon Pro</h3>
-              <p class="text-sm text-gray-600 mb-4">
-                For Professionals & Small Teams
-              </p>
-              <p class="text-gray-700 text-sm mb-4">
-                Unlock advanced tools and enhance your productivity.
-              </p>
-              <div
-                class="bg-[#dbf7c3] text-sm font-medium p-3 rounded-md text-center mb-6"
-              >
-                Get your first 3 months for 30k/mo
-              </div>
-              <div class="space-y-2 text-sm text-black">
-                <p>% All Premium features</p>
-                <p>% Priority support</p>
-                <p>% Advanced analytics</p>
-                <p>% Team collaboration</p>
-              </div>
+            <div class="my-12 text-left text-xl">  <h2>Included Features</h2></div>
+            <div class="space-y-4 text-base text-black">
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Access to core features</p>
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Limited storage</p>
+              <p><span style="color:  #6FDE01;">%&nbsp;</span> Community access</p>
+              <p><span style="color:  #6FDE01;">%&nbsp;</span> Standard support</p>
             </div>
-            <button class="mt-6 py-2 px-4 border rounded-md font-medium">
-              Learn More
-            </button>
           </div>
-
-          <!-- Card 3 -->
-          <div
-            class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-1/4 bg-white border rounded-2xl p-6 shadow-md flex flex-col justify-between"
-            style="aspect-ratio: 4/5"
-          >
-            <div>
-              <h3 class="text-lg font-semibold mb-2">wisemelon Enterprise</h3>
-              <p class="text-sm text-gray-600 mb-4">
-                For Large Organizations & Businesses
-              </p>
-              <p class="text-gray-700 text-sm mb-4">
-                Unlock advanced tools and enhance your productivity.
-              </p>
-              <div
-                class="bg-[#dbf7c3] text-sm font-medium p-3 rounded-md text-center mb-6"
-              >
-                Get your first 3 months at a discounted rate
-              </div>
-              <div class="space-y-2 text-sm text-black">
-                <p>% All Pro features</p>
-                <p>% Dedicated account manager</p>
-                <p>% Advanced integrations</p>
-                <p>% Comprehensive analytics</p>
-              </div>
-            </div>
-            <button class="mt-6 py-2 px-4 border rounded-md font-medium">
-              Learn More
-            </button>
-          </div>
+          <button class="mt-6 py-2 px-4 border rounded-md font-medium">
+            Learn More
+          </button>
         </div>
       </div>
-    </section>
 
-    <!-- Footer Section -->
+      <!-- Card 2 -->
+      <div
+        class="w-full max-w-xs flex flex-col bg-white border-2 border-[#9af76f] rounded-2xl p-6 shadow-lg min-h-[560px]"
+      >
+        <div class="flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">wisemelon Pro</h3>
+            <p class="text-sm text-gray-700 font-bold mb-4">
+              For Professionals & Small Teams
+            </p>
+            <p class="text-gray-700 text-sm mb-4">
+              Unlock advanced tools and enhance your productivity.
+            </p>
+            <div
+              class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center mb-6"
+            >
+              Get your first 3 months for 30k/mo
+            </div>
+          <div class="my-12 text-left text-xl">  <h2>Included Features</h2></div>
+            <div class="space-y-4 text-base text-black">
+              <p><span style="color: #6FDE01;">%&nbsp;</span> All Premium features</p>
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Priority support</p>
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Advanced analytics</p>
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Team collaboration</p>
+            </div>
+          </div>
+          <button class="mt-6 py-2 px-4 border rounded-md font-medium">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="w-full max-w-xs flex flex-col bg-white border rounded-2xl p-6 shadow-md min-h-[520px]"
+      >
+        <div class="flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">wisemelon Enterprise</h3>
+            <p class="text-sm text-gray-700 font-bold mb-4">
+              For Large Organizations & Businesses
+            </p>
+            <p class="text-gray-700 text-sm mb-4">
+              Unlock advanced tools and enhance your productivity.
+            </p>
+            <div
+              class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center mb-6"
+            >
+              Get your first 3 months at a discounted rate
+            </div>
+            <div class="my-12 text-left text-xl">  <h2>Included Features</h2></div>
+            <div class="space-y-4 text-base text-black">
+              <p><span style="color: #6FDE01;">%&nbsp;</span> All Pro features</p>
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Dedicated account manager</p>
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Advanced integrations</p>
+              <p><span style="color: #6FDE01;">%&nbsp;</span> Comprehensive analytics</p>
+            </div>
+          </div>
+          <button class="mt-6 py-4 px-4 border rounded-md font-medium">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!----------------- Footer Section --------------->
     <footer class="w-full bg-black text-white pt-16 pb-8">
       <div
         class="w-full max-w-screen-xl mx-auto px-4 flex flex-wrap justify-between items-start gap-8"

@@ -1,0 +1,24 @@
+.button1 {
+  --bg: #16C542;
+  --text-color: #fff;
+  position: relative;
+  border: none;
+  background: var(--bg);
+  color: var(--text-color);
+  padding: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s; 
+  opacity: 0.8;
+  letter-spacing: 1px;
+  box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
+}
+
+.button1:hover {
+  opacity: 1;
+}
+
+.button1:active {
+  top: 4px;
+  box-shadow: #1a1a1a  0px 3px 2px,#000 0px 3px 5px;
+}

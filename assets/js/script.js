@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let forwardRotationCount = 0;
   const maxForwardRotations = 15; // 3 full loops
   let localScrollLocked = true;
+  let isRotating = false;
 
   const positions = [
     { x: -220, y: 40, rotate: -60, z: 1, scale: 0.8 },
@@ -29,22 +30,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function rotateForward() {
-    if (forwardRotationCount >= maxForwardRotations) return;
-    order.unshift(order.pop());
-    applyTransforms();
-    forwardRotationCount++;
+ function rotateForward() {
+  if (forwardRotationCount >= maxForwardRotations || isRotating) return;
 
-    if (forwardRotationCount >= maxForwardRotations) {
-      localScrollLocked = false;
-      activeSection = null; // allow scrolling to section 2
-    }
+  isRotating = true;
+  order.unshift(order.pop());
+  applyTransforms();
+  forwardRotationCount++;
+
+  if (forwardRotationCount >= maxForwardRotations) {
+    localScrollLocked = false;
+    activeSection = null; // allow scrolling to section 2
   }
 
-  function rotateBackward() {
-    order.push(order.shift());
-    applyTransforms();
-  }
+  setTimeout(() => {
+    isRotating = false;
+  }, 200); // Match your animation duration
+}
+
+
+ function rotateBackward() {
+  if (isRotating) return;
+
+  isRotating = true;
+  order.push(order.shift());
+  applyTransforms();
+
+  setTimeout(() => {
+    isRotating = false;
+  }, 200);
+}
 
   applyTransforms();
 
@@ -113,13 +128,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 600);
   }
 
-  function checkCenterAndLock() {
-    if (animationSequenceDone) return;
-    const rect = container.getBoundingClientRect();
-    if (Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2) < 200) {
-      activeSection = "section2";
-    }
+ function checkCenterAndLock() {
+  if (animationSequenceDone) return;
+  const rect = container.getBoundingClientRect();
+  if (rect.top < 500 && rect.bottom > 0) {
+    activeSection = "section2";
   }
+}
+
 
   // ---------------------------
   // Scroll, Wheel, Keyboard
