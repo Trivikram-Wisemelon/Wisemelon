@@ -52,31 +52,6 @@ body.disable-scroll {
   color: #1e4e1e;
 }
 
-.section2-cards-container {
-  position: relative;
-  width: 100%;
-  max-width: 64rem;
-  height: 400px;
-  margin-top: 15rem;
-}
-
-.section2-card {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-  background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: top 0.5s ease, z-index 0s ease;
-  color: #166426;
-}
 
 .z1 {
   z-index: 1;
@@ -343,13 +318,15 @@ body {
 
 /* stack css */
 
-
-/* SECTION 2 - stacked cards */
 .section2-cards-container {
   position: relative;
   width: 100%;
-  min-height: 40rem;
+  max-width: 64rem;
+  min-height: 20rem;
+  margin-top: 15rem;
+
 }
+
 .section2-card {
   position: absolute;
   left: 50%;
@@ -357,10 +334,20 @@ body {
   width: 90%;
   max-width: 800px;
   aspect-ratio: 16 / 9;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   cursor: pointer;
   user-select: none;
-  transition: top 0.6s ease, box-shadow 0.6s ease;
+  color: #166426;
+  transition: top 0.5s ease, box-shadow 0.6s ease, z-index 0s ease;
 }
+
+
 
 /* iphone animation */
 
@@ -401,7 +388,7 @@ body {
 
 
 
-
+/* snapchat button */
 
 
 
