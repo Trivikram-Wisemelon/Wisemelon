@@ -13,8 +13,9 @@
   box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
 }
 
-/* Media query for larger screens */
-@media screen and (min-width: 768px) {
+/* Media query for smaller screens */
+
+@media screen and (max-width: 480px) {
   .button1 {
   --bg: #16C542;
   --text-color: #fff;
@@ -23,7 +24,7 @@
   background: var(--bg);
   color: var(--text-color);
                      /* ~18px */
-   padding: 1em;   
+   padding: 0.8em !important;   
   font-weight: bold;
   text-transform: uppercase;
   transition: 0.2s;
@@ -31,8 +32,6 @@
   box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
 }
 }
-
-
 
 .button1:hover {
   opacity: 1;
