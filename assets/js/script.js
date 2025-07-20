@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const absDy = Math.abs(dy);
 
       if (absDx > absDy) {
-        if (dx < -30) rotateForward();
-        else if (dx > 30) rotateBackward();
-      }
+        if (dx < -30) rotateBackward();
+        else if (dx > 30) rotateForward();
+      }  
     });
 
     phoneContainer.addEventListener("click", () => rotateForward());
