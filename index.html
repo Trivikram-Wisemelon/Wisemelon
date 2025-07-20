@@ -108,7 +108,7 @@
  <section id="section1"
   class="relative w-full min-h-[calc(100vh-64px)] bg-white text-center pt-[64px] z-10 pt-24">
 
-  <div class="max-w-[1600px] w-full mx-auto px-4">
+  <div class="flex justify-center max-w-[1600px] w-full mx-auto px-4">
     <div class="h-36 mt-36 mb-12">
       <div class="sphere-glow left glow-wrapper z-[60]"></div>
       <div class="sphere-glow right z-50"></div>
@@ -123,7 +123,7 @@
   </div>
 
   <div id="cardContainer"
-    class="w-fit mx-auto mt-[180px] flex justify-center gap-6">
+    class="w-fit mx-auto mt-[180px] ml-12 flex justify-center gap-6">
         <!-- Left_deeper_phone (phone 1)-->
         <div id="card1" class="card">
           <div class="flex items-center justify-center scale-[0.70] origin-top">
@@ -586,7 +586,7 @@
                   class="absolute top-[71px] left-0 right-0 h-px bg-gray-300 z-10"
                 ></div>
                 <div
-                  class="bg-[url('./assets/images/snap.png')] bg-repeat absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0"
+                  class="bg-[url('./assets/images/snap.png')] bg-no-repeat bg-cover bg-center absolute bottom-0 left-0 w-full h-[90%] overflow-hidden p-0 m-0"
                 >
              
 
@@ -1686,9 +1686,9 @@
 
     <section
   id="cardsSection"
-  class="relative w-full min-h-screen flex flex-col items-center pt-0 pb-0 sm:pb-12 md:pb-40 bg-gradient-to-b from-green-50 via-green-200 to-green-300 z-20 -mt-20"
+  class="relative w-full min-h-screen flex flex-col items-center pt-0 pb-0 sm:pb-0 md:pb-0 bg-gradient-to-b from-green-50 via-green-200 to-green-300 z-20 -mt-20"
 >
- <div class="flex justify-center max-w-screen-2xl mx-auto w-full overflow-visible">
+ <div class="h-36 flex justify-center max-w-screen-2xl mx-auto w-full overflow-visible">
   <svg
     class="h-36 w-full max-w-4xl mx-auto block"
     xmlns="http://www.w3.org/2000/svg"
@@ -1711,7 +1711,7 @@
 
       <!-- Titles -->
       <h2
-        class="text-xl text-center font-normal text-[#16C542] tracking-normal -mb-16 -mt-16 sm:-mt-20 md:-mt-20 lg:-mt-1"
+        class="text-xl text-center font-normal text-[#16C542] tracking-normal -mb-16 -mt-16 sm:-mt-3 md:-mt-3 lg:-mt-1"
       >
         One Powerful System
       </h2>
@@ -1725,7 +1725,7 @@
       </div>
 
       <!-- Cards Container -->
-      <div class="section2-cards-container px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full md:mb-12">
+      <div class="section2-cards-container px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full mt-60">
 
         <div class="bg-white/30 backdrop-blur-md section2-card z4 w-" data-index="0">
           <p>Card 1 Content</p>
@@ -1756,50 +1756,52 @@
   </div>
 
   <div
-    class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+    class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-6"
   >
         <!-- Card 1 (wide) -->
         <div
-          class="relative bg-gradient-to-b from-white to-zinc-50 rounded-lg p-3 sm:col-span-2 overflow-hidden"
+          class="svgcom relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-3 sm:col-span-3 overflow-hidden"
           style="aspect-ratio: 2/0.8"
         >
           <!-- Scalable inner container -->
           <div class="absolute inset-0 w-full h-full">
             <div class="relative w-full h-full">
               <!-- Text Box -->
-              <div
-                class="absolute w-72 max-w-[40%] bottom-3 left-3 p-2 z-10 text-xs sm:text-sm"
-              >
+             <div
+  class="absolute w-[28rem] max-w-none bottom-3 left-3 p-2 z-10 text-xs sm:text-sm z-20"
+>
                 <a href="#" class="text-lg font-medium text-black">Learn More →</a>
                 <h2 class="mt-2 text-xl sm:text-2xl font-bold text-black">
                   WhatsApp Flows
                 </h2>
-                <p class="mt-1 text-black">
-                  WhatsApp flows allows you to capture information using easy to
-                  use forms, product list and more.
-                </p>
+              <p class="mt-1 text-black text-base max-w-xs">
+  WhatsApp flows allows you to capture information using easy to
+  use forms, product list and more.
+</p>
               </div>
+              <!-- unified div Box -->
+              <div class="unified">
               <img
                 src="assets/images/phonepart1.png"
                 alt=""
-                class="absolute top-[-1%] left-[28%] w-[16%] h-auto object-contain z-10"
+                class="absolute top-[10%] left-[10%] w-[16%] h-auto object-contain z-10"
               />
               <img
                 src="assets/images/phonepart2.png"
                 alt=""
-                class="absolute top-[-1%] left-[76%] w-[14%] h-auto object-contain"
+                class="absolute top-[-1%] left-[86%] w-[14%] h-auto object-contain"
               />
 
               <img
                 src="assets/images/phonepart3.png"
                 alt=""
-                class="absolute top-[55%] left-[65%] max-w-[15%] object-contain"
+                class="absolute top-[55%] left-[25%] max-w-[15%] object-contain"
               />
 
               <!-- Inserted SVG -->
               <svg
                 viewBox="0 0 500 500"
-                class="absolute w-full h-full max-w-full max-h-full top-[22%] left-[58%] scale-[1.5]"
+                class="absolute w-full h-full max-w-full max-h-full top-[22%] left-[68%] scale-[1.5]"
                 preserveAspectRatio="xMinYMin meet"
               >
                 <defs>
@@ -1902,15 +1904,17 @@
                   />
                 </rect>
               </svg>
+              </div>
+
             </div>
           </div>
         </div>
         <!-- Card 2 (tall) -->
         <div
-          class="overflow-hidden bg-gradient-to-b from-white via-zinc-50 to-zinc-50 rounded-lg p-6 sm:col-span-2 sm:row-span-2 flex flex-col justify-between h-full"
+          class="overflow-hidden bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-3 sm:row-span-2 flex flex-col justify-between h-full"
         >
           <!-- Top: custom logo grid -->
-          <div class="grid-container gap-20 mb-12 mx-auto">
+          <div class="grid-container gap-20 mx-auto">
             <div class="cardlogo tilt-right"><img src="assets/images/logo/x.png" alt="" class="w-12 h-12 object-cover"></div>
              <div class="cardlogo tilt-left"><img src="assets/images/insta.png" alt="" class="w-10 h-10 object-cover"></div>
            
@@ -1923,11 +1927,13 @@
           
            
 
-            <img
+          <img
               src="assets/images/gmail.png"
               alt="Gmail"
               style="max-width: 150%; max-height: 150%; object-fit"
             />
+
+
               <img
               src="assets/images/zoho.png"
               alt="Gmail"
@@ -1961,7 +1967,7 @@
 
      
 <!-- Card 3 -->
-<div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between h-96">
+<div class="bg-gradient-to-b from-zinc-100 to white rounded-lg p-6 sm:col-span-3 flex flex-col justify-between h-96">
   <!-- Spacer at top (if needed for layout) -->
   <div></div>
 
@@ -1986,7 +1992,7 @@
 
 
         <!-- Card 4 -->
-        <div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 flex flex-col justify-between">
+        <div class="bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between">
           <a href="#" class="text-lg font-medium text-black">Learn More →</a>
           <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
           <p class="mt-1 text-black">
@@ -1997,7 +2003,7 @@
 
         <!-- Card 5 -->
 
-        <div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 flex flex-col justify-between">
+        <div class="bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between">
           <a href="#" class="text-lg font-medium text-black">Learn More →</a>
           <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
           <p class="mt-1 text-black">
@@ -2006,7 +2012,7 @@
           </p>
         </div>
         <!-- Card 6 -->
-        <div class="bg-gradient-to-b from-white to-zinc-50 rounded-lg p-6 flex flex-col justify-between">
+        <div class="bg-gradient-to-b from-white to-zinc-100 rounded-lg sm:col-span-2 p-6 flex flex-col justify-between">
           <a href="#" class="text-lg font-medium text-black">Learn More →</a>
           <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
           <p class="mt-1 text-black">
@@ -2058,11 +2064,11 @@
       class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
       style="background: url('assets/images/img2.png') center/cover;"
     >
-      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
         Education
       </div>
       <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="text-white flex items-center gap-2">
+        <a href="#" class="usecase text-white flex items-center gap-2">
           Check Use Cases <span>➔</span>
         </a>
       </div>
@@ -2072,11 +2078,11 @@
       class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
       style="background: url('assets/images/img2.png') center/cover;"
     >
-      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
         Finance
       </div>
       <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="text-white flex items-center gap-2">
+        <a href="#" class="usecase text-white flex items-center gap-2">
           Check Use Cases <span>➔</span>
         </a>
       </div>
@@ -2086,11 +2092,11 @@
       class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
       style="background: url('assets/images/img2.png') center/cover;"
     >
-      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-3xl text-white font-normal">
         Healthcare
       </div>
       <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="text-white flex items-center gap-2">
+        <a href="#" class="usecase text-white flex items-center gap-2">
           Check Use Cases <span>➔</span>
         </a>
       </div>
@@ -2100,11 +2106,11 @@
       class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
       style="background: url('assets/images/img2.png') center/cover;"
     >
-      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-3xl text-white font-normal">
        Home Services
       </div>
       <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="text-white flex items-center gap-2">
+        <a href="#" class="usecase text-white flex items-center gap-2">
           Check Use Cases <span>➔</span>
         </a>
       </div>
@@ -2114,11 +2120,11 @@
       class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
       style="background: url('assets/images/img2.png') center/cover;"
     >
-      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
         Real Estate
       </div>
       <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="text-white flex items-center gap-2">
+        <a href="#" class="usecase text-white flex items-center gap-2">
           Check Use Cases <span>➔</span>
         </a>
       </div>
@@ -2128,11 +2134,11 @@
       class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
       style="background: url('assets/images/img2.png') center/cover;"
     >
-      <div class="absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
+      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
         Education
       </div>
       <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="text-white flex items-center gap-2">
+        <a href="#" class="usecase text-white flex items-center gap-2">
           Check Use Cases <span>➔</span>
         </a>
       </div>
@@ -2144,55 +2150,50 @@
 
     <!--======================================== SECTION 5 =======================================-->
 
-    <section class="w-full min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100 py-6 px-4 sm:px-6 lg:px-8">
-  <!-- Container with flex-column & full height -->
-  <div class="max-w-screen-2xl mx-auto flex flex-col min-h-screen">
 
-    <!-- Top Logos -->
-    <div class="flex flex-wrap items-center justify-ce gap-8 sm:gap-12 lg:gap-40 mt-6 mb-20">
-      <img src="assets/images/logo/meta.png" alt="Meta" class="h-12" />
-      <img src="assets/images/logo/iso9001.png" alt="ISO 9001" class="h-14" />
-      <img src="assets/images/logo/iso27001.png" alt="ISO 27001" class="h-14" />
-      <img src="assets/images/logo/gdpr.png" alt="GDPR" class="h-14" />
-    </div>
+<section class="w-full min-h-screen py-6 flex flex-col justify-between">
+  <!-- Top Half: Gradient Background -->
+  <div class="w-full bg-gradient-to-b from-zinc-50 to-zinc-200">
+    <div class="max-w-screen-2xl mx-auto flex flex-col">
+      <!-- Top Logos -->
+      <div class="toplogos flex flex-wrap items-center justify-start pt-8 gap-8 sm:gap-12 lg:gap-40 mt-6 mb-20">
+        <img src="assets/images/logo/meta.png" alt="Meta" class="h-14" />
+        <img src="assets/images/logo/iso9001.png" alt="ISO 9001" class="h-16" />
+        <img src="assets/images/logo/iso27001.png" alt="ISO 27001" class="h-16" />
+        <img src="assets/images/logo/gdpr.png" alt="GDPR" class="h-16" />
+      </div>
 
-        <!-- Testimonials and Feature Cards -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-3">
-          <!-- Left Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
-            
-            <div class="bg-white rounded-xl shadow-sm p-12 text-lg">
-              <p><strong class="text-lg" >How Petfolk,</strong></p>
-              <span class="text-gray-500 text-base">
-                scaled their services to more than 10k customers in 2 months
-              </span>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-sm p-12">
-              <p>
-                <strong class="text-lg">How ViSource,</strong></p>
-                <span class="text-gray-500 text-base">
-                  automated their response time by 80% for their steel
-                  distribution business.
-                </span>
-              
-            </div>
-
-            <div
-              class="bg-white rounded-xl shadow-sm p-12 text-lg sm:col-span-2"
-            >
-              <p>
-                <strong class="text-lg" >How Math Accelerator,</strong></p>
-                <span class="text-gray-500 text-base">
-                  keeps visitors informed about hundreds of incubated startups
-                  and their work.
-                </span>
-              
-            </div>
+      <!-- Testimonials and Feature Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-1">
+        <!-- Left Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <!-- Card 1 -->
+          <div class="testimony bg-white rounded-xl shadow-sm p-8 text-lg">
+            <p><strong>How Petfolk,</strong></p>
+            <span class="text-gray-500 font-bold text-base">
+              scaled their services to more than 10k customers in 2 months
+            </span>
           </div>
+          <!-- Card 2 -->
+          <div class=" testimony bg-white rounded-xl shadow-sm p-8">
+            <p><strong>How ViSource,</strong></p>
+            <span class="text-gray-500 font-bold text-base">
+              automated their response time by 80% for their steel distribution business.
+            </span>
+          </div>
+          <!-- Card 3 (full width) -->
+          <div class="testimony bg-white rounded-xl shadow-sm p-8 sm:col-span-2">
+            <p><strong>How Math Accelerator,</strong></p>
+            <span class="text-gray-500 font-bold text-base">
+              keeps visitors informed about hundreds of incubated startups and their work.
+            </span>
+          </div>
+        </div>
 
+        
           <!-- Right Testimonial Card Stack -->
-        <div class="relative w-full max-w-md mx-auto lg:ml-48 lg:mt-[-4rem] md:my-32 sm: my-20 ">
+       <div class="scaledown relative w-full max-w-md mx-auto lg:ml-48 mt-9 overflow-visible lg:-mb-[30px] sm:mb-16 md:my-12 z-20">
+
   <!-- Background Card (bottom) -->
   <div
     id="dragcard3"
@@ -2206,16 +2207,16 @@
         class="w-20 h-20 rounded-full object-cover"
       />
       <div>
-        <p class="font-bold text-2xl">Prabhu Deva</p>
-        <p class="text-xl text-gray-600">CMO, Bell Labs</p>
+        <h1 class="font-bold text-4xl">Prabhu Deva</h1>
+        <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
       </div>
     </div>
-    <p class="text-gray-800 text-base mt-3 flex-grow">
+    <p class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow">
       I don’t know who else we could have trusted for our customer
       interactions. Wisemelon literally provides all the options a
       business would ever need.
     </p>
-    <a href="#" class="font-medium text-black text-lg mt-4">
+    <a href="#" class="font-medium text-black text-2xl mt-4">
       Try Yourself →
     </a>
 
@@ -2236,16 +2237,16 @@
         class="w-20 h-20 rounded-full object-cover"
       />
       <div>
-        <p class="font-bold text-2xl">Prabhu Deva</p>
-        <p class="text-xl text-gray-600">CMO, Bell Labs</p>
+       <p class="font-bold text-4xl">Prabhu Deva</p>
+        <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
       </div>
     </div>
-    <p class="text-gray-800 text-base mt-3 flex-grow">
+    <p class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow">
       I don’t know who else we could have trusted for our customer
       interactions. Wisemelon literally provides all the options a
       business would ever need.
     </p>
-    <a href="#" class="font-medium text-black text-lg mt-4">
+    <a href="#" class="font-medium text-black text-2xl mt-4">
       Try Yourself →
     </a>
 
@@ -2265,75 +2266,109 @@
         class="w-20 h-20 rounded-full object-cover"
       />
       <div>
-        <p class="font-bold text-2xl">Prabhu Deva</p>
-        <p class="text-xl text-gray-600">CMO, Bell Labs</p>
+        <p class="font-bold text-4xl">Prabhu Deva</p>
+        <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
       </div>
     </div>
-    <p class="text-gray-800 text-base mt-3 flex-grow">
+    <p class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow">
       I don’t know who else we could have trusted for our customer
       interactions. Wisemelon literally provides all the options a
       business would ever need.
     </p>
-    <a href="#" class="font-medium text-black text-lg mt-4">
+    <a href="#" class="font-medium text-black text-2xl mt-4">
       Try Yourself →
     </a>
   </div>
 </div>
 
-        </div>
-
-        <!-- Partner Logos (Anchored at Bottom) -->
-    <div class="mt-auto">
-      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-start items-center pb-6">
-        <img src="assets/images/logo/haldirams_logo.png" alt="Haldiram's" class="h-12" />
-        <img src="assets/images/logo/vendiman_pvt_ltd_logo.png.png" alt="Vendiman" class="h-12" />
-        <img src="assets/images/logo/bigbasket.png" alt="BigBasket" class="h-12" />
-        <img src="assets/images/logo/hospitalsapollo.png" alt="Apollo" class="h-12" />
-        <img src="assets/images/logo/lalitha_jewellers_colombo_logo.png.png" alt="Lalitha" class="h-12" />
-        <img src="assets/images/logo/royalbrother.png" alt="Royal Brothers" class="h-12" />
       </div>
     </div>
+  </div>
 
+  <!-- Bottom Half: Partner Logos -->
+  <div class="w-full mt-auto p-16">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-center items-center pt-10 pb-6">
+      <img src="assets/images/logo/haldirams_logo.png" alt="Haldiram's" class="bottomlogos" />
+      <img src="assets/images/logo/vendiman_pvt_ltd_logo.png.png" alt="Vendiman" class="bottomlogos" />
+      <img src="assets/images/logo/bigbasket.png" alt="BigBasket" class="bottomlogos" />
+      <img src="assets/images/logo/hospitalsapollo.png" alt="Apollo" class="bottomlogos" />
+      <img src="assets/images/logo/lalitha_jewellers_colombo_logo.png.png" alt="Lalitha" class="bottomlogos" />
+      <img src="assets/images/logo/royalbrother.png" alt="Royal Brothers" class="bottomlogos" />
+    </div>
   </div>
 </section>
+
+    
     <!--======================================== SECTION 6 =======================================-->
 
-    <section class="min-h-screen justify-center py-16 px-6 sm:px-12 md:pb-60">
-      <div
-        class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-48 lg:-my-24"
-      >
-        <!-- Left: Text and Form -->
-        <div>
-          <h2 class="text-3xl font-bold text-black mb-24">
-            Automate your business in just
-            <span class="text-black">2 days.</span>
-          </h2>
-          <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
-            <input
-              type="text"
-              placeholder="Full Name"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="email"
-              placeholder="Business Email"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Mobile Number"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="date"
-              placeholder="Meeting Date"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <textarea
-              placeholder="Use Case"
-              rows="3"
-              class="border border-gray-300 rounded-md px-4 py-6 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 sm:col-span-2"
-            ></textarea>
+  <section class="min-h-screen max-w-screen-2xl mx-auto px-6 sm:px-12">
+
+  <!-- Heading -->
+ <h2 class="automate text-4xl sm:text-5xl md:text-5xl font-bold text-black mb-16">
+    Automate your business in just <span class="text-black">2 days.</span>
+  </h2>
+
+  <!-- Grid container -->
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 w-full">
+
+    <!-- Left column -->
+   <div class="w-full">
+  <form class="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+    
+    <!-- Full Name -->
+    <div class="flex flex-col">
+      <label for="fullName" class="mb-2 text-sm font-medium text-gray-700">Full Name</label>
+      <input
+        id="fullName"
+        name="fullName"
+        type="text"
+        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Business Email -->
+    <div class="flex flex-col">
+      <label for="email" class="mb-2 text-sm font-medium text-gray-700">Business Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Mobile Number -->
+    <div class="flex flex-col">
+      <label for="mobile" class="mb-2 text-sm font-medium text-gray-700">Mobile Number</label>
+      <input
+        id="mobile"
+        name="mobile"
+        type="text"
+        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Meeting Date -->
+    <div class="flex flex-col">
+      <label for="meetingDate" class="mb-2 text-sm font-medium text-gray-700">Meeting Date</label>
+      <input
+        id="meetingDate"
+        name="meetingDate"
+        type="date"
+        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Use Case -->
+    <div class="flex flex-col sm:col-span-2">
+      <label for="useCase" class="mb-2 text-sm font-medium text-gray-700">Use Case</label>
+      <textarea
+        id="useCase"
+        name="useCase"
+        rows="3"
+        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      ></textarea>
+    </div>
 
            
 <button
@@ -2378,21 +2413,21 @@
 
         <!-- Right: Phone Image and Tags as One Block (Always Side-by-Side) -->
         
-          <div class="flex flex-row flex-nowrap items-center justify-center gap-4">
+            <div class="flex items-center justify-center mb-12">
             <!-- Phone Image -->
 
-            <div id="card3" class="cardvideo w-36 sm:w-44 md:w-52 lg:w-60 flex justify-items-center lg:mt-36 -my-40 sm:-my-40 md:-my-40 lg:my-6">
+            <div id="card3" class="cardvideo w-36 sm:w-44 md:w-52 lg:w-60 flex justify-items-center -mb-60 lg:mt-30 sm:-my-40 md:-my-40 lg:my-6 ml-6">
               <div
                 class="flex items-center justify-center transform
-    scale-[0.8]        /* default small screens */
-    sm:scale-[0.85]     /* small screens up */
-    md:scale-[0.85]    /* medium screens up */
+    scale-[0.6]        /* default small screens */
+    sm:scale-[0.70]     /* small screens up */
+    md:scale-[0.80]    /* medium screens up */
     lg:scale-[1]       /* large screens up */
     origin-top-left origin-top"
               >
                 <!-- iPhone Frame -->
                 <div
-                  class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
+                  class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl ml-2"
                 >
                   <!-- Side Buttons -->
                   <div
@@ -2524,7 +2559,7 @@
             </div>
 
             <!-- Tags -->
-            <div class="button-group space-y-12 ml-32 mb-40 md:ml-18 lg:ml-24">
+            <div class="button-group space-y-8 lg:space-y-16 ml-20 mb-20 md:ml-12 lg:ml-32">
               <button
                 onclick="changeVideo('6qFkDrUG-68')"
                 class="button1 bg-pink-300 text-black text-xs px-3 py-2 space-x-0 rounded-r-lg block"
@@ -2570,206 +2605,364 @@
 
     <!--======================================== SECTION 7 =======================================-->
 
-    <section      
-      class="min-h-screen bg-white py-2 px-6 sm:px-12 tex-al justify-center justify-items-center"
+
+    <section
+  id="flows"
+  class="min-h-screen bg-white py-2 px-6 sm:px-12 text-left justify-center justify-items-center"
+>
+  <!-- Headline -->
+  <div class="max-w-screen-2xl mx-auto text-left mb-8">
+    <h2
+      class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-black leading-tight max-w-6xl"
     >
-      <!-- Headline -->
-<div class="max-w-screen-2xl mx-auto text-left mb-8">
-  <h2 class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-black leading-tight max-w-6xl ">
-    <span>Your flow, Your Integrations.</span>
-    <span class="text-gray-400 text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight">
-      Design Flow for your needs and wisemelon does the rest for you automatically.
-    </span>
-  </h2>
-</div>
-
-      <!-- Tabs -->
-      <div
-        id="progressTabs"
-        class="max-w-screen-2xl flex items-center max-w-screen-2xl mx-auto justify-start mb-12 space-x-2"
+      <span>Your flow, Your Integrations.</span>
+      <span
+        class="text-gray-400 text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight"
       >
-        <!-- We'll generate these with JS for easier control -->
-      </div>
+        Design Flow for your needs and wisemelon does the rest for you automatically.
+      </span>
+    </h2>
+  </div>
 
-      <!-- Image and overlay -->
-      <div class="max-w-screen-2xl mx-auto">
-        <div
-          class="relative rounded-2xl overflow-hidden shadow-lg"
-          style="height: auto"
-        >
-          <img
-            id="sliderImage"
-            src=""
-            alt=""
-            class="w-full h-full object-cover rounded-2xl"
-          />
-          <div
-            class="absolute inset-0 bg-opacity-60 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
-            style="background-color: rgba(0, 0, 0, 0.6)"
-          >
-            <h3 id="overlayTitle" class="text-3xl font-bold mb-4"></h3>
-            <p
-              id="overlayText"
-              class="text-lg sm:text-xl font-medium max-w-2xl"
-            ></p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Tabs (Desktop only) -->
+  <div
+    id="progressTabs"
+    class="max-w-screen-2xl flex items-center mx-auto justify-start mb-12 space-x-2 flex-wrap hidden sm:flex"
+  >
+    <!-- Desktop tabs generated by JS -->
+  </div>
+
+  <!-- Mobile Carousel (Mobile only) -->
+ 
+<h4 id="mobileCarouselTitle" class="text-lg font-semibold text-center mt-4 mb-2"></h4>
+  <div id="mobileCarousel" class="block sm:hidden mt-12 px-4">
+    <!-- Carousel track -->
+    <div
+      id="carouselTrack"
+      class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+    >
+      <!-- Slides injected by JS -->
+    </div>
+
+    <!-- Dot indicators -->
+      <div id="carouselDots" class="flex items-center justify-center mt-4">
+      <!-- Dots injected by JS -->
+
+    </div>
+  </div>
+
+  <!-- Image and overlay (Desktop only) -->
+  <div
+    class="max-w-screen-2xl mx-auto hidden sm:block relative rounded-2xl overflow-hidden shadow-lg"
+    style="height: auto"
+  >
+    <img
+      id="sliderImage"
+      src=""
+      alt=""
+      class="w-full h-full object-cover rounded-2xl"
+    />
+    <div
+      class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
+      style="background-color: rgba(0, 0, 0, 0.6)"
+    >
+      <h3 id="overlayTitle" class="text-3xl font-bold mb-4"></h3>
+      <p id="overlayText" class="text-lg sm:text-xl font-medium max-w-2xl"></p>
+    </div>
+  </div>
+</section>
+
+
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const steps = [
-      {
-        label: "Engaging",
-        img: "assets/images/image1.png",
-        title: "Engaging Experiences For Users.",
-        text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
-      },
-      {
-        label: "Your Data",
-        img: "assets/images/image2.png",
-        title: "Your Data. Your Chatbot.",
-        text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
-      },
-      {
-        label: "LifeCycle",
-        img: "assets/images/image3.png",
-        title: "Lifecycle Management.",
-        text: "Streamline your customer lifecycle with tailored automation workflows.",
-      },
-      {
-        label: "Automation",
-        img: "assets/images/image4.png",
-        title: "Automation Made Easy.",
-        text: "Automate repetitive tasks to save time and boost efficiency.",
-      },
-      {
-        label: "Your Guide",
-        img: "assets/images/image5.png",
-        title: "Your Personal Guide.",
-        text: "Get expert advice and support tailored to your needs.",
-      },
-      {
-        label: "Analytics",
-        img: "assets/images/image6.png",
-        title: "Powerful Analytics.",
-        text: "Gain insights and optimize your strategy with our data tools.",
-      },
-    ];
 
-    const tabsContainer = document.getElementById("progressTabs");
-    const sliderImage = document.getElementById("sliderImage");
-    const overlayTitle = document.getElementById("overlayTitle");
-    const overlayText = document.getElementById("overlayText");
-    const flowsSection = document.getElementById("flows");
+document.addEventListener("DOMContentLoaded", () => {
+  const steps = [
+    {
+      label: "Engaging",
+      img: "assets/images/image1.png",
+      title: "Engaging Experiences For Users.",
+      text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
+    },
+    {
+      label: "Your Data",
+      img: "assets/images/image2.png",
+      title: "Your Data. Your Chatbot.",
+      text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
+    },
+    {
+      label: "LifeCycle",
+      img: "assets/images/image3.png",
+      title: "Lifecycle Management.",
+      text: "Streamline your customer lifecycle with tailored automation workflows.",
+    },
+    {
+      label: "Automation",
+      img: "assets/images/image4.png",
+      title: "Automation Made Easy.",
+      text: "Automate repetitive tasks to save time and boost efficiency.",
+    },
+    {
+      label: "Your Guide",
+      img: "assets/images/image5.png",
+      title: "Your Personal Guide.",
+      text: "Get expert advice and support tailored to your needs.",
+    },
+    {
+      label: "Analytics",
+      img: "assets/images/image6.png",
+      title: "Powerful Analytics.",
+      text: "Gain insights and optimize your strategy with our data tools.",
+    },
+  ];
 
-    // Create tabs
-    steps.forEach((step, idx) => {
-      const wrapper = document.createElement("div");
-      wrapper.className = "tab-wrapper";
+  // Desktop Elements
+  const tabsContainer = document.getElementById("progressTabs");
+  const sliderImage = document.getElementById("sliderImage");
+  const overlayTitle = document.getElementById("overlayTitle");
+  const overlayText = document.getElementById("overlayText");
+  const flowsSection = document.getElementById("flows");
+  
 
-      const btn = document.createElement("button");
-      btn.className = "tab-button";
-      btn.textContent = step.label;
-      btn.setAttribute("data-index", idx);
-      btn.setAttribute("aria-pressed", "false");
-      wrapper.appendChild(btn);
+  // Mobile Elements
+  const track = document.getElementById("carouselTrack");
+  const dotsContainer = document.getElementById("carouselDots");
 
-      if (idx !== steps.length - 1) {
-        const line = document.createElement("div");
-        line.className = "progress-line";
-        wrapper.appendChild(line);
-      }
+  // --- Desktop Setup ---
 
-      tabsContainer.appendChild(wrapper);
-    });
+  // Create tabs & lines (desktop)
+  tabsContainer.innerHTML = ""; // Clear if any existing
+  steps.forEach((step, idx) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "tab-wrapper";
 
-    const buttons = tabsContainer.querySelectorAll("button");
-    const lines = tabsContainer.querySelectorAll(".progress-line");
+    const btn = document.createElement("button");
+    btn.className = "tab-button";
+    btn.textContent = step.label;
+    btn.setAttribute("data-index", idx);
+    btn.setAttribute("aria-pressed", "false");
+    wrapper.appendChild(btn);
 
-    let currentIndex = 0;
-    let scrollBlocked = false;
-    let sectionInView = false;
-
-    function setActive(index) {
-      currentIndex = index;
-      buttons.forEach((btn, i) => {
-        const isActive = i <= index;
-        btn.classList.toggle("active", isActive);
-        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
-
-      lines.forEach((line, i) => {
-        line.classList.toggle("active-line", i < index);
-      });
-
-      sliderImage.src = steps[index].img;
-      sliderImage.alt = steps[index].label;
-      overlayTitle.textContent = steps[index].title;
-      overlayText.textContent = steps[index].text;
+    if (idx !== steps.length - 1) {
+      const line = document.createElement("div");
+      line.className = "progress-line";
+      wrapper.appendChild(line);
     }
 
-    buttons.forEach((btn) =>
-      btn.addEventListener("click", () => {
-        setActive(parseInt(btn.dataset.index));
-      })
-    );
-
-    setActive(0);
-
-    // Observer to track when section is in view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          sectionInView = entry.isIntersecting;
-        });
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(flowsSection);
-
-    function handleStepChange(delta) {
-      if (!sectionInView || scrollBlocked) return;
-
-      const nextIndex = currentIndex + delta;
-
-      if (nextIndex >= 0 && nextIndex < steps.length) {
-        setActive(nextIndex);
-        blockScrollTemporarily();
-      } else if (nextIndex === steps.length) {
-        observer.unobserve(flowsSection); // optional unlock scroll control
-      }
-    }
-
-    function blockScrollTemporarily() {
-      scrollBlocked = true;
-      setTimeout(() => (scrollBlocked = false), 500);
-    }
-
-    // Scroll & Arrow Key detection even when scroll is locked
-    window.addEventListener("wheel", (e) => {
-      if (!sectionInView) return;
-      if (e.deltaY > 0) {
-        handleStepChange(1);
-      } else if (e.deltaY < 0) {
-        handleStepChange(-1);
-      }
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (!sectionInView) return;
-      if (e.key === "ArrowDown") {
-        handleStepChange(1);
-      } else if (e.key === "ArrowUp") {
-        handleStepChange(-1);
-      }
-    });
+    tabsContainer.appendChild(wrapper);
   });
+
+  const buttons = tabsContainer.querySelectorAll("button");
+  const lines = tabsContainer.querySelectorAll(".progress-line");
+
+  let currentIndex = 0;
+
+  function setActive(index) {
+    currentIndex = index;
+
+    // Update desktop tabs/buttons and lines with sliding animation
+    buttons.forEach((btn, i) => {
+      const isActive = i <= index;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+
+      // Add sliding effect: translateX from left for new active, reset others
+btn.style.transition = ""; // remove transform transitions
+btn.style.transform = "none"; // ensure it's not shifted
+
+    });
+
+    lines.forEach((line, i) => {
+      line.classList.toggle("active-line", i < index);
+    });
+
+    // Update image and overlay content without opacity or background color
+    sliderImage.src = steps[index].img;
+    sliderImage.alt = steps[index].label;
+    overlayTitle.textContent = steps[index].title;
+    overlayText.textContent = steps[index].text;
+    sliderImage.style.opacity = "1"; // Fully visible
+    
+  }
+
+  buttons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      setActive(parseInt(btn.dataset.index));
+    })
+  );
+
+  setActive(0);
+
+  // IntersectionObserver to update progress bar as user scrolls down section
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Calculate progress based on scroll percentage inside flowsSection
+          const bounding = entry.boundingClientRect;
+          const height = bounding.height;
+          const top = bounding.top;
+
+          // Clamp scroll progress between 0 and 1
+          const progress = Math.min(
+            Math.max(0, 1 - (top / height + 0.1)),
+            1
+          );
+
+          // Map progress (0-1) to steps index
+          const newIndex = Math.floor(progress * steps.length);
+          if (newIndex !== currentIndex && newIndex < steps.length) {
+            setActive(newIndex);
+          }
+        }
+      });
+    },
+    { root: null, threshold: new Array(101).fill(0).map((v, i) => i / 100) }
+  );
+  observer.observe(flowsSection);
+
+  // --- Mobile Setup ---
+
+  const isMobile = () => window.innerWidth < 640; // Tailwind sm breakpoint
+
+  // Clear mobile track and dots if any
+  track.innerHTML = "";
+  dotsContainer.innerHTML = "";
+
+  // Create mobile slides
+  steps.forEach((step, idx) => {
+    const slide = document.createElement("div");
+    slide.className = "snap-start min-w-full";
+    slide.innerHTML = `
+      <div class="relative rounded-2xl overflow-hidden shadow-lg">
+        <img src="${step.img}" alt="${step.label}" class="w-full h-64 rounded-2xl" style="opacity:1;" />
+        <div class="absolute inset-0 text-white flex flex-col justify-center p-6">
+          <h3 class="text-xl font-bold mb-2">${step.title}</h3>
+          <p class="text-base">${step.text}</p>
+        </div>
+      </div>
+    `;
+    track.appendChild(slide);
+  });
+
+  // Create dots and lines for mobile carousel
+  steps.forEach((_, idx) => {
+    const dot = document.createElement("button");
+    dot.className = "dot";
+    dot.style.width = "12px";
+    dot.style.height = "12px";
+    dot.style.borderRadius = "9999px";
+    dot.style.backgroundColor = idx === 0 ? "#1f2937" : "#9ca3af"; // Active dot darker
+    dot.style.flexShrink = "0";
+    dot.style.margin = "0";
+    dot.style.padding = "0";
+    dot.addEventListener("click", () => {
+      currentIndex = idx;
+      updateCarousel();
+      pauseAutoAdvance();
+    });
+
+    dotsContainer.appendChild(dot);
+
+    // Add line between dots (except after last)
+    if (idx < steps.length - 1) {
+      const line = document.createElement("div");
+      line.className = "progress-line";
+      line.style.flex = "0 0 10px";
+      line.style.width = "10px";
+      line.style.height = "2px";
+      line.style.backgroundColor = "#9ca3af";
+      line.style.borderRadius = "9999px";
+      line.style.flexShrink = "0";
+      line.style.margin = "0";
+      line.style.alignSelf = "center";
+      dotsContainer.appendChild(line);
+    }
+  });
+
+  const dots = dotsContainer.querySelectorAll(".dot");
+  const mobileTitle = document.getElementById("mobileCarouselTitle");
+
+  function updateCarousel() {
+    const offset = currentIndex * track.clientWidth;
+    track.scrollTo({ left: offset, behavior: "smooth" });
+
+    // Update dots color
+   dots.forEach((dot, i) => {
+  dot.style.backgroundColor = i <= currentIndex ? "#1f2937" : "#9ca3af";
+});
+
+    // Update lines color
+    const lines = dotsContainer.querySelectorAll(".progress-line");
+    lines.forEach((line, i) => {
+      line.style.backgroundColor = i < currentIndex ? "#1f2937" : "#9ca3af";
+    });
+      mobileTitle.textContent = steps[currentIndex].title;
+  }
+
+  let autoAdvanceInterval;
+  let userPaused = false;
+
+  function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= steps.length) {
+      currentIndex = 0;
+      updateCarousel();
+      clearInterval(autoAdvanceInterval);
+      setTimeout(startAutoAdvance, 3000); // Long pause after last slide
+    } else {
+      updateCarousel();
+    }
+  }
+
+  function startAutoAdvance() {
+    if (!isMobile()) return;
+    autoAdvanceInterval = setInterval(() => {
+      if (!userPaused) nextSlide();
+    }, 4000);
+  }
+
+  function pauseAutoAdvance() {
+    userPaused = true;
+    setTimeout(() => (userPaused = false), 8000); // Pause 8s after interaction
+  }
+
+  // Swipe support for mobile
+  let startX = 0;
+  track.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = endX - startX;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX < 0 && currentIndex < steps.length - 1) {
+        currentIndex++;
+      } else if (deltaX > 0 && currentIndex > 0) {
+        currentIndex--;
+      }
+      updateCarousel();
+      pauseAutoAdvance();
+    }
+  });
+
+  // Start mobile auto advance if on mobile
+  if (isMobile()) startAutoAdvance();
+
+  // Optional: listen for window resize to enable/disable mobile carousel auto advance
+  window.addEventListener("resize", () => {
+    if (isMobile()) {
+      if (!autoAdvanceInterval) startAutoAdvance();
+    } else {
+      clearInterval(autoAdvanceInterval);
+      autoAdvanceInterval = null;
+    }
+  });
+});
+
+
 </script>
-
-
-
 
     <!--======================================== SECTION 8 =======================================-->
 
@@ -2795,7 +2988,7 @@
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
 
   <!-- Card 1 -->
-  <div class="w-[90%] max-w-sm flex flex-col bg-white border rounded-2xl p-6 shadow-md min-h-[560px]">
+  <div class="w-[90%] max-w-sm flex flex-col bg-white border rounded-2xl p-5 shadow-md h-[500px] lg:min-h-[560px]">
 
         <div class="flex-1 flex flex-col justify-between">
           <div>
@@ -2811,8 +3004,8 @@
             >
               Get your first 3 months for 10k/mo
             </div>
-            <div class="my-12 text-left text-xl">  <h2 class="font-bold">Included Features</h2></div>
-            <div class="space-y-4 text-base text-black">
+            <div class="my-5 text-left text-xl">  <h2 class="font-bold">Included Features</h2></div>
+            <div class="space-y-2 text-base text-black">
               <p><span style="color: #6FDE01;">%&nbsp;</span> Access to core features</p>
               <p><span style="color: #6FDE01;">%&nbsp;</span> Limited storage</p>
               <p><span style="color:  #6FDE01;">%&nbsp;</span> Community access</p>
@@ -2843,8 +3036,8 @@
             >
               Get your first 3 months for 30k/mo
             </div>
-          <div class="my-12 text-left text-xl">  <h2 class="font-bold">Included Features</h2></div>
-            <div class="space-y-4 text-base text-black">
+          <div class="my-5 text-left text-xl">  <h2 class="font-bold">Included Features</h2></div>
+            <div class="space-y-2 text-base text-black">
               <p><span style="color: #6FDE01;">%&nbsp;</span> All Premium features</p>
               <p><span style="color: #6FDE01;">%&nbsp;</span> Priority support</p>
               <p><span style="color: #6FDE01;">%&nbsp;</span> Advanced analytics</p>
@@ -2875,15 +3068,15 @@
             >
               Get your first 3 months at a discounted rate
             </div>
-            <div class="my-12 text-left text-xl"> <h2 class="font-bold">Included Features</h2></div>
-            <div class="space-y-4 text-base text-black">
+            <div class="my-6 text-left text-xl"> <h2 class="font-bold">Included Features</h2></div>
+            <div class="space-y-2 text-base text-black">
               <p><span style="color: #6FDE01;">%&nbsp;</span> All Pro features</p>
               <p><span style="color: #6FDE01;">%&nbsp;</span> Dedicated account manager</p>
               <p><span style="color: #6FDE01;">%&nbsp;</span> Advanced integrations</p>
               <p><span style="color: #6FDE01;">%&nbsp;</span> Comprehensive analytics</p>
             </div>
           </div>
-          <button class="mt-6 py-4 px-4 border rounded-md font-medium">
+          <button class="mt-6 py-2 px-4 border rounded-md font-medium">
             Learn More
           </button>
         </div>

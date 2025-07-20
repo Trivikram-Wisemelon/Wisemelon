@@ -5,14 +5,34 @@
   border: none;
   background: var(--bg);
   color: var(--text-color);
-  padding: 1em;
+  padding: 1.2em !important;
   font-weight: bold;
   text-transform: uppercase;
-  transition: 0.2s; 
-  opacity: 0.8;
+  transition: 0.2s;
   letter-spacing: 1px;
   box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
 }
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  .button1 {
+  --bg: #16C542;
+  --text-color: #fff;
+  position: relative;
+  border: none;
+  background: var(--bg);
+  color: var(--text-color);
+                     /* ~18px */
+   padding: 1em;   
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s;
+  letter-spacing: 1px;
+  box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
+}
+}
+
+
 
 .button1:hover {
   opacity: 1;

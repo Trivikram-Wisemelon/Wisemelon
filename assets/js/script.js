@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let activeSection = "section1";
+  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
   // ---------------------------
   // SECTION 1: Card Rotation
@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneCards = Array.from(phoneContainer.querySelectorAll(".card"));
 
   let order = [0, 1, 2, 3, 4];
-  let forwardRotationCount = 0;
-  const maxForwardRotations = 15; // 3 full loops
-  let localScrollLocked = true;
   let isRotating = false;
 
   const positions = [
@@ -30,38 +27,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
- function rotateForward() {
-  if (forwardRotationCount >= maxForwardRotations || isRotating) return;
-
-  isRotating = true;
-  order.unshift(order.pop());
-  applyTransforms();
-  forwardRotationCount++;
-
-  if (forwardRotationCount >= maxForwardRotations) {
-    localScrollLocked = false;
-    activeSection = null; // allow scrolling to section 2
+  function rotateForward() {
+    if (isRotating) return;
+    isRotating = true;
+    order.unshift(order.pop());
+    applyTransforms();
+    setTimeout(() => (isRotating = false), 200);
   }
 
-  setTimeout(() => {
-    isRotating = false;
-  }, 200); // Match your animation duration
-}
-
-
- function rotateBackward() {
-  if (isRotating) return;
-
-  isRotating = true;
-  order.push(order.shift());
-  applyTransforms();
-
-  setTimeout(() => {
-    isRotating = false;
-  }, 200);
-}
+  function rotateBackward() {
+    if (isRotating) return;
+    isRotating = true;
+    order.push(order.shift());
+    applyTransforms();
+    setTimeout(() => (isRotating = false), 200);
+  }
 
   applyTransforms();
+
+  // Desktop interaction for Section 1
+  if (!isTouchDevice) {
+    let isHovered1 = false;
+
+    phoneContainer.addEventListener("mouseenter", () => (isHovered1 = true));
+    phoneContainer.addEventListener("mouseleave", () => (isHovered1 = false));
+    phoneContainer.addEventListener("click", () => rotateForward());
+
+    window.addEventListener(
+      "wheel",
+      (e) => {
+        if (isHovered1) {
+          e.preventDefault();
+          if (e.deltaY > 0) rotateForward();
+          else rotateBackward();
+        }
+      },
+      { passive: false }
+    );
+
+    window.addEventListener("keydown", (e) => {
+      if (isHovered1) {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          rotateForward();
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          rotateBackward();
+        }
+      }
+    });
+  }
+
+  // Mobile interaction for Section 1
+  if (isTouchDevice) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    document.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      if (absDx > absDy) {
+        if (dx < -30) rotateForward();
+        else if (dx > 30) rotateBackward();
+      }
+    });
+
+    phoneContainer.addEventListener("click", () => rotateForward());
+  }
 
   // ---------------------------
   // SECTION 2: Stack Cards + Headings
@@ -118,68 +158,80 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
       currentIndex++;
-      if (currentIndex >= 4) {
-        animationSequenceDone = true;
-        activeSection = null;
-      }
-      setTimeout(() => {
-        animating = false;
-      }, 600);
+      if (currentIndex >= 4) animationSequenceDone = true;
+      setTimeout(() => (animating = false), 600);
     }, 600);
   }
 
- function checkCenterAndLock() {
-  if (animationSequenceDone) return;
-  const rect = container.getBoundingClientRect();
-  if (rect.top < 500 && rect.bottom > 0) {
-    activeSection = "section2";
-  }
-}
-
-
-  // ---------------------------
-  // Scroll, Wheel, Keyboard
-  // ---------------------------
-  window.addEventListener("scroll", () => {
-    checkCenterAndLock();
-
-    if (window.scrollY < 50) {
-      order = [0, 1, 2, 3, 4];
-      forwardRotationCount = 0;
-      localScrollLocked = true;
-      activeSection = "section1";
-      applyTransforms();
-    }
-  });
-
-  window.addEventListener(
-    "wheel",
-    (e) => {
-      if (activeSection === "section1" && window.scrollY === 0 && localScrollLocked) {
-        e.preventDefault();
-        if (e.deltaY > 0) rotateForward();
-        else if (e.deltaY < 0) rotateBackward();
-      } else if (activeSection === "section2") {
-        e.preventDefault();
-        if (e.deltaY > 0) animateTopCard();
-      }
-    },
-    { passive: false }
-  );
-
-  window.addEventListener("keydown", (e) => {
-    if (activeSection === "section1" && window.scrollY === 0 && localScrollLocked) {
-      e.preventDefault();
-      if (e.key === "ArrowDown") rotateForward();
-      else if (e.key === "ArrowUp") rotateBackward();
-    } else if (activeSection === "section2") {
-      if (e.key === "ArrowDown") {
-        e.preventDefault();
-        animateTopCard();
-      }
-    }
-  });
-
-  // Initialize Section 2 cards on load
   updateClasses(Array.from(container.querySelectorAll(".section2-card")));
+
+  // ---------------------------
+  // Section 2 Interaction (Strictly on top card only)
+  // ---------------------------
+  function getTopCard() {
+    return container.querySelector(".section2-card");
+  }
+
+  if (!isTouchDevice) {
+    let isHovered2 = false;
+
+    const observeTopCard = () => {
+      const topCard = getTopCard();
+      if (!topCard) return;
+      topCard.addEventListener("mouseenter", () => (isHovered2 = true));
+      topCard.addEventListener("mouseleave", () => (isHovered2 = false));
+      topCard.addEventListener("click", () => animateTopCard());
+    };
+
+    observeTopCard();
+    const observer = new MutationObserver(observeTopCard);
+    observer.observe(container, { childList: true });
+
+    window.addEventListener(
+      "wheel",
+      (e) => {
+        if (isHovered2 && e.deltaY > 0) {
+          e.preventDefault();
+          animateTopCard();
+        }
+      },
+      { passive: false }
+    );
+  }
+
+  if (isTouchDevice) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    document.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      const topCard = getTopCard();
+      const cardRect = topCard.getBoundingClientRect();
+      const touchX = e.changedTouches[0].clientX;
+      const touchY = e.changedTouches[0].clientY;
+
+      const insideCard =
+        touchX >= cardRect.left &&
+        touchX <= cardRect.right &&
+        touchY >= cardRect.top &&
+        touchY <= cardRect.bottom;
+
+      if (!insideCard) return;
+
+      if (absDy > absDx && dy < -30) {
+        animateTopCard(); // swipe up
+      } else if (absDx < 10 && absDy < 10) {
+        animateTopCard(); // tap
+      }
+    });
+  }
 });
