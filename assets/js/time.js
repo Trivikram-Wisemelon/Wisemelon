@@ -19,3 +19,4 @@ setInterval(updateTime, 60000);
     // Construct the embed URL properly
     iframe.src = `https://www.youtube.com/embed/${videoId}?&mute=1&controls=0&loop=1&playlist=${videoId}`;
   }
+

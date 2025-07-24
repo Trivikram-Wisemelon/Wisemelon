@@ -1,3 +1,5 @@
+
+
 .button1 {
   --bg: #16C542;
   --text-color: #fff;
@@ -12,6 +14,7 @@
   letter-spacing: 1px;
   box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
 }
+
 
 /* Media query for smaller screens */
 
@@ -33,6 +36,8 @@
 }
 }
 
+
+
 .button1:hover {
   opacity: 1;
 }
@@ -41,3 +46,163 @@
   top: 4px;
   box-shadow: #1a1a1a  0px 3px 2px,#000 0px 3px 5px;
 }
+
+/*----------------- CTA Button ----------------- */
+
+.btn-outline {
+  position: relative;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #16C542, #6FDE01);
+  z-index: -1;
+  border-radius: inherit;
+  padding: 2px; /* Border thickness */
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
+.btn-filled {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;        /* Ensure padding */
+  border-radius: 999px;      /* Fully rounded */
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;      /* Align content */
+  align-items: center;
+  gap: 8px;                 /* Space between text and arrow if any */
+  transition: background-color 0.3s ease;
+  outline: none;
+} 
+
+.button-container{
+  display: flex;
+  gap: 2rem; /* or however much space you want */
+}
+
+/* white button */
+
+.button2 {
+ width: 18em;
+ height: 3em;
+ border-radius: 30em;
+ font-size: 15px;
+ font-family: inherit;
+ border: none;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.button2::before {
+ content: '';
+ width: 0;
+ height: 3em;
+ border-radius: 30em;
+ position: absolute;
+ top: 0;
+ left: 0;
+ background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+.button2:hover::before {
+ width: 18em;
+}
+
+/* black button */
+
+
+.button3 {
+  color: #fff;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #212121;
+  cursor: pointer;
+  border: 1px solid #212121;
+  transition: all 0.3s;
+  box-shadow:
+    6px 6px 12px #0a0a0a,
+    -6px -6px 12px #2f2f2f;
+}
+
+.button3:active {
+  color: #666;
+  box-shadow:
+    0px 0px 0px #000,
+    0px 0px 0px #2f2f2f,
+    inset 4px 4px 12px #1a1a1a,
+    inset -4px -4px 12px #1f1f1f;
+}
+
+/*button4*/
+
+   .button4 {
+      display: flex;
+      gap: 15px;
+      z-index: 10;
+    }
+
+    .button4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      cursor: pointer;
+      text-align: center;
+      width: fit-content;
+      height: 50px;
+      background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+      border-radius: 30px;
+      border: 1px solid #8F9092;
+      transition: all 0.2s ease;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #606060;
+      text-shadow: 0 1px #fff;
+    }
+
+    .button4:hover {
+      box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+    }
+
+    .button4:active,
+    .button4:focus {
+      box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+    }

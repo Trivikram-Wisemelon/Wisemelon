@@ -6,8 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wisemelon: Bot Reimagined</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
       rel="stylesheet"
     />
 
@@ -20,13 +27,15 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/buttons.css" />
   </head>
 
   <body class="bg-white min-h-screen overflow-x-hidden">
     <!--======================================= Header  =========================================-->
 
-    <header class="mt-6 rounded-lg left-1/2 transform -translate-x-1/2 fixed top-0 left-0 w-[94%] z-50">
+    <header
+      class="mt-6 rounded-lg left-1/2 transform -translate-x-1/2 fixed top-0 left-0 w-[94%] z-50"
+    >
       <div
         class="w-full max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-10 flex items-center justify-between py-4"
       >
@@ -40,45 +49,49 @@
         </div>
 
         <!-- Nav -->
-      <nav class="hidden xl:flex justify-center bg-white/30 backdrop-blur-md shadow h-[70px] rounded-lg">
-    <div class="w-full max-w-screen-md mx-auto flex items-center justify-center sm:px-4 lg:px-8 xl:px-12">
-          <ul class="flex gap-6 md:gap-10 lg:gap-14 xl:gap-20 text-base">
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Product</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Industry</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Resources</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Blogs</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-black font-semibold hover:text-gray-800 transition-colors"
-                >Contact</a
-              >
-            </li>
-          </ul>
+        <nav
+          class="hidden xl:flex justify-center bg-white/30 backdrop-blur-md shadow h-[70px] rounded-lg"
+        >
+          <div
+            class="w-full max-w-screen-md mx-auto flex items-center justify-center sm:px-4 lg:px-8 xl:px-12"
+          >
+            <ul class="flex gap-6 md:gap-10 lg:gap-14 xl:gap-20 text-base">
+              <li>
+                <a
+                  href="#"
+                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  >Product</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  >Industry</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  >Resources</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
           </div>
         </nav>
 
@@ -103,29 +116,73 @@
       </div>
     </header>
 
-    <!--======================================= SECTION 1 =======================================-->
+    <!--======================================= SECTION "Iphone Components" =======================================-->
 
- <section id="section1"
-  class="relative w-full min-h-[calc(100vh-64px)] bg-white text-center pt-[64px] z-10 pt-24">
+    <section
+      id="section1"
+      class="relative w-full min-h-[calc(100vh-64px)] bg-white text-center pt-[64px] z-10 pt-24"
+    >
+      <div class="flex justify-center max-w-[1600px] w-full mx-auto px-4">
+        <div class="h-36 mt-36 mb-12">
+          <!--  <div class="sphere-glow left glow-wrapper z-[60]"></div>
+          <div class="sphere-glow right z-50"></div>-->
 
-  <div class="flex justify-center max-w-[1600px] w-full mx-auto px-4">
-    <div class="h-36 mt-36 mb-12">
-      <div class="sphere-glow left glow-wrapper z-[60]"></div>
-      <div class="sphere-glow right z-50"></div>
+          <h1
+            class="text-4xl md:text-5xl font-extrabold leading-tight text-center tracking-tight"
+          >
+            Your AI <span class="text-[#16C542]">agent</span> for all<br />
+            &nbsp; your digital channels
+          </h1>
+        </div>
+      </div>
 
-      <h1
-        class="text-4xl md:text-5xl font-extrabold leading-tight text-center tracking-tight"
+      <!-- CTA Button-->
+
+      <div class="button-container flex justify-center lg:-my-3">
+        <button
+          class="btn btn-outline font-semibold text-base"
+          onclick="tryForFree()"
+        >
+          Try for Free
+          <svg
+            class="arrow-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <line
+              x1="4"
+              y1="12"
+              x2="20"
+              y2="12"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <polyline
+              points="14 6 20 12 14 18"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          class="btn btn-filled font-semibold text-base"
+          onclick="scheduleDemo()"
+        >
+          Schedule a demo
+        </button>
+      </div>
+
+      <div
+        id="cardContainer"
+        class="w-fit mx-auto mt-[180px] ml-12 flex justify-center gap-6"
       >
-        Your AI <span class="text-[#16C542]">agent</span> for all<br />
-        &nbsp; your digital channels
-      </h1>
-    </div>
-  </div>
-
-  <div id="cardContainer"
-    class="w-fit mx-auto mt-[180px] ml-12 flex justify-center gap-6">
         <!-- Left_deeper_phone (phone 1)-->
-        <div id="card1" class="card">
+        <div id="card1" class="card bg-radial-glow bg-gradient2">
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <div
               class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl"
@@ -476,7 +533,7 @@
         </div>
 
         <!-- Left_behind_phone (phone 2)-->
-        <div id="card2" class="card">
+        <div id="card2" class="card bg-radial-glow bg-gradient1">
           <div class="flex items-center justify-center scale-[0.75] origin-top">
             <!-- iPhone Frame -->
             <div
@@ -542,57 +599,17 @@
                 </div>
 
                 <!-- Navbar -->
-                <div
-                  class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
-                >
-                  <div class="flex items-center gap-2">
-                    <div
-                      class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
-                    ></div>
-                    <img
-                      src="./assets/images/logo/ws-dark.png"
-                      class="w-9 h-19 rounded-full"
-                      alt="Julia"
-                    />
-                    <span class="text-lg font-medium text-black"
-                      >Wisemelon</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
-                    >
-                      <div
-                        class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
-                      ></div>
-                    </div>
-                    <div
-                      class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
-                    >
-                      <div
-                        class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
-                      ></div>
-                    </div>
-                    <div
-                      class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
-                    >
-                      i
-                    </div>
-                  </div>
-                </div>
 
                 <!-- Divider below navbar -->
                 <div
-                  class="absolute top-[71px] left-0 right-0 h-px bg-gray-300 z-10"
+                  class="absolute top-[65px] left-0 right-0 h-px bg-gray-300 z-10"
                 ></div>
                 <div
-                  class="bg-[url('./assets/images/snap.png')] bg-no-repeat bg-cover bg-center absolute bottom-0 left-0 w-full h-[90%] overflow-hidden p-0 m-0"
+                  class="bg-[url('./assets/images/snap2.png')] bg-no-repeat bg-cover bg-center absolute bottom-0 left-0 w-full h-[96%] overflow-hidden p-0 m-0"
                 >
-             
-
                   <!-- Speaker Slit (Bottom Microphone Style) -->
                   <div
-                    class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                    class="borabsolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
                   ></div>
                 </div>
               </div>
@@ -601,7 +618,7 @@
         </div>
 
         <!-- Center_phone_(main) (phone 3)-->
-        <div id="card3" class="card">
+        <div id="card3" class="card bg-radial-glow bg-gradient2">
           <div class="flex items-center justify-center scale-[0.75] origin-top">
             <!-- iPhone Frame -->
             <div
@@ -768,7 +785,7 @@
                   <div
                     class="absolute top-[240px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[250px] z-10"
                   >
-                    <span class="typing" style="animation-delay: 0s">
+                    <span class="" style="animation-delay: 0s">
                       Hi! Yes, depends on your size
                     </span>
                   </div>
@@ -788,7 +805,7 @@
                     <div
                       class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
                     >
-                      <span class="typing" style="animation-delay: 3.2s">
+                      <span class="" style="animation-delay: 3.2s">
                         I wear medium
                       </span>
                     </div>
@@ -797,16 +814,17 @@
                   <!-- Right-aligned blue chat bubble -->
 
                   <div
-                    class="absolute top-[340px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[300px] z-10"
+                    class="absolute top-[340px] right-4 bg-green-200 text-black text-sm px-3 py-1 rounded-xl z-10 reveal delay-3s"
+                    style="width: 250px !important"
                   >
-                    <span class="typing" style="animation-delay: 7s">
+                    <span class="" style="animation-delay: 2s">
                       Ok, this is what we have in stock:
                     </span>
                   </div>
 
                   <!-- Image Cards Section -->
                   <div
-                    class="absolute top-[390px] left-[60%] left-1/2 -translate-x-1/2 flex gap-3 z-10"
+                    class="absolute top-[390px] left-[60%] left-1/2 -translate-x-1/2 flex gap-3 z-10 reveal delay-6s"
                   >
                     <!-- Card 1 -->
                     <div
@@ -863,7 +881,7 @@
 
                   <!-- Left-aligned grey chat bubble with profile image -->
                   <div
-                    class="absolute top-[460px] left-4 flex items-start gap-2 z-10"
+                    class="reveal delay-12s absolute top-[460px] left-4 flex items-start gap-2 z-10 delay-20s"
                   >
                     <!-- Profile Image -->
                     <img
@@ -874,29 +892,25 @@
 
                     <!-- Chat Bubble -->
                     <div
-                      class="bg-gray-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] mt-5"
+                      class="bg-gray-200 text-black text-sm px-3 py-1 rounded-xl mt-5 reveal delay-9s"
+                      style="width: 200px !important"
                     >
-                      <span class="typing" style="animation-delay: 12.8s">
-                        Bulldog one, please!!
-                      </span>
+                      <span class=""> Bulldog one, please!! </span>
                     </div>
                   </div>
 
                   <!-- Right-aligned blue chat bubble -->
                   <div
-                    class="absolute top-[520px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                    class="absolute top-[520px] right-4 bg-green-200 text-black text-sm px-3 py-1 rounded-xl max-w-[220px] z-10 reveal delay-15s"
+                    style="width: 150px !important"
                   >
-                    <span class="typing" style="animation-delay: 16s">
-                      You got it!
-                    </span>
+                    <span class=""> You got it! </span>
                   </div>
                   <!-- Right-aligned blue chat bubble -->
                   <div
-                    class="absolute top-[565px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] z-10"
+                    class="absolute top-[565px] right-4 bg-green-200 text-black text-sm px-3 py-2 rounded-xl max-w-[220px] z-10 reveal delay-18s"
                   >
-                    <span class="typing" style="animation-delay: 20s">
-                      I'll create a request now
-                    </span>
+                    <span class=""> I'll create a request now </span>
                   </div>
 
                   <!-- Message Input Section -->
@@ -974,7 +988,7 @@
         </div>
 
         <!-- Right_behind_phone (phone 4)-->
-        <div id="card4" class="card">
+        <div id="card4" class="card bg-radial-glow bg-gradient2">
           <div class="flex items-center justify-center scale-[0.72] origin-top">
             <!-- iPhone Frame -->
             <div
@@ -1327,7 +1341,7 @@
 
         <!-- Right-deeper_Phone (phone 5)-->
 
-        <div id="card5" class="card">
+        <div id="card5" class="card bg-radial-glow bg-gradient1">
           <div class="flex items-center justify-center scale-[0.70] origin-top">
             <!-- iPhone Frame -->
             <div
@@ -1682,42 +1696,75 @@
       </div>
     </section>
 
-    <!--======================================= SECTION 2 =======================================-->
+    <!--======================================= SECTION 2 "Screen Animation" =======================================-->
 
     <section
-  id="cardsSection"
-  class="relative w-full min-h-screen flex flex-col items-center pt-0 pb-0 sm:pb-0 md:pb-0 bg-gradient-to-b from-green-50 via-green-200 to-green-300 z-20 -mt-20"
->
- <div class="h-36 flex justify-center max-w-screen-2xl mx-auto w-full overflow-visible">
-  <svg
-    class="h-36 w-full max-w-4xl mx-auto block"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="-53 90 500 100"
-    preserveAspectRatio="xMidYMin meet"
-  >
-      <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color: #6fde01; stop-opacity: 1" />
-          <stop offset="100%" style="stop-color: #16c542; stop-opacity: 1" />
-        </linearGradient>
-      </defs>
-      <path d="M29.6 100.3 C19.2 160.6 132.3 142.4 120.3 185.2" fill="none" stroke="url(#grad1)" stroke-width="2" />
-      <path d="M105 98.8 C92.2 140.9 165.4 141.7 158.3 185.3" fill="none" stroke="url(#grad1)" stroke-width="2" />
-      <path d="M197.2 97 L197.4 185.7" fill="none" stroke="url(#grad1)" stroke-width="2" />
-      <path d="M293 98.8 C305.8 140.9 232.6 141.7 239.7 185.5" fill="none" stroke="url(#grad1)" stroke-width="2" />
-      <path d="M365.4 100.3 C375.8 160.6 262.7 142.4 274.7 185.2" fill="none" stroke="url(#grad1)" stroke-width="2" />
-    </svg>
-  </div>
+      id="cardsSection"
+      class="relative bg-white w-full min-h-screen flex flex-col items-center pt-0 pb-0 sm:pb-0 md:pb-0 z-20 -mt-20"
+    >
+      <div
+        class="h-36 flex justify-center max-w-screen-2xl mx-auto w-full overflow-visible"
+      >
+        <svg
+          class="h-36 w-full max-w-4xl mx-auto block"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-53 90 500 100"
+          preserveAspectRatio="xMidYMin meet"
+        >
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color: #6fde01; stop-opacity: 1" />
+              <stop
+                offset="100%"
+                style="stop-color: #16c542; stop-opacity: 1"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            d="M29.6 100.3 C19.2 160.6 132.3 142.4 120.3 185.2"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M105 98.8 C92.2 140.9 165.4 141.7 158.3 185.3"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M197.2 97 L197.4 185.7"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M293 98.8 C305.8 140.9 232.6 141.7 239.7 185.5"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+          <path
+            d="M365.4 100.3 C375.8 160.6 262.7 142.4 274.7 185.2"
+            fill="none"
+            stroke="url(#grad1)"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
 
       <!-- Titles -->
-      <h2
-        class="text-xl text-center font-normal text-[#16C542] tracking-normal -mb-16 -mt-16 sm:-mt-3 md:-mt-3 lg:-mt-1"
+      <div
+        class="flex justify-center items-center button4 text-center font-semibold -mb-12 z-0"
       >
-        One Powerful System
-      </h2>
-
-      <div class="dynamic-heading -mb-52 px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full" id="dynamicHeading">
-
+        <h2 class="text-xl text-black tracking-normal p-6">
+          One Powerful System
+        </h2>
+      </div>
+      <div
+        class="dynamic-heading -mb-52 px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full h-full object-fill"
+        id="dynamicHeading"
+      >
         <h1 class="">Leading Qualification</h1>
         <h2 class="">
           Are you facing challenges to timely qualify your leads?
@@ -1725,39 +1772,56 @@
       </div>
 
       <!-- Cards Container -->
-      <div class="section2-cards-container px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full mt-60">
-
-        <div class="bg-white/30 backdrop-blur-md section2-card z4 w-" data-index="0">
-          <p>Card 1 Content</p>
+      <div
+        class="section2-cards-container px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto w-full h-auto mt-60"
+      >
+        <div class="section2-card z4" data-index="0">
+          <img
+            class="border border-gray-200 w-full h-full object-contain"
+            src="assets/images/screen1.png"
+            alt=""
+          />
         </div>
-        <div class="bg-white/30 backdrop-blur-md section2-card z3" data-index="1">
-          <p>Card 2 Content</p>
+        <div class="border border-gray-200 section2-card z3" data-index="1">
+          <img
+            class="w-full h-full object-contain"
+            src="assets/images/screen2.png"
+            alt=""
+          />
         </div>
-        <div class="bg-white/30 backdrop-blur-md section2-card z2" data-index="2">
-          <p>Card 3 Content</p>
+        <div class="border border-gray-200 section2-card z2" data-index="2">
+          <img
+            class="w-full h-full object-contain"
+            src="assets/images/app-store1.png"
+            alt=""
+          />
         </div>
-        <div class="bg-white/30 backdrop-blur-md section2-card z1" data-index="3">
-          <p>Card 4 Content</p>
+        <div class="border border-gray-200 section2-card z1" data-index="3">
+          <img
+            class="w-full h-full object-contain"
+            src="assets/images/app-store2.png"
+            alt=""
+          />
         </div>
       </div>
     </section>
 
-    <!--=======================================  SECTION 3 =====================================-->
+    <!--======================================= SECTION 3 "Whatsapp Platform" =====================================-->
 
-    <section class="min-h-screen bg-white w-full px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto mb-12 py-12">
-  <div class="mb-6 mt-6">
-    <h1
-      class="text-4xl md:text-5xl font-extrabold leading-tight text-left tracking-tight"
-    >
-      The most powerful
-      <span style="color: #16c542">WhatsApp</span>
-      Platform.
-    </h1>
-  </div>
+    <section
+      class="min-h-screen w-full px-4 sm:px-6 lg:px-8 mx-auto mb-12 py-12 bg-[radial-gradient(ellipse_at_center,_#e0f7e9_0%,_transparent_90%)]"
+    >  
+    <div class="max-w-screen-2xl mx-auto">
+    
+      <div class="my-6">
+        <h1 class="text-4xl md:text-5xl font-semibold text-left tracking-tight">
+          The most powerful
+          <span style="color: #16c542">WhatsApp</span>
+          Platform.
+        </h1>
+      </div>
 
-  <div
-    class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-6"
-  >
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-6">
         <!-- Card 1 (wide) -->
         <div
           class="svgcom relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-3 sm:col-span-3 overflow-hidden"
@@ -1767,272 +1831,766 @@
           <div class="absolute inset-0 w-full h-full">
             <div class="relative w-full h-full">
               <!-- Text Box -->
-             <div
-  class="absolute w-[28rem] max-w-none bottom-3 left-3 p-2 z-10 text-xs sm:text-sm z-20"
->
-                <a href="#" class="text-lg font-medium text-black">Learn More →</a>
-                <h2 class="mt-2 text-xl sm:text-2xl font-bold text-black">
+              <div
+                class="absolute w-[28rem] max-w-none bottom-3 left-3 p-2 text-xs sm:text-sm z-20"
+              >
+                <a
+                  href="#"
+                  class="text-lg font-light text-green-600"
+                  style="font-family: 'Roboto', sans-serif"
+                  >Learn More →</a
+                >
+                <h2 class="mt-2 text-2xl sm:text-2xl font-bold text-zinc-600">
                   WhatsApp Flows
                 </h2>
-              <p class="mt-1 text-black text-base max-w-xs">
-  WhatsApp flows allows you to capture information using easy to
-  use forms, product list and more.
-</p>
+                <p class="mt-1 text-black text-base max-w-xs">
+                  WhatsApp flows allows you to capture information using easy to
+                  use forms, product list and more.
+                </p>
               </div>
               <!-- unified div Box -->
               <div class="unified">
-              <img
-                src="assets/images/phonepart1.png"
-                alt=""
-                class="absolute top-[10%] left-[10%] w-[16%] h-auto object-contain z-10"
-              />
-              <img
-                src="assets/images/phonepart2.png"
-                alt=""
-                class="absolute top-[-1%] left-[86%] w-[14%] h-auto object-contain"
-              />
+                <img
+                  src="assets/images/phonepart1.png"
+                  alt=""
+                  class="absolute top-[10%] left-[10%] w-[14%] h-auto object-contain z-10"
+                />
+                <img
+                  src="assets/images/phonepart2.png"
+                  alt=""
+                  class="absolute top-[-1%] left-[86%] w-[14%] h-auto object-contain"
+                />
 
-              <img
-                src="assets/images/phonepart3.png"
-                alt=""
-                class="absolute top-[55%] left-[25%] max-w-[15%] object-contain"
-              />
+                <img
+                  src="assets/images/phonepart3.png"
+                  alt=""
+                  class="absolute top-[55%] left-[25%] max-w-[14%] object-contain"
+                />
 
-              <!-- Inserted SVG -->
-              <svg
-                viewBox="0 0 500 500"
-                class="absolute w-full h-full max-w-full max-h-full top-[22%] left-[68%] scale-[1.5]"
-                preserveAspectRatio="xMinYMin meet"
-              >
-                <defs>
-                  <!-- Electric gradient -->
-                  <linearGradient
-                    id="electric-gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop offset="0%" stop-color="#22c55e" />
-                    <stop offset="100%" stop-color="#16a34a" />
-                  </linearGradient>
-                </defs>
+                <!-- Inserted SVG -->
+                <svg
+                  viewBox="0 0 500 500"
+                  class="absolute w-full h-full max-w-full max-h-full top-[22%] left-[68%] scale-[1.5]"
+                  preserveAspectRatio="xMinYMin meet"
+                >
+                  <defs>
+                    <!-- Electric gradient -->
+                    <linearGradient
+                      id="electric-gradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop offset="0%" stop-color="#22c55e" />
+                      <stop offset="100%" stop-color="#16a34a" />
+                    </linearGradient>
+                  </defs>
 
-                <!-- Group all static elements -->
-                <g transform="rotate(1 250 250)">
-                  <!-- Static Paths -->
-                  <path
-                    id="left-curve"
-                    d="M 91.738 55.286 C 120.088 43.106 143.298 111.683 176.185 112.394"
-                    stroke="#15803d"
-                    fill="none"
-                  />
-                  <path
-                    id="top-curve"
-                    d="M 260.631 110.571 C 306.947 118.66 297.777 39.364 351.762 41.919"
-                    stroke="#15803d"
-                    fill="none"
-                  />
-                  <path
-                    id="bottom-curve"
-                    d="M 260.632 111.178 C 347.038 139.169 311.025 131.403 330.499 191.98"
-                    stroke="#15803d"
-                    fill="none"
-                  />
+                  <!-- Group all static elements -->
+                  <g transform="rotate(1 250 250)">
+                    <!-- Static Paths -->
+                    <path
+                      id="left-curve"
+                      d="M 91.738 55.286 C 120.088 43.106 143.298 111.683 176.185 112.394"
+                      stroke="#15803d"
+                      fill="none"
+                    />
+                    <path
+                      id="top-curve"
+                      d="M 260.631 110.571 C 306.947 118.66 297.777 39.364 351.762 41.919"
+                      stroke="#15803d"
+                      fill="none"
+                    />
+                    <path
+                      id="bottom-curve"
+                      d="M 260.632 111.178 C 347.038 139.169 311.025 131.403 330.499 191.98"
+                      stroke="#15803d"
+                      fill="none"
+                    />
 
-                  <!-- Node dots -->
-                  <circle cx="91.738" cy="55.286" r="3" fill="#22c55e" />
-                  <circle cx="351.762" cy="41.919" r="3" fill="#22c55e" />
-                  <circle cx="330.499" cy="191.98" r="3" fill="#22c55e" />
+                    <!-- Node dots -->
+                    <circle cx="91.738" cy="55.286" r="3" fill="#22c55e" />
+                    <circle cx="351.762" cy="41.919" r="3" fill="#22c55e" />
+                    <circle cx="330.499" cy="191.98" r="3" fill="#22c55e" />
 
-                  <!-- Static Box -->
-                  <rect
-                    x="176.793"
-                    y="100.849"
-                    width="83.438"
-                    height="22.478"
-                    rx="5"
-                    ry="5"
-                    style="fill: #bbf7d0; stroke: #15803d"
-                  />
-                  <text
-                    x="188"
-                    y="115.5"
-                    style="
-                      fill: #14532d;
-                      font-family: Arial, sans-serif;
-                      font-size: 10px;
-                    "
-                  >
-                    Find Products
-                  </text>
-                </g>
+                    <!-- Static Box -->
+                    <rect
+                      x="176.793"
+                      y="100.849"
+                      width="83.438"
+                      height="22.478"
+                      rx="5"
+                      ry="5"
+                      style="fill: #bbf7d0; stroke: #15803d"
+                    />
+                    <text
+                      x="188"
+                      y="115.5"
+                      style="
+                        fill: #14532d;
+                        font-family: Arial, sans-serif;
+                        font-size: 10px;
+                      "
+                    >
+                      Find Products
+                    </text>
+                  </g>
 
-                <!-- Separate group for animation to avoid layout shaking -->
-                <g transform="rotate(1 250 250)">
-                  <!-- Moving Dot 1: Left to Center -->
-                  <circle r="3" fill="url(#electric-gradient)">
-                    <animateMotion dur="3s" begin="loop.begin" fill="remove">
-                      <mpath xlink:href="#left-curve" />
-                    </animateMotion>
-                  </circle>
+                  <!-- Separate group for animation to avoid layout shaking -->
+                  <g transform="rotate(1 250 250)">
+                    <!-- Moving Dot 1: Left to Center -->
+                    <circle r="3" fill="url(#electric-gradient)">
+                      <animateMotion dur="3s" begin="loop.begin" fill="remove">
+                        <mpath xlink:href="#left-curve" />
+                      </animateMotion>
+                    </circle>
 
-                  <!-- Moving Dot 2: Center to Top-right -->
-                  <circle r="3" fill="url(#electric-gradient)">
-                    <animateMotion dur="3s" begin="loop.begin+3s" fill="remove">
-                      <mpath xlink:href="#top-curve" />
-                    </animateMotion>
-                  </circle>
+                    <!-- Moving Dot 2: Center to Top-right -->
+                    <circle r="3" fill="url(#electric-gradient)">
+                      <animateMotion
+                        dur="3s"
+                        begin="loop.begin+3s"
+                        fill="remove"
+                      >
+                        <mpath xlink:href="#top-curve" />
+                      </animateMotion>
+                    </circle>
 
-                  <!-- Moving Dot 3: Center to Bottom-right -->
-                  <circle r="3" fill="url(#electric-gradient)">
-                    <animateMotion dur="3s" begin="loop.begin+6s" fill="remove">
-                      <mpath xlink:href="#bottom-curve" />
-                    </animateMotion>
-                  </circle>
-                </g>
+                    <!-- Moving Dot 3: Center to Bottom-right -->
+                    <circle r="3" fill="url(#electric-gradient)">
+                      <animateMotion
+                        dur="3s"
+                        begin="loop.begin+6s"
+                        fill="remove"
+                      >
+                        <mpath xlink:href="#bottom-curve" />
+                      </animateMotion>
+                    </circle>
+                  </g>
 
-                <!-- Loop controller (fires every 12s) -->
-                <rect width="0" height="0">
-                  <animate
-                    id="loop"
-                    begin="0s;loop.end+12s"
-                    dur="0.001s"
-                    attributeName="visibility"
-                    from="visible"
-                    to="hidden"
-                  />
-                </rect>
-              </svg>
+                  <!-- Loop controller (fires every 12s) -->
+                  <rect width="0" height="0">
+                    <animate
+                      id="loop"
+                      begin="0s;loop.end+12s"
+                      dur="0.001s"
+                      attributeName="visibility"
+                      from="visible"
+                      to="hidden"
+                    />
+                  </rect>
+                </svg>
               </div>
-
             </div>
           </div>
         </div>
         <!-- Card 2 (tall) -->
         <div
-          class="overflow-hidden bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-3 sm:row-span-2 flex flex-col justify-between h-full"
+          class="wapp-sm relative overflow-hidden bg-gradient-to-b from-white to-zinc-100 rounded-lg sm:col-span-3 sm:row-span-2 flex flex-col justify-between h-full"
         >
           <!-- Top: custom logo grid -->
-          <div class="grid-container gap-20 mx-auto">
-            <div class="cardlogo tilt-right"><img src="assets/images/logo/x.png" alt="" class="w-12 h-12 object-cover"></div>
-             <div class="cardlogo tilt-left"><img src="assets/images/insta.png" alt="" class="w-10 h-10 object-cover"></div>
-           
-<div class="cardlogo tilt-left"><img src="assets/images/Mailchimp.png" alt="" class="w-12 h-12"></div>
-              <div class="cardlogo tilt-left"><img src="assets/images/zendesk.png" alt="" class="w-12 h-12"></div>
+          <div class="absolute">
+            <svg
+              width="800"
+              height="800"
+              viewBox="0 0 800 800"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g transform="rotate(-45, 125, -100)">
+                <!-- First 6 arcs: radius 90 to 240 -->
 
+                <!-- Next 6 arcs: radius 270 to 420 -->
+                <path
+                  d="M 400,130 A 270,270 0 0,0 400,670"
+                  fill="none"
+                  stroke="rgb(110, 255, 149, 1)"
+                  stroke-width="6"
+                />
+                <path
+                  d="M 400,10 A 390,390 0 0,0 400,790"
+                  fill="none"
+                  stroke="rgb(110, 255, 149, 1)"
+                  stroke-width="6"
+                />
 
-            <div class="cardlogo tilt-left">  <img src="assets/images/meta.png" alt="" class="w-11 h-11 object-contain"></div>  
-             <div class="cardlogo tilt-left"><img src="assets/images/WhatsApp.svg.webp" alt="" class="w-12 h-12 object-cover"></div>
-          
-           
+                <!-- New larger arc: radius 510 -->
+                <path
+                  d="M 400,-110 A 510,510 0 0,0 400,910"
+                  fill="none"
+                  stroke="rgb(110, 255, 149, 1)"
+                  stroke-width="4"
+                />
+              </g>
+              <g transform="translate(150, 40) rotate(-45, 0, 0)">
+                <path
+                  d="M 400,220 A 180,180 0 0,0 400,580"
+                  fill="none"
+                  stroke="rgb(110, 255, 149, 1)"
+                  stroke-width="6"
+                />
+              </g>
+            </svg>
 
-          <img
-              src="assets/images/gmail.png"
-              alt="Gmail"
-              style="max-width: 150%; max-height: 150%; object-fit"
-            />
-
-
+            <!-- logos-line 1 -->
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 2%;
+                left: 66.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
               <img
-              src="assets/images/zoho.png"
-              alt="Gmail"
-              style="max-width: 150%; max-height: 150%; object-fit"
-            />
-          
-            <div class="cardlogo tilt-left"><img
-              src="assets/images/razor.png"
-              alt="Gmail"
-              class="w-16 h-16 object-contain"
-              style="max-width: 150%; max-height: 150%; object-fill"
-            /></div>
+                src="assets/images/zendesk2.png"
+                alt="Logo"
+                class="w-15 h-auto object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 23.7%;
+                left: 77.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/gmail_symbol.png"
+                alt="Logo"
+                class="w-10 h-auto object-contain"
+              />
+            </div>
+
+            <!-- logos-line 2 -->
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 9.7%;
+                left: 50.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/gpt.png"
+                alt="Logo"
+                class="w-10 h-auto object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 25.7%;
+                left: 56.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/salesforce_logo.png"
+                alt="Logo"
+                class="w-10 h-auto object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 38.7%;
+                left: 72.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+            <img
+                src="assets/images/meta.png"
+                alt="Logo"
+                class="w-10 h-auto object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 40.7%;
+                left: 90.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/gpt.png"
+                alt="Logo"
+                class="w-10 h-auto object-contain"
+              />
+            </div>
+
+            <!-- logo-line3 -->
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-base"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 2.7%;
+                left: 35.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/shopify.png"
+                alt="Logo"
+                class="w-16 object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 22.7%;
+                left: 37.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/Woo.png"
+                alt="Logo"
+                class="w-12 h-auto object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 40.7%;
+                left: 48.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/zoho_logo.png"
+                alt="Logo"
+                class="w-12 h-auto object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 51.7%;
+                left: 62.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/razorpay_logo.png"
+                alt="Logo"
+                class="w-10 h-auto object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 55.7%;
+                left: 81.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/ws-black.png"
+                alt="Logo"
+                class="w-14 h-auto object-contain"
+              />
+            </div>
+
+            <!-- logos-line 4 -->
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 2.7%;
+                left: 20.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/clickup_logo.png"
+                alt="Logo"
+                class="w-16 object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 22.7%;
+                left: 22.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/calendly_logo.png"
+                alt="Logo"
+                class="w-12 object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 43.7%;
+                left: 32%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/zoom_logo.png"
+                alt="Logo"
+                class="w-12 object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 60.7%;
+                left: 48.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/github.png"
+                alt="Logo"
+                class="w-12 object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 70.7%;
+                left: 87.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/dropbox_symbol.png"
+                alt="Logo"
+                class="w-12 object-contain"
+              />
+            </div>
+
+            <div
+              class="absolute rounded-full bg-zinc-300 text-white flex items-center justify-center font-bold"
+              style="
+                width: 5rem;
+                height: 5rem;
+                top: 69.7%;
+                left: 69.9%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <img
+                src="assets/images/salesforce_logo.png"
+                alt="Logo"
+                class="w-12 object-contain"
+              />
+            </div>
           </div>
 
           <!-- Bottom: text and link -->
-          <div class="flex justify-between items-end h-full overflow-hidden">
+          <div
+            class="flex justify-between items-end h-full overflow-hidden p-6"
+          >
             <div>
-              <h2 class="text-2xl font-bold text-black">400+ Apps</h2>
-              <p class="mt-1 text-black max-w-xs">
-                WhatsApp flows allows you to capture information using easy to
-                use forms, product list and more.
+              <h2 class="text-3xl font-bold text-zinc-600">Integrations</h2>
+              <p class="mt-2 text-black max-w-xs">
+                You’re not stuck with one tool. Wisemelon connects WhatsApp with
+                everything you already use — Sheets, CRMs, Payments, and 400+
+                apps. All in one flow.
               </p>
             </div>
             <div>
-              <a href="#" class="text-lg font-medium text-black"
+              <a
+                href="#"
+                class="text-lg font-light text-green-600"
+                style="font-family: 'Roboto', sans-serif"
                 >Learn More →</a
               >
             </div>
           </div>
         </div>
 
-     
-<!-- Card 3 -->
-<div class="bg-gradient-to-b from-zinc-100 to white rounded-lg p-6 sm:col-span-3 flex flex-col justify-between h-96">
-  <!-- Spacer at top (if needed for layout) -->
-  <div></div>
+        <!-- Card 3 -->
+      
+        <div
+          class="relative bg-gradient-to-b from-zinc-100 to-white rounded-lg p-6 sm:col-span-3 flex flex-col justify-between h-96 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#f0fdf4] to-white"
+        >
+          <!-- ✅ Vector icon behind phone -->
+          <img
+            src="assets/images/vector.png"
+            alt=""
+            class="absolute left-1/2 top-1/2 w-[10rem] opacity-15 z-0 pointer-events-none"
+            style="transform: translate(-32%, -105%)"
+          />
 
-  <!-- Bottom row: text left, link right -->
-  <div class="flex justify-between items-end w-full">
-    <!-- Text left -->
-    <div class=" flex flex-col max-w-md">
-      <h2 class="text-2xl font-bold text-black">
-        Intelligent Assistant
-      </h2>
-      <p class="mt-1 text-black">
-        Train your AI on your own data, give it a personality and a goal,
-        leave the rest to Wisemelon — it handles the rest!
-      </p>
-    </div>
+          <!-- ✅ Phone image in front of vector -->
+          <img
+            src="assets/images/phonepart4.png"
+            alt="Phone Illustration"
+            class="absolute right-20 bottom-40 h-64 object-contain z-10 pointer-events-none"
+          />
 
-    <!-- Link right -->
-    <a href="#" class="text-lg font-medium text-black">Learn More →</a>
-  </div>
+          <!-- Spacer (if needed for spacing above text) -->
+          <div></div>
+
+          <!-- ✅ Bottom row: text left, link right -->
+          <div class="flex justify-between items-end w-full relative z-10">
+            <!-- Text left -->
+            <div class="flex flex-col max-w-md">
+              <h2 class="text-3xl font-bold text-zinc-600">
+                Intelligent Assistant
+              </h2>
+              <p class="mt-2 text-black">
+                Train your AI on your own data, give it a personality and a
+                goal, leave the rest to Wisemelon — it handles the rest!
+              </p>
+            </div>
+
+            <!-- Link right -->
+            <a href="#" class="text-lg font-light text-green-600" style="font-family: 'Roboto', sans-serif">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+       
+<div
+  class="relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
+>
+  <!-- Decorative icon -->
+  <img src="assets/images/campaign-logo.png" alt="Campaign Icon" class="absolute top-0 right-0 w-28 h-28 opacity-100 pointer-events-none" />
+
+  <!-- Heading and text -->
+  <h2 class="mt-2 text-3xl font-bold text-zinc-600">Smart Campaigns</h2>
+  <p class="mt-2 text-black max-w-xs">
+    AI-personalized campaigns – tailored to each customer, based on their behavior, preferences, and history
+  </p>
+
+  <!-- Learn More link at bottom right -->
+  <a href="#"
+     class="absolute bottom-6 right-6 text-lg font-light text-green-600"
+     style="font-family: 'Roboto', sans-serif">
+    Learn More →
+  </a>
 </div>
 
 
 
-        <!-- Card 4 -->
-        <div class="bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between">
-          <a href="#" class="text-lg font-medium text-black">Learn More →</a>
-          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
-          <p class="mt-1 text-black">
-            WhatsApp flows allows you to capture information using easy to use
-            forms, product list and more.
-          </p>
-        </div>
-
         <!-- Card 5 -->
 
-        <div class="bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between">
-          <a href="#" class="text-lg font-medium text-black">Learn More →</a>
-          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
-          <p class="mt-1 text-black">
-            WhatsApp flows allows you to capture information using easy to use
-            forms, product list and more.
-          </p>
-        </div>
-        <!-- Card 6 -->
-        <div class="bg-gradient-to-b from-white to-zinc-100 rounded-lg sm:col-span-2 p-6 flex flex-col justify-between">
-          <a href="#" class="text-lg font-medium text-black">Learn More →</a>
-          <h2 class="mt-2 text-2xl font-bold text-black">WhatsApp Flows</h2>
-          <p class="mt-1 text-black">
-            WhatsApp flows allows you to capture information using easy to use
-            forms, product list and more.
-          </p>
-        </div>
+        <div
+  class="relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
+>
+  <!-- Decorative icon -->
+  <img src="assets/images/live-chat.png" alt="Live Chat Icon" class="absolute top-0 right-0 w-32 h-auto opacity-100 pointer-events-none" />
 
+  <!-- Heading -->
+  <h2 class="text-3xl font-bold text-zinc-600">Live Chats</h2>
+
+  <!-- Paragraph -->
+  <p class="mt-2 text-black max-w-xs">
+    Live chat with quick replies, easy agent transfers, and a full user timeline to understand every conversation.
+  </p>
+
+  <!-- Learn More link at bottom right -->
+  <a href="#"
+     class="absolute bottom-6 right-6 text-lg font-light text-green-600"
+     style="font-family: 'Roboto', sans-serif">
+    Learn More →
+  </a>
+</div>
+
+
+        <!-- Card 6 -->
+        <div
+  class="relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
+>
+  <!-- Decorative icon -->
+  <img src="assets/images/user-management.png" alt="User Management Icon" class="absolute top-0 right-0 w-28 h-auto opacity-100 pointer-events-none" />
+
+  <!-- Heading -->
+  <h2 class="text-3xl font-bold text-zinc-600">User Management</h2>
+
+  <!-- Paragraph -->
+  <p class="mt-2 text-black max-w-xs">
+    Create departments, assign roles, and control permissions to manage your team efficiently and securely.
+  </p>
+
+  <!-- Learn More link at bottom right -->
+  <a href="#"
+     class="absolute bottom-6 right-6 text-lg font-light text-green-600"
+     style="font-family: 'Roboto', sans-serif">
+    Learn More →
+  </a>
+</div>
+
+      </div>
       </div>
     </section>
 
-    <!--======================================= SECTION 4 =======================================-->
+    <!--======================================= SECTION 4 "Check Use Cases" =======================================-->
 
-    <section class="w-full min-h-screen mb-12">
-<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Title -->
-    <h2 class="text-3xl font-bold mb-6">
-      Personalised setup for your business.
-    </h2>
+    <!-- Business Solutions Section -->
+    <section class="max-w-screen-2xl px-4 py-10 bg-white mx-auto text-center">
+      <!-- Heading -->
+      <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-3xl lg:text-5xl font-semibold text-left">
+          Built for businesses which wants to
+          <span class="text-green-500">Scale</span>
+        </h2>
+      </div>
 
+      <!-- Cards Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16"
+      >
+        <!-- Card 1 -->
+        <div
+          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+        >
+          <!-- Image with overlay -->
+          <div class="relative h-[500px]">
+            <img
+              src="assets/images/education1.png"
+              alt="Real Estate"
+              class="w-full h-full object-cover"
+            />
+            <button
+              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
+            >
+              Learn More &gt;
+            </button>
+          </div>
+          <!-- Text content -->
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Real Estate</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Educational coaching centers struggle with overwhelming student
+              inquiries, scattered lead management.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+        >
+          <div class="relative h-[500px]">
+            <img
+              src="assets/images/finance1.png"
+              alt="Real Estate"
+              class="w-full h-full object-cover"
+            />
+            <button
+              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
+            >
+              Learn More &gt;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Real Estate</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Educational coaching centers struggle with overwhelming student
+              inquiries, scattered lead management.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+        >
+          <div class="relative h-[500px]">
+            <img
+              src="assets/images/realestate1.png"
+              alt="Real Estate"
+              class="w-full h-full object-cover"
+            />
+            <button
+              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
+            >
+              Learn More &gt;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Real Estate</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Educational coaching centers struggle with overwhelming student
+              inquiries, scattered lead management.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+        >
+          <div class="relative h-[500px]">
+            <img
+              src="assets/images/realestate1.png"
+              alt="Real Estate"
+              class="w-full h-full object-cover"
+            />
+            <button
+              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
+            >
+              Learn More &gt;
+            </button>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Real Estate</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Educational coaching centers struggle with overwhelming student
+              inquiries, scattered lead management.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Box Section -->
+      <div class="mt-12">
+        <h3 class="text-lg md:text-xl lg:text-3xl font-medium mb-4 text-gray-600 text-left">
+          See how it helps your business
+        </h3>
+        
     <!-- Description Box -->
     <div class="flex flex-col justify-between border-2 border-black rounded-xl p-4 mb-8 max-w-full mx-auto text-left">
       <div>
@@ -2040,800 +2598,784 @@
           Describe your business and Wisemelon will tell you how it can help you.
         </p>
         <textarea
-          class="w-full border-none outline-none resize-none p-2 leading-tight rounded-md"
+          class="w-full border-none outline-none resize-none leading-tight rounded-md"
           rows="3"
           placeholder="Type here..."
         ></textarea>
       </div>
       <div class="flex justify-end mt-4">
         <button
-          type="submit"
-          class="bg-black text-white px-6 py-3 rounded-md"
-        >
-          Send
-        </button>
-      </div>
-    </div>
-  </div>
-
-      <!-- Cards grid centered with page content -->
-<div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-    <!-- Repeat this card block -->
-    <div
-      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-      style="background: url('assets/images/img2.png') center/cover;"
-    >
-      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
-        Education
-      </div>
-      <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="usecase text-white flex items-center gap-2">
-          Check Use Cases <span>➔</span>
-        </a>
+            class="whitespace-nowrap px-5 py-2 bg-black text-white text-sm rounded-lg hover:bg-gray-800 transition"
+          >
+            Send <span class="ml-1">➤</span>
+          </button>
       </div>
     </div>
 
-          <div
-      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-      style="background: url('assets/images/img2.png') center/cover;"
-    >
-      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
-        Finance
-      </div>
-      <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="usecase text-white flex items-center gap-2">
-          Check Use Cases <span>➔</span>
-        </a>
-      </div>
-    </div>
-
-        <div
-      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-      style="background: url('assets/images/img2.png') center/cover;"
-    >
-      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-3xl text-white font-normal">
-        Healthcare
-      </div>
-      <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="usecase text-white flex items-center gap-2">
-          Check Use Cases <span>➔</span>
-        </a>
-      </div>
-    </div>
-    
-            <div
-      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-      style="background: url('assets/images/img2.png') center/cover;"
-    >
-      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-3xl text-white font-normal">
-       Home Services
-      </div>
-      <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="usecase text-white flex items-center gap-2">
-          Check Use Cases <span>➔</span>
-        </a>
-      </div>
-    </div>
-
-          <div
-      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-      style="background: url('assets/images/img2.png') center/cover;"
-    >
-      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
-        Real Estate
-      </div>
-      <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="usecase text-white flex items-center gap-2">
-          Check Use Cases <span>➔</span>
-        </a>
-      </div>
-    </div>
-
-          <div
-      class="relative aspect-[3.7/1] w-full bg-gray-300 rounded-xl overflow-hidden"
-      style="background: url('assets/images/img2.png') center/cover;"
-    >
-      <div class="usecasetitle absolute bottom-0 left-0 p-4 text-white text-3xl font-normal">
-        Education
-      </div>
-      <div class="absolute bottom-0 right-0 p-4">
-        <a href="#" class="usecase text-white flex items-center gap-2">
-          Check Use Cases <span>➔</span>
-        </a>
-      </div>
-    </div>
-
-        </div>
       </div>
     </section>
 
-    <!--======================================== SECTION 5 =======================================-->
+    <!--======================================== SECTION 5 "Testimony" =======================================-->
 
+ <section class="w-full min-h-screen py-6 flex flex-col justify-between">
+  <div class="max-w-screen-2xl mx-auto flex flex-col">
+    <h2 class="automate text-4xl sm:text-5xl md:text-5xl font-bold text-black mb-16">
+      The reason why they <span class="text-green-400">Trust</span>&nbsp;us
+    </h2>
 
-<section class="w-full min-h-screen py-6 flex flex-col justify-between">
-  <!-- Top Half: Gradient Background -->
-  <div class="w-full bg-gradient-to-b from-zinc-50 to-zinc-200">
-    <div class="max-w-screen-2xl mx-auto flex flex-col">
-      <!-- Top Logos -->
-      <div class="toplogos flex flex-wrap items-center justify-start pt-8 gap-8 sm:gap-12 lg:gap-40 mt-6 mb-20">
-        <img src="assets/images/logo/meta.png" alt="Meta" class="h-14" />
-        <img src="assets/images/logo/iso9001.png" alt="ISO 9001" class="h-16" />
-        <img src="assets/images/logo/iso27001.png" alt="ISO 27001" class="h-16" />
-        <img src="assets/images/logo/gdpr.png" alt="GDPR" class="h-16" />
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      <!-- Left Side Content (from image you shared) -->
+     <div class="flex gap-8">
+  <!-- Left Column: Two small vertical cards -->
+  <div class="flex flex-col gap-6">
+    <!-- Small Card 1 -->
+    <div class="w-48 rounded-lg shadow-lg overflow-hidden">
+      <img src="assets/images/startup 1.png" alt="Math Accelerator" class="w-full h-32 object-cover" />
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">How Math Accelerator,</h3>
+        <p class="text-sm text-gray-600">
+          keeps visitors informed about hundreds of incubated startups.
+        </p>
       </div>
+    </div>
 
-      <!-- Testimonials and Feature Cards -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-1">
-        <!-- Left Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <!-- Card 1 -->
-          <div class="testimony bg-white rounded-xl shadow-sm p-8 text-lg">
-            <p><strong>How Petfolk,</strong></p>
-            <span class="text-gray-500 font-bold text-base">
-              scaled their services to more than 10k customers in 2 months
-            </span>
+    <!-- Small Card 2 -->
+    <div class="w-48 rounded-lg shadow-lg overflow-hidden">
+      <img src="assets/images/grooming 1.png" alt="Petfolks" class="w-full h-32 object-cover" />
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">How Petfolks,</h3>
+        <p class="text-sm text-gray-600">
+          scaled their services to more than 10k customers in 2 months.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: One large card -->
+  <div class="w-96 rounded-lg shadow-lg overflow-hidden">
+    <img src="assets/images/lifestyle1.png" alt="Lux Hospitals" class="w-full h-150 object-cover" />
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">How Lux Hospitals,</h3>
+      <p class="text-sm text-gray-600">
+        is transforming thousands of lives, by giving personalised lifestyle recommendation on scale.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Right Side: Existing stacked testimonial cards, right aligned -->
+      <div class="relative w-full max-w-md mx-auto lg:ml-auto mt-9 overflow-visible lg:-mb-[30px] sm:mb-16 md:my-12 z-20 flex justify-end">
+        <!-- Background Card (bottom) -->
+        <div
+          id="dragcard3"
+          class="absolute inset-0 -translate-x-5 -translate-y-10 bg-pink-100/30 backdrop-blur-lg flex flex-col justify-between rounded-xl rotate-[-12deg] shadow-md z-10 transition-transform duration-500 p-4"
+          data-x="-1.25rem"
+          data-y="-2.5rem"
+          data-rotate="-12"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="assets/images/14.png"
+              alt="Prabhu Deva"
+              class="w-20 h-20 rounded-full object-cover"
+            />
+            <div>
+              <h1 class="font-bold text-4xl">Prabhu Deva</h1>
+              <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
+            </div>
           </div>
-          <!-- Card 2 -->
-          <div class=" testimony bg-white rounded-xl shadow-sm p-8">
-            <p><strong>How ViSource,</strong></p>
-            <span class="text-gray-500 font-bold text-base">
-              automated their response time by 80% for their steel distribution business.
-            </span>
-          </div>
-          <!-- Card 3 (full width) -->
-          <div class="testimony bg-white rounded-xl shadow-sm p-8 sm:col-span-2">
-            <p><strong>How Math Accelerator,</strong></p>
-            <span class="text-gray-500 font-bold text-base">
-              keeps visitors informed about hundreds of incubated startups and their work.
-            </span>
-          </div>
+          <p
+            class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow"
+          >
+            I don’t know who else we could have trusted for our customer
+            interactions. Wisemelon literally provides all the options a
+            business would ever need.
+          </p>
+          <a href="#" class="font-medium text-black text-2xl mt-4">
+            Try Yourself →
+          </a>
         </div>
 
-        
-          <!-- Right Testimonial Card Stack -->
-       <div class="scaledown relative w-full max-w-md mx-auto lg:ml-48 mt-9 overflow-visible lg:-mb-[30px] sm:mb-16 md:my-12 z-20">
+        <!-- Middle Card -->
+        <div
+          id="dragcard2"
+          class="absolute inset-0 translate-x-2 -translate-y-5 bg-green-50 flex flex-col justify-between rounded-xl rotate-[-5deg] shadow-md z-20 transition-transform duration-500 p-4"
+          data-x="0.5rem"
+          data-y="-1.25rem"
+          data-rotate="-5"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="assets/images/13.png"
+              alt="Prabhu Deva"
+              class="w-20 h-20 rounded-full object-cover"
+            />
+            <div>
+              <p class="font-bold text-4xl">Prabhu Deva</p>
+              <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
+            </div>
+          </div>
+          <p
+            class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow"
+          >
+            I don’t know who else we could have trusted for our customer
+            interactions. Wisemelon literally provides all the options a
+            business would ever need.
+          </p>
+          <a href="#" class="font-medium text-black text-2xl mt-4">
+            Try Yourself →
+          </a>
+        </div>
 
-  <!-- Background Card (bottom) -->
-  <div
-    id="dragcard3"
-    class="absolute inset-0 -translate-x-5 -translate-y-10 bg-pink-100/30 backdrop-blur-lg flex flex-col justify-between rounded-xl rotate-[-12deg] shadow-md z-10 transition-transform duration-500 p-4"
-    data-x="-1.25rem" data-y="-2.5rem" data-rotate="-12"
-  >
- <div class="flex items-center gap-3">
-      <img
-        src="assets/images/14.png"
-        alt="Prabhu Deva"
-        class="w-20 h-20 rounded-full object-cover"
-      />
-      <div>
-        <h1 class="font-bold text-4xl">Prabhu Deva</h1>
-        <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
-      </div>
-    </div>
-    <p class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow">
-      I don’t know who else we could have trusted for our customer
-      interactions. Wisemelon literally provides all the options a
-      business would ever need.
-    </p>
-    <a href="#" class="font-medium text-black text-2xl mt-4">
-      Try Yourself →
-    </a>
-
-
-</div>
-
-  <!-- Middle Card -->
-  <div
-    id="dragcard2"
-    class="absolute inset-0 translate-x-2 -translate-y-5 bg-green-50 flex flex-col justify-between rounded-xl rotate-[-5deg] shadow-md z-20 transition-transform duration-500 p-4"
-    data-x="0.5rem" data-y="-1.25rem" data-rotate="-5"
-  >
-
-<div class="flex items-center gap-3">
-      <img
-        src="assets/images/13.png"
-        alt="Prabhu Deva"
-        class="w-20 h-20 rounded-full object-cover"
-      />
-      <div>
-       <p class="font-bold text-4xl">Prabhu Deva</p>
-        <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
-      </div>
-    </div>
-    <p class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow">
-      I don’t know who else we could have trusted for our customer
-      interactions. Wisemelon literally provides all the options a
-      business would ever need.
-    </p>
-    <a href="#" class="font-medium text-black text-2xl mt-4">
-      Try Yourself →
-    </a>
-
-</div>
-
-  <!-- Foreground Card (top) -->
-  <div
-    id="dragcard1"
-    class="relative bg-white rounded-xl p-4 shadow-lg z-30 flex flex-col justify-between rotate-[5deg] w-full aspect-square transition-transform duration-500"
-    style="transform: translateX(2.5rem) rotate(2deg)"
-    data-x="2.5rem" data-y="0rem" data-rotate="2"
-  >
-    <div class="flex items-center gap-3">
-      <img
-        src="https://randomuser.me/api/portraits/men/75.jpg"
-        alt="Prabhu Deva"
-        class="w-20 h-20 rounded-full object-cover"
-      />
-      <div>
-        <p class="font-bold text-4xl">Prabhu Deva</p>
-        <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
-      </div>
-    </div>
-    <p class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow">
-      I don’t know who else we could have trusted for our customer
-      interactions. Wisemelon literally provides all the options a
-      business would ever need.
-    </p>
-    <a href="#" class="font-medium text-black text-2xl mt-4">
-      Try Yourself →
-    </a>
-  </div>
-</div>
-
+        <!-- Foreground Card (top) -->
+        <div
+          id="dragcard1"
+          class="relative bg-white rounded-xl p-4 shadow-lg z-30 flex flex-col justify-between rotate-[5deg] w-full aspect-square transition-transform duration-500"
+          style="transform: translateX(2.5rem) rotate(2deg)"
+          data-x="2.5rem"
+          data-y="0rem"
+          data-rotate="2"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="https://randomuser.me/api/portraits/men/75.jpg"
+              alt="Prabhu Deva"
+              class="w-20 h-20 rounded-full object-cover"
+            />
+            <div>
+              <p class="font-bold text-4xl">Prabhu Deva</p>
+              <p class="text-2xl text-gray-600">CMO, Bell Labs</p>
+            </div>
+          </div>
+          <p
+            class="text-gray-800 text-2xl max-w-sm mx-auto mt-6 flex-grow"
+          >
+            I don’t know who else we could have trusted for our customer
+            interactions. Wisemelon literally provides all the options a
+            business would ever need.
+          </p>
+          <a href="#" class="font-medium text-black text-2xl mt-4">
+            Try Yourself →
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Bottom Half: Partner Logos -->
-  <div class="w-full mt-auto p-16">
-    <div class="max-w-screen-2xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-center items-center pt-10 pb-6">
-      <img src="assets/images/logo/haldirams_logo.png" alt="Haldiram's" class="bottomlogos" />
-      <img src="assets/images/logo/vendiman_pvt_ltd_logo.png.png" alt="Vendiman" class="bottomlogos" />
-      <img src="assets/images/logo/bigbasket.png" alt="BigBasket" class="bottomlogos" />
-      <img src="assets/images/logo/hospitalsapollo.png" alt="Apollo" class="bottomlogos" />
-      <img src="assets/images/logo/lalitha_jewellers_colombo_logo.png.png" alt="Lalitha" class="bottomlogos" />
-      <img src="assets/images/logo/royalbrother.png" alt="Royal Brothers" class="bottomlogos" />
+  <!-- Bottom Half: Partner Logos (unchanged) -->
+  <div class="w-full mt-auto p-6">
+    <div
+      class="max-w-screen-2xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-center items-center pt-10 pb-6"
+    >
+      <img
+        src="assets/images/logo/haldirams_logo.png"
+        alt="Haldiram's"
+        class="bottomlogos"
+      />
+      <img
+        src="assets/images/logo/vendiman_pvt_ltd_logo.png.png"
+        alt="Vendiman"
+        class="bottomlogos"
+      />
+      <img
+        src="assets/images/logo/bigbasket.png"
+        alt="BigBasket"
+        class="bottomlogos"
+      />
+      <img
+        src="assets/images/logo/hospitalsapollo.png"
+        alt="Apollo"
+        class="bottomlogos"
+      />
+      <img
+        src="assets/images/logo/lalitha_jewellers_colombo_logo.png.png"
+        alt="Lalitha"
+        class="bottomlogos"
+      />
+      <img
+        src="assets/images/logo/royalbrother.png"
+        alt="Royal Brothers"
+        class="bottomlogos"
+      />
     </div>
   </div>
 </section>
 
-    
-    <!--======================================== SECTION 6 =======================================-->
 
-  <section class="min-h-screen max-w-screen-2xl mx-auto px-6 sm:px-12">
+    <!--======================================== SECTION 6 "Get a Callback" =======================================-->
 
-  <!-- Heading -->
- <h2 class="automate text-4xl sm:text-5xl md:text-5xl font-bold text-black mb-16">
-    Automate your business in just <span class="text-black">2 days.</span>
-  </h2>
+    <section
+      class="min-h-screen max-w-screen-2xl mx-auto px-6 sm:px-12 py-3 lg:py-12"
+    >
+      <!-- Heading -->
+      <h2
+        class="automate text-4xl sm:text-5xl md:text-5xl font-bold text-black mb-16"
+      >
+        Automate your business in just <span class="text-black">2 days.</span>
+      </h2>
 
-  <!-- Grid container -->
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 w-full">
-
-    <!-- Left column -->
-   <div class="w-full">
-  <form class="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
-    
-    <!-- Full Name -->
-    <div class="flex flex-col">
-      <label for="fullName" class="mb-2 text-sm font-medium text-gray-700">Full Name</label>
-      <input
-        id="fullName"
-        name="fullName"
-        type="text"
-        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </div>
-
-    <!-- Business Email -->
-    <div class="flex flex-col">
-      <label for="email" class="mb-2 text-sm font-medium text-gray-700">Business Email</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </div>
-
-    <!-- Mobile Number -->
-    <div class="flex flex-col">
-      <label for="mobile" class="mb-2 text-sm font-medium text-gray-700">Mobile Number</label>
-      <input
-        id="mobile"
-        name="mobile"
-        type="text"
-        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </div>
-
-    <!-- Meeting Date -->
-    <div class="flex flex-col">
-      <label for="meetingDate" class="mb-2 text-sm font-medium text-gray-700">Meeting Date</label>
-      <input
-        id="meetingDate"
-        name="meetingDate"
-        type="date"
-        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </div>
-
-    <!-- Use Case -->
-    <div class="flex flex-col sm:col-span-2">
-      <label for="useCase" class="mb-2 text-sm font-medium text-gray-700">Use Case</label>
-      <textarea
-        id="useCase"
-        name="useCase"
-        rows="3"
-        class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      ></textarea>
-    </div>
-
-           
-<button
-  type="submit"
-  class="callback-btn group bg-black text-white text-sm px-5 py-2 rounded-md flex items-center gap-2 sm:col-span-2 w-fit"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="icon h-5 w-5 fill-current text-white group-hover:text-black"
-    viewBox="0 0 24 24"
-  >
-    <path
-      d="m7.18 10.27 6.504 6.46c.697-.807 5.11-5.538 7.316.924 0 0-.232 3.346-4.994 3.346-3.367 0-6.851-4.038-9.29-6.346C4.626 12.692 3 10.154 3 7.846 3 3.116 6.252 3 6.252 3c7.432 2.538.929 7.27.929 7.27Z"
-      fill="currentColor"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M14.172 5.586v4.242h4.242"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="m14.172 9.828 5.656-5.656"
-      stroke="currentColor"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-    />
-  </svg>
-
-  Get a callback
-</button>
+      <!-- Grid container -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 w-full">
+        <!-- Left column -->
+        <div class="w-full flex flex-col justify-between">
 
 
+            
+          <!-- form  -->
+          <form class="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+            <!-- Full Name -->
+            <div class="flex flex-col">
+              <label
+                for="fullName"
+                class="mb-2 text-sm font-medium text-gray-700"
+                >Full Name</label
+              >
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Business Email -->
+            <div class="flex flex-col">
+              <label for="email" class="mb-2 text-sm font-medium text-gray-700"
+                >Business Email</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="flex flex-col">
+              <label for="mobile" class="mb-2 text-sm font-medium text-gray-700"
+                >Mobile Number</label
+              >
+              <input
+                id="mobile"
+                name="mobile"
+                type="text"
+                class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Meeting Date -->
+            <div class="flex flex-col">
+              <label
+                for="meetingDate"
+                class="mb-2 text-sm font-medium text-gray-700"
+                >Meeting Date</label
+              >
+              <input
+                id="meetingDate"
+                name="meetingDate"
+                type="date"
+                class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Use Case -->
+            <div class="flex flex-col sm:col-span-2">
+              <label
+                for="useCase"
+                class="mb-2 text-sm font-medium text-gray-700"
+                >Use Case</label
+              >
+              <textarea
+                id="useCase"
+                name="useCase"
+                rows="3"
+                class="border border-gray-300 rounded-md px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="callback-btn group bg-black text-white text-sm px-5 py-2 rounded-md flex items-center gap-2 sm:col-span-2 w-fit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon h-5 w-5 fill-current text-white group-hover:text-black"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m7.18 10.27 6.504 6.46c.697-.807 5.11-5.538 7.316.924 0 0-.232 3.346-4.994 3.346-3.367 0-6.851-4.038-9.29-6.346C4.626 12.692 3 10.154 3 7.846 3 3.116 6.252 3 6.252 3c7.432 2.538.929 7.27.929 7.27Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.172 5.586v4.242h4.242"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="m14.172 9.828 5.656-5.656"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                />
+              </svg>
+
+              Get a callback
+            </button>
           </form>
+
+                    <!-- logos row -->
+  <div
+            class="toplogos flex flex-wrap items-center justify-start pt-8 gap-3 sm:gap-12 lg:gap-20 mt-6 mb-20"
+          >
+            <img src="assets/images/logo/meta.png" alt="Meta" class="h-14" />
+            <img
+              src="assets/images/logo/iso9001.png"
+              alt="ISO 9001"
+              class="h-16"
+            />
+            <img
+              src="assets/images/logo/iso27001.png"
+              alt="ISO 27001"
+              class="h-16"
+            />
+            <img src="assets/images/logo/gdpr.png" alt="GDPR" class="h-16" />
+          </div>
+
         </div>
 
         <!-- Right: Phone Image and Tags as One Block (Always Side-by-Side) -->
-        
-            <div class="flex items-center justify-center mb-12">
-            <!-- Phone Image -->
 
-            <div id="card3" class="cardvideo w-36 sm:w-44 md:w-52 lg:w-60 flex justify-items-center -mb-60 lg:mt-30 sm:-my-40 md:-my-40 lg:my-6 ml-6">
+        <div class="flex items-center justify-center mb-12">
+          <!-- Phone Image -->
+
+          <div
+            id="card3"
+            class="cardvideo w-36 sm:w-44 md:w-52 lg:w-60 flex justify-items-center -mb-60 lg:mt-30 sm:-my-40 md:-my-40 lg:my-6 ml-6"
+          >
+            <div
+              class="flex items-center justify-center transform scale-[0.6] /* default small screens */ sm:scale-[0.70] /* small screens up */ md:scale-[0.80] /* medium screens up */ lg:scale-[1] /* large screens up */ origin-top-left origin-top"
+            >
+              <!-- iPhone Frame -->
               <div
-                class="flex items-center justify-center transform
-    scale-[0.6]        /* default small screens */
-    sm:scale-[0.70]     /* small screens up */
-    md:scale-[0.80]    /* medium screens up */
-    lg:scale-[1]       /* large screens up */
-    origin-top-left origin-top"
+                class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl ml-2"
               >
-                <!-- iPhone Frame -->
+                <!-- Side Buttons -->
                 <div
-                  class="w-[360px] h-[740px] metallic rounded-[40px] p-[9px] relative shadow-2xl ml-2"
+                  class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
+                ></div>
+                <div
+                  class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
+                ></div>
+                <div
+                  class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
+                ></div>
+                <div
+                  class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
+                ></div>
+
+                <!-- Notch -->
+                <div
+                  class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
+                ></div>
+
+                <!-- Screen -->
+                <div
+                  class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
                 >
-                  <!-- Side Buttons -->
+                  <!-- Time -->
                   <div
-                    class="absolute left-0 top-[100px] -translate-x-full w-[3px] h-[40px] metallic rounded"
-                  ></div>
-                  <div
-                    class="absolute left-0 top-[160px] -translate-x-full w-[3px] h-[60px] metallic rounded"
-                  ></div>
-                  <div
-                    class="absolute left-0 top-[240px] -translate-x-full w-[3px] h-[60px] metallic rounded"
-                  ></div>
-                  <div
-                    class="absolute right-0 top-[140px] translate-x-full w-[3px] h-[50px] metallic rounded"
+                    id="live-time"
+                    class="live-time absolute top-2 left-4 text-black text-sm font-medium z-10"
                   ></div>
 
-                  <!-- Notch -->
+                  <!-- Status Icons -->
                   <div
-                    class="absolute top-[1px] left-1/2 -translate-x-1/2 w-[150px] h-[30px] bg-black rounded-b-xl z-10"
-                  ></div>
-
-                  <!-- Screen -->
-                  <div
-                    class="w-full h-full bg-white rounded-[32px] overflow-hidden relative"
+                    class="absolute top-2 right-4 flex items-center gap-1 z-10"
                   >
-                    <!-- Time -->
-                    <div
-                      id="live-time"
-                      class="live-time absolute top-2 left-4 text-black text-sm font-medium z-10"
-                    ></div>
-
-                    <!-- Status Icons -->
-                    <div
-                      class="absolute top-2 right-4 flex items-center gap-1 z-10"
-                    >
-                      <div class="flex items-end gap-[1px]">
-                        <div class="signal-bar h-[4px]"></div>
-                        <div class="signal-bar h-[6px]"></div>
-                        <div class="signal-bar h-[8px]"></div>
-                        <div class="signal-bar h-[10px]"></div>
-                      </div>
-
-                      <div class="w-[14px] h-[14px] relative">
-                        <div
-                          class="absolute inset-0 rounded-full border-[2px] border-black"
-                        ></div>
-                        <div
-                          class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
-                        ></div>
-                      </div>
-
-                      <div
-                        class="flex items-center border border-black w-[20px] h-[10px] relative"
-                      >
-                        <div class="w-[14px] h-full bg-black"></div>
-                        <div
-                          class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
-                        ></div>
-                      </div>
+                    <div class="flex items-end gap-[1px]">
+                      <div class="signal-bar h-[4px]"></div>
+                      <div class="signal-bar h-[6px]"></div>
+                      <div class="signal-bar h-[8px]"></div>
+                      <div class="signal-bar h-[10px]"></div>
                     </div>
 
-                    <!-- Navbar -->
-                    <div
-                      class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
-                    >
-                      <div class="flex items-center gap-2">
-                        <div
-                          class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
-                        ></div>
-                        <img
-                          src="./assets/images/logo/ws-dark.png"
-                          class="w-9 h-19 rounded-full"
-                          alt="Julia"
-                        />
-                        <span class="text-lg font-medium text-black"
-                          >Wisemelon</span
-                        >
-                      </div>
-                      <div class="flex items-center gap-4">
-                        <div
-                          class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
-                        >
-                          <div
-                            class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
-                          ></div>
-                        </div>
-                        <div
-                          class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
-                        >
-                          <div
-                            class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
-                          ></div>
-                        </div>
-                        <div
-                          class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
-                        >
-                          i
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Divider below navbar -->
-                    <div
-                      class="absolute top-[71px] left-0 right-0 h-px bg-gray-300 z-10"
-                    ></div>
-                    <div
-                      class="absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0"
-                    >
-                      <div class="video-container w-[360px] h-[640px] bg-black shadow-lg p-4 flex items-center justify-center overflow-hidden">
-  <iframe
-    id="videoPlayer"
-    src="https://www.youtube.com/embed/o2oWoMcyAxU?&mute=1&controls=0&loop=1&playlist=o2oWoMcyAxU"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    title="WhatsApp Customer Engagement Shorts"
-  ></iframe>
-</div>
-
-                      <!-- Message Input Section -->
-                  
-
-                      <!-- Speaker Slit (Bottom Microphone Style) -->
+                    <div class="w-[14px] h-[14px] relative">
                       <div
-                        class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                        class="absolute inset-0 rounded-full border-[2px] border-black"
+                      ></div>
+                      <div
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-black rounded-full"
                       ></div>
                     </div>
+
+                    <div
+                      class="flex items-center border border-black w-[20px] h-[10px] relative"
+                    >
+                      <div class="w-[14px] h-full bg-black"></div>
+                      <div
+                        class="w-[2px] h-[6px] bg-black absolute -right-[3px] top-[2px] rounded-sm"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <!-- Navbar -->
+                  <div
+                    class="absolute top-8 left-0 right-0 px-4 py-2 flex items-center justify-between z-10"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-4 h-4 border-l-2 border-b-2 border-black rotate-45 ml-1"
+                      ></div>
+                      <img
+                        src="./assets/images/logo/ws-dark.png"
+                        class="w-9 h-19 rounded-full"
+                        alt="Julia"
+                      />
+                      <span class="text-lg font-medium text-black"
+                        >Wisemelon</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-[18px] h-[14px] border-2 border-black rounded-sm relative"
+                      >
+                        <div
+                          class="absolute right-[-6px] top-[2px] w-[6px] h-[8px] bg-black clip-path-triangle"
+                        ></div>
+                      </div>
+                      <div
+                        class="w-[12px] h-[14px] border-l-2 border-t-2 border-black relative"
+                      >
+                        <div
+                          class="absolute top-0 left-0 w-[8px] h-[6px] border-t-2 border-r-2 border-black"
+                        ></div>
+                      </div>
+                      <div
+                        class="w-[14px] h-[14px] border-2 border-black rounded-full flex items-center justify-center text-[10px] font-bold text-black"
+                      >
+                        i
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Divider below navbar -->
+                  <div
+                    class="absolute top-[71px] left-0 right-0 h-px bg-gray-300 z-10"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-0 w-full h-[90%] overflow-hidden bg-pattern p-0 m-0"
+                  >
+                    <div
+                      class="video-container w-[360px] h-[640px] bg-black shadow-lg p-4 flex items-center justify-center overflow-hidden"
+                    >
+                      <iframe
+                        id="videoPlayer"
+                        src="https://www.youtube.com/embed/o2oWoMcyAxU?&mute=1&controls=0&loop=1&playlist=o2oWoMcyAxU"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen
+                        title="WhatsApp Customer Engagement Shorts"
+                      ></iframe>
+                    </div>
+
+                    <!-- Message Input Section -->
+
+                    <!-- Speaker Slit (Bottom Microphone Style) -->
+                    <div
+                      class="absolute bottom-1 left-1/2 -translate-x-1/2 w-[60px] h-[5px] bg-black/90 rounded-full z-0"
+                    ></div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- Tags -->
-            <div class="button-group space-y-8 lg:space-y-16 ml-20 mb-20 md:ml-12 lg:ml-32">
-              <button
-                onclick="changeVideo('6qFkDrUG-68')"
-                class="button1 bg-pink-300 text-black text-xs px-3 py-2 space-x-0 rounded-r-lg block"
-              >
-                Rentals
-              </button>
-              <button
-                onclick="changeVideo('Tv3fWnUA_9I')"
-                class="button1 bg-rose-200 text-black text-xs px-3 py-2 py-2 space-x-0 rounded-r-lg block"
-              >
-                Healthcare
-              </button>
-              <button
-                onclick="changeVideo('o2oWoMcyAxU')"
-                class="button1 bg-indigo-300 text-black text-xs px-3 py-2 rounded-r-lg block"
-              >
-                D2C
-              </button>
-              <button
-                onclick="changeVideo('pyzn8K4hKls')"
-                class="button1 bg-green-300 text-black text-xs px-3 py-2 rounded-r-lg block"
-              >
-                Finance
-              </button>
-              <button
-                onclick="changeVideo('hkbUKKplGFU')"
-                class="button1 bg-yellow-300 text-black text-xs px-3 py-2 rounded-r-lg block"
-              >
-                Education
-              </button>
-              <button
-                onclick="changeVideo('LYlbQC-rF_E')"
-                class="button1 bg-sky-300 text-black text-xs px-3 py-2 rounded-r-lg block"
-              >
-                Home Services
-              </button>
-            </div>
-
           </div>
-        
+
+          <!-- Tags -->
+          <div
+            class="button-group space-y-8 lg:space-y-16 ml-20 mb-20 md:ml-12 lg:ml-32"
+          >
+            <button
+              onclick="changeVideo('6qFkDrUG-68')"
+              class="button1 bg-pink-300 text-black text-xs px-3 py-2 space-x-0 rounded-r-lg block"
+            >
+              Rentals
+            </button>
+            <button
+              onclick="changeVideo('Tv3fWnUA_9I')"
+              class="button1 bg-rose-200 text-black text-xs px-3 py-2 py-2 space-x-0 rounded-r-lg block"
+            >
+              Healthcare
+            </button>
+            <button
+              onclick="changeVideo('o2oWoMcyAxU')"
+              class="button1 bg-indigo-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+            >
+              D2C
+            </button>
+            <button
+              onclick="changeVideo('pyzn8K4hKls')"
+              class="button1 bg-green-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+            >
+              Finance
+            </button>
+            <button
+              onclick="changeVideo('hkbUKKplGFU')"
+              class="button1 bg-yellow-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+            >
+              Education
+            </button>
+            <button
+              onclick="changeVideo('LYlbQC-rF_E')"
+              class="button1 bg-sky-300 text-black text-xs px-3 py-2 rounded-r-lg block"
+            >
+              Home Services
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!--======================================== SECTION 7 =======================================-->
-
+    <!--======================================== SECTION 7 "Flows" =======================================-->
 
     <section
-  id="flows"
-  class="min-h-screen bg-white py-2 px-6 sm:px-12 text-left justify-center justify-items-center"
->
-  <!-- Headline -->
-  <div class="max-w-screen-2xl mx-auto text-left mb-8">
-    <h2
-      class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-black leading-tight max-w-6xl"
+      id="flows"
+      class="min-h-screen bg-white py-2 px-6 sm:px-12 text-left justify-center justify-items-center"
     >
-      <span>Your flow, Your Integrations.</span>
-      <span
-        class="text-gray-400 text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight"
+      <!-- Headline -->
+      <div class="max-w-screen-2xl mx-auto text-left mb-8">
+        <h2
+          class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-black leading-tight max-w-6xl"
+        >
+          <span>Your flow, Your Integrations.</span>
+          <span
+            class="text-gray-400 text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight"
+          >
+            Design Flow for your needs and wisemelon does the rest for you
+            automatically.
+          </span>
+        </h2>
+      </div>
+
+      <!-- Tabs (Desktop only) -->
+      <div
+        id="progressTabs"
+        class="max-w-screen-2xl flex items-center mx-auto justify-start mb-12 space-x-2 flex-wrap hidden sm:flex"
       >
-        Design Flow for your needs and wisemelon does the rest for you automatically.
-      </span>
-    </h2>
-  </div>
+        <!-- Desktop tabs generated by JS -->
+      </div>
 
-  <!-- Tabs (Desktop only) -->
-  <div
-    id="progressTabs"
-    class="max-w-screen-2xl flex items-center mx-auto justify-start mb-12 space-x-2 flex-wrap hidden sm:flex"
-  >
-    <!-- Desktop tabs generated by JS -->
-  </div>
+      <!-- Mobile Carousel (Mobile only) -->
 
-  <!-- Mobile Carousel (Mobile only) -->
- 
-<h4 id="mobileCarouselTitle" class="text-lg font-semibold text-center mt-4 mb-2"></h4>
-  <div id="mobileCarousel" class="block sm:hidden mt-12 px-4">
-    <!-- Carousel track -->
-    <div
-      id="carouselTrack"
-      class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
-    >
-      <!-- Slides injected by JS -->
-    </div>
+      <h4
+        id="mobileCarouselTitle"
+        class="text-lg font-semibold text-center mt-4 mb-2"
+      ></h4>
+      <div id="mobileCarousel" class="block sm:hidden mt-12 px-4">
+        <!-- Carousel track -->
+        <div
+          id="carouselTrack"
+          class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+        >
+          <!-- Slides injected by JS -->
+        </div>
 
-    <!-- Dot indicators -->
-      <div id="carouselDots" class="flex items-center justify-center mt-4">
-      <!-- Dots injected by JS -->
+        <!-- Dot indicators -->
+        <div id="carouselDots" class="flex items-center justify-center mt-4">
+          <!-- Dots injected by JS -->
+        </div>
+      </div>
 
-    </div>
-  </div>
+      <!-- Image and overlay (Desktop only) -->
+      <div
+        class="max-w-screen-2xl mx-auto hidden sm:block relative rounded-2xl overflow-hidden shadow-lg"
+        style="height: auto"
+      >
+        <img
+          id="sliderImage"
+          src=""
+          alt=""
+          class="w-full h-full object-cover rounded-2xl"
+        />
+        <div
+          class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
+          style="background-color: rgba(0, 0, 0, 0.6)"
+        >
+          <h3 id="overlayTitle" class="text-3xl font-bold mb-4"></h3>
+          <p
+            id="overlayText"
+            class="text-lg sm:text-xl font-medium max-w-2xl"
+          ></p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Image and overlay (Desktop only) -->
-  <div
-    class="max-w-screen-2xl mx-auto hidden sm:block relative rounded-2xl overflow-hidden shadow-lg"
-    style="height: auto"
-  >
-    <img
-      id="sliderImage"
-      src=""
-      alt=""
-      class="w-full h-full object-cover rounded-2xl"
-    />
-    <div
-      class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
-      style="background-color: rgba(0, 0, 0, 0.6)"
-    >
-      <h3 id="overlayTitle" class="text-3xl font-bold mb-4"></h3>
-      <p id="overlayText" class="text-lg sm:text-xl font-medium max-w-2xl"></p>
-    </div>
-  </div>
-</section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const steps = [
+          {
+            label: "Engaging",
+            img: "assets/images/image1.png",
+            title: "Engaging Experiences For Users.",
+            text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
+          },
+          {
+            label: "Your Data",
+            img: "assets/images/image2.png",
+            title: "Your Data. Your Chatbot.",
+            text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
+          },
+          {
+            label: "LifeCycle",
+            img: "assets/images/image3.png",
+            title: "Lifecycle Management.",
+            text: "Streamline your customer lifecycle with tailored automation workflows.",
+          },
+          {
+            label: "Automation",
+            img: "assets/images/image4.png",
+            title: "Automation Made Easy.",
+            text: "Automate repetitive tasks to save time and boost efficiency.",
+          },
+          {
+            label: "Your Guide",
+            img: "assets/images/image5.png",
+            title: "Your Personal Guide.",
+            text: "Get expert advice and support tailored to your needs.",
+          },
+          {
+            label: "Analytics",
+            img: "assets/images/image6.png",
+            title: "Powerful Analytics.",
+            text: "Gain insights and optimize your strategy with our data tools.",
+          },
+        ];
 
+        // Desktop Elements
+        const tabsContainer = document.getElementById("progressTabs");
+        const sliderImage = document.getElementById("sliderImage");
+        const overlayTitle = document.getElementById("overlayTitle");
+        const overlayText = document.getElementById("overlayText");
+        const flowsSection = document.getElementById("flows");
 
+        // Mobile Elements
+        const track = document.getElementById("carouselTrack");
+        const dotsContainer = document.getElementById("carouselDots");
 
-<script>
+        // --- Desktop Setup ---
 
-document.addEventListener("DOMContentLoaded", () => {
-  const steps = [
-    {
-      label: "Engaging",
-      img: "assets/images/image1.png",
-      title: "Engaging Experiences For Users.",
-      text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
-    },
-    {
-      label: "Your Data",
-      img: "assets/images/image2.png",
-      title: "Your Data. Your Chatbot.",
-      text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
-    },
-    {
-      label: "LifeCycle",
-      img: "assets/images/image3.png",
-      title: "Lifecycle Management.",
-      text: "Streamline your customer lifecycle with tailored automation workflows.",
-    },
-    {
-      label: "Automation",
-      img: "assets/images/image4.png",
-      title: "Automation Made Easy.",
-      text: "Automate repetitive tasks to save time and boost efficiency.",
-    },
-    {
-      label: "Your Guide",
-      img: "assets/images/image5.png",
-      title: "Your Personal Guide.",
-      text: "Get expert advice and support tailored to your needs.",
-    },
-    {
-      label: "Analytics",
-      img: "assets/images/image6.png",
-      title: "Powerful Analytics.",
-      text: "Gain insights and optimize your strategy with our data tools.",
-    },
-  ];
+        // Create tabs & lines (desktop)
+        tabsContainer.innerHTML = ""; // Clear if any existing
+        steps.forEach((step, idx) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "tab-wrapper";
 
-  // Desktop Elements
-  const tabsContainer = document.getElementById("progressTabs");
-  const sliderImage = document.getElementById("sliderImage");
-  const overlayTitle = document.getElementById("overlayTitle");
-  const overlayText = document.getElementById("overlayText");
-  const flowsSection = document.getElementById("flows");
-  
+          const btn = document.createElement("button");
+          btn.className = "tab-button";
+          btn.textContent = step.label;
+          btn.setAttribute("data-index", idx);
+          btn.setAttribute("aria-pressed", "false");
+          wrapper.appendChild(btn);
 
-  // Mobile Elements
-  const track = document.getElementById("carouselTrack");
-  const dotsContainer = document.getElementById("carouselDots");
-
-  // --- Desktop Setup ---
-
-  // Create tabs & lines (desktop)
-  tabsContainer.innerHTML = ""; // Clear if any existing
-  steps.forEach((step, idx) => {
-    const wrapper = document.createElement("div");
-    wrapper.className = "tab-wrapper";
-
-    const btn = document.createElement("button");
-    btn.className = "tab-button";
-    btn.textContent = step.label;
-    btn.setAttribute("data-index", idx);
-    btn.setAttribute("aria-pressed", "false");
-    wrapper.appendChild(btn);
-
-    if (idx !== steps.length - 1) {
-      const line = document.createElement("div");
-      line.className = "progress-line";
-      wrapper.appendChild(line);
-    }
-
-    tabsContainer.appendChild(wrapper);
-  });
-
-  const buttons = tabsContainer.querySelectorAll("button");
-  const lines = tabsContainer.querySelectorAll(".progress-line");
-
-  let currentIndex = 0;
-
-  function setActive(index) {
-    currentIndex = index;
-
-    // Update desktop tabs/buttons and lines with sliding animation
-    buttons.forEach((btn, i) => {
-      const isActive = i <= index;
-      btn.classList.toggle("active", isActive);
-      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-
-      // Add sliding effect: translateX from left for new active, reset others
-btn.style.transition = ""; // remove transform transitions
-btn.style.transform = "none"; // ensure it's not shifted
-
-    });
-
-    lines.forEach((line, i) => {
-      line.classList.toggle("active-line", i < index);
-    });
-
-    // Update image and overlay content without opacity or background color
-    sliderImage.src = steps[index].img;
-    sliderImage.alt = steps[index].label;
-    overlayTitle.textContent = steps[index].title;
-    overlayText.textContent = steps[index].text;
-    sliderImage.style.opacity = "1"; // Fully visible
-    
-  }
-
-  buttons.forEach((btn) =>
-    btn.addEventListener("click", () => {
-      setActive(parseInt(btn.dataset.index));
-    })
-  );
-
-  setActive(0);
-
-  // IntersectionObserver to update progress bar as user scrolls down section
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Calculate progress based on scroll percentage inside flowsSection
-          const bounding = entry.boundingClientRect;
-          const height = bounding.height;
-          const top = bounding.top;
-
-          // Clamp scroll progress between 0 and 1
-          const progress = Math.min(
-            Math.max(0, 1 - (top / height + 0.1)),
-            1
-          );
-
-          // Map progress (0-1) to steps index
-          const newIndex = Math.floor(progress * steps.length);
-          if (newIndex !== currentIndex && newIndex < steps.length) {
-            setActive(newIndex);
+          if (idx !== steps.length - 1) {
+            const line = document.createElement("div");
+            line.className = "progress-line";
+            wrapper.appendChild(line);
           }
+
+          tabsContainer.appendChild(wrapper);
+        });
+
+        const buttons = tabsContainer.querySelectorAll("button");
+        const lines = tabsContainer.querySelectorAll(".progress-line");
+
+        let currentIndex = 0;
+
+        function setActive(index) {
+          currentIndex = index;
+
+          // Update desktop tabs/buttons and lines with sliding animation
+          buttons.forEach((btn, i) => {
+            const isActive = i <= index;
+            btn.classList.toggle("active", isActive);
+            btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+
+            // Add sliding effect: translateX from left for new active, reset others
+            btn.style.transition = ""; // remove transform transitions
+            btn.style.transform = "none"; // ensure it's not shifted
+          });
+
+          lines.forEach((line, i) => {
+            line.classList.toggle("active-line", i < index);
+          });
+
+          // Update image and overlay content without opacity or background color
+          sliderImage.src = steps[index].img;
+          sliderImage.alt = steps[index].label;
+          overlayTitle.textContent = steps[index].title;
+          overlayText.textContent = steps[index].text;
+          sliderImage.style.opacity = "1"; // Fully visible
         }
-      });
-    },
-    { root: null, threshold: new Array(101).fill(0).map((v, i) => i / 100) }
-  );
-  observer.observe(flowsSection);
 
-  // --- Mobile Setup ---
+        buttons.forEach((btn) =>
+          btn.addEventListener("click", () => {
+            setActive(parseInt(btn.dataset.index));
+          })
+        );
 
-  const isMobile = () => window.innerWidth < 640; // Tailwind sm breakpoint
+        setActive(0);
 
-  // Clear mobile track and dots if any
-  track.innerHTML = "";
-  dotsContainer.innerHTML = "";
+        // IntersectionObserver to update progress bar as user scrolls down section
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Calculate progress based on scroll percentage inside flowsSection
+                const bounding = entry.boundingClientRect;
+                const height = bounding.height;
+                const top = bounding.top;
 
-  // Create mobile slides
-  steps.forEach((step, idx) => {
-    const slide = document.createElement("div");
-    slide.className = "snap-start min-w-full";
-    slide.innerHTML = `
+                // Clamp scroll progress between 0 and 1
+                const progress = Math.min(
+                  Math.max(0, 1 - (top / height + 0.1)),
+                  1
+                );
+
+                // Map progress (0-1) to steps index
+                const newIndex = Math.floor(progress * steps.length);
+                if (newIndex !== currentIndex && newIndex < steps.length) {
+                  setActive(newIndex);
+                }
+              }
+            });
+          },
+          {
+            root: null,
+            threshold: new Array(101).fill(0).map((v, i) => i / 100),
+          }
+        );
+        observer.observe(flowsSection);
+
+        // --- Mobile Setup ---
+
+        const isMobile = () => window.innerWidth < 640; // Tailwind sm breakpoint
+
+        // Clear mobile track and dots if any
+        track.innerHTML = "";
+        dotsContainer.innerHTML = "";
+
+        // Create mobile slides
+        steps.forEach((step, idx) => {
+          const slide = document.createElement("div");
+          slide.className = "snap-start min-w-full";
+          slide.innerHTML = `
       <div class="relative rounded-2xl overflow-hidden shadow-lg">
         <img src="${step.img}" alt="${step.label}" class="w-full h-64 rounded-2xl" style="opacity:1;" />
         <div class="absolute inset-0 text-white flex flex-col justify-center p-6">
@@ -2842,248 +3384,300 @@ btn.style.transform = "none"; // ensure it's not shifted
         </div>
       </div>
     `;
-    track.appendChild(slide);
-  });
+          track.appendChild(slide);
+        });
 
-  // Create dots and lines for mobile carousel
-  steps.forEach((_, idx) => {
-    const dot = document.createElement("button");
-    dot.className = "dot";
-    dot.style.width = "12px";
-    dot.style.height = "12px";
-    dot.style.borderRadius = "9999px";
-    dot.style.backgroundColor = idx === 0 ? "#1f2937" : "#9ca3af"; // Active dot darker
-    dot.style.flexShrink = "0";
-    dot.style.margin = "0";
-    dot.style.padding = "0";
-    dot.addEventListener("click", () => {
-      currentIndex = idx;
-      updateCarousel();
-      pauseAutoAdvance();
-    });
+        // Create dots and lines for mobile carousel
+        steps.forEach((_, idx) => {
+          const dot = document.createElement("button");
+          dot.className = "dot";
+          dot.style.width = "12px";
+          dot.style.height = "12px";
+          dot.style.borderRadius = "9999px";
+          dot.style.backgroundColor = idx === 0 ? "#1f2937" : "#9ca3af"; // Active dot darker
+          dot.style.flexShrink = "0";
+          dot.style.margin = "0";
+          dot.style.padding = "0";
+          dot.addEventListener("click", () => {
+            currentIndex = idx;
+            updateCarousel();
+            pauseAutoAdvance();
+          });
 
-    dotsContainer.appendChild(dot);
+          dotsContainer.appendChild(dot);
 
-    // Add line between dots (except after last)
-    if (idx < steps.length - 1) {
-      const line = document.createElement("div");
-      line.className = "progress-line";
-      line.style.flex = "0 0 10px";
-      line.style.width = "10px";
-      line.style.height = "2px";
-      line.style.backgroundColor = "#9ca3af";
-      line.style.borderRadius = "9999px";
-      line.style.flexShrink = "0";
-      line.style.margin = "0";
-      line.style.alignSelf = "center";
-      dotsContainer.appendChild(line);
-    }
-  });
+          // Add line between dots (except after last)
+          if (idx < steps.length - 1) {
+            const line = document.createElement("div");
+            line.className = "progress-line";
+            line.style.flex = "0 0 10px";
+            line.style.width = "10px";
+            line.style.height = "2px";
+            line.style.backgroundColor = "#9ca3af";
+            line.style.borderRadius = "9999px";
+            line.style.flexShrink = "0";
+            line.style.margin = "0";
+            line.style.alignSelf = "center";
+            dotsContainer.appendChild(line);
+          }
+        });
 
-  const dots = dotsContainer.querySelectorAll(".dot");
-  const mobileTitle = document.getElementById("mobileCarouselTitle");
+        const dots = dotsContainer.querySelectorAll(".dot");
+        const mobileTitle = document.getElementById("mobileCarouselTitle");
 
-  function updateCarousel() {
-    const offset = currentIndex * track.clientWidth;
-    track.scrollTo({ left: offset, behavior: "smooth" });
+        function updateCarousel() {
+          const offset = currentIndex * track.clientWidth;
+          track.scrollTo({ left: offset, behavior: "smooth" });
 
-    // Update dots color
-   dots.forEach((dot, i) => {
-  dot.style.backgroundColor = i <= currentIndex ? "#1f2937" : "#9ca3af";
-});
+          // Update dots color
+          dots.forEach((dot, i) => {
+            dot.style.backgroundColor =
+              i <= currentIndex ? "#1f2937" : "#9ca3af";
+          });
 
-    // Update lines color
-    const lines = dotsContainer.querySelectorAll(".progress-line");
-    lines.forEach((line, i) => {
-      line.style.backgroundColor = i < currentIndex ? "#1f2937" : "#9ca3af";
-    });
-      mobileTitle.textContent = steps[currentIndex].title;
-  }
+          // Update lines color
+          const lines = dotsContainer.querySelectorAll(".progress-line");
+          lines.forEach((line, i) => {
+            line.style.backgroundColor =
+              i < currentIndex ? "#1f2937" : "#9ca3af";
+          });
+          mobileTitle.textContent = steps[currentIndex].title;
+        }
 
-  let autoAdvanceInterval;
-  let userPaused = false;
+        let autoAdvanceInterval;
+        let userPaused = false;
 
-  function nextSlide() {
-    currentIndex++;
-    if (currentIndex >= steps.length) {
-      currentIndex = 0;
-      updateCarousel();
-      clearInterval(autoAdvanceInterval);
-      setTimeout(startAutoAdvance, 3000); // Long pause after last slide
-    } else {
-      updateCarousel();
-    }
-  }
+        function nextSlide() {
+          currentIndex++;
+          if (currentIndex >= steps.length) {
+            currentIndex = 0;
+            updateCarousel();
+            clearInterval(autoAdvanceInterval);
+            setTimeout(startAutoAdvance, 3000); // Long pause after last slide
+          } else {
+            updateCarousel();
+          }
+        }
 
-  function startAutoAdvance() {
-    if (!isMobile()) return;
-    autoAdvanceInterval = setInterval(() => {
-      if (!userPaused) nextSlide();
-    }, 4000);
-  }
+        function startAutoAdvance() {
+          if (!isMobile()) return;
+          autoAdvanceInterval = setInterval(() => {
+            if (!userPaused) nextSlide();
+          }, 4000);
+        }
 
-  function pauseAutoAdvance() {
-    userPaused = true;
-    setTimeout(() => (userPaused = false), 8000); // Pause 8s after interaction
-  }
+        function pauseAutoAdvance() {
+          userPaused = true;
+          setTimeout(() => (userPaused = false), 8000); // Pause 8s after interaction
+        }
 
-  // Swipe support for mobile
-  let startX = 0;
-  track.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
+        // Swipe support for mobile
+        let startX = 0;
+        track.addEventListener("touchstart", (e) => {
+          startX = e.touches[0].clientX;
+        });
 
-  track.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const deltaX = endX - startX;
-    if (Math.abs(deltaX) > 50) {
-      if (deltaX < 0 && currentIndex < steps.length - 1) {
-        currentIndex++;
-      } else if (deltaX > 0 && currentIndex > 0) {
-        currentIndex--;
-      }
-      updateCarousel();
-      pauseAutoAdvance();
-    }
-  });
+        track.addEventListener("touchend", (e) => {
+          const endX = e.changedTouches[0].clientX;
+          const deltaX = endX - startX;
+          if (Math.abs(deltaX) > 50) {
+            if (deltaX < 0 && currentIndex < steps.length - 1) {
+              currentIndex++;
+            } else if (deltaX > 0 && currentIndex > 0) {
+              currentIndex--;
+            }
+            updateCarousel();
+            pauseAutoAdvance();
+          }
+        });
 
-  // Start mobile auto advance if on mobile
-  if (isMobile()) startAutoAdvance();
+        // Start mobile auto advance if on mobile
+        if (isMobile()) startAutoAdvance();
 
-  // Optional: listen for window resize to enable/disable mobile carousel auto advance
-  window.addEventListener("resize", () => {
-    if (isMobile()) {
-      if (!autoAdvanceInterval) startAutoAdvance();
-    } else {
-      clearInterval(autoAdvanceInterval);
-      autoAdvanceInterval = null;
-    }
-  });
-});
+        // Optional: listen for window resize to enable/disable mobile carousel auto advance
+        window.addEventListener("resize", () => {
+          if (isMobile()) {
+            if (!autoAdvanceInterval) startAutoAdvance();
+          } else {
+            clearInterval(autoAdvanceInterval);
+            autoAdvanceInterval = null;
+          }
+        });
+      });
+    </script>
 
+    <!--======================================== SECTION 8 "Plans and pricing" =======================================-->
 
-</script>
-
-    <!--======================================== SECTION 8 =======================================-->
-
-<section id="flows" class="min-h-screen w-full py-16 bg-gray-50">
-  <div class="w-full max-w-screen-xl mx-auto px-4">
-    <!-- Section Header -->
-    <div class="max-w-screen-2xl text-center mb-12">
-      <h2 class="text-3xl font-bold">Plans & Pricing</h2>
-      <div
-        class="inline-flex mt-4 bg-[#e8f9e3] rounded-lg overflow-hidden p-1 border-2 border-green-400"
-      >
-      <button class="py-1 px-6 bg-gradient-to-r from-[#b6f397] to-[#6FDE01] font-bold text-black rounded-lg">
-  Pay Monthly
-</button>
-        <button class="py-1 px-6 text-black rounded-lg font-bold">
-          Pay Yearly (Save 25%)
-        </button>
-      </div>
-    </div>
-
-  
-    <!-- Grid container -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
-
-  <!-- Card 1 -->
-  <div class="w-[90%] max-w-sm flex flex-col bg-white border rounded-2xl p-5 shadow-md h-[500px] lg:min-h-[560px]">
-
-        <div class="flex-1 flex flex-col justify-between">
-          <div>
-            <h3 class="text-2xl font-semibold">wisemelon Starter</h3>
-            <p class="text-sm text-gray-950 font-bold mb-4">
-              For individuals & casual users
-            </p>
-            <p class="text-gray-700 text-sm mb-4">
-              Get started with the essentials and explore our features.
-            </p>
-            <div
-              class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center mb-6"
+    <section id="flows" class="min-h-screen w-full py-16 bg-gray-50">
+      <div class="w-full max-w-screen-xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="max-w-screen-2xl text-center mb-12">
+          <h2 class="text-5xl font-bold py-12">Plans & Pricing</h2>
+          <div
+            class="inline-flex mt-4 bg-[#e8f9e3] rounded-lg overflow-hidden p-1 border-2 border-green-400"
+          >
+            <button
+              class="py-1 px-6 bg-gradient-to-r from-[#b6f397] to-[#6FDE01] font-bold text-black rounded-lg"
             >
-              Get your first 3 months for 10k/mo
-            </div>
-            <div class="my-5 text-left text-xl">  <h2 class="font-bold">Included Features</h2></div>
-            <div class="space-y-2 text-base text-black">
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Access to core features</p>
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Limited storage</p>
-              <p><span style="color:  #6FDE01;">%&nbsp;</span> Community access</p>
-              <p><span style="color:  #6FDE01;">%&nbsp;</span> Standard support</p>
+              Pay Monthly
+            </button>
+            <button class="py-1 px-6 text-black rounded-lg font-bold">
+              Pay Yearly (Save 25%)
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid container -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
+          <!-- Card 1 -->
+          <div
+            class="w-[90%] max-w-sm flex flex-col bg-white border rounded-2xl p-5 shadow-md h-[500px] lg:min-h-[560px]"
+          >
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-2xl font-semibold">wisemelon Starter</h3>
+                <p class="text-sm text-gray-950 font-bold mb-4">
+                  For individuals & casual users
+                </p>
+                <p class="text-gray-700 text-sm mb-4">
+                  Get started with the essentials and explore our features.
+                </p>
+                <div
+                  class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center mb-6"
+                >
+                  Get your first 3 months for 10k/mo
+                </div>
+                <div class="my-5 text-left text-xl">
+                  <h2 class="font-bold">Included Features</h2>
+                </div>
+                <div class="space-y-2 text-base text-black">
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> Access to core
+                    features
+                  </p>
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> Limited storage
+                  </p>
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> Community access
+                  </p>
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> Standard support
+                  </p>
+                </div>
+              </div>
+              <button class="mt-6 py-2 px-4 border rounded-md font-medium">
+                Learn More
+              </button>
             </div>
           </div>
-          <button class="mt-6 py-2 px-4 border rounded-md font-medium">
-            Learn More
-          </button>
-        </div>
-      </div>
 
-      <!-- Card 2 -->
-      <div
-        class="w-[90%] max-w-sm flex flex-col bg-white border-2 border-[#9af76f] rounded-2xl p-6 shadow-lg min-h-[560px]"
-      >
-        <div class="flex-1 flex flex-col justify-between">
-          <div>
-            <h3 class="text-2xl font-semibold">wisemelon Pro</h3>
-            <p class="text-sm text-gray-950 font-bold mb-4">
-              For Professionals & Small Teams
-            </p>
-            <p class="text-gray-700 text-sm mb-4">
-              Unlock advanced tools and enhance your productivity.
-            </p>
+          <!-- Card 2 -->
+          <div
+            class="w-[90%] max-w-sm flex flex-col bg-white border-2 border-[#9af76f] rounded-2xl p-6 shadow-lg min-h-[560px] relative"
+          >
+            <!-- MOST POPULAR tag -->
             <div
-              class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center mb-6"
+              class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#b6f397] to-[#6FDE01] text-black font-bold px-4 py-1 rounded-lg shadow-md text-sm select-none"
             >
-              Get your first 3 months for 30k/mo
+              MOST POPULAR
             </div>
-          <div class="my-5 text-left text-xl">  <h2 class="font-bold">Included Features</h2></div>
-            <div class="space-y-2 text-base text-black">
-              <p><span style="color: #6FDE01;">%&nbsp;</span> All Premium features</p>
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Priority support</p>
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Advanced analytics</p>
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Team collaboration</p>
+
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-2xl font-semibold">wisemelon Pro</h3>
+                <p class="text-sm text-gray-950 font-bold mb-4">
+                  For Professionals & Small Teams
+                </p>
+                <p class="text-gray-700 text-sm mb-4">
+                  Unlock advanced tools and enhance your productivity.
+                </p>
+
+                <!-- Green full-width section -->
+                <div
+                  class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center mb-6 w-full"
+                >
+                  Get your first 3 months for 30k/mo
+                </div>
+
+                <div class="my-5 text-left text-xl">
+                  <h2 class="font-bold">Included Features</h2>
+                </div>
+
+                <div class="space-y-2 text-base text-black">
+                  <p>
+                    <span class="text-[#6FDE01]">%&nbsp;</span> All Premium
+                    features
+                  </p>
+                  <p>
+                    <span class="text-[#6FDE01]">%&nbsp;</span> Priority support
+                  </p>
+                  <p>
+                    <span class="text-[#6FDE01]">%&nbsp;</span> Advanced
+                    analytics
+                  </p>
+                  <p>
+                    <span class="text-[#6FDE01]">%&nbsp;</span> Team
+                    collaboration
+                  </p>
+                </div>
+              </div>
+
+              <button
+                class="mt-6 py-2 px-4 border rounded-md font-medium hover:bg-[#9af76f] hover:text-black transition"
+              >
+                Learn More
+              </button>
             </div>
           </div>
-          <button class="mt-6 py-2 px-4 border rounded-md font-medium">
-            Learn More
-          </button>
-        </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div
-        class="w-[90%] max-w-sm flex flex-col bg-white border rounded-2xl p-6 shadow-md min-h-[520px]"
-      >
-        <div class="flex-1 flex flex-col justify-between">
-          <div>
-            <h3 class="text-2xl font-semibold mb">wisemelon Enterprise</h3>
-            <p class="text-sm text-gray-950 font-bold mb-4">
-              For Large Organizations & Businesses
-            </p>
-            <p class="text-gray-700 text-sm mb-4">
-              Unlock advanced tools and enhance your productivity.
-            </p>
-            <div
-              class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center lg: mb-6"
-            >
-              Get your first 3 months at a discounted rate
-            </div>
-            <div class="my-6 text-left text-xl"> <h2 class="font-bold">Included Features</h2></div>
-            <div class="space-y-2 text-base text-black">
-              <p><span style="color: #6FDE01;">%&nbsp;</span> All Pro features</p>
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Dedicated account manager</p>
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Advanced integrations</p>
-              <p><span style="color: #6FDE01;">%&nbsp;</span> Comprehensive analytics</p>
+          <!-- Card 3 -->
+          <div
+            class="w-[90%] max-w-sm flex flex-col bg-white border rounded-2xl p-6 shadow-md min-h-[520px]"
+          >
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-2xl font-semibold mb">wisemelon Enterprise</h3>
+                <p class="text-sm text-gray-950 font-bold mb-4">
+                  For Large Organizations & Businesses
+                </p>
+                <p class="text-gray-700 text-sm mb-4">
+                  Unlock advanced tools and enhance your productivity.
+                </p>
+                <div
+                  class="bg-[#dbf7c3] text-sm font-bold p-3 rounded-md text-center lg: mb-6"
+                >
+                  Get your first 3 months at a discounted rate
+                </div>
+                <div class="my-6 text-left text-xl">
+                  <h2 class="font-bold">Included Features</h2>
+                </div>
+                <div class="space-y-2 text-base text-black">
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> All Pro features
+                  </p>
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> Dedicated
+                    account manager
+                  </p>
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> Advanced
+                    integrations
+                  </p>
+                  <p>
+                    <span style="color: #6fde01">%&nbsp;</span> Comprehensive
+                    analytics
+                  </p>
+                </div>
+              </div>
+              <button class="mt-6 py-2 px-4 border rounded-md font-medium">
+                Learn More
+              </button>
             </div>
           </div>
-          <button class="mt-6 py-2 px-4 border rounded-md font-medium">
-            Learn More
-          </button>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!----------------- Footer Section --------------->
     <footer class="w-full bg-black text-white pt-16 pb-8">
@@ -3177,105 +3771,107 @@ btn.style.transform = "none"; // ensure it's not shifted
 
     <!--======================================== Javascript =======================================-->
 
+    <script>
+      const cards = [
+        document.getElementById("dragcard1"),
+        document.getElementById("dragcard2"),
+        document.getElementById("dragcard3"),
+      ];
 
+      let topCard = cards[0];
+      let isDragging = false;
+      let startX, startY;
+      let baseX = 0,
+        baseY = 0;
 
-<script>
-const cards = [
-  document.getElementById('dragcard1'),
-  document.getElementById('dragcard2'),
-  document.getElementById('dragcard3')
-];
+      function attachDrag(card) {
+        card.addEventListener("mousedown", startDrag);
+      }
 
-let topCard = cards[0];
-let isDragging = false;
-let startX, startY;
-let baseX = 0, baseY = 0;
+      function startDrag(e) {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        baseX = parseTranslate(topCard.dataset.x);
+        baseY = parseTranslate(topCard.dataset.y);
+        topCard.style.transition = "none"; // instant drag
+      }
 
-function attachDrag(card) {
-  card.addEventListener('mousedown', startDrag);
-}
+      function parseTranslate(val) {
+        if (!val) return 0;
+        if (val.includes("rem")) return parseFloat(val) * 16;
+        if (val.includes("px")) return parseFloat(val);
+        return parseFloat(val);
+      }
 
-function startDrag(e) {
-  isDragging = true;
-  startX = e.clientX;
-  startY = e.clientY;
-  baseX = parseTranslate(topCard.dataset.x);
-  baseY = parseTranslate(topCard.dataset.y);
-  topCard.style.transition = 'none'; // instant drag
-}
+      window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        topCard.style.transform = `translate(${baseX + dx}px, ${
+          baseY + dy
+        }px) rotate(${topCard.dataset.rotate}deg)`;
+      });
 
-function parseTranslate(val) {
-  if (!val) return 0;
-  if (val.includes('rem')) return parseFloat(val) * 16;
-  if (val.includes('px')) return parseFloat(val);
-  return parseFloat(val);
-}
+      window.addEventListener("mouseup", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        cycleCards();
+      });
 
-window.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-  const dx = e.clientX - startX;
-  const dy = e.clientY - startY;
-  topCard.style.transform = `translate(${baseX + dx}px, ${baseY + dy}px) rotate(${topCard.dataset.rotate}deg)`;
-});
+      function cycleCards() {
+        // Store current positions
+        const topData = getCardData(cards[0]);
+        const middleData = getCardData(cards[1]);
+        const bottomData = getCardData(cards[2]);
 
-window.addEventListener('mouseup', () => {
-  if (!isDragging) return;
-  isDragging = false;
-  cycleCards();
-});
+        // Animate with transition only during swap
+        moveCard(cards[0], bottomData);
+        moveCard(cards[1], topData);
+        moveCard(cards[2], middleData);
 
-function cycleCards() {
-  // Store current positions
-  const topData = getCardData(cards[0]);
-  const middleData = getCardData(cards[1]);
-  const bottomData = getCardData(cards[2]);
+        setCardData(cards[0], bottomData);
+        setCardData(cards[1], topData);
+        setCardData(cards[2], middleData);
 
-  // Animate with transition only during swap
-  moveCard(cards[0], bottomData);
-  moveCard(cards[1], topData);
-  moveCard(cards[2], middleData);
+        cards[0].style.zIndex = bottomData.z;
+        cards[1].style.zIndex = topData.z;
+        cards[2].style.zIndex = middleData.z;
 
-  setCardData(cards[0], bottomData);
-  setCardData(cards[1], topData);
-  setCardData(cards[2], middleData);
+        cards.push(cards.shift());
+        topCard = cards[0];
+        resetDragListeners();
+      }
 
-  cards[0].style.zIndex = bottomData.z;
-  cards[1].style.zIndex = topData.z;
-  cards[2].style.zIndex = middleData.z;
+      function moveCard(card, data) {
+        card.style.transition = "transform 0.5s";
+        card.style.transform = `translate(${data.x}, ${data.y}) rotate(${data.rotate}deg)`;
+      }
 
-  cards.push(cards.shift());
-  topCard = cards[0];
-  resetDragListeners();
-}
+      function setCardData(card, data) {
+        card.dataset.x = data.x;
+        card.dataset.y = data.y;
+        card.dataset.rotate = data.rotate;
+      }
 
-function moveCard(card, data) {
-  card.style.transition = 'transform 0.5s';
-  card.style.transform = `translate(${data.x}, ${data.y}) rotate(${data.rotate}deg)`;
-}
+      function getCardData(card) {
+        return {
+          x: card.dataset.x,
+          y: card.dataset.y,
+          rotate: card.dataset.rotate,
+          z: card.style.zIndex || window.getComputedStyle(card).zIndex,
+        };
+      }
 
-function setCardData(card, data) {
-  card.dataset.x = data.x;
-  card.dataset.y = data.y;
-  card.dataset.rotate = data.rotate;
-}
+      function resetDragListeners() {
+        cards.forEach((card) =>
+          card.removeEventListener("mousedown", startDrag)
+        );
+        attachDrag(topCard);
+      }
 
-function getCardData(card) {
-  return {
-    x: card.dataset.x,
-    y: card.dataset.y,
-    rotate: card.dataset.rotate,
-    z: card.style.zIndex || window.getComputedStyle(card).zIndex
-  };
-}
-
-function resetDragListeners() {
-  cards.forEach(card => card.removeEventListener('mousedown', startDrag));
-  attachDrag(topCard);
-}
-
-attachDrag(topCard);
-</script>
-
+      attachDrag(topCard);
+    </script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/time.js"></script>

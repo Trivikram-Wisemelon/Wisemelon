@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
   // ---------------------------
-  // SECTION 1: Card Rotation
+  // SECTION 1: Iphone Rotation
   // ---------------------------
   const phoneContainer = document.getElementById("cardContainer");
   const phoneCards = Array.from(phoneContainer.querySelectorAll(".card"));
@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applyTransforms();
 
-  // Desktop interaction for Section 1
   if (!isTouchDevice) {
     let isHovered1 = false;
 
@@ -78,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Mobile interaction for Section 1
   if (isTouchDevice) {
     let touchStartX = 0;
     let touchStartY = 0;
@@ -97,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (absDx > absDy) {
         if (dx < -30) rotateBackward();
         else if (dx > 30) rotateForward();
-      }  
+      }
     });
 
     phoneContainer.addEventListener("click", () => rotateForward());
@@ -119,55 +117,60 @@ document.addEventListener("DOMContentLoaded", () => {
     { title: "Boost Conversion", subtitle: "Focus on leads that actually convert" },
   ];
 
+
+
   function updateHeading(cardIndex) {
-    const { title, subtitle } = headings[cardIndex];
-    headingEl.style.opacity = 0;
-    setTimeout(() => {
-      headingEl.querySelector("h1").textContent = title;
-      headingEl.querySelector("h2").textContent = subtitle;
-      headingEl.style.opacity = 1;
-    }, 250);
-  }
+  const { title, subtitle } = headings[cardIndex];
+  headingEl.style.opacity = 0;
+  setTimeout(() => {
+    headingEl.querySelector("h1").textContent = title;
+    headingEl.querySelector("h2").textContent = subtitle;
+    headingEl.style.opacity = 1;
+  }, 250);
+}
 
-  function updateClasses(cards) {
-    cards.forEach((card, i) => {
-      card.classList.remove("z1", "z2", "z3", "z4");
-      card.classList.add(`z${4 - i}`);
-      card.style.top = `${(4 - i - 1) * 20}px`;
-    });
-    updateHeading(parseInt(cards[0].dataset.index, 10));
-  }
+function updateClasses(cards) {
+  cards.forEach((card, i) => {
+    card.classList.remove("z1", "z2", "z3", "z4");
+    card.classList.add(`z${4 - i}`);
+    card.style.top = `${(4 - i - 1) * 20}px`;
+  });
+  updateHeading(parseInt(cards[0].dataset.index, 10));
+}
 
-  function animateTopCard() {
-    if (animating || animationSequenceDone) return;
-    animating = true;
-    const cards = Array.from(container.querySelectorAll(".section2-card"));
-    const topCard = cards[0];
-    topCard.style.transition = "top 0.6s ease";
-    topCard.style.top = "-20rem";
-    setTimeout(() => {
-      container.appendChild(topCard);
-      const newCards = Array.from(container.querySelectorAll(".section2-card"));
-      updateClasses(newCards);
-      topCard.style.transition = "none";
-      topCard.style.top = "-20rem";
+function animateTopCard() {
+  if (animating || animationSequenceDone) return;
+  animating = true;
+  const cards = Array.from(container.querySelectorAll(".section2-card"));
+  const topCard = cards[0];
+  topCard.style.transition = "top 0.6s ease";
+  topCard.style.top = "-50%";
+  setTimeout(() => {
+    container.appendChild(topCard);
+    const newCards = Array.from(container.querySelectorAll(".section2-card"));
+    updateClasses(newCards);
+    topCard.style.transition = "none";
+    topCard.style.top = "-50%";
+    requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          topCard.style.transition = "top 0.6s ease";
-          topCard.style.top = `${(newCards.length - 1) * 20}px`;
-        });
+        topCard.style.transition = "top 0.6s ease";
+        const lastIndex = newCards.length - 1;
+const finalTop = (4 - lastIndex - 1) * 20;  // Same formula as updateClasses
+topCard.style.top = `${finalTop}px`;
       });
-      currentIndex++;
-      if (currentIndex >= 4) animationSequenceDone = true;
-      setTimeout(() => (animating = false), 600);
-    }, 600);
-  }
+    });
+    currentIndex++;
+    if (currentIndex >= 4) animationSequenceDone = true;
+    setTimeout(() => (animating = false), 600);
+  }, 600);
+}
+
+
+
+
 
   updateClasses(Array.from(container.querySelectorAll(".section2-card")));
 
-  // ---------------------------
-  // Section 2 Interaction (Strictly on top card only)
-  // ---------------------------
   function getTopCard() {
     return container.querySelector(".section2-card");
   }
