@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let isRotating = false;
 
   const positions = [
-    { x: -220, y: 40, rotate: -60, z: 1, scale: 0.8 },
-    { x: -170, y: 20, rotate: -15, z: 2, scale: 0.85 },
+    { x: -220, y: 90, rotate: -60, z: 1, scale: 0.8 },
+    { x: -150, y: 30, rotate: -20, z: 2, scale: 0.85 },
     { x: 0, y: 0, rotate: 0, z: 3, scale: 1 },
-    { x: 170, y: 20, rotate: 15, z: 2, scale: 0.85 },
-    { x: 220, y: 40, rotate: 60, z: 1, scale: 0.8 },
+    { x: 150, y: 30, rotate: 20, z: 2, scale: 0.85 },
+    { x: 220, y: 90, rotate: 60, z: 1, scale: 0.8 },
   ];
 
   function applyTransforms() {
@@ -111,63 +111,90 @@ document.addEventListener("DOMContentLoaded", () => {
   let animationSequenceDone = false;
 
   const headings = [
-    { title: "Leading Qualification", subtitle: "Are you facing challenges to timely qualify your leads?" },
-    { title: "Instant Matching", subtitle: "Match your leads with top criteria instantly" },
-    { title: "Score Like a Pro", subtitle: "Give leads scores based on smart rules" },
-    { title: "Boost Conversion", subtitle: "Focus on leads that actually convert" },
+    {
+      title: "Leading Qualification",
+      subtitle: "Are you facing challenges to timely qualify your leads?",
+    },
+    {
+      title: "Instant Matching",
+      subtitle: "Match your leads with top criteria instantly",
+    },
+    {
+      title: "Score Like a Pro",
+      subtitle: "Give leads scores based on smart rules",
+    },
+    {
+      title: "Boost Conversion",
+      subtitle: "Focus on leads that actually convert",
+    },
   ];
 
-
-
   function updateHeading(cardIndex) {
-  const { title, subtitle } = headings[cardIndex];
-  headingEl.style.opacity = 0;
-  setTimeout(() => {
-    headingEl.querySelector("h1").textContent = title;
-    headingEl.querySelector("h2").textContent = subtitle;
-    headingEl.style.opacity = 1;
-  }, 250);
-}
+    const { title, subtitle } = headings[cardIndex];
+    headingEl.style.opacity = 0;
+    setTimeout(() => {
+      headingEl.querySelector("h1").textContent = title;
+      headingEl.querySelector("h2").textContent = subtitle;
+      headingEl.style.opacity = 1;
+    }, 250);
+  }
 
 function updateClasses(cards) {
   cards.forEach((card, i) => {
+    const depth = 4 - i; // Highest z-index on top
+    const scale = 1 - i * 0.05;
+    const opacity = 1 - i * 0.10;
+    const topOffset = (4 - i - 1) * 64; // 6% gap between cards
+    card.style.top = `${topOffset}%`;
+
+    // Z-index classes
     card.classList.remove("z1", "z2", "z3", "z4");
-    card.classList.add(`z${4 - i}`);
-    card.style.top = `${(4 - i - 1) * 20}px`;
+    card.classList.add(`z${depth}`);
+
+    // Visual styles
+    card.style.zIndex = `${depth}`;
+    card.style.top = `${topOffset}px`;
+    card.style.opacity = opacity.toFixed(2);
+    card.style.transformOrigin = "center top";
+    card.style.transform = `translateX(-50%) scale(${scale})`;
+
+    // Optional: add transition for smoothness
+    card.style.transition = "transform 0.4s ease, opacity 0.4s ease, top 0.4s ease";
   });
+
   updateHeading(parseInt(cards[0].dataset.index, 10));
 }
 
-function animateTopCard() {
-  if (animating || animationSequenceDone) return;
-  animating = true;
-  const cards = Array.from(container.querySelectorAll(".section2-card"));
-  const topCard = cards[0];
-  topCard.style.transition = "top 0.6s ease";
-  topCard.style.top = "-50%";
-  setTimeout(() => {
-    container.appendChild(topCard);
-    const newCards = Array.from(container.querySelectorAll(".section2-card"));
-    updateClasses(newCards);
-    topCard.style.transition = "none";
+
+
+  function animateTopCard() {
+    if (animating || animationSequenceDone) return;
+    animating = true;
+    const cards = Array.from(container.querySelectorAll(".section2-card"));
+    const topCard = cards[0];
+    topCard.style.transition = "top 0.6s ease";
     topCard.style.top = "-50%";
-    requestAnimationFrame(() => {
+    setTimeout(() => {
+      container.appendChild(topCard);
+      const newCards = Array.from(container.querySelectorAll(".section2-card"));
+      updateClasses(newCards);
+      topCard.style.transition = "none";
+      topCard.style.top = "-50%";
       requestAnimationFrame(() => {
-        topCard.style.transition = "top 0.6s ease";
-        const lastIndex = newCards.length - 1;
-const finalTop = (4 - lastIndex - 1) * 20;  // Same formula as updateClasses
-topCard.style.top = `${finalTop}px`;
+        requestAnimationFrame(() => {
+          topCard.style.transition = "top 0.6s ease";
+          const lastIndex = newCards.length - 1;
+          const finalTop = (4 - lastIndex - 1) * 20; // Same formula as updateClasses
+          topCard.style.top = `${finalTop}px`;
+        });
       });
-    });
-    currentIndex++;
-    if (currentIndex >= 4) animationSequenceDone = true;
-    setTimeout(() => (animating = false), 600);
-  }, 600);
-}
+      currentIndex++;
 
+      // if (currentIndex >= 3) animationSequenceDone = true; (infinite loop)
 
-
-
+      setTimeout(() => (animating = false), 600);
+    }, 600);
+  }
 
   updateClasses(Array.from(container.querySelectorAll(".section2-card")));
 
@@ -238,3 +265,5 @@ topCard.style.top = `${finalTop}px`;
     });
   }
 });
+
+

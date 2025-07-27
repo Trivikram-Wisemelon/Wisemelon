@@ -34,7 +34,7 @@
     <!--======================================= Header  =========================================-->
 
     <header
-      class="mt-6 rounded-lg left-1/2 transform -translate-x-1/2 fixed top-0 left-0 w-[94%] z-50"
+      class="mt-0 rounded-lg left-1/2 transform -translate-x-1/2 fixed top-0 left-0 w-[94%] z-50"
     >
       <div
         class="w-full max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-10 flex items-center justify-between py-4"
@@ -59,35 +59,35 @@
               <li>
                 <a
                   href="#"
-                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  class="text-black font-base hover:text-gray-800 transition-colors"
                   >Product</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  class="text-black font-base hover:text-gray-800 transition-colors"
                   >Industry</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  class="text-black font-base hover:text-gray-800 transition-colors"
                   >Resources</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  class="text-black font-base hover:text-gray-800 transition-colors"
                   >Blogs</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-black font-semibold hover:text-gray-800 transition-colors"
+                  class="text-black font-base hover:text-gray-800 transition-colors"
                   >Contact</a
                 >
               </li>
@@ -98,7 +98,7 @@
         <!-- Button (shifted slightly right) -->
         <div class="hidden xl:block flex-shrink-0 pl-8">
           <button
-            class="bg-black text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-900 whitespace-nowrap transition-colors"
+            class="bg-black text-white font-base px-6 py-3 rounded-xl hover:bg-gray-900 whitespace-nowrap transition-colors"
           >
             Start For Free
           </button>
@@ -127,20 +127,22 @@
           <!--  <div class="sphere-glow left glow-wrapper z-[60]"></div>
           <div class="sphere-glow right z-50"></div>-->
 
-          <h1
-            class="text-4xl md:text-5xl font-extrabold leading-tight text-center tracking-tight"
-          >
-            Your AI <span class="text-[#16C542]">agent</span> for all<br />
-            &nbsp; your digital channels
-          </h1>
+          <h1 class="text-center">
+  <span class="text-3xl md:text-4xl lg:text-5xl">
+    Your AI <span class="text-[#16C542]">agent</span>
+  </span><br />
+  <span class="font-semibold mt-3 inline-block text-3xl md:text-5xl">For all Your Digital Channels</span>
+</h1>
+
+        
         </div>
       </div>
 
       <!-- CTA Button-->
 
-      <div class="button-container flex justify-center lg:-my-3">
+      <div class="button-container flex justify-center -mt-12 lg:-mt-12 gap-4 md:gap-12">
         <button
-          class="btn btn-outline font-semibold text-base"
+          class="btn btn-outline font-normal text-sm lg:text-base font-medium"
           onclick="tryForFree()"
         >
           Try for Free
@@ -163,14 +165,14 @@
             />
             <polyline
               points="14 6 20 12 14 18"
-              stroke-width="2"
+              stroke-width="3"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
           </svg>
         </button>
         <button
-          class="btn btn-filled font-semibold text-base"
+          class="btn btn-filled text-sm lg:text-base font-medium"
           onclick="scheduleDemo()"
         >
           Schedule a demo
@@ -814,10 +816,10 @@
                   <!-- Right-aligned blue chat bubble -->
 
                   <div
-                    class="absolute top-[340px] right-4 bg-green-200 text-black text-sm px-3 py-1 rounded-xl z-10 reveal delay-3s"
+                    class="absolute top-[340px] right-4 bg-green-200 text-black text-sm px-3 py-1 rounded-xl z-10 delay-3s"
                     style="width: 250px !important"
                   >
-                    <span class="" style="animation-delay: 2s">
+                    <span class="typing" style="animation-delay: 2s">
                       Ok, this is what we have in stock:
                     </span>
                   </div>
@@ -881,7 +883,7 @@
 
                   <!-- Left-aligned grey chat bubble with profile image -->
                   <div
-                    class="reveal delay-12s absolute top-[460px] left-4 flex items-start gap-2 z-10 delay-20s"
+                    class="typing delay-9s absolute top-[460px] left-4 flex items-start gap-2 z-10 delay-20s"
                   >
                     <!-- Profile Image -->
                     <img
@@ -1703,64 +1705,65 @@
       class="relative bg-white w-full min-h-screen flex flex-col items-center pt-0 pb-0 sm:pb-0 md:pb-0 z-20 -mt-20"
     >
       <div
-        class="h-36 flex justify-center max-w-screen-2xl mx-auto w-full overflow-visible"
+        class="lg:h-36 h-20 flex justify-center max-w-screen-2xl mx-auto w-full overflow-visible"
       >
         <svg
-          class="h-36 w-full max-w-4xl mx-auto block"
+          class="lg:h-36 h-20 w-full max-w-4xl mx-auto block"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-53 90 500 100"
           preserveAspectRatio="xMidYMin meet"
         >
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style="stop-color: #6fde01; stop-opacity: 1" />
+              <stop offset="0%" style="stop-color: #afafaf; stop-opacity: 0.6" />
               <stop
                 offset="100%"
-                style="stop-color: #16c542; stop-opacity: 1"
+                style="stop-color: #b4b4b4; stop-opacity: 0.6"
               />
             </linearGradient>
           </defs>
           <path
-            d="M29.6 100.3 C19.2 160.6 132.3 142.4 120.3 185.2"
+            d="M-9.3512 97.67286 C-38.8754 160.73956 81.1748 116.24166 122.167 186.66916"
             fill="none"
             stroke="url(#grad1)"
-            stroke-width="2"
+            stroke-width="3"
           />
           <path
-            d="M105 98.8 C92.2 140.9 165.4 141.7 158.3 185.3"
+            d="M106.873 96 C95.8684 140.66544 148.4758 116.24166 155.7226 186"
             fill="none"
             stroke="url(#grad1)"
-            stroke-width="2"
+            stroke-width="3"
           />
           <path
             d="M197.2 97 L197.4 185.7"
             fill="none"
             stroke="url(#grad1)"
-            stroke-width="2"
+            stroke-width="3"
           />
           <path
             d="M293 98.8 C305.8 140.9 232.6 141.7 239.7 185.5"
             fill="none"
             stroke="url(#grad1)"
-            stroke-width="2"
+            stroke-width="3"
           />
           <path
-            d="M365.4 100.3 C375.8 160.6 262.7 142.4 274.7 185.2"
+            d="M380.4 101.6037C380.4 161.827 270.9672 117.9978 274.6482 190.6"
             fill="none"
             stroke="url(#grad1)"
-            stroke-width="2"
+            stroke-width="3"
           />
         </svg>
       </div>
 
       <!-- Titles -->
       <div
-        class="flex justify-center items-center button4 text-center font-semibold -mb-12 z-0"
+        class="border-2 border-black bg-black rounded-full justify-center items-center text-center font-base -mb-12 z-0"
       >
-        <h2 class="text-xl text-black tracking-normal p-6">
+        <h2 class="text-xl text-white tracking-normal px-4 py-2">
           One Powerful System
         </h2>
       </div>
+      
       <div
         class="dynamic-heading -mb-52 px-4 sm:px-6 lg:px-8 max-w-screen-2xl mx-auto w-full h-full object-fill"
         id="dynamicHeading"
@@ -1771,45 +1774,63 @@
         </h2>
       </div>
 
+      
+      
+
+<div
+  class="absolute inset-0 pointer-events-none z-[-10] blur-[60px]"
+  style="
+    background: 
+      radial-gradient(ellipse at 20% 25%, rgba(132, 204, 22, 0.3) 0%, transparent 20%),
+      radial-gradient(ellipse at 20% 50%, rgba(153, 228, 41, 0.3) 0%, transparent 20%),
+      radial-gradient(ellipse at 20% 75%, rgba(89, 204, 54, 0.3) 0%, transparent 20%);
+  "
+></div>
+
+
       <!-- Cards Container -->
+      
       <div
         class="section2-cards-container px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto w-full h-auto mt-60"
       >
-        <div class="section2-card z4" data-index="0">
+      
           <img
-            class="border border-gray-200 w-full h-full object-contain"
+            class="border-4 border-lime-200 w-full h-full object-contain section2-card z4" 
+            data-index="0"
             src="assets/images/screen1.png"
             alt=""
           />
-        </div>
-        <div class="border border-gray-200 section2-card z3" data-index="1">
+         
           <img
-            class="w-full h-full object-contain"
+            class="border-4 border-lime-200 section2-card z3 w-full h-full object-contain"
+            data-index="1"
             src="assets/images/screen2.png"
             alt=""
           />
-        </div>
-        <div class="border border-gray-200 section2-card z2" data-index="2">
+        
           <img
-            class="w-full h-full object-contain"
+            class="border-4 border-lime-200 w-full h-full object-contain section2-card z2"
+            data-index="2"
             src="assets/images/app-store1.png"
             alt=""
           />
-        </div>
-        <div class="border border-gray-200 section2-card z1" data-index="3">
+
           <img
-            class="w-full h-full object-contain"
+            class="border-4 border-lime-200 w-full h-full object-contain section2-card z1"
+            data-index="3"
             src="assets/images/app-store2.png"
             alt=""
           />
-        </div>
+
       </div>
+
+
     </section>
 
     <!--======================================= SECTION 3 "Whatsapp Platform" =====================================-->
 
     <section
-      class="min-h-screen w-full px-4 sm:px-6 lg:px-8 mx-auto mb-12 py-12 bg-[radial-gradient(ellipse_at_center,_#e0f7e9_0%,_transparent_90%)]"
+      class="bg-white relative z-[60] min-h-screen w-full px-4 sm:px-6 lg:px-8 mx-auto mb-12 py-12 bg-[radial-gradient(ellipse_at_center,_#e0f7e9_0%,_transparent_90%)]"
     >  
     <div class="max-w-screen-2xl mx-auto">
     
@@ -1824,7 +1845,7 @@
       <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-6">
         <!-- Card 1 (wide) -->
         <div
-          class="svgcom relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-3 sm:col-span-3 overflow-hidden"
+          class="border-glow svgcom relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-3 sm:col-span-3 overflow-hidden"
           style="aspect-ratio: 2/0.8"
         >
           <!-- Scalable inner container -->
@@ -1840,10 +1861,10 @@
                   style="font-family: 'Roboto', sans-serif"
                   >Learn More →</a
                 >
-                <h2 class="mt-2 text-2xl sm:text-2xl font-bold text-zinc-600">
+                <h2 class="mt-2 text-2xl lg:text-3xl font-bold text-zinc-600">
                   WhatsApp Flows
                 </h2>
-                <p class="mt-1 text-black text-base max-w-xs">
+                <p class="mt-1 text-black text-sm lg:text-lg max-w-xs">
                   WhatsApp flows allows you to capture information using easy to
                   use forms, product list and more.
                 </p>
@@ -1893,20 +1914,26 @@
                     <path
                       id="left-curve"
                       d="M 91.738 55.286 C 120.088 43.106 143.298 111.683 176.185 112.394"
-                      stroke="#15803d"
+                      stroke="#1DBC60"
+                      stroke-width="3"
                       fill="none"
+                      opacity="0.5"
                     />
                     <path
                       id="top-curve"
                       d="M 260.631 110.571 C 306.947 118.66 297.777 39.364 351.762 41.919"
-                      stroke="#15803d"
+                      stroke="#1DBC60"
+                      stroke-width="3"
                       fill="none"
+                      opacity="0.5"
                     />
                     <path
                       id="bottom-curve"
                       d="M 260.632 111.178 C 347.038 139.169 311.025 131.403 330.499 191.98"
-                      stroke="#15803d"
+                      stroke="#1DBC60"
+                      stroke-width="3"
                       fill="none"
+                      opacity="0.5"
                     />
 
                     <!-- Node dots -->
@@ -1914,40 +1941,41 @@
                     <circle cx="351.762" cy="41.919" r="3" fill="#22c55e" />
                     <circle cx="330.499" cy="191.98" r="3" fill="#22c55e" />
 
-                    <!-- Static Box -->
-                    <rect
-                      x="176.793"
-                      y="100.849"
-                      width="83.438"
-                      height="22.478"
-                      rx="5"
-                      ry="5"
-                      style="fill: #bbf7d0; stroke: #15803d"
-                    />
-                    <text
-                      x="188"
-                      y="115.5"
-                      style="
-                        fill: #14532d;
-                        font-family: Arial, sans-serif;
-                        font-size: 10px;
-                      "
-                    >
-                      Find Products
-                    </text>
-                  </g>
+                      <!-- Static Box -->
+                      <rect
+                        x="176.793"
+                        y="100.849"
+                        width="83.438"
+                        height="22.478"
+                        rx="5"
+                        ry="5"
+                        style="fill: #bbf7d0; stroke: #1DBC60"
+                      />
+                      <text
+                        x="185"
+                        y="115.5"
+                        style="
+                          fill: #17a050;
+                          font-family: Arial, sans-serif;
+                          font-size: 10px;
+                          font-weight: bold;
+                        "
+                      >
+                        Find Products
+                      </text>
+                    </g>
 
                   <!-- Separate group for animation to avoid layout shaking -->
                   <g transform="rotate(1 250 250)">
                     <!-- Moving Dot 1: Left to Center -->
-                    <circle r="3" fill="url(#electric-gradient)">
+                    <circle r="0" fill="url(#electric-gradient)">
                       <animateMotion dur="3s" begin="loop.begin" fill="remove">
                         <mpath xlink:href="#left-curve" />
                       </animateMotion>
                     </circle>
 
                     <!-- Moving Dot 2: Center to Top-right -->
-                    <circle r="3" fill="url(#electric-gradient)">
+                    <circle r="0" fill="url(#electric-gradient)">
                       <animateMotion
                         dur="3s"
                         begin="loop.begin+3s"
@@ -1958,7 +1986,7 @@
                     </circle>
 
                     <!-- Moving Dot 3: Center to Bottom-right -->
-                    <circle r="3" fill="url(#electric-gradient)">
+                    <circle r="0" fill="url(#electric-gradient)">
                       <animateMotion
                         dur="3s"
                         begin="loop.begin+6s"
@@ -1987,10 +2015,10 @@
         </div>
         <!-- Card 2 (tall) -->
         <div
-          class="wapp-sm relative overflow-hidden bg-gradient-to-b from-white to-zinc-100 rounded-lg sm:col-span-3 sm:row-span-2 flex flex-col justify-between h-full"
+          class="border-glow wapp-sm relative overflow-hidden bg-gradient-to-b from-white to-zinc-100 rounded-lg sm:col-span-3 sm:row-span-2 flex flex-col justify-between h-full"
         >
           <!-- Top: custom logo grid -->
-          <div class="absolute">
+          <div class="absolute scale-20 sm:scale-20 md:scale-20">
             <svg
               width="800"
               height="800"
@@ -2331,8 +2359,8 @@
             class="flex justify-between items-end h-full overflow-hidden p-6"
           >
             <div>
-              <h2 class="text-3xl font-bold text-zinc-600">Integrations</h2>
-              <p class="mt-2 text-black max-w-xs">
+              <h2 class="text-2xl lg:text-3xl font-bold text-zinc-600">Integrations</h2>
+              <p class="mt-2 text-black max-w-xs text-sm lg:text-lg">
                 You’re not stuck with one tool. Wisemelon connects WhatsApp with
                 everything you already use — Sheets, CRMs, Payments, and 400+
                 apps. All in one flow.
@@ -2352,13 +2380,13 @@
         <!-- Card 3 -->
       
         <div
-          class="relative bg-gradient-to-b from-zinc-100 to-white rounded-lg p-6 sm:col-span-3 flex flex-col justify-between h-96 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#f0fdf4] to-white"
+          class="border-glow relative bg-gradient-to-b from-zinc-100 to-white rounded-lg p-6 sm:col-span-3 flex flex-col justify-between h-96 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#f0fdf4] to-white"
         >
           <!-- ✅ Vector icon behind phone -->
           <img
-            src="assets/images/icon1.png"
+            src="assets/images/vector.png"
             alt=""
-            class="absolute left-1/2 top-1/2 w-[10rem] opacity-15 z-0 pointer-events-none"
+            class="absolute left-1/5 top-1/2 w-[10rem] opacity-15 z-0 pointer-events-none"
             style="transform: translate(-32%, -105%)"
           />
 
@@ -2366,7 +2394,7 @@
           <img
             src="assets/images/phonepart4.png"
             alt="Phone Illustration"
-            class="absolute right-20 bottom-40 h-64 object-contain z-10 pointer-events-none"
+            class="absolute lg:right-20 lg:bottom-40 lg:h-64 h-64 bottom-40 -right-5  object-contain z-10 pointer-events-none"
           />
 
           <!-- Spacer (if needed for spacing above text) -->
@@ -2376,10 +2404,10 @@
           <div class="flex justify-between items-end w-full relative z-10">
             <!-- Text left -->
             <div class="flex flex-col max-w-md">
-              <h2 class="text-3xl font-bold text-zinc-600">
+              <h2 class="text-2xl lg:text-3xl font-bold text-zinc-600">
                 Intelligent Assistant
               </h2>
-              <p class="mt-2 text-black">
+              <p class="mt-2 text-black text-sm lg:text-lg">
                 Train your AI on your own data, give it a personality and a
                 goal, leave the rest to Wisemelon — it handles the rest!
               </p>
@@ -2393,14 +2421,14 @@
         <!-- Card 4 -->
        
 <div
-  class="relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
+  class="border-glow relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
 >
   <!-- Decorative icon -->
   <img src="assets/images/campaign-logo.png" alt="Campaign Icon" class="absolute top-0 right-0 w-28 h-28 opacity-100 pointer-events-none" />
 
   <!-- Heading and text -->
-  <h2 class="mt-2 text-3xl font-bold text-zinc-600">Smart Campaigns</h2>
-  <p class="mt-2 text-black max-w-xs">
+  <h2 class="mt-2 text-2xl lg:text-3xl font-bold text-zinc-600">Smart Campaigns</h2>
+  <p class="mt-2 text-black max-w-xs text-sm lg:text-lg">
     AI-personalized campaigns – tailored to each customer, based on their behavior, preferences, and history
   </p>
 
@@ -2417,16 +2445,16 @@
         <!-- Card 5 -->
 
         <div
-  class="relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
+  class="border-glow relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
 >
   <!-- Decorative icon -->
   <img src="assets/images/live-chat.png" alt="Live Chat Icon" class="absolute top-0 right-0 w-32 h-auto opacity-100 pointer-events-none" />
 
   <!-- Heading -->
-  <h2 class="text-3xl font-bold text-zinc-600">Live Chats</h2>
+  <h2 class="text-2xl lg:text-3xl font-bold text-zinc-600">Live Chats</h2>
 
   <!-- Paragraph -->
-  <p class="mt-2 text-black max-w-xs">
+  <p class="mt-2 text-black max-w-xs text-sm lg:text-lg">
     Live chat with quick replies, easy agent transfers, and a full user timeline to understand every conversation.
   </p>
 
@@ -2441,16 +2469,16 @@
 
         <!-- Card 6 -->
         <div
-  class="relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
+  class="border-glow relative bg-gradient-to-b from-white to-zinc-100 rounded-lg p-6 sm:col-span-2 flex flex-col justify-between overflow-hidden"
 >
   <!-- Decorative icon -->
   <img src="assets/images/user-management.png" alt="User Management Icon" class="absolute top-0 right-0 w-28 h-auto opacity-100 pointer-events-none" />
 
   <!-- Heading -->
-  <h2 class="text-3xl font-bold text-zinc-600">User Management</h2>
+  <h2 class="text-2xl lg:text-3xl font-bold text-zinc-600">User Management</h2>
 
   <!-- Paragraph -->
-  <p class="mt-2 text-black max-w-xs">
+  <p class="mt-2 text-black max-w-xs text-sm lg:text-lg">
     Create departments, assign roles, and control permissions to manage your team efficiently and securely.
   </p>
 
@@ -2469,182 +2497,207 @@
     <!--======================================= SECTION 4 "Check Use Cases" =======================================-->
 
     <!-- Business Solutions Section -->
-    <section class="max-w-screen-2xl px-4 py-10 bg-white mx-auto text-center">
-      <!-- Heading -->
-      <div class="text-center mb-10">
-        <h2 class="text-2xl md:text-3xl lg:text-5xl font-semibold text-left">
-          Built for businesses which wants to
-          <span class="text-green-500">Scale</span>
-        </h2>
-      </div>
+<section class="min-h-screen max-w-screen-2xl -py-1 lg:py-10 bg-white mx-auto text-center">
 
-      <!-- Cards Grid -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16"
-      >
-        <!-- Card 1 -->
-        <div
-          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
-        >
-          <!-- Image with overlay -->
-          <div class="relative h-[500px]">
-            <img
-              src="assets/images/education1.png"
-              alt="Real Estate"
-              class="w-full h-full object-cover"
-            />
-            <button
-              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
-            >
+  <!-- Heading -->
+  <div class="text-left mb-10 max-w-6xl px-4 ml-10">
+    <h2 class="text-2xl md:text-3xl lg:text-5xl font-semibold">
+      Built for businesses which want to
+      <span class="text-green-500">Scale</span>
+    </h2>
+  </div>
+
+  <!-- Outer Wrapper for padding -->
+  <div class="overflow-hidden px-4 relative">
+
+    <!-- Carousel Wrapper -->
+    <div class="carousel-wrapper w-full relative px-12">
+
+      <!-- Left Arrow -->
+      <button id="prevBtn" aria-label="Previous" class="absolute left-0 top-[15%] lg:top-[40%] -translate-y-1/2 z-10 bg-white rounded-full shadow-md p-4 text-2xl hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed">
+        &#10094;
+      </button>
+
+      <!-- Cards Container -->
+      <div id="carousel" class="flex flex-nowrap overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide h-[500px] lg:h-auto max-w-screen-2xl space-x-9 px-9">
+
+
+        
+        <!-- Example Card --> 
+        <div class="snap-start flex-shrink-0 w-[60vw] md:w-[calc(100vw/3-12rem)] h-full bg-white rounded-xl overflow-hidden">
+          <div class="relative h-[50%] md:h-[550px] lg:h-auto">
+            <img src="assets/images/education1.png" alt="Card 1" class="w-full h-full object-contain" />
+            <button class="absolute bottom-3 right-3 px-4 py-2 text-base bg-white/60 text-gray-800 rounded-lg hover:bg-white shadow-md transition">
               Learn More &gt;
             </button>
           </div>
-          <!-- Text content -->
-          <div class="p-4">
-            <h3 class="font-semibold text-gray-800">Real Estate</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Educational coaching centers struggle with overwhelming student
-              inquiries, scattered lead management.
+          <div class="mt-6 ml-2 text-left">
+            <h3 class="font-semibold text-zinc-500 text-2xl lg:text-3xl">Real Estate</h3>
+            <p class="text-sm lg:text-base text-gray-600 mt-2">
+              Educational coaching centers struggle with overwhelming student inquiries, scattered lead management.
             </p>
           </div>
         </div>
 
+        <!-- Duplicate this block for other cards -->
         <!-- Card 2 -->
-        <div
-          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
-        >
-          <div class="relative h-[500px]">
-            <img
-              src="assets/images/finance1.png"
-              alt="Real Estate"
-              class="w-full h-full object-cover"
-            />
-            <button
-              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
-            >
+        <div class="snap-start flex-shrink-0 w-[60vw] md:w-[calc(100vw/3-12rem)] h-full bg-white rounded-xl overflow-hidden">
+          <div class="relative h-[50%] md:h-[550px] lg:h-auto">
+            <img src="assets/images/finance1.png" alt="Card 2" class="w-full h-full object-contain" />
+            <button class="absolute bottom-3 right-3 px-4 py-2 text-base bg-white/60 text-gray-800 rounded-lg hover:bg-white shadow-md transition">
               Learn More &gt;
             </button>
           </div>
-          <div class="p-4">
-            <h3 class="font-semibold text-gray-800">Real Estate</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Educational coaching centers struggle with overwhelming student
-              inquiries, scattered lead management.
+       <div class="mt-6 ml-2 text-left">
+            <h3 class="font-semibold text-zinc-500 text-2xl lg:text-3xl">Finance</h3>
+            <p class="text-sm lg:text-base text-gray-600 mt-2">
+              Financial services face difficulties managing leads and converting inquiries efficiently.
             </p>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div
-          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
-        >
-          <div class="relative h-[500px]">
-            <img
-              src="assets/images/realestate1.png"
-              alt="Real Estate"
-              class="w-full h-full object-cover"
-            />
-            <button
-              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
-            >
+        <div class="snap-start flex-shrink-0 w-[60vw] md:w-[calc(100vw/3-12rem)] h-full bg-white rounded-xl overflow-hidden">
+          <div class="relative h-[50%] md:h-[550px] lg:h-auto">
+            <img src="assets/images/realestate1.png" alt="Card 3" class="w-full h-full object-contain" />
+            <button class="absolute bottom-3 right-3 px-4 py-2 text-base bg-white/60 text-gray-800 rounded-lg hover:bg-white shadow-md transition">
               Learn More &gt;
             </button>
           </div>
-          <div class="p-4">
-            <h3 class="font-semibold text-gray-800">Real Estate</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Educational coaching centers struggle with overwhelming student
-              inquiries, scattered lead management.
+         <div class="mt-6 ml-2 text-left">
+            <h3 class="font-semibold text-zinc-500 text-2xl lg:text-3xl">Education</h3>
+            <p class="text-sm lg:text-base text-gray-600 mt-2">
+              Educational institutions need efficient lead management and better inquiry tracking.
             </p>
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div
-          class="max-w-xs bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
-        >
-          <div class="relative h-[500px]">
-            <img
-              src="assets/images/realestate1.png"
-              alt="Real Estate"
-              class="w-full h-full object-cover"
-            />
-            <button
-              class="absolute bottom-3 right-3 px-4 py-1 text-sm bg-white/80 text-gray-800 rounded-full hover:bg-white shadow-md transition"
-            >
+        <!-- Continue duplicating for cards 4 to 9 -->
+        <!-- ... -->
+
+     <!-- Example Card --> 
+        <div class="snap-start flex-shrink-0 w-[60vw] md:w-[calc(100vw/3-12rem)] h-full bg-white rounded-xl overflow-hidden">
+          <div class="relative h-[50%] md:h-[550px] lg:h-auto">
+            <img src="assets/images/education1.png" alt="Card 1" class="w-full h-full object-contain" />
+            <button class="absolute bottom-3 right-3 px-4 py-2 text-base bg-white/60 text-gray-800 rounded-lg hover:bg-white shadow-md transition">
               Learn More &gt;
             </button>
           </div>
-          <div class="p-4">
-            <h3 class="font-semibold text-gray-800">Real Estate</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Educational coaching centers struggle with overwhelming student
-              inquiries, scattered lead management.
+          <div class="mt-6 ml-2 text-left">
+            <h3 class="font-semibold text-zinc-500 text-2xl lg:text-3xl">Real Estate</h3>
+            <p class="text-sm lg:text-base text-gray-600 mt-2">
+              Educational coaching centers struggle with overwhelming student inquiries, scattered lead management.
             </p>
           </div>
         </div>
+
+        <!-- Duplicate this block for other cards -->
+        <!-- Card 2 -->
+        <div class="snap-start flex-shrink-0 w-[60vw] md:w-[calc(100vw/3-12rem)] h-full bg-white rounded-xl overflow-hidden">
+          <div class="relative h-[50%] md:h-[550px] lg:h-auto">
+            <img src="assets/images/finance1.png" alt="Card 2" class="w-full h-full object-contain" />
+            <button class="absolute bottom-3 right-3 px-4 py-2 text-base bg-white/60 text-gray-800 rounded-lg hover:bg-white shadow-md transition">
+              Learn More &gt;
+            </button>
+          </div>
+       <div class="mt-6 ml-2 text-left">
+            <h3 class="font-semibold text-zinc-500 text-2xl lg:text-3xl">Finance</h3>
+            <p class="text-sm lg:text-base text-gray-600 mt-2">
+              Financial services face difficulties managing leads and converting inquiries efficiently.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="snap-start flex-shrink-0 w-[60vw] md:w-[calc(100vw/3-12rem)] h-full bg-white rounded-xl overflow-hidden">
+          <div class="relative h-[50%] md:h-[550px] lg:h-auto">
+            <img src="assets/images/realestate1.png" alt="Card 3" class="w-full h-full object-contain" />
+            <button class="absolute bottom-3 right-3 px-4 py-2 text-base bg-white/60 text-gray-800 rounded-lg hover:bg-white shadow-md transition">
+              Learn More &gt;
+            </button>
+          </div>
+         <div class="mt-6 ml-2 text-left">
+            <h3 class="font-semibold text-zinc-500 text-2xl lg:text-3xl">Education</h3>
+            <p class="text-sm lg:text-base text-gray-600 mt-2">
+              Educational institutions need efficient lead management and better inquiry tracking.
+            </p>
+          </div>
+        </div>
+
+
       </div>
 
-      <!-- Input Box Section -->
-      <div class="mt-12">
-        <h3 class="text-lg md:text-xl lg:text-3xl font-medium mb-4 text-gray-600 text-left">
-          See how it helps your business
-        </h3>
-        
-    <!-- Description Box -->
-    <div class="flex flex-col justify-between border-2 border-black rounded-xl p-4 mb-8 max-w-full mx-auto text-left">
+      <!-- Right Arrow -->
+      <button id="nextBtn" aria-label="Next" class="absolute right-0 top-[15%] lg:top-[40%] -translate-y-1/2 z-10 bg-white rounded-full shadow-md p-4 text-2xl hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed">
+       &#10095;
+      </button>
+    </div>
+  </div>
+
+  <!-- Input Box Section -->
+  <div class="lg:mt-12 mt-1 max-w-screen-2xl text-left px-2 lg:px-20 ml-10 bg-[radial-gradient(ellipse_at_center,_#e0f7e9_50%,_transparent_75%)] rounded-xl -py-1 lg:py-20">
+    <h3 class="text-lg md:text-xl lg:text-3xl font-medium mb-4 text-gray-600">
+      See how it helps your business
+    </h3>
+
+
+    <div class="flex flex-col bg-white border-2 border-black rounded-xl p-4 mb-8 max-w-full mx-auto">
       <div>
         <p class="text-gray-600 mb-2">
           Describe your business and Wisemelon will tell you how it can help you.
         </p>
-        <textarea
-          class="w-full border-none outline-none resize-none leading-tight rounded-md"
-          rows="3"
-          placeholder="Type here..."
-        ></textarea>
+        <textarea class="w-full border-none outline-none resize-none leading-tight rounded-md" rows="3" placeholder="Type here..."></textarea>
       </div>
       <div class="flex justify-end mt-4">
-        <button
-            class="whitespace-nowrap px-5 py-2 bg-black text-white text-sm rounded-lg hover:bg-gray-800 transition"
-          >
-            Send <span class="ml-1">➤</span>
-          </button>
+        <button class="whitespace-nowrap px-5 py-2 bg-black text-white text-sm rounded-lg hover:bg-gray-800 transition">
+          Send <span class="ml-1">➤</span>
+        </button>
       </div>
     </div>
 
-      </div>
-    </section>
+    
+  </div>
+</section>
+
 
     <!--======================================== SECTION 5 "Testimony" =======================================-->
 
- <section class="w-full min-h-screen py-6 flex flex-col justify-between">
-  <div class="max-w-screen-2xl mx-auto flex flex-col">
-    <h2 class="automate text-4xl sm:text-5xl md:text-5xl font-bold text-black mb-16">
+ <section class="flex flex-wrap justify-center overflow-hidden">
+  
+
+  <div class="flex flex-col justify-between">
+  <h2 class="text-3xl lg:text-5xl font-medium m-8 flex flex-wrap max-w-xs lg:max-w-screen-md">
       The reason why they <span class="text-green-400">Trust</span>&nbsp;us
     </h2>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-      <!-- Left Side Content (from image you shared) -->
-     <div class="flex gap-8">
+    
+  
+<div class="max-w-screen-2xl flex justify-between">
+     
+  
+  <!-- Left Side Content (from image you shared) -->
+     <div class="">
+
+      <div class="flex justify-between p-8 space-x-20">
   <!-- Left Column: Two small vertical cards -->
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col justify-between">
     <!-- Small Card 1 -->
-    <div class="w-48 rounded-lg shadow-lg overflow-hidden">
-      <img src="assets/images/startup 1.png" alt="Math Accelerator" class="w-full h-32 object-cover" />
-      <div class="p-4">
-        <h3 class="font-semibold text-lg">How Math Accelerator,</h3>
-        <p class="text-sm text-gray-600">
+    <div class="w-60 rounded-lg overflow-hidden">
+      <img src="assets/images/startup 1.png" alt="Math Accelerator" class="w-full h-40 object-cover" />
+      <div class="py-5">
+        <h3 class="font-semibold text-xl">How Math Accelerator,</h3>
+        <p class="text-base text-gray-500">
           keeps visitors informed about hundreds of incubated startups.
         </p>
       </div>
     </div>
 
     <!-- Small Card 2 -->
-    <div class="w-48 rounded-lg shadow-lg overflow-hidden">
-      <img src="assets/images/grooming 1.png" alt="Petfolks" class="w-full h-32 object-cover" />
-      <div class="p-4">
-        <h3 class="font-semibold text-lg">How Petfolks,</h3>
-        <p class="text-sm text-gray-600">
+    <div class="w-60 rounded-lg overflow-hidden">
+      <img src="assets/images/grooming 1.png" alt="Petfolks" class="w-full h-40 object-cover" />
+      <div class="py-5">
+        <h3 class="font-semibold text-xl">How Petfolks,</h3>
+        <p class="text-base text-gray-500">
           scaled their services to more than 10k customers in 2 months.
         </p>
       </div>
@@ -2652,27 +2705,28 @@
   </div>
 
   <!-- Right Column: One large card -->
-  <div class="w-96 rounded-lg shadow-lg overflow-hidden">
-    <img src="assets/images/lifestyle1.png" alt="Lux Hospitals" class="w-full h-150 object-cover" />
-    <div class="p-4">
-      <h3 class="font-semibold text-lg">How Lux Hospitals,</h3>
-      <p class="text-sm text-gray-600">
+  <div class="w-[80%] rounded-lg overflow-hidden">
+    <img src="assets/images/lifestyle1.png" alt="Lux Hospitals" class="w-[100%] object-cover" />
+    <div class="py-5">
+      <h3 class="font-semibold text-xl">How Lux Hospitals,</h3>
+      <p class="text-base text-gray-500 max-w-md">
         is transforming thousands of lives, by giving personalised lifestyle recommendation on scale.
       </p>
     </div>
   </div>
+  </div>
+
 </div>
 
-
-      <!-- Right Side: Existing stacked testimonial cards, right aligned -->
-      <div class="relative w-full max-w-md mx-auto lg:ml-auto mt-9 overflow-visible lg:-mb-[30px] sm:mb-16 md:my-12 z-20 flex justify-end">
+  <!-- Right Side content: Existing stacked testimonial cards, right aligned -->
+      <div class="relative mt-9 overflow-visible w-[30%] h-[30%]">
         <!-- Background Card (bottom) -->
         <div
           id="dragcard3"
-          class="absolute inset-0 -translate-x-5 -translate-y-10 bg-pink-100/30 backdrop-blur-lg flex flex-col justify-between rounded-xl rotate-[-12deg] shadow-md z-10 transition-transform duration-500 p-4"
-          data-x="-1.25rem"
-          data-y="-2.5rem"
-          data-rotate="-12"
+          class="aspect-square absolute inset-0 -translate-y-0  bg-lime-200 backdrop-blur-lg flex flex-col justify-between rounded-xl rotate-[0deg] shadow-md z-10 transition-transform duration-500 p-4"
+          data-x="0rem"
+          data-y="0rem"
+          data-rotate="0"
         >
           <div class="flex items-center gap-3">
             <img
@@ -2700,10 +2754,10 @@
         <!-- Middle Card -->
         <div
           id="dragcard2"
-          class="absolute inset-0 translate-x-2 -translate-y-5 bg-green-50 flex flex-col justify-between rounded-xl rotate-[-5deg] shadow-md z-20 transition-transform duration-500 p-4"
-          data-x="0.5rem"
-          data-y="-1.25rem"
-          data-rotate="-5"
+          class="bg-lime-200 absolute inset-0 translate-y-16  bg-green-50 flex flex-col justify-between rounded-xl rotate-[0deg] shadow-md z-20 transition-transform duration-500 p-4 aspect-square"
+          data-x="0rem"
+          data-y="3rem"
+          data-rotate="0"
         >
           <div class="flex items-center gap-3">
             <img
@@ -2731,11 +2785,11 @@
         <!-- Foreground Card (top) -->
         <div
           id="dragcard1"
-          class="relative bg-white rounded-xl p-4 shadow-lg z-30 flex flex-col justify-between rotate-[5deg] w-full aspect-square transition-transform duration-500"
-          style="transform: translateX(2.5rem) rotate(2deg)"
-          data-x="2.5rem"
-          data-y="0rem"
-          data-rotate="2"
+          class="relative bg-lime-200 translate-y-32 rounded-xl p-4 shadow-lg z-30 flex flex-col justify-between rotate-[0deg] w-full aspect-square transition-transform duration-500"
+        
+          data-x="0rem"
+          data-y="6rem"
+          data-rotate="0"
         >
           <div class="flex items-center gap-3">
             <img
@@ -2760,11 +2814,13 @@
           </a>
         </div>
       </div>
+
+
     </div>
-  </div>
+  
 
   <!-- Bottom Half: Partner Logos (unchanged) -->
-  <div class="w-full mt-auto p-6">
+  <div class="p-6">
     <div
       class="max-w-screen-2xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-center items-center pt-10 pb-6"
     >
@@ -2800,6 +2856,9 @@
       />
     </div>
   </div>
+  
+  </div>
+
 </section>
 
 
@@ -2818,7 +2877,7 @@
       <!-- Grid container -->
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 w-full">
         <!-- Left column -->
-        <div class="w-full flex flex-col justify-between">
+        <div class="relative overflow-visible w-full flex flex-col justify-between">
 
 
             
@@ -2933,22 +2992,23 @@
           </form>
 
                     <!-- logos row -->
+ <!-- Logos section with horizontal glow that overflows side-to-side -->
+<div class="relative w-full flex items-center justify-center py-24 mt-6 mb-20 overflow-visible">
+  <!-- Glowing background behind logos -->
   <div
-            class="toplogos flex flex-wrap items-center justify-start pt-8 gap-3 sm:gap-12 lg:gap-20 mt-6 mb-20"
-          >
-            <img src="assets/images/logo/meta.png" alt="Meta" class="h-14" />
-            <img
-              src="assets/images/logo/iso9001.png"
-              alt="ISO 9001"
-              class="h-16"
-            />
-            <img
-              src="assets/images/logo/iso27001.png"
-              alt="ISO 27001"
-              class="h-16"
-            />
-            <img src="assets/images/logo/gdpr.png" alt="GDPR" class="h-16" />
-          </div>
+    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-none h-[160px] rounded-full blur-2xl -z-10 pointer-events-none"
+    style="background: radial-gradient(ellipse at center, #d3f5a8 0%, #d3f5a8 60%, transparent 100%);"
+  ></div>
+
+  <!-- Logo row -->
+  <div class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-6 sm:gap-12 lg:gap-20 z-10">
+    <img src="assets/images/logo/meta.png" alt="Meta" class="h-12" />
+    <img src="assets/images/logo/iso9001.png" alt="ISO 9001" class="h-14" />
+    <img src="assets/images/logo/iso27001.png" alt="ISO 27001" class="h-14" />
+    <img src="assets/images/logo/gdpr.png" alt="GDPR" class="h-14" />
+  </div>
+</div>
+
 
         </div>
 
@@ -3145,366 +3205,357 @@
 
     <!--======================================== SECTION 7 "Flows" =======================================-->
 
-    <section
-      id="flows"
-      class="min-h-screen bg-white py-2 px-6 sm:px-12 text-left justify-center justify-items-center"
-    >
-      <!-- Headline -->
-      <div class="max-w-screen-2xl mx-auto text-left mb-8">
-        <h2
-          class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-black leading-tight max-w-6xl"
-        >
-          <span>Your flow, Your Integrations.</span>
-          <span
-            class="text-gray-400 text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight"
-          >
-            Design Flow for your needs and wisemelon does the rest for you
-            automatically.
-          </span>
-        </h2>
-      </div>
+<section
+  id="flows"
+  class="min-h-screen bg-white py-2 px-6 sm:px-12 text-left justify-center justify-items-center"
+>
+  <!-- Headline -->
+  <div class="max-w-screen-2xl mx-auto text-left mb-8">
+    <h2 class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-black leading-tight max-w-6xl">
+      <span>Your flow, Your Integrations.</span>
+      <span class="text-gray-400 text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight">
+        Design Flow for your needs and wisemelon does the rest for you automatically.
+      </span>
+    </h2>
+  </div>
 
-      <!-- Tabs (Desktop only) -->
-      <div
-        id="progressTabs"
-        class="max-w-screen-2xl flex items-center mx-auto justify-start mb-12 space-x-2 flex-wrap hidden sm:flex"
-      >
-        <!-- Desktop tabs generated by JS -->
-      </div>
+  <!-- Tabs (Desktop only) -->
+  <div
+    id="progressTabs"
+    class="max-w-screen-2xl flex items-center mx-auto justify-start mb-12 space-x-2 flex-wrap hidden sm:flex"
+  ></div>
 
-      <!-- Mobile Carousel (Mobile only) -->
+  <!-- Mobile Carousel (Mobile only) -->
+  <h4 id="mobileCarouselTitle" class="text-lg font-semibold text-center mt-4 mb-2"></h4>
+  <div id="mobileCarousel" class="block sm:hidden mt-12 px-4">
+    <div id="carouselTrack" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"></div>
+    <div id="carouselDots" class="flex items-center justify-center mt-4"></div>
+  </div>
 
-      <h4
-        id="mobileCarouselTitle"
-        class="text-lg font-semibold text-center mt-4 mb-2"
-      ></h4>
-      <div id="mobileCarousel" class="block sm:hidden mt-12 px-4">
-        <!-- Carousel track -->
-        <div
-          id="carouselTrack"
-          class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
-        >
-          <!-- Slides injected by JS -->
-        </div>
+  <!-- Desktop Image and overlay -->
+  <div
+    id="imageContainer"
+    class="max-w-screen-2xl mx-auto hidden sm:block relative rounded-2xl overflow-hidden shadow-lg"
+  >
+    <img id="sliderImage" src="" alt="" class="w-full h-full object-cover rounded-2xl" />
+    <div class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 py-12 text-white" style="background-color: rgba(0, 0, 0, 0)">
+      <h3 id="overlayTitle" class="text-3xl font-bold mb-4"></h3>
+      <p id="overlayText" class="text-lg sm:text-xl font-medium max-w-2xl"></p>
+    </div>
+  </div>
+</section>
 
-        <!-- Dot indicators -->
-        <div id="carouselDots" class="flex items-center justify-center mt-4">
-          <!-- Dots injected by JS -->
-        </div>
-      </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const steps = [
+      {
+        label: "Engaging",
+        img: "assets/images/image1.png",
+        title: "Engaging Experiences For Users.",
+        text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
+      },
+      {
+        label: "Your Data",
+        img: "assets/images/image2.png",
+        title: "Your Data. Your Chatbot.",
+        text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
+      },
+      {
+        label: "LifeCycle",
+        img: "assets/images/image3.png",
+        title: "Lifecycle Management.",
+        text: "Streamline your customer lifecycle with tailored automation workflows.",
+      },
+      {
+        label: "Automation",
+        img: "assets/images/image4.png",
+        title: "Automation Made Easy.",
+        text: "Automate repetitive tasks to save time and boost efficiency.",
+      },
+      {
+        label: "Your Guide",
+        img: "assets/images/image5.png",
+        title: "Your Personal Guide.",
+        text: "Get expert advice and support tailored to your needs.",
+      },
+      {
+        label: "Analytics",
+        img: "assets/images/image6.png",
+        title: "Powerful Analytics.",
+        text: "Gain insights and optimize your strategy with our data tools.",
+      },
+    ];
 
-      <!-- Image and overlay (Desktop only) -->
-      <div
-        class="max-w-screen-2xl mx-auto hidden sm:block relative rounded-2xl overflow-hidden shadow-lg"
-        style="height: auto"
-      >
-        <img
-          id="sliderImage"
-          src=""
-          alt=""
-          class="w-full h-full object-cover rounded-2xl"
-        />
-        <div
-          class="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 py-12 text-white"
-          style="background-color: rgba(0, 0, 0, 0.6)"
-        >
-          <h3 id="overlayTitle" class="text-3xl font-bold mb-4"></h3>
-          <p
-            id="overlayText"
-            class="text-lg sm:text-xl font-medium max-w-2xl"
-          ></p>
-        </div>
-      </div>
-    </section>
+    // Desktop Elements
+    const tabsContainer = document.getElementById("progressTabs");
+    const sliderImage = document.getElementById("sliderImage");
+    const overlayTitle = document.getElementById("overlayTitle");
+    const overlayText = document.getElementById("overlayText");
+    const imageContainer = document.getElementById("imageContainer");
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const steps = [
-          {
-            label: "Engaging",
-            img: "assets/images/image1.png",
-            title: "Engaging Experiences For Users.",
-            text: "Convert more leads and retain your customers with our AI-driven analytics and personalized marketing strategies.",
-          },
-          {
-            label: "Your Data",
-            img: "assets/images/image2.png",
-            title: "Your Data. Your Chatbot.",
-            text: "Train your Chatbot to your brand needs and wisemelon handles the rest automatically.",
-          },
-          {
-            label: "LifeCycle",
-            img: "assets/images/image3.png",
-            title: "Lifecycle Management.",
-            text: "Streamline your customer lifecycle with tailored automation workflows.",
-          },
-          {
-            label: "Automation",
-            img: "assets/images/image4.png",
-            title: "Automation Made Easy.",
-            text: "Automate repetitive tasks to save time and boost efficiency.",
-          },
-          {
-            label: "Your Guide",
-            img: "assets/images/image5.png",
-            title: "Your Personal Guide.",
-            text: "Get expert advice and support tailored to your needs.",
-          },
-          {
-            label: "Analytics",
-            img: "assets/images/image6.png",
-            title: "Powerful Analytics.",
-            text: "Gain insights and optimize your strategy with our data tools.",
-          },
-        ];
+    // Mobile Elements
+    const track = document.getElementById("carouselTrack");
+    const dotsContainer = document.getElementById("carouselDots");
+    const mobileTitle = document.getElementById("mobileCarouselTitle");
 
-        // Desktop Elements
-        const tabsContainer = document.getElementById("progressTabs");
-        const sliderImage = document.getElementById("sliderImage");
-        const overlayTitle = document.getElementById("overlayTitle");
-        const overlayText = document.getElementById("overlayText");
-        const flowsSection = document.getElementById("flows");
+    let currentIndex = 0;
 
-        // Mobile Elements
-        const track = document.getElementById("carouselTrack");
-        const dotsContainer = document.getElementById("carouselDots");
+    // Create tabs and progress lines
+    steps.forEach((step, idx) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "tab-wrapper";
 
-        // --- Desktop Setup ---
+      const btn = document.createElement("button");
+      btn.className = "tab-button";
+      btn.textContent = step.label;
+      btn.setAttribute("data-index", idx);
+      wrapper.appendChild(btn);
 
-        // Create tabs & lines (desktop)
-        tabsContainer.innerHTML = ""; // Clear if any existing
-        steps.forEach((step, idx) => {
-          const wrapper = document.createElement("div");
-          wrapper.className = "tab-wrapper";
+      if (idx !== steps.length - 1) {
+        const line = document.createElement("div");
+        line.className = "progress-line";
+        wrapper.appendChild(line);
+      }
 
-          const btn = document.createElement("button");
-          btn.className = "tab-button";
-          btn.textContent = step.label;
-          btn.setAttribute("data-index", idx);
-          btn.setAttribute("aria-pressed", "false");
-          wrapper.appendChild(btn);
+      tabsContainer.appendChild(wrapper);
+    });
 
-          if (idx !== steps.length - 1) {
-            const line = document.createElement("div");
-            line.className = "progress-line";
-            wrapper.appendChild(line);
-          }
+    const buttons = tabsContainer.querySelectorAll("button");
+    const lines = tabsContainer.querySelectorAll(".progress-line");
 
-          tabsContainer.appendChild(wrapper);
+   function setActive(index) {
+  if (window.innerWidth < 640) {
+    // On mobile, skip animation
+    currentIndex = index;
+    sliderImage.src = steps[index].img;
+    sliderImage.alt = steps[index].label;
+    overlayTitle.textContent = steps[index].title;
+    overlayText.textContent = steps[index].text;
+    return;
+  }
+
+  const fadeOut = (element) =>
+    element.animate(
+      [{ opacity: 1, transform: "translateY(0px)" }, { opacity: 0, transform: "translateY(20px)" }],
+      { duration: 300, fill: "forwards", easing: "ease-in" }
+    );
+
+  const fadeIn = (element) =>
+    element.animate(
+      [{ opacity: 0, transform: "translateY(20px)" }, { opacity: 1, transform: "translateY(0px)" }],
+      { duration: 300, fill: "forwards", easing: "ease-out", delay: 100 }
+    );
+
+  currentIndex = index;
+
+  // Animate out
+  const imageOut = fadeOut(sliderImage);
+  const titleOut = fadeOut(overlayTitle);
+  const textOut = fadeOut(overlayText);
+
+  imageOut.onfinish = () => {
+    // Swap content after fade out
+    sliderImage.src = steps[index].img;
+    sliderImage.alt = steps[index].label;
+    overlayTitle.textContent = steps[index].title;
+    overlayText.textContent = steps[index].text;
+
+    // Animate in
+    fadeIn(sliderImage);
+    fadeIn(overlayTitle);
+    fadeIn(overlayText);
+  };
+
+  // Update tab states
+  buttons.forEach((btn, i) => {
+    const isActive = i <= index;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+
+  lines.forEach((line, i) => {
+    line.style.backgroundColor = i < index ? "#000" : "#9ca3af";
+  });
+}
+
+
+    buttons.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        setActive(parseInt(btn.dataset.index));
+      })
+    );
+
+    setActive(0);
+
+    // Scroll & key nav inside image container
+    let allowScrollNav = false;
+
+    imageContainer.addEventListener("mouseenter", () => {
+      allowScrollNav = true;
+      document.body.style.overflow = "hidden";
+    });
+
+    imageContainer.addEventListener("mouseleave", () => {
+      allowScrollNav = false;
+      document.body.style.overflow = "";
+    });
+
+    imageContainer.addEventListener("wheel", (e) => {
+      if (!allowScrollNav) return;
+      e.preventDefault();
+      if (e.deltaY > 0 && currentIndex < steps.length - 1) {
+        setActive(currentIndex + 1);
+      } else if (e.deltaY < 0 && currentIndex > 0) {
+        setActive(currentIndex - 1);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!allowScrollNav) return;
+      if (e.key === "ArrowDown" && currentIndex < steps.length - 1) {
+        e.preventDefault();
+        setActive(currentIndex + 1);
+      } else if (e.key === "ArrowUp" && currentIndex > 0) {
+        e.preventDefault();
+        setActive(currentIndex - 1);
+      }
+    });
+
+    // ========== MOBILE CAROUSEL ==========
+    function isMobile() {
+      return window.innerWidth < 640;
+    }
+
+    function setupMobileCarousel() {
+      track.innerHTML = "";
+      dotsContainer.innerHTML = "";
+
+      steps.forEach((step, idx) => {
+        const slide = document.createElement("div");
+        slide.className = "snap-start min-w-full";
+        slide.innerHTML = `
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <img src="${step.img}" alt="${step.label}" class="w-full h-64 rounded-2xl" />
+            <div class="absolute inset-0 text-white flex flex-col justify-center p-6">
+              <h3 class="text-xl font-bold mb-2">${step.title}</h3>
+              <p class="text-base">${step.text}</p>
+            </div>
+          </div>
+        `;
+        track.appendChild(slide);
+
+        const dot = document.createElement("button");
+        dot.className = "dot";
+        dot.style.width = "12px";
+        dot.style.height = "12px";
+        dot.style.borderRadius = "9999px";
+        dot.style.backgroundColor = idx === 0 ? "#1f2937" : "#9ca3af";
+        dot.addEventListener("click", () => {
+          currentIndex = idx;
+          updateCarousel();
+          pauseAutoAdvance();
         });
+        dotsContainer.appendChild(dot);
 
-        const buttons = tabsContainer.querySelectorAll("button");
-        const lines = tabsContainer.querySelectorAll(".progress-line");
-
-        let currentIndex = 0;
-
-        function setActive(index) {
-          currentIndex = index;
-
-          // Update desktop tabs/buttons and lines with sliding animation
-          buttons.forEach((btn, i) => {
-            const isActive = i <= index;
-            btn.classList.toggle("active", isActive);
-            btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-
-            // Add sliding effect: translateX from left for new active, reset others
-            btn.style.transition = ""; // remove transform transitions
-            btn.style.transform = "none"; // ensure it's not shifted
-          });
-
-          lines.forEach((line, i) => {
-            line.classList.toggle("active-line", i < index);
-          });
-
-          // Update image and overlay content without opacity or background color
-          sliderImage.src = steps[index].img;
-          sliderImage.alt = steps[index].label;
-          overlayTitle.textContent = steps[index].title;
-          overlayText.textContent = steps[index].text;
-          sliderImage.style.opacity = "1"; // Fully visible
+        if (idx < steps.length - 1) {
+          const line = document.createElement("div");
+          line.className = "progress-line";
+          line.style.width = "10px";
+          line.style.height = "2px";
+          line.style.backgroundColor = "#9ca3af";
+          line.style.margin = "0 4px";
+          dotsContainer.appendChild(line);
         }
-
-        buttons.forEach((btn) =>
-          btn.addEventListener("click", () => {
-            setActive(parseInt(btn.dataset.index));
-          })
-        );
-
-        setActive(0);
-
-        // IntersectionObserver to update progress bar as user scrolls down section
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // Calculate progress based on scroll percentage inside flowsSection
-                const bounding = entry.boundingClientRect;
-                const height = bounding.height;
-                const top = bounding.top;
-
-                // Clamp scroll progress between 0 and 1
-                const progress = Math.min(
-                  Math.max(0, 1 - (top / height + 0.1)),
-                  1
-                );
-
-                // Map progress (0-1) to steps index
-                const newIndex = Math.floor(progress * steps.length);
-                if (newIndex !== currentIndex && newIndex < steps.length) {
-                  setActive(newIndex);
-                }
-              }
-            });
-          },
-          {
-            root: null,
-            threshold: new Array(101).fill(0).map((v, i) => i / 100),
-          }
-        );
-        observer.observe(flowsSection);
-
-        // --- Mobile Setup ---
-
-        const isMobile = () => window.innerWidth < 640; // Tailwind sm breakpoint
-
-        // Clear mobile track and dots if any
-        track.innerHTML = "";
-        dotsContainer.innerHTML = "";
-
-        // Create mobile slides
-        steps.forEach((step, idx) => {
-          const slide = document.createElement("div");
-          slide.className = "snap-start min-w-full";
-          slide.innerHTML = `
-      <div class="relative rounded-2xl overflow-hidden shadow-lg">
-        <img src="${step.img}" alt="${step.label}" class="w-full h-64 rounded-2xl" style="opacity:1;" />
-        <div class="absolute inset-0 text-white flex flex-col justify-center p-6">
-          <h3 class="text-xl font-bold mb-2">${step.title}</h3>
-          <p class="text-base">${step.text}</p>
-        </div>
-      </div>
-    `;
-          track.appendChild(slide);
-        });
-
-        // Create dots and lines for mobile carousel
-        steps.forEach((_, idx) => {
-          const dot = document.createElement("button");
-          dot.className = "dot";
-          dot.style.width = "12px";
-          dot.style.height = "12px";
-          dot.style.borderRadius = "9999px";
-          dot.style.backgroundColor = idx === 0 ? "#1f2937" : "#9ca3af"; // Active dot darker
-          dot.style.flexShrink = "0";
-          dot.style.margin = "0";
-          dot.style.padding = "0";
-          dot.addEventListener("click", () => {
-            currentIndex = idx;
-            updateCarousel();
-            pauseAutoAdvance();
-          });
-
-          dotsContainer.appendChild(dot);
-
-          // Add line between dots (except after last)
-          if (idx < steps.length - 1) {
-            const line = document.createElement("div");
-            line.className = "progress-line";
-            line.style.flex = "0 0 10px";
-            line.style.width = "10px";
-            line.style.height = "2px";
-            line.style.backgroundColor = "#9ca3af";
-            line.style.borderRadius = "9999px";
-            line.style.flexShrink = "0";
-            line.style.margin = "0";
-            line.style.alignSelf = "center";
-            dotsContainer.appendChild(line);
-          }
-        });
-
-        const dots = dotsContainer.querySelectorAll(".dot");
-        const mobileTitle = document.getElementById("mobileCarouselTitle");
-
-        function updateCarousel() {
-          const offset = currentIndex * track.clientWidth;
-          track.scrollTo({ left: offset, behavior: "smooth" });
-
-          // Update dots color
-          dots.forEach((dot, i) => {
-            dot.style.backgroundColor =
-              i <= currentIndex ? "#1f2937" : "#9ca3af";
-          });
-
-          // Update lines color
-          const lines = dotsContainer.querySelectorAll(".progress-line");
-          lines.forEach((line, i) => {
-            line.style.backgroundColor =
-              i < currentIndex ? "#1f2937" : "#9ca3af";
-          });
-          mobileTitle.textContent = steps[currentIndex].title;
-        }
-
-        let autoAdvanceInterval;
-        let userPaused = false;
-
-        function nextSlide() {
-          currentIndex++;
-          if (currentIndex >= steps.length) {
-            currentIndex = 0;
-            updateCarousel();
-            clearInterval(autoAdvanceInterval);
-            setTimeout(startAutoAdvance, 3000); // Long pause after last slide
-          } else {
-            updateCarousel();
-          }
-        }
-
-        function startAutoAdvance() {
-          if (!isMobile()) return;
-          autoAdvanceInterval = setInterval(() => {
-            if (!userPaused) nextSlide();
-          }, 4000);
-        }
-
-        function pauseAutoAdvance() {
-          userPaused = true;
-          setTimeout(() => (userPaused = false), 8000); // Pause 8s after interaction
-        }
-
-        // Swipe support for mobile
-        let startX = 0;
-        track.addEventListener("touchstart", (e) => {
-          startX = e.touches[0].clientX;
-        });
-
-        track.addEventListener("touchend", (e) => {
-          const endX = e.changedTouches[0].clientX;
-          const deltaX = endX - startX;
-          if (Math.abs(deltaX) > 50) {
-            if (deltaX < 0 && currentIndex < steps.length - 1) {
-              currentIndex++;
-            } else if (deltaX > 0 && currentIndex > 0) {
-              currentIndex--;
-            }
-            updateCarousel();
-            pauseAutoAdvance();
-          }
-        });
-
-        // Start mobile auto advance if on mobile
-        if (isMobile()) startAutoAdvance();
-
-        // Optional: listen for window resize to enable/disable mobile carousel auto advance
-        window.addEventListener("resize", () => {
-          if (isMobile()) {
-            if (!autoAdvanceInterval) startAutoAdvance();
-          } else {
-            clearInterval(autoAdvanceInterval);
-            autoAdvanceInterval = null;
-          }
-        });
       });
-    </script>
+    }
+
+    const dots = () => dotsContainer.querySelectorAll(".dot");
+
+    function updateCarousel() {
+      const offset = currentIndex * track.clientWidth;
+      track.scrollTo({ left: offset, behavior: "smooth" });
+
+      dots().forEach((dot, i) => {
+        dot.style.backgroundColor = i === currentIndex ? "#1f2937" : "#9ca3af";
+      });
+
+      const lines = dotsContainer.querySelectorAll(".progress-line");
+      lines.forEach((line, i) => {
+        line.style.backgroundColor = i < currentIndex ? "#1f2937" : "#9ca3af";
+      });
+
+      mobileTitle.textContent = steps[currentIndex].title;
+    }
+
+    let autoAdvanceInterval = null;
+    let userPaused = false;
+
+    function nextSlide() {
+      currentIndex++;
+      if (currentIndex >= steps.length) {
+        currentIndex = 0;
+        updateCarousel();
+        clearInterval(autoAdvanceInterval);
+        setTimeout(startAutoAdvance, 3000);
+      } else {
+        updateCarousel();
+      }
+    }
+
+    function startAutoAdvance() {
+      if (!isMobile()) return;
+      autoAdvanceInterval = setInterval(() => {
+        if (!userPaused) nextSlide();
+      }, 4000);
+    }
+
+    function pauseAutoAdvance() {
+      userPaused = true;
+      setTimeout(() => (userPaused = false), 8000);
+    }
+
+    // Swipe support
+    let startX = 0;
+    track.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    track.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const deltaX = endX - startX;
+      if (Math.abs(deltaX) > 50) {
+        if (deltaX < 0 && currentIndex < steps.length - 1) {
+          currentIndex++;
+        } else if (deltaX > 0 && currentIndex > 0) {
+          currentIndex--;
+        }
+        updateCarousel();
+        pauseAutoAdvance();
+      }
+    });
+
+    // Init
+    if (isMobile()) {
+      setupMobileCarousel();
+      startAutoAdvance();
+    }
+
+    // Handle resize
+    window.addEventListener("resize", () => {
+      if (isMobile()) {
+        if (!autoAdvanceInterval) {
+          setupMobileCarousel();
+          startAutoAdvance();
+        }
+      } else {
+        clearInterval(autoAdvanceInterval);
+        autoAdvanceInterval = null;
+      }
+    });
+  });
+</script>
+
+
 
     <!--======================================== SECTION 8 "Plans and pricing" =======================================-->
 
@@ -3771,107 +3822,137 @@
 
     <!--======================================== Javascript =======================================-->
 
-    <script>
-      const cards = [
-        document.getElementById("dragcard1"),
-        document.getElementById("dragcard2"),
-        document.getElementById("dragcard3"),
-      ];
+<script>
+  const cards = [
+    document.getElementById("dragcard1"),
+    document.getElementById("dragcard2"),
+    document.getElementById("dragcard3"),
+  ];
 
-      let topCard = cards[0];
-      let isDragging = false;
-      let startX, startY;
-      let baseX = 0,
-        baseY = 0;
+  let topCard = cards[0];
+  let isDragging = false;
+  let startX, startY;
+  let baseX = 0, baseY = 0;
 
-      function attachDrag(card) {
-        card.addEventListener("mousedown", startDrag);
+  // Attach mouse down event to enable dragging
+  function attachDrag(card) {
+    card.addEventListener("mousedown", startDrag);
+  }
+
+  // Start dragging
+  function startDrag(e) {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+
+    baseX = parseTranslate(topCard.dataset.x);
+    baseY = parseTranslate(topCard.dataset.y);
+
+    topCard.style.transition = "none"; // remove animation while dragging
+  }
+
+  // Parse translate values (support rem or px)
+  function parseTranslate(val) {
+    if (!val) return 0;
+    if (val.includes("rem")) return parseFloat(val) * 16;
+    if (val.includes("px")) return parseFloat(val);
+    return parseFloat(val);
+  }
+
+  // Drag behavior
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    topCard.style.transform = `translate(${baseX + dx}px, ${baseY + dy}px) rotate(${topCard.dataset.rotate}deg)`;
+  });
+
+  // On mouse up, stop dragging and cycle cards
+  window.addEventListener("mouseup", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    cycleCards();
+  });
+
+  // Cycle cards to next position
+  function cycleCards() {
+    // Store transform data
+    const topData = getCardData(cards[0]);
+    const middleData = getCardData(cards[1]);
+    const bottomData = getCardData(cards[2]);
+
+    // Move them to new spots
+    moveCard(cards[0], bottomData);
+    moveCard(cards[1], topData);
+    moveCard(cards[2], middleData);
+
+    // Update transform data
+    setCardData(cards[0], bottomData);
+    setCardData(cards[1], topData);
+    setCardData(cards[2], middleData);
+
+    // Update z-indexes
+    cards[0].style.zIndex = bottomData.z;
+    cards[1].style.zIndex = topData.z;
+    cards[2].style.zIndex = middleData.z;
+
+    // Reorder the array
+    cards.push(cards.shift());
+    topCard = cards[0];
+
+    resetDragListeners();
+    updateCardBlur(); // Apply blur based on new order
+  }
+
+  // Move card with transition
+  function moveCard(card, data) {
+    card.style.transition = "transform 0.5s ease";
+    card.style.transform = `translate(${data.x}, ${data.y}) rotate(${data.rotate}deg)`;
+  }
+
+  // Store updated transform values
+  function setCardData(card, data) {
+    card.dataset.x = data.x;
+    card.dataset.y = data.y;
+    card.dataset.rotate = data.rotate;
+  }
+
+  // Get current card data
+  function getCardData(card) {
+    return {
+      x: card.dataset.x,
+      y: card.dataset.y,
+      rotate: card.dataset.rotate,
+      z: card.style.zIndex || window.getComputedStyle(card).zIndex,
+    };
+  }
+
+  // Make sure only the top card is draggable
+  function resetDragListeners() {
+    cards.forEach((card) =>
+      card.removeEventListener("mousedown", startDrag)
+    );
+    attachDrag(topCard);
+  }
+
+  // Apply blur based on card depth
+  function updateCardBlur() {
+    cards.forEach((card, index) => {
+      card.style.filter = "";
+      if (index === 1) {
+        card.style.filter = "blur(2px)";
+      } else if (index === 2) {
+        card.style.filter = "blur(4px)";
       }
+    });
+  }
 
-      function startDrag(e) {
-        isDragging = true;
-        startX = e.clientX;
-        startY = e.clientY;
-        baseX = parseTranslate(topCard.dataset.x);
-        baseY = parseTranslate(topCard.dataset.y);
-        topCard.style.transition = "none"; // instant drag
-      }
+  // Initial setup
+  attachDrag(topCard);
+  updateCardBlur(); // Initial blur state
+</script>
 
-      function parseTranslate(val) {
-        if (!val) return 0;
-        if (val.includes("rem")) return parseFloat(val) * 16;
-        if (val.includes("px")) return parseFloat(val);
-        return parseFloat(val);
-      }
-
-      window.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        topCard.style.transform = `translate(${baseX + dx}px, ${
-          baseY + dy
-        }px) rotate(${topCard.dataset.rotate}deg)`;
-      });
-
-      window.addEventListener("mouseup", () => {
-        if (!isDragging) return;
-        isDragging = false;
-        cycleCards();
-      });
-
-      function cycleCards() {
-        // Store current positions
-        const topData = getCardData(cards[0]);
-        const middleData = getCardData(cards[1]);
-        const bottomData = getCardData(cards[2]);
-
-        // Animate with transition only during swap
-        moveCard(cards[0], bottomData);
-        moveCard(cards[1], topData);
-        moveCard(cards[2], middleData);
-
-        setCardData(cards[0], bottomData);
-        setCardData(cards[1], topData);
-        setCardData(cards[2], middleData);
-
-        cards[0].style.zIndex = bottomData.z;
-        cards[1].style.zIndex = topData.z;
-        cards[2].style.zIndex = middleData.z;
-
-        cards.push(cards.shift());
-        topCard = cards[0];
-        resetDragListeners();
-      }
-
-      function moveCard(card, data) {
-        card.style.transition = "transform 0.5s";
-        card.style.transform = `translate(${data.x}, ${data.y}) rotate(${data.rotate}deg)`;
-      }
-
-      function setCardData(card, data) {
-        card.dataset.x = data.x;
-        card.dataset.y = data.y;
-        card.dataset.rotate = data.rotate;
-      }
-
-      function getCardData(card) {
-        return {
-          x: card.dataset.x,
-          y: card.dataset.y,
-          rotate: card.dataset.rotate,
-          z: card.style.zIndex || window.getComputedStyle(card).zIndex,
-        };
-      }
-
-      function resetDragListeners() {
-        cards.forEach((card) =>
-          card.removeEventListener("mousedown", startDrag)
-        );
-        attachDrag(topCard);
-      }
-
-      attachDrag(topCard);
-    </script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/time.js"></script>

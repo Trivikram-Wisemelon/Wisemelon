@@ -1,4 +1,38 @@
+.noise-gradient {
+  position: relative;
+  background: radial-gradient(ellipse at center, #d3f5a8 0%, #bff29e 100%);
+  overflow: hidden; /* to contain pseudo element */
+}
 
+.noise-gradient::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0; /* shorthand for top:0;right:0;bottom:0;left:0 */
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* subtle dot/noise */
+  opacity: 0.1; /* adjust to taste */
+  z-index: 1;
+}
+
+/* image slider */
+/* Add this in your CSS file or inside a <style> tag */
+.slide-in-right {
+  left: 0;
+}
+.slide-out-left {
+  left: -100%;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 
 .button1 {
   --bg: #16C542;
@@ -206,3 +240,4 @@
     .button4:focus {
       box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
     }
+

@@ -1,824 +1,848 @@
 
-html, 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-body {
-  font-family: "Onset", sans-serif;
-}
+  html, 
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  body {
+    font-family: "Onset", sans-serif;
+  }
 
 
 
-/*======================================= css for "Iphone components" section ==========================*/
+  /*======================================= css for "Iphone components" section ==========================*/
 
 
 
 
-/*------- radial gradients ------*/
+  /*------- radial gradients ------*/
+  .bg-radial-glow {
+    position: relative;
+    border-radius: 40px;
+    overflow: visible; /* Make sure the glow isn't clipped */
+  }
 
-.bg-radial-glow {
-  position: relative;
-  border-radius: 40px;
-}
+  /* Top glow - wider and more spread out */
+  .bg-radial-glow::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;          /* wider */
+    height: 500px;         /* taller for more vertical spread */
+    filter: blur(100px);   /* more blur for softer spread */
+    border-radius: 50%;
+    z-index: -1;
+    background: radial-gradient(circle, var(--glow-color) 0%, transparent 60%);
+  }
 
-/* Top glow - wider */
-.bg-radial-glow::before {
-  content: '';
-  position: absolute;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;      /* wider than before */
-  height: 350px;
-  filter: blur(50px); /* increase blur for softness */
-  border-radius: 50%;
-  z-index: -1;
-  background: radial-gradient(circle, var(--glow-color) 0%, transparent 60%);
-}
+  /* Bottom glow - wider and more spread out */
+  .bg-radial-glow::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 500px;
+    filter: blur(90px);
+    border-radius: 50%;
+    z-index: -1;
+    background: radial-gradient(circle, var(--glow-color) 0%, transparent 60%);
+  }
 
-/* Bottom glow - original size */
-.bg-radial-glow::after {
-  content: '';
-  position: absolute;
-  bottom: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 350px;
-  filter: blur(40px);
-  border-radius: 50%;
-  z-index: -1;
-  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
-}
+  /* Color variables (unchanged) */
+  .bg-gradient1 {
+    --glow-color: #B9FBC0;
+  }
 
-/* Color variables */
-.bg-gradient1 {
-  --glow-color: #B9FBC0;
-}
+  .bg-gradient2 {
+    --glow-color: #cff7a0;
+  }
 
-.bg-gradient2 {
-  --glow-color: #b2f7a0;
-}
-
-.bg-gradient3 {
-  --glow-color: #a3f8b6;
-}
-
-
-
-/*------- Green Spheres ------*/
-.glow-wrapper {
-  position: relative;
-  z-index: 0;
-  overflow: visible;
-}
-
-.sphere-glow {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 200, 100, 0.8) 0%,
-    rgba(0, 200, 100, 0) 60%
-  );
-  filter: blur(50px);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.sphere-glow.left {
-  top: -150px;
-  left: -150px;
-}
-
-.sphere-glow.right {
-  top: 250px;
-  right: -150px;
-}
+  .bg-gradient3 {
+    --glow-color: #a3f8b6;
+  }
 
 
-.dot {
-  width: 0.99rem;
-  height: 0.99rem;
-  background-color: green;
-  border-radius: 50%;
-  margin-top: 0.4rem;
-  margin-right: 0.75rem;
-  flex-shrink: 0;
-}
 
 
-/*------ iphone animation CSS ------*/
+  /*------- Green Spheres ------*/
+  .glow-wrapper {
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+  }
+
+  .sphere-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 200, 100, 0.8) 0%,
+      rgba(0, 200, 100, 0) 60%
+    );
+    filter: blur(50px);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .sphere-glow.left {
+    top: -150px;
+    left: -150px;
+  }
+
+  .sphere-glow.right {
+    top: 250px;
+    right: -150px;
+  }
 
 
-#cardContainer {
-  position: relative;
-  width: 400px;
-  height: 700px;
-  margin: 0 auto; /* centers the container horizontally */
-  top: 150px; /* Set this to zero to eliminate any unnecessary top offset */ 
-}
+  .dot {
+    width: 0.99rem;
+    height: 0.99rem;
+    background-color: green;
+    border-radius: 50%;
+    margin-top: 0.4rem;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
 
-@media (max-width: 360px) {
+
+  /*------ iphone animation CSS ------*/
+
+
   #cardContainer {
-    margin-left: -1rem;  /* or whatever value you want */
-    margin-right: 0;    /* remove auto centering for better control */
+    position: relative;
+    width: 400px;
+    height: 700px;
+    margin: 0 auto; /* centers the container horizontally */
+    top: 150px; /* Set this to zero to eliminate any unnecessary top offset */ 
   }
-}
 
-.card {
-  position: absolute;
-  top: 0; /* Align the card to the top of the container */
-  left: 0;
-  width: 100%; /* Cards fill the container */
-  height: 100%;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: bold;
-    transition: transform 0.6s ease, z-index 0.6s ease;
-  /* initial transform places them exactly on top of each other */
-  transform: translate(0, 0);
+  @media (max-width: 360px) {
+    #cardContainer {
+      margin-left: -1rem;  /* or whatever value you want */
+      margin-right: 0;    /* remove auto centering for better control */
+    }
+  }
 
-}
+  .card {
+    position: absolute;
+    top: 0; /* Align the card to the top of the container */
+    left: 0;
+    width: 100%; /* Cards fill the container */
+    height: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+      transition: transform 0.6s ease, z-index 0.6s ease;
+    /* initial transform places them exactly on top of each other */
+    transform: translate(0, 0);
 
-/* CSS for "Iphone component" */
+  }
 
- @keyframes typeReveal {
-  0% {
+  /* CSS for "Iphone component" */
+
+  @keyframes typeReveal {
+    0% {
+      max-width: 0;
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    100% {
+      max-width: 100%;
+      opacity: 1;
+    }
+  }
+
+  /*------ animation popup (iphone component) ------*/
+  .pop {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: scale(0.5) !important;
+    transform-origin: bottom left !important;
+    animation: popIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards !important;
+  }
+
+
+  @keyframes popIn {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    1% {
+      visibility: visible;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+  .typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
     max-width: 0;
-    opacity: 0;
+    animation: typeReveal 3s steps(30) forwards;
+    animation-delay: 12.8s; /* you can keep your delay */
   }
-  5% {
-    opacity: 1;
+
+  @keyframes typeReveal {
+    from {
+      max-width: 0;
+    }
+    to {
+      max-width: 100%;
+    }
   }
-  100% {
-    max-width: 100%;
-    opacity: 1;
+
+
+  .reveal {
+    opacity: 0; /* hidden initially */
+    animation-name: showAfterDelay;
+    animation-duration: 1s; /* 1 second pop */
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
   }
-}
+  /* Delay classes */
+  .delay-3s { animation-delay: 3s; }
+  .delay-6s { animation-delay: 6s; }
+  .delay-9s { animation-delay: 9s; }
+  .delay-12s { animation-delay: 12s; }
+  .delay-15s { animation-delay: 15s; }
+  .delay-18s { animation-delay: 18s; }
 
-/*------ animation popup (iphone component) ------*/
-.pop {
-  visibility: hidden !important;
-  opacity: 0 !important;
-  transform: scale(0.5) !important;
-  transform-origin: bottom left !important;
-  animation: popIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards !important;
-}
-
-
-@keyframes popIn {
-  0% {
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(0.5);
+  /* Original fade-in-only keyframes */
+  @keyframes showAfterDelay {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  1% {
-    visibility: visible;
+
+  .signal-bar {
+    width: 2px;
+    background-color: black;
+    display: inline-block;
+    margin-right: 1px;
   }
-  100% {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
+  .metallic {
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.1),
+      inset 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
-}
 
+  /*  CSS for stack animation */
 
-.typing {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  max-width: 0;
-  animation: typeReveal 3s steps(30) forwards;
-  animation-delay: 12.8s; /* you can keep your delay */
-}
-
-@keyframes typeReveal {
-  from {
-    max-width: 0;
+  .shuffle1,
+  .shuffle2 {
+    will-change: transform;
+    transition: transform 0.6s ease-in-out;
   }
-  to {
-    max-width: 100%;
+
+
+
+
+  /*============================= css for "Screens" section2 =============================*/
+
+
+  /*stack animation css */
+
+  .dynamic-heading {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #16c542;
+    transition: opacity 0.3s ease;
+    min-height: 5rem;
   }
-}
 
-
-.reveal {
-  opacity: 0; /* hidden initially */
-  animation-name: showAfterDelay;
-  animation-duration: 1s; /* 1 second pop */
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-}
-/* Delay classes */
-.delay-3s { animation-delay: 3s; }
-.delay-6s { animation-delay: 6s; }
-.delay-9s { animation-delay: 9s; }
-.delay-12s { animation-delay: 12s; }
-.delay-15s { animation-delay: 15s; }
-.delay-18s { animation-delay: 18s; }
-
-/* Original fade-in-only keyframes */
-@keyframes showAfterDelay {
-  0% {
-    opacity: 0;
+  .dynamic-heading h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
   }
-  100% {
-    opacity: 1;
+
+  .dynamic-heading h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    color: #1e4e1e;
   }
-}
 
-.signal-bar {
-  width: 2px;
-  background-color: black;
-  display: inline-block;
-  margin-right: 1px;
-}
-.metallic {
-  background: linear-gradient(145deg, #1a1a1a, #000000);
-  box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.1),
-    inset 1px 1px 2px rgba(0, 0, 0, 0.8);
-}
 
-/*  CSS for stack animation */
-
-.shuffle1,
-.shuffle2 {
-  will-change: transform;
-  transition: transform 0.6s ease-in-out;
-}
+  .z1 {
+    z-index: 1;
+    top: 0;
+  }
+  .z2 {
+    z-index: 2;
+    top: 20px;
+  }
+  .z3 {
+    z-index: 3;
+    top: 40px;
+  }
+  .z4 {
+    z-index: 4;
+    top: 60px;
+  }
 
 
 
+  .lift-up {
+    top: -30rem !important;
+    transition: top 0.6s ease;
+    box-shadow: 0 15px 40px rgba(22, 197, 66, 0.8);
+  }
 
-/*============================= css for "Screens" section2 =============================*/
-
-
-/*stack animation css */
-
-.dynamic-heading {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: #16c542;
-  transition: opacity 0.3s ease;
-  min-height: 5rem;
-}
-
-.dynamic-heading h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin: 0;
-}
-
-.dynamic-heading h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-top: 1rem;
-  color: #1e4e1e;
-}
+  .lift-down {
+    transition: top 0.6s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
 
 
-.z1 {
-  z-index: 1;
-  top: 0;
-}
-.z2 {
-  z-index: 2;
-  top: 20px;
-}
-.z3 {
-  z-index: 3;
-  top: 40px;
-}
-.z4 {
-  z-index: 4;
-  top: 60px;
-}
+  /* stack animation css */
 
-
-
-.lift-up {
-  top: -30rem !important;
-  transition: top 0.6s ease;
-  box-shadow: 0 15px 40px rgba(22, 197, 66, 0.8);
-}
-
-.lift-down {
-  transition: top 0.6s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-
-/* stack animation css */
-
-.section2-cards-container {
-  position: relative;
-  width: auto ;
-  max-width: 40rem;
-  min-height: 60rem;
-  margin-top: 15rem;
-}
-
-@media (max-width: 640px) {
   .section2-cards-container {
-    min-height: 16rem;   /* Reduced height */
-    margin-top: 8rem;    /* Less top spacing */
-    margin-bottom: -10rem !important;
-  }
-}
-
-
-.section2-card {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 1200px;
-  background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  user-select: none;
-  color: #166426;
-  transition: top 0.5s ease, box-shadow 0.6s ease, z-index 0s ease;
-}
-
-
-/*============================= css for "WhatsApp" section =============================*/
-
-.wapp-sm {
-  height: 100%; /* or whatever default height you want */
-}
-
-/* Media query for small screens */
-@media (max-width: 640px) { /* Tailwind's sm breakpoint is 640px */
-  .wapp-sm {
-    height: 30rem !important; /* increase height on small screens */
-  }
-}
-
-/*whatsapp logos section */
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 70px);
-  gap: 5px 5px; /* row-gap and column-gap */
-   width: max-content;   /* shrink to fit content width */
-  margin: 0 auto; 
-}
-
-.cardlogo {
-  width: auto;
-  height: 60px;
-  background: linear-gradient(to bottom, #ffffff, #a9a9a9);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  user-select: none;
-  overflow: hidden;
-  margin-top: 20px;
-}
-.tilt-left {
-  transform: rotate(-10deg);
-}
-.tilt-right {
-  transform: rotate(10deg);
-}
-
-@media (max-width: 640px) {
-  .grid-container {
-    transform: scale(0.8) translateX(-3rem); /* shift 1rem left */
-    transform-origin: top center;
-    margin: 0 auto;
-    width: max-content; /* ensure shrink wrap */
-  }
-}
-
-
-/* svg component*/
-@media (max-width: 639px) {
-  .svgcom {
-    position: relative !important;
-    overflow: visible !important;
-    height: auto !important;
-    min-height: 20rem !important;
-    aspect-ratio: auto !important;
+    position: relative;
+    width: auto ;
+    max-width: 40rem;
+    min-height: 60rem;
+    margin-top: 15rem;
   }
 
-  .svgcom .unified {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important; /* so aspect-ratio controls height */
-    aspect-ratio: 2 / 0.8 !important; /* ensure shape is locked */
-    transform: none !important;
-    z-index: 9999 !important;
-  }
-}
-
-/* Desktop/other default styles */  
-.unified {
-  position: absolute;
-  top: 20px; /* reset default offset */
-  left: 0;
-  transform: none;
-  width: auto; /* sizing for larger screens */
-  height: auto;
-}
-
-
-/* svg scale */
-@media (max-width: 640px) {
-  .unified img:nth-child(1) {
-    top: 1% !important;
-    left: 6% !important;
-    width: 15% !important;
+  @media (max-width: 640px) {
+    .section2-cards-container {
+      min-height: 16rem;   /* Reduced height */
+      margin-top: 8rem;    /* Less top spacing */
+      margin-bottom: -10rem !important;
+    }
   }
 
-  .unified img:nth-child(2) {
-    top: 1% !important;
-    left: 85% !important;
-    width: 15% !important;
+
+  .section2-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    color: #166426;
+    transition: top 0.5s ease, box-shadow 0.6s ease, z-index 0s ease;
   }
 
-  .unified img:nth-child(3) {
-    top: 70% !important;
-    left: 78% !important;
-    max-width: 15% !important;
-  }
 
-  .unified svg {
-    top: 80% !important;
-    left: 79% !important;
-    width: 80% !important;
-    height: auto !important;
-    transform: scale(3) !important;
-  }
+  /*============================= css for "WhatsApp" section =============================*/
+
+  /* Css for border-glow */
+
+.border-glow {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0); /* not transparent, but invisible */
+  will-change: transform, box-shadow;
 }
 
-/* Large Devices (Desktops and above) */
-@media (min-width: 1024px) {
-  .svgcom {
-    position: relative !important;
-    overflow: visible !important;
-    height: auto !important;
-  }
-
-  .svgcom .unified {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 2 / 0.8 !important; /* Maintain aspect ratio */
-    transform: none !important;
-    z-index: 9999 !important;
-  }
-
-  /* Adjusting SVG and images within .unified */
-  .svgcom .unified img:nth-child(1) {
-    top: 1% !important;
-    left: 37% !important;
-    width: 10% !important;
-  }
-
-  .svgcom .unified img:nth-child(2) {
-    top: 1% !important;
-    left: 90% !important;
-    width: 10% !important;
-  }
-
-  .svgcom .unified img:nth-child(3) {
-    top: 68% !important;
-    left: 85% !important;
-    max-width: 10% !important;
-  }
-
-  .svgcom .unified svg {
-    top: 40% !important;
-    left: 70% !important;
-    width: 75% !important;
-    height: auto !important;
-    transform: scale(2) !important;
-  }
+.border-glow:hover {
+  box-shadow: 0 0 10px rgb(222, 255, 173), 0 0 50px rgb(214, 255, 152);
+  transform: scale(1.05);
+  z-index: 10; /* Ensures the hovered card floats above others if needed */
 }
 
-
-/*============================= css for "Callback" section =============================*/
-
-
-/*-------- Video Player css --------*/
-
-.video-container {
-  position: relative;
-  width: 400px; /* or 100%, or container width */
-  height: 700px; /* fix height */
-  overflow: hidden; /* hide overflow */
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: grey;
-}
-
-
-/*-------- Css for callback-btn --------*/ 
-
-.callback-btn {
-  width: 6.5em;
-  height: 2.5em;
-  margin: 0.1em;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 0.625em;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.callback-btn:hover {
-  color: black;
-  border-color: #000000;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.733);
-}
-
-.callback-btn:after {
-  content: "";
-  background: white;
-  position: absolute;
-  z-index: -1;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.5s;
-}
-
-.callback-btn:hover:after {
-  transform: skewX(-45deg) scale(1, 1);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.callback-btn:hover .icon {
-  color: black; /* svg icon color */
-}
-
-.cardvideo {
-  border-radius: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  transition: transform 0.6s ease, z-index 0.6s ease;
-}
-
-/*-------- Responsive CSS for small screens --------*/
-
-@media (max-width: 639px) {
-  .automate {
-    font-size: 2.3rem !important; 
-   
-  }
-}
-
-/* usecase text for small screens */
-@media (max-width: 480px) {
-  .usecase {
-    font-size: 12px; /* smaller text on small screens */
-  }
-}
-
-/* usecase title text for small screens */
-@media (max-width: 480px) {
-  .usecasetitle {
-    font-size: 22px !important; /* smaller text on small screens */
-  }
-}
-
-
-
-
-/*============================= css for "Testimony" section =============================*/
-
-/*-------- No select-text for draggable cards --------*/
-
-.drag-card * {
-  user-select: none;
+.border-glow > .absolute {
   pointer-events: none;
 }
-
-/*-------- responsive size for dragable cards  --------*/
-
-
-@media (max-width: 640px) {
-  .scaledown {
-    transform: scale(0.78);
-    transform-origin: top center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
-    margin-bottom: -6rem;
-    width: max-content;
+  .wapp-sm {
+    height: 100%; /* height small screens */
   }
 
-  .scaledown p {
-    font-size: 1.2rem; /* Tailwind’s text-sm is ~0.875rem */
-    width: 100%;
-  }
- .scaledown h1 {
-    font-size: 1.rem; /* Tailwind’s text-sm is ~0.875rem */
-    width: 100%;
+  /* Media query for small screens */
+  @media (max-width: 640px) { /* Tailwind's sm breakpoint is 640px */
+    .wapp-sm {
+      height: 30rem !important; /* increase height on small screens */
+    }
   }
 
-}
+  /*whatsapp logos section */
 
-
-
-/*-------- Small screens (below 640px) — apply mobile styles --------*/
-
-
-@media (max-width: 639px) {
-  .testimony {
-    grid-template-columns: 1fr;
-    margin-left: 1rem;   /* 16px on the left */
-    margin-right: 1rem;  /* 16px on the right */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    gap: 5px 5px; /* row-gap and column-gap */
+    width: max-content;   /* shrink to fit content width */
+    margin: 0 auto; 
   }
-}
 
-
-/*-------- Responsive size for Top logos --------*/
-
-
-@media (max-width: 639px) {
-  .toplogos {
-   margin-left: 3rem;   /* 16px on the left */
-    margin-right: 1rem;
-    gap: 6rem;
-  }
-}
-
-
-/*-------- Responsive size for Bottom logos --------*/
-
-
-@media (max-width: 639px) { 
-  .bottomlogos {
-    width: 60% !important;    /* force width */
-    height: auto !important;  /* override h-14 */
-  }
-}
-
-@media (min-width: 640px) {
-  .bottomlogos {
-    max-height: 50%;
+  .cardlogo {
     width: auto;
-    object-fit: contain;
+    height: 60px;
+    background: linear-gradient(to bottom, #ffffff, #a9a9a9);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    overflow: hidden;
+    margin-top: 20px;
   }
-}
+  .tilt-left {
+    transform: rotate(-10deg);
+  }
+  .tilt-right {
+    transform: rotate(10deg);
+  }
+
+  @media (max-width: 640px) {
+    .grid-container {
+      transform: scale(0.8) translateX(-3rem); /* shift 1rem left */
+      transform-origin: top center;
+      margin: 0 auto;
+      width: max-content; /* ensure shrink wrap */
+    }
+  }
+
+
+  /* svg component*/
+  @media (max-width: 639px) {
+    .svgcom {
+      position: relative !important;
+      overflow: visible !important;
+      height: auto !important;
+      min-height: 20rem !important;
+      aspect-ratio: auto !important;
+    }
+
+    .svgcom .unified {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: auto !important; /* so aspect-ratio controls height */
+      aspect-ratio: 2 / 0.8 !important; /* ensure shape is locked */
+      transform: none !important;
+      z-index: 9999 !important;
+    }
+  }
+
+  /* Desktop/other default styles */  
+  .unified {
+    position: absolute;
+    top: 20px; /* reset default offset */
+    left: 0;
+    transform: none;
+    width: auto; /* sizing for larger screens */
+    height: auto;
+  }
+
+
+  /* svg scale */
+  @media (max-width: 640px) {
+    .unified img:nth-child(1) {
+      top: 1% !important;
+      left: 6% !important;
+      width: 15% !important;
+    }
+
+    .unified img:nth-child(2) {
+      top: 1% !important;
+      left: 85% !important;
+      width: 15% !important;
+    }
+
+    .unified img:nth-child(3) {
+      top: 70% !important;
+      left: 78% !important;
+      max-width: 15% !important;
+    }
+
+    .unified svg {
+      top: 80% !important;
+      left: 79% !important;
+      width: 80% !important;
+      height: auto !important;
+      transform: scale(3) !important;
+    }
+  }
+
+  /* Large Devices (Desktops and above) */
+  @media (min-width: 1024px) {
+    .svgcom {
+      position: relative !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    .svgcom .unified {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 2 / 0.8 !important; /* Maintain aspect ratio */
+      transform: none !important;
+      z-index: 9999 !important;
+    }
+
+    /* Adjusting SVG and images within .unified */
+    .svgcom .unified img:nth-child(1) {
+      top: 1% !important;
+      left: 37% !important;
+      width: 10% !important;
+    }
+
+    .svgcom .unified img:nth-child(2) {
+      top: 1% !important;
+      left: 90% !important;
+      width: 10% !important;
+    }
+
+    .svgcom .unified img:nth-child(3) {
+      top: 68% !important;
+      left: 85% !important;
+      max-width: 10% !important;
+    }
+
+    .svgcom .unified svg {
+      top: 40% !important;
+      left: 70% !important;
+      width: 75% !important;
+      height: auto !important;
+      transform: scale(2) !important;
+    }
+  }
+
+
+  /*============================= css for "Callback" section =============================*/
+
+
+  /*-------- Video Player css --------*/
+
+  .video-container {
+    position: relative;
+    width: 400px; /* or 100%, or container width */
+    height: 700px; /* fix height */
+    overflow: hidden; /* hide overflow */
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: grey;
+  }
+
+
+  /*-------- Css for callback-btn --------*/ 
+
+  .callback-btn {
+    width: 6.5em;
+    height: 2.5em;
+    margin: 0.1em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .callback-btn:hover {
+    color: black;
+    border-color: #000000;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.733);
+  }
+
+  .callback-btn:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+  }
+
+  .callback-btn:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  .callback-btn:hover .icon {
+    color: black; /* svg icon color */
+  }
+
+  .cardvideo {
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: transform 0.6s ease, z-index 0.6s ease;
+  }
+
+  /*-------- Responsive CSS for small screens --------*/
+
+  @media (max-width: 639px) {
+    .automate {
+      font-size: 2.3rem !important; 
+    
+    }
+  }
+
+  /* usecase text for small screens */
+  @media (max-width: 480px) {
+    .usecase {
+      font-size: 12px; /* smaller text on small screens */
+    }
+  }
+
+  /* usecase title text for small screens */
+  @media (max-width: 480px) {
+    .usecasetitle {
+      font-size: 22px !important; /* smaller text on small screens */
+    }
+  }
 
 
 
-/*============================= css for "flows" section =============================*/
 
-/*---------- css for Image slider ----------*/
-.tab-button {
-  padding: 0.5rem 1.5rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  border: 1px solid #cbd5e1;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  margin-right: 0;
-}
+  /*============================= css for "Testimony" section =============================*/
+
+  /*-------- No select-text for draggable cards --------*/
+
+  .drag-card * {
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /*-------- responsive size for dragable cards  --------*/
 
 
-.tab-button.active {
-  background-color: black;
-  color: white;
-  border-color: black;
-}
+  @media (max-width: 640px) {
+    .scaledown {
+      transform: scale(0.78);
+      transform-origin: top center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3rem;
+      margin-bottom: -6rem;
+      width: max-content;
+    }
 
-.progress-line {
-  flex-grow: 1;         /* Let line stretch naturally */
-  min-width: 50px;      /* Ensure a minimum size */
-  height: 2px;
-  background-color: #9ca3af;
-  border-radius: 9999px;
-  margin: 0 4px;   
-  margin-left: 20px;     /* Optional spacing */
-    flex-grow: 1;
-  height: 3px;
-  background-color: #9ca3af;
-  border-radius: 9999px;
-  margin-left: -2px; /* pull closer to button */
-  margin-right: -8px; /* pull closer to next button */
-}
+    .scaledown p {
+      font-size: 1.2rem; /* Tailwind’s text-sm is ~0.875rem */
+      width: 100%;
+    }
+  .scaledown h1 {
+      font-size: 1.rem; /* Tailwind’s text-sm is ~0.875rem */
+      width: 100%;
+    }
 
-#carouselTrack {
-  overflow-x: auto; /* enable swipe scrolling */
-  -ms-overflow-style: none;  /* IE/Edge */
-  scrollbar-width: none;     /* Firefox */
-}
-#carouselTrack::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
-}
-
-.progress-line.active-line {
-  background-color: black;
-}
-
-.tab-wrapper {
-  display: flex;
-  align-items: center;
-}
+  }
 
 
-/*------------- css for dots and lines -------------*/
 
-#carouselDots {
-  display: flex;
-  align-items: center; /* aligns dots and lines evenly */
-  justify-content: center;
-  gap: 0rem; /* adjust if needed */
-  padding: 3rem;
-}
+  /*-------- Small screens (below 640px) — apply mobile styles --------*/
 
 
-#carouselDots button {
-  width: 14px;
-  height: 14px;
-  background-color: #9ca3af;
-  border-radius: 50%;
-  padding: 0;
-  margin: 0;
-  flex-shrink: 0;
-  flex-grow: 0;
-  box-sizing: border-box;
-  display: inline-block;
-}
-#carouselDots button.bg-gray-800 {
-  background-color: #1f2937; /* Tailwind gray-800 */
-}
-
-.dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 9999px;
-  background-color: #9ca3af;
-  flex-shrink: 0;
-  margin: 0;              /* No margin */
-}
+  @media (max-width: 639px) {
+    .testimony {
+      grid-template-columns: 1fr;
+      margin-left: 1rem;   /* 16px on the left */
+      margin-right: 1rem;  /* 16px on the right */
+    }
+  }
 
 
-.progress-line.bg-gray-800 {
-  background-color: #1f2937; /* gray-800 */
-  
-}
-
-.tab-wrapper {
-  display: flex;
-  align-items: center;
-}
 
 
-.tab-button.active + .progress-line {
-  background-color: #1f2937; /* Darker line for active */
-}
+  /*-------- Responsive size for Top logos --------*/
 
 
-/*============================= css for "Plans and Pricing" section =============================*/
+  @media (max-width: 639px) {
+    .toplogos {
+    margin-left: 3rem;   /* 16px on the left */
+      margin-right: 1rem;
+      gap: 6rem;
+    }
+  }
 
-/*============================= css for "Usecase" section =============================*/
+
+  /*-------- Responsive size for Bottom logos --------*/
+
+
+  @media (max-width: 639px) { 
+    .bottomlogos {
+      width: 60% !important;    /* force width */
+      height: auto !important;  /* override h-14 */
+    }
+  }
+
+  @media (min-width: 640px) {
+    .bottomlogos {
+      max-height: 50%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+
+
+  /*============================= css for "flows" section =============================*/
+
+
+
+  /*---------- css for Image slider ----------*/
+  .tab-button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0;
+  }
+
+
+  .tab-button.active {
+    background-color: black;
+    color: white;
+    border-color: black;
+  }
+
+  .progress-line {
+    flex-grow: 1;         /* Let line stretch naturally */
+    min-width: 50px;      /* Ensure a minimum size */
+    height: 2px;
+    background-color: #9ca3af;
+    border-radius: 9999px;
+    margin: 0 4px;   
+    margin-left: 20px;     /* Optional spacing */
+      flex-grow: 1;
+    height: 3px;
+    background-color: #9ca3af;
+    border-radius: 9999px;
+    margin-left: 0px; /* pull closer to button */
+    margin-right: -8px; /* pull closer to next button */
+  }
+
+
+
+  #carouselTrack {
+    overflow-x: auto; /* enable swipe scrolling */
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  #carouselTrack::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, Opera */
+  }
+
+  .progress-line.active-line {
+    background-color: black;
+  }
+
+  .tab-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+
+  /*------------- css for dots and lines -------------*/
+
+  #carouselDots {
+    display: flex;
+    align-items: center; /* aligns dots and lines evenly */
+    justify-content: center;
+    gap: 0rem; /* adjust if needed */
+    padding: 3rem;
+  }
+
+
+  #carouselDots button {
+    width: 14px;
+    height: 14px;
+    background-color: #9ca3af;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  #carouselDots button.bg-gray-800 {
+    background-color: #1f2937; /* Tailwind gray-800 */
+  }
+
+  .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background-color: #9ca3af;
+    flex-shrink: 0;
+    margin: 0;              /* No margin */
+  }
+
+
+  .progress-line.bg-gray-800 {
+    background-color: #1f2937; /* gray-800 */
+    
+  }
+
+  .tab-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+
+  .tab-button.active + .progress-line {
+    background-color: #1f2937; /* Darker line for active */
+  }
+
+
+  /*============================= css for "Plans and Pricing" section =============================*/
+
+  /*============================= css for "Usecase" section =============================*/
 
 
 
